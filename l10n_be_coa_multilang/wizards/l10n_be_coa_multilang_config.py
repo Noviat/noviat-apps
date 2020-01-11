@@ -288,7 +288,8 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
         # update the entries in the BNB/NBB legal report scheme
         upd_wiz = self.env['l10n_be.update_be_reportscheme']
         upd_ctx = {'l10n.be.coa.multilang.config': 1}
-        note = upd_wiz.with_context(upd_ctx)._update_be_reportscheme()
+        note = upd_wiz.with_context(upd_ctx)._update_be_reportscheme(
+            self.company_id)
         if note:
             wiz = upd_wiz.create({'note': note})
             module = __name__.split('addons.')[1].split('.')[0]
