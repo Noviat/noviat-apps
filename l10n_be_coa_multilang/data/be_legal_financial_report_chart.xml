@@ -29,6 +29,7 @@
     <field name="sequence">311000</field>
     <field name="parent_id" ref="be_report_chart_319000"/>
     <field name="factor" eval="1"/>
+    <field name="balance_factor" eval="1"/>
     <field name="color">darkblue</field>
     <field name="font">b</field>
   </record>
@@ -47,6 +48,7 @@
     <field name="sequence">311200</field>
     <field name="parent_id" ref="be_report_chart_311100"/>
     <field name="factor" eval="1"/>
+    <field name="balance_factor" eval="1"/>
     <field name="color">darkblue</field>
     <field name="font">b</field>
   </record>
@@ -351,6 +353,7 @@
     <field name="sequence">312500</field>
     <field name="parent_id" ref="be_report_chart_312000"/>
     <field name="factor" eval="1"/>
+    <field name="balance_factor" eval="1"/>
     <field name="color">darkblue</field>
     <field name="font">b</field>
   </record>
@@ -360,6 +363,7 @@
     <field name="sequence">312600</field>
     <field name="parent_id" ref="be_report_chart_312000"/>
     <field name="factor" eval="1"/>
+    <field name="balance_factor" eval="1"/>
     <field name="color">darkblue</field>
     <field name="font">b</field>
   </record>
@@ -419,6 +423,7 @@
     <field name="sequence">321200</field>
     <field name="parent_id" ref="be_report_chart_321000"/>
     <field name="factor" eval="1"/>
+    <field name="balance_factor" eval="-1"/>
     <field name="color">darkblue</field>
     <field name="font">b</field>
   </record>
@@ -428,6 +433,7 @@
     <field name="sequence">321300</field>
     <field name="parent_id" ref="be_report_chart_321000"/>
     <field name="factor" eval="1"/>
+    <field name="balance_factor" eval="-1"/>
     <field name="color">darkblue</field>
     <field name="font">b</field>
   </record>
