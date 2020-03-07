@@ -3,7 +3,7 @@
 
 {
     'name': 'Belgium - Multilingual Chart of Accounts (en/nl/fr)',
-    'version': '12.0.1.0.3',
+    'version': '12.0.1.0.4',
     'license': 'AGPL-3',
     'author': "Noviat",
     'website': 'http://www.noviat.com',
