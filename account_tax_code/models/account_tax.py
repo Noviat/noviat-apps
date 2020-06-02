@@ -20,3 +20,12 @@ class AccountTax(models.Model):
     def copy(self, default=None):
         default = dict(default or {}, code=_("%s (Copy)") % (self.code or ""))
         return super().copy(default=default)
+
+    def name_get(self):
+        res = super().name_get()
+        if self.env.context.get("append_code_to_tax_name"):
+            for i, entry in enumerate(res):
+                tax = self[i]
+                if tax.code:
+                    res[i] = (tax.id, "[%s] %s" % (tax.code, entry[1]))
+        return res

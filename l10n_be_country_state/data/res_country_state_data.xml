@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <record id="state_be_van" model="res.country.state">
+      <field name="name">Antwerpen</field>
+      <field name="code">van</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_wbr" model="res.country.state">
+      <field name="name">Brabant wallon</field>
+      <field name="code">wbr</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_wht" model="res.country.state">
+      <field name="name">Hainaut</field>
+      <field name="code">wht</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_wlgn" model="res.country.state">
+      <field name="name">Liège</field>
+      <field name="code">wlg</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_vli" model="res.country.state">
+      <field name="name">Limburg</field>
+      <field name="code">vli</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_wlx" model="res.country.state">
+      <field name="name">Luxembourg</field>
+      <field name="code">wlx</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_wna" model="res.country.state">
+      <field name="name">Namur</field>
+      <field name="code">wna</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_vov" model="res.country.state">
+      <field name="name">Oost-Vlaanderen</field>
+      <field name="code">vov</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_vbr" model="res.country.state">
+      <field name="name">Vlaams-Brabant</field>
+      <field name="code">vbr</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    <record id="state_be_vwv" model="res.country.state">
+      <field name="name">West-Vlaanderen</field>
+      <field name="code">vwv</field>
+      <field name="country_id" ref="base.be"/>
+    </record>
+    
+  </data>
+</odoo>
