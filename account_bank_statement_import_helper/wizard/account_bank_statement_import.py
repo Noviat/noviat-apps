@@ -21,7 +21,8 @@ class AccountBankStatementImport(models.TransientModel):
                 [('type', '=', 'bank')])
             fin_journal = fin_journals.filtered(
                 lambda r: sanitized_account_number
-                in r.bank_account_id.sanitized_acc_number)
+                in (r.bank_account_id.sanitized_acc_number or '')
+            )
             if len(fin_journal) == 1:
                 journal = fin_journal
         return currency, journal
