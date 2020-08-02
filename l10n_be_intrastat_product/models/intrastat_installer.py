@@ -84,7 +84,7 @@ class IntrastatInstaller(models.TransientModel):
             if os.path.isdir(module_path):
                 break
         CN_fn = self.CN_file + "_intrastat_codes.csv"
-        CN_fqn = module_path + os.sep + "data" + os.sep + CN_fn
+        CN_fqn = module_path + os.sep + "static/data" + os.sep + CN_fn
         with io.open(CN_fqn, mode="r", encoding="Windows-1252") as CN_file:
             cn_codes = csv.DictReader(CN_file, delimiter=CN_file_delimiter)
             for row in cn_codes:

@@ -26,6 +26,11 @@ from the official addons.
 If you have already installed these modules,
 you should uninstall them before installing this module.
 
+We recommend to also install the OCA stock_picking_invoice_link module,
+Cf. https://github.com/OCA/stock-logistics-workflow/tree/13.0/stock_picking_invoice_link
+This modules establishes a link between invoice lines and stock pickings.
+When this module is installed the declaration will take into account refunds created via return pickings.
+
 Configuration wizard to load intrastat codes:
 ---------------------------------------------
 
@@ -47,8 +52,6 @@ The system will load a large number of codes (9000+) hence this operation will t
 
 Configuration
 =============
-
-This module adds the following configuration parameters:
 
 * Accounting -> Configuration -> Settings
 
@@ -91,14 +94,15 @@ Known issues / Roadmap
   Since associated stock moves are not taken into consideration, it is possible that manual
   corrections are required, e.g.
 
-  - Product movements without invoices are not included in the current version
-    of this module and must be added manually to the report lines
-    before generating the ONEGATE XML declaration.
-  - Credit Notes are by default assumed to be corrections to the outgoing or incoming
-    invoices within the same reporting period. The product declaration values of the
-    Credit Notes are as a consequence deducted from the declaration lines.
-    You should encode the Credit Note with 'Intrastat Transaction Type = 2' when the goods
-    returned.
+- Product movements without invoices are not included in the current version
+  of this module and must be added manually to the report lines
+  before generating the ONEGATE XML declaration.
+
+- Credit Notes are by default assumed to be corrections to the outgoing or incoming
+  invoices within the same reporting period. The product declaration values of the
+  Credit Notes are as a consequence deducted from the declaration lines.
+  You should encode the Credit Note with 'Intrastat Transaction Type = 2' when the goods
+  returned.
 
 - The current version of the Belgian Intrastat reporting module does not perform a
   cross-check with the VAT declaration.

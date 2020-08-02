@@ -55,10 +55,12 @@ class L10nBeIntrastatProductDeclaration(models.Model):
 
     def _handle_refund(self, inv_line, line_vals):
         invoice = inv_line.move_id
-        # TODO: restore return_picking logic after 13.0 migration of
+        # The invoice.picking_ids field in implemented in the
         # OCA stock_picking_invoice_link module
-        # return_picking = invoice.picking_ids
-        return_picking = False
+        if hasattr(invoice, "picking_ids"):
+            return_picking = invoice.picking_ids
+        else:
+            return_picking = False
         if return_picking:
 
             if invoice.type == "in_refund":
@@ -231,17 +233,19 @@ class L10nBeIntrastatProductDeclaration(models.Model):
         res = super()._check_generate_xml()
         if not self.declaration_line_ids:
             res = self.generate_declaration()
-        kbo_nr = self.company_id.partner_id.kbo_bce_number
-        if not kbo_nr:
-            raise UserError(
-                _("Configuration Error." "No KBO/BCE Number defined for your Company.")
-            )
         return res
+
+    def _get_kbo_bce_nr(self):
+        kbo_bce_nr = False
+        vat = self.company_id.partner_id.sanitized_vat
+        if vat and vat[:2] == "BE":
+            kbo_bce_nr = vat[2:]
+        return kbo_bce_nr
 
     def _node_Admininstration(self, parent):
         Administration = etree.SubElement(parent, "Administration")
         From = etree.SubElement(Administration, "From")
-        From.text = self.company_id.partner_id.kbo_bce_number.replace(".", "")
+        From.text = self._get_kbo_bce_nr()
         From.set("declarerType", "KBO")
         etree.SubElement(Administration, "To").text = "NBB"
         etree.SubElement(Administration, "Domain").text = "SXX"
@@ -344,7 +348,7 @@ class L10nBeIntrastatProductDeclaration(models.Model):
             root, pretty_print=True, encoding="UTF-8", xml_declaration=True
         )
         module = __name__.split("addons.")[1].split(".")[0]
-        self._check_xml_schema(xml_string, "{}/data/{}.xsd".format(module, xsd))
+        self._check_xml_schema(xml_string, "{}/static/data/{}.xsd".format(module, xsd))
         return xml_string
 
     def _xls_computation_line_fields(self):
