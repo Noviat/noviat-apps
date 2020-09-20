@@ -18,11 +18,13 @@
                  attrs="{'required': [('period_length', '=', 'month')], 'invisible': [('period_length', '!=', 'month')]}"/>
           <field name="quarter"
                  attrs="{'required': [('period_length', '=', 'quarter')], 'invisible': [('period_length', '!=', 'quarter')]}"/>
+          <field name="target_move"/>
         </group>
         <group name="date_range" invisible="1">
           <field name="date_from"/>
           <field name="date_to"/>
           <field name="period"/>
+          <field name="note"/>
         </group>
         <footer>
           <button name="generate_declaration" string="View Declaration" type="object" class="oe_highlight"/>
@@ -46,11 +48,15 @@
         </header>
         <group name="selection_criteria" colspan="4" col="6">
           <field name="period"/>
+          <field name="target_move" readonly="1"/>
           <field name="company_id"
                  options="{'no_create': True, 'no_open': True}"
                  readonly="1"
                  groups="base.group_multi_company"/>
         </group>
+        <div attrs="{'invisible': [('note', '=', '')]}">
+          <field name="note" class="alert alert-info" role="alert" readonly="1"/>
+        </div>
         <notebook>
           <page name="declaration" string="Intracom VAT Declaration">
             <field name="client_ids" nolabel="1" readonly="1">

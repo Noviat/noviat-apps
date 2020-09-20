@@ -5,23 +5,23 @@ from odoo import models
 
 
 class AccountJournal(models.Model):
-    _inherit = 'account.journal'
+    _inherit = "account.journal"
 
     def _report_xlsx_fields(self):
         """
         Adapt list in inherited module to add/drop columns or change order
         """
         res = [
-            'move_name',         # account.move,name
-            'move_date',         # account.move,date
-            'acc_code',          # account.account,code
-            'partner_name',      # res.partner,name
-            'aml_name',          # account.move.line,name
-            'tax_code',          # account.tax.code,code
-            'tax_amount',        # account.move.line,tax_amount
-            'debit',             # account.move.line,debit
-            'credit',            # account.move.line,credit
-            'balance',           # debit-credit
+            "move_name",  # account.move,name
+            "move_date",  # account.move,date
+            "acc_code",  # account.account,code
+            "partner_name",  # res.partner,name
+            "aml_name",  # account.move.line,name
+            "tax_code",  # account.tax.code,code
+            "tax_amount",  # account.move.line,tax_amount
+            "debit",  # account.move.line,debit
+            "credit",  # account.move.line,credit
+            "balance",  # debit-credit
             # 'date_maturity',   # account.move.line,date_maturity
             # 'full_reconcile',  # account.move.line,reconcile_id.name
             # 'reconcile_amount',

@@ -4,39 +4,36 @@
 from odoo import api, fields, models
 
 
-class l10nBeChartCommon(models.AbstractModel):
-    _name = 'l10n.be.chart.common'
-    _description = 'Common code for Belgian report structures'
+class L10nBeChartCommon(models.AbstractModel):
+    _name = "l10n.be.chart.common"
+    _description = "Common code for Belgian report structures"
 
     factor = fields.Float(
-        string='Parent Coefficient',
+        string="Parent Coefficient",
         help="Specify here the coefficient that will be used "
-             "when consolidating the amount of this entry into its parent. "
-             "For example, set 1/-1 if you want to add/substract it.")
-    invisible = fields.Boolean(
-        help="Hide this entry from the report.")
-    color = fields.Char(
-        help="CSS color unit")
-    font = fields.Selection(
-        selection=lambda self: self._selection_font())
+        "when consolidating the amount of this entry into its parent. "
+        "For example, set 1/-1 if you want to add/substract it.",
+    )
+    invisible = fields.Boolean(help="Hide this entry from the report.")
+    color = fields.Char(help="CSS color unit")
+    font = fields.Selection(selection=lambda self: self._selection_font())
     sequence = fields.Integer(default=0)
-    level = fields.Integer(
-        compute='_compute_level', string='Level', store=True)
+    level = fields.Integer(compute="_compute_level", string="Level", store=True)
     info = fields.Text()
 
     @api.model
     def _selection_font(self):
         return [
-            ('b', 'bold'),
-            ('i', 'italic'),
-            ('u', 'underline'),
-            ('bi', 'bold-italic'),
-            ('bu', 'bold-underline'),
-            ('iu', 'italic-underline'),
-            ('biu', 'bold-italic-underline'),
+            ("b", "bold"),
+            ("i", "italic"),
+            ("u", "underline"),
+            ("bi", "bold-italic"),
+            ("bu", "bold-underline"),
+            ("iu", "italic-underline"),
+            ("biu", "bold-italic-underline"),
         ]
 
-    @api.depends('parent_id', 'parent_id.level')
+    @api.depends("parent_id", "parent_id.level")
     def _compute_level(self):
         for entry in self:
             level = 0

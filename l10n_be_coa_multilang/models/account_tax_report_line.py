@@ -5,15 +5,15 @@ from odoo import api, models
 
 
 class AccountTaxReportLine(models.Model):
-    _name = 'account.tax.report.line'
-    _inherit = ['account.tax.report.line', 'l10n.be.chart.common']
+    _name = "account.tax.report.line"
+    _inherit = ["account.tax.report.line", "l10n.be.chart.common"]
 
-    @api.depends('name', 'code')
+    @api.depends("name", "code")
     def name_get(self):
         result = []
         for case in self:
             if case.code:
-                name = ' - '.join([case.code, case.name])
+                name = " - ".join([case.code, case.name])
             else:
                 name = case.name
             result.append((case.id, name))

@@ -2,21 +2,17 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "account tax code",
+    "name": "account_chart_update tax code",
     "version": "13.0.1.0.0",
     "category": "Accounting & Finance",
     "summary": """
-        Add 'code' field to taxes
+        Add 'code' field to account_chart_update tax matching
     """,
     "author": "Noviat",
     "website": "https://www.noviat.com",
-    "depends": ["account"],
-    "data": [
-        "views/account_fiscal_position_views.xml",
-        "views/account_move_views.xml",
-        "views/account_tax_views.xml",
-        "views/account_tax_template_views.xml",
-    ],
+    "depends": ["account_chart_update", "account_tax_code"],
+    "data": [],
     "installable": True,
+    "auto_install": True,
     "license": "AGPL-3",
 }

@@ -13,11 +13,13 @@
                  groups="base.group_multi_company"/>
           <field name="declarant_id"/>
           <field name="year"/>
+          <field name="target_move"/>
           <field name="limit_amount"/>
         </group>
         <group name="date_range" invisible="1">
           <field name="date_from"/>
           <field name="date_to"/>
+          <field name="note"/>
         </group>
         <footer>
           <button name="generate_declaration" string="View Listing" type="object" class="oe_highlight"/>
@@ -41,6 +43,7 @@
         </header>
         <group name="selection_criteria" colspan="4" col="4">
           <field name="year" readonly="1"/>
+          <field name="target_move" readonly="1"/>
           <field name="company_id"
                  options="{'no_create': True, 'no_open': True}"
                  readonly="1"
@@ -48,6 +51,9 @@
           <newline/>
           <field name="limit_amount" readonly="1"/>
         </group>
+        <div attrs="{'invisible': [('note', '=', '')]}">
+          <field name="note" class="alert alert-info" role="alert" readonly="1"/>
+        </div>
         <notebook>
           <page name="listing" string="Listing">
             <field name="client_ids" nolabel="1" readonly="1">

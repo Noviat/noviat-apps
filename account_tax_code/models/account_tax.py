@@ -27,5 +27,5 @@ class AccountTax(models.Model):
             for i, entry in enumerate(res):
                 tax = self[i]
                 if tax.code:
-                    res[i] = (tax.id, "[%s] %s" % (tax.code, entry[1]))
+                    res[i] = (tax.id, "[{}] {}".format(tax.code, entry[1]))
         return res

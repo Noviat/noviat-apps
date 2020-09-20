@@ -22,6 +22,10 @@
               <strong>Period</strong>
               <p t-esc="docs.period"/>
             </div>
+            <div class="col-3">
+              <strong>Target Moves</strong>
+              <p t-esc="docs.target_move"/>
+            </div>
           </div>
 
           <table class="table table-sm" width="100%">
