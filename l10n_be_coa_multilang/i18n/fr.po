@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 13.0\n"
 "Report-Msgid-Bugs-To: support@noviat.com\n"
-"POT-Creation-Date: 2020-05-31 18:24:08.034000\n"
-"PO-Revision-Date: 2020-05-31 18:24:08.034000\n"
+"POT-Creation-Date: 2020-09-22 20:02:13.396000\n"
+"PO-Revision-Date: 2020-09-22 20:02:13.396000\n"
 "Last-Translator: Luc De Meyer (Noviat nv/sa)\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -620,6 +620,21 @@ msgstr "Notes de crédit délivrées et corrections négatives"
 #: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_48
 msgid "Issued Credit Notes Operations Grid [44] and [46]"
 msgstr "Notes de crédit aux opérations grilles [44] et [46]"
+
+#. module: l10n_be_coa_multilang
+#: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_48S
+msgid "Issued Credit Notes Operations Grid [44]"
+msgstr "Notes de crédit aux opérations grille [44]"
+
+#. module: l10n_be_coa_multilang
+#: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_48L
+msgid "Issued Credit Notes Operations Grid [46L]"
+msgstr "Notes de crédit aux opérations grille [46L]"
+
+#. module: l10n_be_coa_multilang
+#: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_48T
+msgid "Issued Credit Notes Operations Grid [46T]"
+msgstr "Notes de crédit aux opérations grille [46T]"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_49

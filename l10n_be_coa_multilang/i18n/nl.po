@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 13.0\n"
 "Report-Msgid-Bugs-To: support@noviat.com\n"
-"POT-Creation-Date: 2020-05-31 18:24:08.023000\n"
-"PO-Revision-Date: 2020-05-31 18:24:08.023000\n"
+"POT-Creation-Date: 2020-09-22 20:02:13.387000\n"
+"PO-Revision-Date: 2020-09-22 20:02:13.387000\n"
 "Last-Translator: Luc De Meyer (Noviat nv/sa)\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -620,6 +620,21 @@ msgstr "Uitgereikte creditnota’s en de negatieve verbeteringen"
 #: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_48
 msgid "Issued Credit Notes Operations Grid [44] and [46]"
 msgstr "Uitgereikte creditnota's handelingen roosters [44] en [46]"
+
+#. module: l10n_be_coa_multilang
+#: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_48S
+msgid "Issued Credit Notes Operations Grid [44]"
+msgstr "Uitgereikte creditnota's handelingen rooster [44]"
+
+#. module: l10n_be_coa_multilang
+#: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_48L
+msgid "Issued Credit Notes Operations Grid [46L]"
+msgstr "Uitgereikte creditnota's handelingen rooster [46L]"
+
+#. module: l10n_be_coa_multilang
+#: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_48T
+msgid "Issued Credit Notes Operations Grid [46T]"
+msgstr "Uitgereikte creditnota's handelingen rooster [46T]"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_49

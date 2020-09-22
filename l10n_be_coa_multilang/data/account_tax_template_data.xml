@@ -197,7 +197,7 @@
     <field name="amount_type">percent</field>
     <field name="type_tax_use">sale</field>
     <field name="invoice_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_44')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
-    <field name="refund_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_48')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
+    <field name="refund_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_48S')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template"/>
   </record>
   <record id="attn_VAT-OUT-00-EU-G" model="account.tax.template">
@@ -211,7 +211,7 @@
     <field name="amount_type">percent</field>
     <field name="type_tax_use">sale</field>
     <field name="invoice_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_46L')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
-    <field name="refund_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_48')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
+    <field name="refund_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_48L')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template"/>
   </record>
   <record id="attn_VAT-OUT-00-EU-T" model="account.tax.template">
@@ -225,7 +225,7 @@
     <field name="amount_type">percent</field>
     <field name="type_tax_use">sale</field>
     <field name="invoice_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_46T')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
-    <field name="refund_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_48')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
+    <field name="refund_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_48T')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', })]"/>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template"/>
   </record>
   <record id="attn_VAT-OUT-00-ROW" model="account.tax.template">

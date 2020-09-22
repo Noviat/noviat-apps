@@ -101,7 +101,7 @@ class L10nBeVatIntracom(models.TransientModel):
         ).report_action(self)
 
     def _get_client_vals(self):
-        flds = ["partner_id", "debit", "credit"]
+        flds = ["partner_id", "balance"]
         groupby = ["partner_id"]
 
         aml_dom = self._get_move_line_domain()
@@ -132,7 +132,7 @@ class L10nBeVatIntracom(models.TransientModel):
                         "partner_id": partner.id,
                         "vat": vat,
                         "code": entry["code"],
-                        "amount": entry["credit"] - entry["debit"],
+                        "amount": -entry["balance"],
                     }
                 )
             else:
@@ -141,7 +141,7 @@ class L10nBeVatIntracom(models.TransientModel):
                         "partner_id": partner.id,
                         "vat": vat,
                         "code": entry["code"],
-                        "amount": entry["credit"] - entry["debit"],
+                        "amount": -entry["balance"],
                     }
                 ]
 
@@ -157,18 +157,18 @@ class L10nBeVatIntracom(models.TransientModel):
             ("country_id", "=", self.env.ref("base.be").id),
             ("applicability", "=", "taxes"),
         ]
-        code_S = "44"
-        dom_S = dom + [("name", "=", "+" + code_S)]
+        code_S = ["+" + x for x in ["44", "48S"]]
+        dom_S = dom + [("name", "in", code_S)]
         tags_S = self.env["account.account.tag"].search(dom_S)
         S_dom = [("tag_ids.id", "in", tags_S.ids)]
 
-        code_L = "46L"
-        dom_L = dom + [("name", "=", "+" + code_L)]
+        code_L = ["+" + x for x in ["46L", "48L"]]
+        dom_L = dom + [("name", "in", code_L)]
         tags_L = self.env["account.account.tag"].search(dom_L)
         L_dom = [("tag_ids.id", "in", tags_L.ids)]
 
-        code_T = "46T"
-        dom_T = dom + [("name", "=", "+" + code_T)]
+        code_T = ["+" + x for x in ["46T", "48T"]]
+        dom_T = dom + [("name", "in", code_T)]
         tags_T = self.env["account.account.tag"].search(dom_T)
         T_dom = [("tag_ids.id", "in", tags_T.ids)]
 
