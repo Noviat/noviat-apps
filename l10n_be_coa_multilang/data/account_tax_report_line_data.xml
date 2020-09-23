@@ -215,7 +215,6 @@
   <record id="atrl_48" model="account.tax.report.line">
     <field name="name">Issued Credit Notes Operations Grid [44] and [46]</field>
     <field name="code">48</field>
-    <field name="tag_name">48</field>
     <field name="factor">1</field>
     <field name="sequence">171</field>
     <field name="parent_id" ref="atrl_IIG"/>
@@ -230,7 +229,7 @@
     <field name="factor">1</field>
     <field name="sequence">172</field>
     <field name="parent_id" ref="atrl_48"/>
-    <field name="invisible" eval="0"/>
+    <field name="invisible" eval="1"/>
     <field name="country_id" ref="base.be"/>
   </record>
   <record id="atrl_48L" model="account.tax.report.line">
@@ -240,7 +239,7 @@
     <field name="factor">1</field>
     <field name="sequence">173</field>
     <field name="parent_id" ref="atrl_48"/>
-    <field name="invisible" eval="0"/>
+    <field name="invisible" eval="1"/>
     <field name="country_id" ref="base.be"/>
   </record>
   <record id="atrl_48T" model="account.tax.report.line">
@@ -250,7 +249,7 @@
     <field name="factor">1</field>
     <field name="sequence">174</field>
     <field name="parent_id" ref="atrl_48"/>
-    <field name="invisible" eval="0"/>
+    <field name="invisible" eval="1"/>
     <field name="country_id" ref="base.be"/>
   </record>
   <record id="atrl_49" model="account.tax.report.line">
