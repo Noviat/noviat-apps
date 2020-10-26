@@ -237,7 +237,7 @@ class L10nBeIntrastatProductDeclaration(models.Model):
 
     def _get_kbo_bce_nr(self):
         kbo_bce_nr = False
-        vat = self.company_id.partner_id.sanitized_vat
+        vat = self._sanitize_vat(self.company_id.partner_id.vat)
         if vat and vat[:2] == "BE":
             kbo_bce_nr = vat[2:]
         return kbo_bce_nr
