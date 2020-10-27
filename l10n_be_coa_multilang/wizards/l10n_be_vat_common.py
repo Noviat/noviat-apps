@@ -176,6 +176,12 @@ class L10nBeVatCommon(models.AbstractModel):
             aml_dom.append(("move_id.state", "=", "posted"))
         return aml_dom
 
+    def _get_move_domain(self):
+        am_dom = self._get_move_line_date_domain()
+        if self.target_move == "posted":
+            am_dom.append(("state", "=", "posted"))
+        return am_dom
+
     def _get_company_data(self):
         cpart = self.company_id.partner_id
         company_vat = self._get_company_vat()

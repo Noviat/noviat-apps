@@ -1071,7 +1071,7 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         ws.freeze_panes(row_pos, 0)
 
         min_types = decl._account_move_min_types()
-        am_dom = decl._get_move_line_domain() + [("journal_id", "=", journal.id)]
+        am_dom = decl._get_move_domain() + [("journal_id", "=", journal.id)]
         if decl.target_move == "posted":
             am_dom.append(("state", "=", "posted"))
         ams = self.env["account.move"].search(am_dom, order="name, date")
