@@ -1212,8 +1212,9 @@ class AccountCodaImport(models.TransientModel):
             coda_data = base64.decodestring(self.coda_data)
             with zipfile.ZipFile(BytesIO(coda_data)) as coda_zip:
                 for fn in coda_zip.namelist():
-                    if not fn.endswith('/'):
-                        coda_files.append((coda_zip.read(fn), fn))
+                    if fn.endswith('/') or fn.startswith('__MACOSX/'):
+                        continue
+                    coda_files.append((coda_zip.read(fn), fn))
         # fall back to regular CODA file processing if zip expand fails
         except zipfile.BadZipfile as e:
             _logger.error(str(e))
@@ -2263,17 +2264,28 @@ class AccountCodaImport(models.TransientModel):
             counterpart_aml_dict = {
                 'move_line': aml,
                 'name': name,
+                'account_id': aml.account_id.id,
             }
-            # the process_reconciliation method takes assumes that the
-            # input mv_line_dict 'debit'/'credit' contains the amount
-            # in bank statement line currency and will handle the currency
-            # conversions
-            if entry[1] > 0:
-                counterpart_aml_dict['debit'] = 0.0
-                counterpart_aml_dict['credit'] = entry[1]
+            if (cba.currency_id != cba.company_id.currency_id
+                    and st_line.currency_id == cba.company_id.currency_id):
+                amt = st_line.amount_currency
+                if amt > 0:
+                    counterpart_aml_dict['debit'] = 0.0
+                    counterpart_aml_dict['credit'] = amt
+                else:
+                    counterpart_aml_dict['debit'] = -amt
+                    counterpart_aml_dict['credit'] = 0.0
             else:
-                counterpart_aml_dict['debit'] = -entry[1]
-                counterpart_aml_dict['credit'] = 0.0
+                # the process_reconciliation method takes assumes that the
+                # input mv_line_dict 'debit'/'credit' contains the amount
+                # in bank statement line currency and will handle the currency
+                # conversions
+                if entry[1] > 0:
+                    counterpart_aml_dict['debit'] = 0.0
+                    counterpart_aml_dict['credit'] = entry[1]
+                else:
+                    counterpart_aml_dict['debit'] = -entry[1]
+                    counterpart_aml_dict['credit'] = 0.0
             counterpart_aml_dicts.append(counterpart_aml_dict)
 
         return counterpart_aml_dicts
