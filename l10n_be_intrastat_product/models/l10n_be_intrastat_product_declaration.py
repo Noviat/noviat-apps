@@ -126,11 +126,13 @@ class L10nBeIntrastatProductDeclaration(models.Model):
             if self.type == "dispatches":
                 vat_number = self._sanitize_vat(inv.partner_id.vat)
                 if not vat_number:
-                    note = "\n" + _(
-                        "Missing VAT Number on partner '%s'"
+                    line_notes = [
+                        _("Missing VAT Number on partner '%s'")
                         % inv.partner_id.name_get()[0][1]
+                    ]
+                    self._note += self._format_line_note(
+                        inv_line, self._line_nbr, line_notes
                     )
-                    self._note += note
                 else:
                     line_vals["vat_number"] = vat_number
             # extended declaration
@@ -192,13 +194,45 @@ class L10nBeIntrastatProductDeclaration(models.Model):
 
         self._transaction_2 = self.env.ref("%s.intrastat_transaction_2" % module)
 
+    def _get_intrastat_fpos(self):
+        fpos = self.env["account.fiscal.position"]
+        module = self.env["ir.module.module"].search(
+            [
+                ("name", "in", ("l10n_be", "l10n_be_coa_multilang")),
+                ("state", "=", "installed"),
+            ]
+        )
+        if not module:
+            return fpos
+        if module.name == "l10n_be":
+            fpt_name = "fiscal_position_template_3"
+        elif module.name == "l10n_be_coa_multilang":
+            fpt_name = "afptn_intracom"
+        fpos_ref = "{}.{}_{}".format(module.name, self.company_id.id, fpt_name)
+        if fpos_ref:
+            try:
+                fpos += self.env.ref(fpos_ref)
+            except Exception:
+                _logger.warn("Fiscal position '%s' not found", fpos_ref)
+        return fpos
+
     def _prepare_invoice_domain(self):
         """
+        Domain should be based on fiscal position in stead of country.
         Both in_ and out_refund must be included in order to cover
         - credit notes with and without return
         - companies subject to arrivals or dispatches only
         """
         domain = super()._prepare_invoice_domain()
+        fpos = self._get_intrastat_fpos()
+        if fpos:
+            try:
+                topop = domain.index(("intrastat_country", "=", True))
+                domain.pop(topop)
+                domain.append(("fiscal_position_id", "in", fpos.ids))
+            except Exception:
+                _logger.warn("_prepare_invoice_domain returns unexpected result")
+                return fpos
         if self.type == "arrivals":
             domain.append(("type", "in", ("in_invoice", "in_refund", "out_refund")))
         elif self.type == "dispatches":
