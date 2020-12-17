@@ -22,7 +22,8 @@ def remove_data(cr, module, model):
     if res:
         res_ids = tuple([x[1] for x in res])
         table = model.replace(".", "_")
-        query = "DELETE FROM %s WHERE id IN %%s" % table  # pylint: disable=E8103
+        query = "DELETE FROM %s WHERE id IN %%s" % table
+        # pylint: disable=E8103
         cr.execute(query, (res_ids,))
         imd_ids = tuple([x[0] for x in res])
         cr.execute("DELETE from ir_model_data WHERE id IN %s", (imd_ids,))
@@ -54,7 +55,7 @@ def migrate(cr, version):
     version_main = int(version.split(".")[0])
     module = "l10n_be"
     # check l10n_be status
-    # (V6 version of l10n_be_coa_multilang had l10n_be dependenct)
+    # (V6 version of l10n_be_coa_multilang had l10n_be dependency)
     cr.execute(
         "SELECT state FROM ir_module_module WHERE name = %s and state = 'installed'",
         (module,),

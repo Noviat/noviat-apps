@@ -307,7 +307,7 @@ class L10nBeVatDeclaration(models.TransientModel):
         if negative_cases:
             self.note += _(
                 "Negative values found for cases %s"
-                % [str(x.code) for x in negative_cases]
+                % [str(x.case_id.code) for x in negative_cases]
             )
             self.note += "\n"
             self.note += _(

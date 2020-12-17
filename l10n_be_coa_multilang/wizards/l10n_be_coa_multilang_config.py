@@ -74,7 +74,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
             acc_config_wiz = self.env[active_model].browse(active_id)
             ctx["default_company_id"] = acc_config_wiz.company_id.id
         elif not ctx.get("default_company_id"):
-            ctx["default_company_id"] = self.env.user.company_id.id
+            ctx["default_company_id"] = self.env.company.id
         return super(L10nBeCoaMultilangConfig, self.with_context(ctx)).default_get(
             fields_list
         )
