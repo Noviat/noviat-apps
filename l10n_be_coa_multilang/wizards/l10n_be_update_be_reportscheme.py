@@ -13,7 +13,7 @@ class L10nBeUpdateBeReportscheme(models.TransientModel):
     note = fields.Text("Result", readonly=True)
 
     def _update_be_reportscheme(self, company):
-        """"
+        """
         This method is executed when installing the module and will
         create/update the entries in the BNB/NBB legal report scheme.
         """
@@ -62,10 +62,11 @@ class L10nBeUpdateBeReportscheme(models.TransientModel):
         country_codes = self.env["account.account"]._get_be_scheme_countries()
         companies = self.env.user.company_ids.filtered(
             lambda r: r.country_id.code in country_codes
+            and r.id in self.env.context.get("allowed_company_ids")
         )
         note = ""
         for company in companies:
-            note = self._update_be_reportscheme(company)
+            note += self._update_be_reportscheme(company)
         module = __name__.split("addons.")[1].split(".")[0]
         if note:
             self.note = note

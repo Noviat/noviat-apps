@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 13.0\n"
 "Report-Msgid-Bugs-To: support@noviat.com\n"
-"POT-Creation-Date: 2020-09-22 20:02:13.387000\n"
-"PO-Revision-Date: 2020-09-22 20:02:13.387000\n"
+"POT-Creation-Date: 2020-12-21 23:10:25.064000\n"
+"PO-Revision-Date: 2020-12-21 23:10:25.064000\n"
 "Last-Translator: Luc De Meyer (Noviat nv/sa)\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -520,6 +520,91 @@ msgstr "Bedrijf"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_declaration_view_form
 msgid "Period"
 msgstr "Periode"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Description"
+msgstr "Omschrijving"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "VAT Number"
+msgstr "BTW Nummer"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "End Date"
+msgstr "Einddatum"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Period"
+msgstr "Periode"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Target Moves"
+msgstr "Welke boekingen"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Case"
+msgstr "Vak"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Journal Centralisation"
+msgstr "Dagboek Centralisatie"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Total Debit/Credit"
+msgstr "Totaal Debet/Credit"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Entry"
+msgstr "Boeking"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "All Entries"
+msgstr "Alle boekingen"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Posted Entries"
+msgstr "Goedgekeurde boekingen"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Effective Date"
+msgstr "Datum"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "VAT Amount"
+msgstr "Bedrag BTW"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Periodical VAT Declaration"
+msgstr "Periodieke BTW aangifte"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Intracom VAT Declaration"
+msgstr "Intracommunautaire BTW aangifte"
+
+#. module: l10n_be_coa_multilang
+#: model_terms:ir.actions.report,help:l10n_be_coa_multilang.action_report_l10nbelegalreport
+msgid "Annual Listing of VAT subjected Customers"
+msgstr "Jaarlijkse BTW-listing Klanten"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.report.line,name:l10n_be_coa_multilang.atrl_I

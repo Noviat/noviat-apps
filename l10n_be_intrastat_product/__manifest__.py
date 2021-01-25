@@ -3,7 +3,7 @@
 
 {
     "name": "Intrastat Product Declaration for Belgium",
-    "version": "13.0.1.2.1",
+    "version": "13.0.1.3.0",
     "category": "Intrastat",
     "license": "AGPL-3",
     "summary": "Intrastat Product Declaration for Belgium",
@@ -16,8 +16,8 @@
         "data/intrastat_region.xml",
         "data/intrastat_transaction.xml",
         "views/account_move_views.xml",
-        "views/intrastat_installer_views.xml",
         "views/l10n_be_intrastat_product_views.xml",
+        "wizards/intrastat_installer_views.xml",
     ],
     "installable": True,
 }

@@ -8,11 +8,8 @@ from lxml import etree
 
 from odoo import _, fields, models
 from odoo.exceptions import UserError
-from odoo.tools.translate import translate
 
 _logger = logging.getLogger(__name__)
-
-IR_TRANSLATION_NAME = "l10n.be.vat.intracom"
 
 
 class L10nBeVatIntracom(models.TransientModel):
@@ -285,13 +282,12 @@ class L10nBeVatIntracomClient(models.TransientModel):
 
 class L10nBeVatIntracomXlsx(models.AbstractModel):
     _name = "report.l10n_be_coa_multilang.vat_intracom_xls"
-    _inherit = "report.report_xlsx.abstract"
+    _inherit = ["report.report_xlsx.abstract", "l10n.be.xlats.mixin"]
     _description = "Intracom declaration excel export"
 
-    def _(self, src):
-        lang = self.env.context.get("lang", "en_US")
-        val = translate(self.env.cr, IR_TRANSLATION_NAME, "report", lang, src) or src
-        return val
+    def generate_xlsx_report(self, workbook, data, objects):
+        self = self.with_context(dict(self.env.context, lang=self.env.user.lang))
+        super().generate_xlsx_report(workbook, data, objects)
 
     def _get_ws_params(self, workbook, data, listing):
 
@@ -345,7 +341,7 @@ class L10nBeVatIntracomXlsx(models.AbstractModel):
             {
                 "ws_name": "vat_intra_%s" % listing.period,
                 "generate_ws_method": "_generate_listing",
-                "title": listing._description,
+                "title": self._("Intracom VAT Declaration"),
                 "wanted_list": wanted_list,
                 "col_specs": col_specs,
             }
@@ -379,7 +375,13 @@ class L10nBeVatIntracomXlsx(models.AbstractModel):
         ws.write_string(row_pos, 2, listing.period)
         row_pos += 1
         ws.write_string(row_pos, 1, self._("Target Moves") + ":", self.format_left_bold)
-        ws.write_string(row_pos, 2, listing.target_move)
+        ws.write_string(
+            row_pos,
+            2,
+            listing.target_move == "all"
+            and self._("All Entries")
+            or self._("Posted Entries"),
+        )
         return row_pos + 2
 
     def _listing_lines(self, ws, row_pos, ws_params, data, listing):

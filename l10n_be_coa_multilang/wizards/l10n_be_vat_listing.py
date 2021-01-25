@@ -8,11 +8,8 @@ from lxml import etree
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
-from odoo.tools.translate import translate
 
 _logger = logging.getLogger(__name__)
-
-IR_TRANSLATION_NAME = "l10n.be.vat.listing"
 
 
 class L10nBeVatListing(models.TransientModel):
@@ -314,13 +311,12 @@ class L10nBeVatListingClient(models.TransientModel):
 
 class L10nBeVatListingXlsx(models.AbstractModel):
     _name = "report.l10n_be_coa_multilang.vat_listing_xls"
-    _inherit = "report.report_xlsx.abstract"
+    _inherit = ["report.report_xlsx.abstract", "l10n.be.xlats.mixin"]
     _description = "Annual Listing of VAT subjected Customers - excel export"
 
-    def _(self, src):
-        lang = self.env.context.get("lang", "en_US")
-        val = translate(self.env.cr, IR_TRANSLATION_NAME, "report", lang, src) or src
-        return val
+    def generate_xlsx_report(self, workbook, data, objects):
+        self = self.with_context(dict(self.env.context, lang=self.env.user.lang))
+        super().generate_xlsx_report(workbook, data, objects)
 
     def _get_ws_params(self, workbook, data, listing):
 
@@ -380,7 +376,7 @@ class L10nBeVatListingXlsx(models.AbstractModel):
             {
                 "ws_name": "vat_list_%s" % listing.year,
                 "generate_ws_method": "_generate_listing",
-                "title": listing._description,
+                "title": self._("Annual Listing of VAT subjected Customers"),
                 "wanted_list": wanted_list,
                 "col_specs": col_specs,
             }
@@ -414,7 +410,13 @@ class L10nBeVatListingXlsx(models.AbstractModel):
         ws.write_string(row_pos, 2, listing.year)
         row_pos += 1
         ws.write_string(row_pos, 1, self._("Target Moves") + ":", self.format_left_bold)
-        ws.write_string(row_pos, 2, listing.target_move)
+        ws.write_string(
+            row_pos,
+            2,
+            listing.target_move == "all"
+            and self._("All Entries")
+            or self._("Posted Entries"),
+        )
         return row_pos + 2
 
     def _listing_lines(self, ws, row_pos, ws_params, data, listing):

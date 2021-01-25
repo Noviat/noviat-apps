@@ -9,11 +9,8 @@ from lxml import etree
 
 from odoo import _, fields, models
 from odoo.exceptions import UserError
-from odoo.tools.translate import translate
 
 _logger = logging.getLogger(__name__)
-
-IR_TRANSLATION_NAME = "l10n.be.vat.declaration"
 
 
 class L10nBeVatDeclaration(models.TransientModel):
@@ -475,13 +472,12 @@ class L10nBeVatDeclarationCase(models.TransientModel):
 
 class L10nBeVatDeclarationXlsx(models.AbstractModel):
     _name = "report.l10n_be_coa_multilang.vat_declaration_xls"
-    _inherit = "report.report_xlsx.abstract"
+    _inherit = ["report.report_xlsx.abstract", "l10n.be.xlats.mixin"]
     _description = "VAT declaration excel export"
 
-    def _(self, src):
-        lang = self.env.context.get("lang", "en_US")
-        val = translate(self.env.cr, IR_TRANSLATION_NAME, "report", lang, src) or src
-        return val
+    def generate_xlsx_report(self, workbook, data, objects):
+        self = self.with_context(dict(self.env.context, lang=self.env.user.lang))
+        super().generate_xlsx_report(workbook, data, objects)
 
     def _get_ws_params(self, workbook, data, declaration):
 
@@ -514,7 +510,7 @@ class L10nBeVatDeclarationXlsx(models.AbstractModel):
             {
                 "ws_name": "vat_declaration_%s" % declaration.period,
                 "generate_ws_method": "_generate_declaration",
-                "title": declaration._description,
+                "title": self._("Periodical VAT Declaration"),
                 "wanted_list": wanted_list,
                 "col_specs": col_specs,
             }
@@ -548,7 +544,13 @@ class L10nBeVatDeclarationXlsx(models.AbstractModel):
         ws.write_string(row_pos, 2, declaration.period)
         row_pos += 1
         ws.write_string(row_pos, 1, self._("Target Moves") + ":", self.format_left_bold)
-        ws.write_string(row_pos, 2, declaration.target_move)
+        ws.write_string(
+            row_pos,
+            2,
+            declaration.target_move == "all"
+            and self._("All Entries")
+            or self._("Posted Entries"),
+        )
         return row_pos + 2
 
     def _declaration_lines(self, ws, row_pos, ws_params, data, declaration):
@@ -578,13 +580,12 @@ class L10nBeVatDeclarationXlsx(models.AbstractModel):
 
 class L10nBeVatDetailXlsx(models.AbstractModel):
     _name = "report.l10n_be_coa_multilang.vat_detail_xls"
-    _inherit = "report.report_xlsx.abstract"
+    _inherit = ["report.report_xlsx.abstract", "l10n.be.xlats.mixin"]
     _description = "vat declaration transactions report"
 
-    def _(self, src):
-        lang = self.env.context.get("lang", "en_US")
-        val = translate(self.env.cr, IR_TRANSLATION_NAME, "report", lang, src) or src
-        return val
+    def generate_xlsx_report(self, workbook, data, objects):
+        self = self.with_context(dict(self.env.context, lang=self.env.user.lang))
+        super().generate_xlsx_report(workbook, data, objects)
 
     def _define_formats(self, wb):
         """
@@ -689,9 +690,11 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         title = (10 * " ").join(
             [
                 decl.company_id.name,
-                _("Journal Centralisation"),
+                self._("Journal Centralisation"),
                 decl.period,
-                decl.target_move,
+                decl.target_move == "all"
+                and self._("All Entries")
+                or self._("Posted Entries"),
             ]
         )
 

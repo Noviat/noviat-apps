@@ -92,7 +92,32 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
         elif self.load_fr_BE or self.load_fr_FR:
             self.coa_lang = "fr"
 
-    def copy_xlat(self, langs, in_field, in_recs, out_recs, field_check=True):
+    def _field_check(self, in_field, in_recs, out_recs):
+        for i, in_rec in enumerate(in_recs):
+            out_rec = out_recs[i]
+            if getattr(in_rec, in_field) != getattr(out_rec, in_field):
+                _logger.error(
+                    "generate translations from template "
+                    "%s (id:%s) failed (error 3)!"
+                    "\n%s,%s = '%s' i.s.o. '%s'.",
+                    in_rec._name,
+                    in_rec.id,
+                    out_rec._name,
+                    in_field,
+                    getattr(out_rec, in_field),
+                    getattr(in_rec, in_field),
+                )
+                raise UserError(
+                    _(
+                        "The generation of translations "
+                        "from the template for %s failed!"
+                        "\nPlease report this issue via your "
+                        "Odoo support channel."
+                    )
+                    % out_rec._name
+                )
+
+    def _copy_xlat(self, langs, in_field, in_recs, out_recs):
         # create ir.translation entries based upon
         # 1-1 relationship between in_ and out_ params
         if len(in_recs) != len(out_recs):
@@ -109,33 +134,9 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
                 )
                 % out_recs._name
             )
-
         for lang in langs:
             for i, in_rec in enumerate(in_recs):
                 out_rec = out_recs[i]
-                if field_check and (
-                    getattr(in_rec, in_field) != getattr(out_rec, in_field)
-                ):
-                    _logger.error(
-                        "generate translations from template "
-                        "%s (id:%s) failed (error 3)!"
-                        "\n%s,%s = '%s' i.s.o. '%s'.",
-                        in_rec._name,
-                        in_rec.id,
-                        out_rec._name,
-                        in_field,
-                        getattr(out_rec, in_field),
-                        getattr(in_rec, in_field),
-                    )
-                    raise UserError(
-                        _(
-                            "The generation of translations "
-                            "from the template for %s failed!"
-                            "\nPlease report this issue via your "
-                            "Odoo support channel."
-                        )
-                        % out_rec._name
-                    )
                 value = in_rec.with_context({"lang": lang}).read([in_field])[0][
                     in_field
                 ]
@@ -174,6 +175,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
         while parent_chart:
             chart_templates.insert(0, parent_chart)
             parent_chart = parent_chart.parent_id
+        chart_template_ids = [x.id for x in chart_templates]
 
         # load languages
         langs = (
@@ -188,8 +190,13 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
                 [("state", "=", "installed")]
             )
             for lang in langs:
-                lang_rs = self.env["res.lang"].search([("code", "=", lang)])
-                if not lang_rs:
+                lang_rs = (
+                    self.env["res.lang"]
+                    .with_context(active_test=False)
+                    .search([("code", "=", lang)])
+                )
+                if not lang_rs.active:
+                    self.env["res.lang"]._activate_lang(lang)
                     installed_modules._update_translations(filter_lang=lang)
 
         # find all installed fr/nl languages
@@ -200,16 +207,12 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
 
         # copy account.account translations
         in_field = "name"
-        account_tmpls = self_no_ctx.env["account.account.template"]
-        for template in chart_templates:
-            account_tmpls += account_tmpls.search(
-                [("chart_template_id", "=", template.id)]
-            )
-        account_tmpls.sorted(key=lambda r: r.code)
+        account_tmpls = self_no_ctx.env["account.account.template"].search(
+            [("chart_template_id", "in", chart_template_ids)], order="code"
+        )
         accounts = self_no_ctx.env["account.account"].search(
             [("company_id", "=", self.company_id.id)], order="code"
         )
-
         # Remove accounts with no account_template counterpart.
         # The logic is based upon template codes with length equal
         # to acount.chart.template,code_digits which is the case
@@ -258,67 +261,37 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
                 account.name = account_tmpls[i].name
             # no field value check to enable mono- to multi-lang
             # via this config wizard
-            self.copy_xlat(langs, in_field, account_tmpls, accounts, field_check=False)
+            self._copy_xlat(langs, in_field, account_tmpls, accounts, field_check=False)
 
-        # copy account.tax codes and translations
-        tax_tmpls = self_no_ctx.env["account.tax.template"]
-        for template in chart_templates:
-            tax_tmpls += tax_tmpls.search(
-                [("chart_template_id", "=", template.id)],
-                order="sequence,description,name",
-            )
+        # copy account.tax translations
+        tax_tmpls = self_no_ctx.env["account.tax.template"].search(
+            [("chart_template_id", "in", chart_template_ids)],
+            order="sequence,description,name",
+        )
         taxes = self_no_ctx.env["account.tax"].search(
             [("company_id", "=", self.company_id.id)], order="sequence,description,name"
         )
-        # Perform basic sanity check on in/out pairs to protect against
-        # changes in the process that generates tax objects from templates
-        for i, tmpl in enumerate(tax_tmpls):
-            if tmpl.name != taxes[i].name:
-                raise UserError(
-                    _(
-                        "The generation of translations from the template "
-                        "for %s failed! "
-                        "\nTax Template : %s, Tax: %s"
-                        "\nPlease report this issue via "
-                        "your Odoo support channel."
-                    )
-                    % (taxes._name, tmpl.name, taxes[i].name)
-                )
+        self._field_check("name", tax_tmpls, taxes)
         in_fields = ["name", "description"]
         for in_field in in_fields:
-            self.copy_xlat(langs, in_field, tax_tmpls, taxes, field_check=False)
+            self._copy_xlat(langs, in_field, tax_tmpls, taxes)
 
         # copy account.fiscal.position translations and note field
-        fpos_tmpls = self_no_ctx.env["account.fiscal.position.template"].with_context(
-            {}
+        fpos_tmpls = self_no_ctx.env["account.fiscal.position.template"].search(
+            [("chart_template_id", "in", chart_template_ids)], order="name"
         )
-        for template in chart_templates:
-            fpos_tmpls += fpos_tmpls.search(
-                [("chart_template_id", "=", template.id)], order="id"
-            )
         fpos = self_no_ctx.env["account.fiscal.position"].search(
-            [("company_id", "=", self.company_id.id)], order="id"
+            [("company_id", "=", self.company_id.id)], order="name"
         )
         # Perform basic sanity check on in/out pairs to protect against
-        # changes in the process that generates tax objects from templates
-        for i, tmpl in enumerate(fpos_tmpls):
-            if tmpl.name != fpos[i].name:
-                raise UserError(
-                    _(
-                        "The generation of translations from the template "
-                        "for %s failed! "
-                        "\nFiscal Position Template : %s, Fiscal Position: %s"
-                        "\nPlease report this issue via "
-                        "your Odoo support channel."
-                    )
-                    % (fpos._name, tmpl.name, fpos[i].name)
-                )
+        # changes in the process that generates objects from templates
+        self._field_check("name", fpos_tmpls, fpos)
         for i, tmpl in enumerate(fpos_tmpls):
             if tmpl.note:
                 fpos[i].note = tmpl.note
         in_fields = ["name", "note"]
         for in_field in in_fields:
-            self.copy_xlat(langs, in_field, fpos_tmpls, fpos, field_check=False)
+            self._copy_xlat(langs, in_field, fpos_tmpls, fpos)
 
         # update the entries in the BNB/NBB legal report scheme
         upd_wiz = self.env["l10n.be.update.be.reportscheme"]

@@ -3,7 +3,7 @@
 
 {
     "name": "Account Tax constraints",
-    "version": "13.0.1.0.1",
+    "version": "13.0.1.0.2",
     "category": "Accounting & Finance",
     "website": "https://www.noviat.com",
     "author": "Noviat",

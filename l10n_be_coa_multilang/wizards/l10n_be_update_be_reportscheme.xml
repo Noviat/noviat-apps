@@ -8,7 +8,7 @@
     <field name="model">l10n.be.update.be.reportscheme</field>
     <field name="priority">1</field>
     <field name="arch" type="xml">
-      <form string="Update financial reports configurattion" version="7.0">
+      <form string="Update financial reports configurattion">
         <group>
           <label for="" string="Update general accounts reporting configuration for Belgian BNB/NBB legal reportscheme." width="500"/>
         </group>
@@ -30,7 +30,7 @@
     <field name="model">l10n.be.update.be.reportscheme</field>
     <field name="priority">2</field>
     <field name="arch" type="xml">
-      <form string="Update financial reports configurattion" version="7.0">
+      <form string="Update financial reports configurattion">
         <group>
           <label for="" string="Update general accounts reporting configuration for Belgian BNB/NBB legal reportscheme." width="500"/>
         </group>

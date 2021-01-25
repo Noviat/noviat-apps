@@ -11,6 +11,7 @@ _logger = logging.getLogger(__name__)
 class AccountMoveLineXlsx(models.AbstractModel):
     _name = "report.account_move_line_report_xls.account_move_line_xlsx"
     _inherit = "report.report_xlsx.abstract"
+    _description = "Journal Items XLSX export"
 
     def generate_xlsx_report(self, workbook, data, objects):
         self = self.with_context(dict(self.env.context, lang=self.env.user.lang))

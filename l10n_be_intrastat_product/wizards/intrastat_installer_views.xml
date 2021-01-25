@@ -11,6 +11,10 @@
       </form>
       <xpath expr="/form/separator[@colspan='4']" position="after">
         <group position="inside">
+          <field name="company_id"
+                 options="{'no_create': True, 'no_open': True}"
+                 domain="[('id', 'in', allowed_company_ids)]"
+                 groups="base.group_multi_company"/>
           <field name="CN_file"/>
         </group>
       </xpath>

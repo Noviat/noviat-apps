@@ -1,4 +1,4 @@
-# Copyright 2009-2019 Noviat
+# Copyright 2009-2020 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import calendar
@@ -60,7 +60,7 @@ class L10nBeVatCommon(models.AbstractModel):
     date_from = fields.Date(string="Start Date")
     date_to = fields.Date(string="End Date")
     target_move = fields.Selection(
-        [("posted", "All Posted Entries"), ("all", "All Entries")],
+        [("posted", "Posted Entries"), ("all", "All Entries")],
         string="Target Moves",
         required=True,
         default="posted",
@@ -72,7 +72,7 @@ class L10nBeVatCommon(models.AbstractModel):
 
     @api.model
     def _default_company_id(self):
-        return self.env.user.company_id
+        return self.env.company
 
     @api.model
     def _default_year(self):
@@ -138,8 +138,10 @@ class L10nBeVatCommon(models.AbstractModel):
             dom.append(("state", "=", "draft"))
             check_draft = self.env["account.move"].search_count(dom)
             if check_draft:
-                self.note += _("Draft entries found for the selected period.")
-                self.note += "\n"
+                warning = _("Draft entries found for the selected period.")
+                if warning not in self.note:
+                    self.note += warning
+                    self.note += "\n"
 
     def create_xls(self):
         raise UserError(_("The XLS export function is not available."))

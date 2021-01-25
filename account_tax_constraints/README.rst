@@ -6,5 +6,8 @@
 Account Tax constraints
 =======================
 
-This module prohibits the removal of a tax when this tax
-has been set on product records or used in Journal Items.
+This module prohibits
+
+- the removal of a tax when this tax has been set on product records.
+- the removal of a tax when this tax has been set on accounting entries.
+- the removal of a general account when this account has been set on a tax object

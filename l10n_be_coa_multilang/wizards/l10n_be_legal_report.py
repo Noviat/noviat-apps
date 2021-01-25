@@ -4,11 +4,8 @@
 import logging
 
 from odoo import api, fields, models
-from odoo.tools.translate import translate
 
 _logger = logging.getLogger(__name__)
-
-IR_TRANSLATION_NAME = "l10n.be.legal.report"
 
 
 class L10nBeLegalReport(models.TransientModel):
@@ -58,13 +55,8 @@ class L10nBeLegalReport(models.TransientModel):
 
     def generate_report(self):
         self.ensure_one()
-        self._be_scheme_entries = self.env["be.legal.financial.report.scheme"].search(
-            []
-        )
-        self._accounts = self.env["account.account"].search(
-            [("company_id", "=", self.company_id.id)]
-        )
-        line_vals = self._get_line_vals()
+        report_cache = self._report_cache()
+        line_vals = self._get_line_vals(report_cache)
         self.line_ids = [(0, 0, x) for x in line_vals]
         module = __name__.split("addons.")[1].split(".")[0]
         result_view = self.env.ref("{}.{}_view_form_report".format(module, self._table))
@@ -77,6 +69,16 @@ class L10nBeLegalReport(models.TransientModel):
             "target": "inline",
             "view_id": result_view.id,
             "type": "ir.actions.act_window",
+        }
+
+    def _report_cache(self):
+        return {
+            "be_scheme_entries": self.env["be.legal.financial.report.scheme"].search(
+                []
+            ),
+            "accounts": self.env["account.account"].search(
+                [("company_id", "=", self.company_id.id)]
+            ),
         }
 
     def create_xls(self):
@@ -111,16 +113,8 @@ class L10nBeLegalReport(models.TransientModel):
             date_dom.append(("date", ">=", self.date_from))
         return date_dom
 
-    def _get_chart_entry_domain(self, chart_entry):
-        if not hasattr(self, "_be_scheme_entries"):
-            self._be_scheme_entries = self.env[
-                "be.legal.financial.report.scheme"
-            ].search([])
-        if not hasattr(self, "_accounts"):
-            self._accounts = self.env["account.account"].search(
-                [("company_id", "=", self.company_id.id)]
-            )
-        chart_schemes = self._be_scheme_entries.filtered(
+    def _get_chart_entry_domain(self, chart_entry, report_cache):
+        chart_schemes = report_cache["be_scheme_entries"].filtered(
             lambda r: r.report_chart_id == chart_entry
         )
         account_groups = chart_schemes.mapped("account_group")
@@ -131,7 +125,7 @@ class L10nBeLegalReport(models.TransientModel):
                     return True
             return False
 
-        accounts = self._accounts.filtered(account_groups_filter)
+        accounts = report_cache["accounts"].filtered(account_groups_filter)
         return [("account_id", "in", accounts.ids)]
 
     def _calc_parent_chart_amounts(self, chart, amounts):
@@ -141,7 +135,7 @@ class L10nBeLegalReport(models.TransientModel):
                     self._calc_parent_chart_amounts(child, amounts)
             amounts[chart.id] = sum([x.factor * amounts[x.id] for x in chart.child_ids])
 
-    def _get_line_amounts(self, chart_root):
+    def _get_line_amounts(self, chart_root, report_cache):
         chart_entries = chart_root.search(
             [("parent_id", "child_of", chart_root.id), ("child_ids", "=", False)]
         )
@@ -149,7 +143,7 @@ class L10nBeLegalReport(models.TransientModel):
         amounts = {}
         date_dom = self._get_move_line_date_domain()
         for chart_entry in chart_entries:
-            aml_dom = date_dom + self._get_chart_entry_domain(chart_entry)
+            aml_dom = date_dom + self._get_chart_entry_domain(chart_entry, report_cache)
             flds = ["balance"]
             groupby = []
             amt = self.env["account.move.line"].read_group(aml_dom, flds, groupby)[0]
@@ -173,8 +167,8 @@ class L10nBeLegalReport(models.TransientModel):
         for child in chart.child_ids:
             self._get_chart_child(child, level + 1, line_vals, line_amounts)
 
-    def _get_line_vals(self):
-        line_amounts = self._get_line_amounts(self.chart_id)
+    def _get_line_vals(self, report_cache):
+        line_amounts = self._get_line_amounts(self.chart_id, report_cache)
         line_vals = []
         level = 0
         for child in self.chart_id.child_ids:
@@ -202,6 +196,7 @@ class L10nBeLegalReportLine(models.TransientModel):
 
     def view_move_lines(self):
         self.ensure_one()
+        report_cache = self.report_id._report_cache()
         act_window = self.report_id._move_lines_act_window()
         date_dom = self.report_id._get_move_line_date_domain()
         if self.chart_id.child_ids:
@@ -212,22 +207,23 @@ class L10nBeLegalReportLine(models.TransientModel):
             for i, chart in enumerate(charts, start=1):
                 if i != len(charts):
                     chart_dom += ["|"]
-                chart_dom += self.report_id._get_chart_entry_domain(chart)
+                chart_dom += self.report_id._get_chart_entry_domain(chart, report_cache)
         else:
-            chart_dom = self.report_id._get_chart_entry_domain(self.chart_id)
+            chart_dom = self.report_id._get_chart_entry_domain(
+                self.chart_id, report_cache
+            )
         act_window["domain"] = date_dom + chart_dom
         return act_window
 
 
 class L10nBeLegalReportXlsx(models.AbstractModel):
     _name = "report.l10n_be_coa_multilang.legal_report_xls"
-    _inherit = "report.report_xlsx.abstract"
+    _inherit = ["report.report_xlsx.abstract", "l10n.be.xlats.mixin"]
     _description = "Belgium Legal Reports - excel export"
 
-    def _(self, src):
-        lang = self.env.context.get("lang", "en_US")
-        val = translate(self.env.cr, IR_TRANSLATION_NAME, "report", lang, src) or src
-        return val
+    def generate_xlsx_report(self, workbook, data, objects):
+        self = self.with_context(dict(self.env.context, lang=self.env.user.lang))
+        super().generate_xlsx_report(workbook, data, objects)
 
     def _get_ws_params(self, workbook, data, be_report):
 

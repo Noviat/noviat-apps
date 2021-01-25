@@ -17,8 +17,21 @@ class IntrastatInstaller(models.TransientModel):
     _inherit = "res.config.installer"
     _description = "Intrastat Installer"
 
+    CN_file = fields.Selection(
+        selection="_selection_CN_file",
+        string="Intrastat Code File",
+        required=True,
+        default=lambda self: self._default_CN_file(),
+    )
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        default=lambda self: self._default_company_id(),
+        required=True,
+        string="Company",
+    )
+
     @api.model
-    def _get_CN_file(self):
+    def _selection_CN_file(self):
         return [
             (CN_file_year + "_en", CN_file_year + " " + _("English")),
             (CN_file_year + "_fr", CN_file_year + " " + _("French")),
@@ -32,12 +45,9 @@ class IntrastatInstaller(models.TransientModel):
             lang = "en"
         return CN_file_year + "_" + lang
 
-    CN_file = fields.Selection(
-        "_get_CN_file",
-        string="Intrastat Code File",
-        required=True,
-        default=_default_CN_file,
-    )
+    @api.model
+    def _default_company_id(self):
+        return self.env.company
 
     @api.model
     def _load_code(self, row):
@@ -58,8 +68,8 @@ class IntrastatInstaller(models.TransientModel):
 
     def execute(self):
         res = super().execute()
-        company = self.env.user.company_id
-        if company.country_id.code not in ("BE", "be"):
+        company = self.company_id
+        if self.company_id.country_id.code not in ("BE", "be"):
             return res
 
         # set company defaults
