@@ -113,7 +113,7 @@
     <field name="name">Financial Assets</field>
     <field name="code">28</field>
     <field name="sequence">311400</field>
-    <field name="parent_id" ref="be_report_chart_319000"/>
+    <field name="parent_id" ref="be_report_chart_311100"/>
     <field name="factor" eval="1"/>
     <field name="color">darkblue</field>
     <field name="font">bu</field>
@@ -957,6 +957,7 @@
     <field name="sequence">40240</field>
     <field name="parent_id" ref="be_report_chart_40200"/>
     <field name="factor" eval="1"/>
+    <field name="balance_factor" eval="1"/>
     <field name="font">u</field>
   </record>
   <record id="be_report_chart_40250" model="be.legal.financial.report.chart">
@@ -1003,7 +1004,7 @@
     <field name="name">Financial Income</field>
     <field name="code">75/76B</field>
     <field name="sequence">41100</field>
-    <field name="parent_id" ref="be_report_chart_43000"/>
+    <field name="parent_id" ref="be_report_chart_40100"/>
     <field name="factor" eval="1"/>
     <field name="color">darkblue</field>
     <field name="font">bu</field>
