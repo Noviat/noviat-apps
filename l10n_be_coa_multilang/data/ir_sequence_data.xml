@@ -6,6 +6,7 @@
     <field name="name">Declarantseq</field>
     <field name="code">declarantseq</field>
     <field name="padding">5</field>
+    <field name="company_id" eval="0"/>
   </record>
 
 </odoo>
