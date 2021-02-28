@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2009-2020 Noviat
+# Copyright 2009-2021 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import base64
@@ -298,10 +298,24 @@ class l10nBeVatDeclaration(models.TransientModel):
                            self._tax_debt_in_refund_cases()):
             inv_type = 'in_refund'
         if inv_type:
-            if inv_type in ['out_refund']:
-                # filter out refund cases when the Journal Item
-                # has no originating invoice, e.g.
-                # POS Orders, misc. operations
+            # filter out invoice or refund cases based on
+            # transaction sign when the Journal Item
+            # has no originating invoice, e.g.
+            # POS Orders, misc. operations
+            if inv_type == 'out_invoice':
+                inv_type_args = [
+                    '|',
+                    ('invoice_id.type', '=', inv_type),
+                    '&',
+                    ('invoice_id', '=', False),
+                    ('credit', '>', 0)
+                ]
+                inv_check = (
+                    "({aml}.invoice_id.type == '%s'"
+                    " or "
+                    "(not {aml}.invoice_id and ({aml}.credit > 0)))"
+                ) % inv_type
+            elif inv_type == 'out_refund':
                 inv_type_args = [
                     '|',
                     ('invoice_id.type', '=', inv_type),
@@ -314,10 +328,20 @@ class l10nBeVatDeclaration(models.TransientModel):
                     " or "
                     "(not {aml}.invoice_id and ({aml}.debit > 0)))"
                 ) % inv_type
-            elif inv_type in ['in_refund']:
-                # filter out refund cases when the Journal Item
-                # has no originating invoice, e.g.
-                # bank costs, expense notes, misc. operations
+            elif inv_type == 'in_invoice':
+                inv_type_args = [
+                    '|',
+                    ('invoice_id.type', '=', inv_type),
+                    '&',
+                    ('invoice_id', '=', False),
+                    ('debit', '>', 0),
+                ]
+                inv_check = (
+                    "({aml}.invoice_id.type == '%s'"
+                    " or "
+                    "(not {aml}.invoice_id and ({aml}.debit > 0)))"
+                ) % inv_type
+            elif inv_type == 'in_refund':
                 inv_type_args = [
                     '|',
                     ('invoice_id.type', '=', inv_type),
