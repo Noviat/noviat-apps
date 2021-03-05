@@ -3,7 +3,7 @@
 
 {
     'name': 'Account Journal Refund settings',
-    'version': '11.0.1.1.0',
+    'version': '11.0.1.1.1',
     'category': 'Accounting & Finance',
     'author': 'Noviat',
     'website': 'http://www.noviat.com',
