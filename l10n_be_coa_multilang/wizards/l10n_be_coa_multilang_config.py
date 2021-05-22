@@ -196,7 +196,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
                     .search([("code", "=", lang)])
                 )
                 if not lang_rs.active:
-                    self.env["res.lang"]._activate_lang(lang)
+                    self.env["res.lang"].load_lang(lang)
                     installed_modules._update_translations(filter_lang=lang)
 
         # find all installed fr/nl languages

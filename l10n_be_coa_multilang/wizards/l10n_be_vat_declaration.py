@@ -194,8 +194,25 @@ class L10nBeVatDeclaration(models.TransientModel):
         amounts = dict.fromkeys(cases.mapped("id"), 0.0)
         dom = self._get_move_line_domain()
         min_types = self._account_move_min_types()
-        dom_min = [("move_id.type", "in", min_types)]
-        dom_plus = [("move_id.type", "not in", min_types)]
+        # Odoo OE uses a different approach involving a more complex hence slower
+        # SQL query, cf _get_grids_refund_sql_condition.
+        # The logic here remains what we use in previous versions of
+        # this module : for type "entry" (e.g. POS Orders) we check the balance sign.
+        # This approach is sufficient to cover Belgian tax declaration requirements.
+        dom_min = [
+            "|",
+            ("move_id.type", "in", min_types),
+            "&",
+            ("move_id.type", "=", "entry"),
+            ("balance", "<", 0),
+        ]
+        dom_plus = [
+            "|",
+            ("move_id.type", "not in", min_types + ["entry"]),
+            "&",
+            ("move_id.type", "=", "entry"),
+            ("balance", ">", 0),
+        ]
         for case in cases:
             tc = case.code
             for tag in tax_code_map[tc]:
@@ -1099,7 +1116,7 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
                     continue
                 tc = tc_str = tag.name[1:]
                 sign = tag.tax_negate and -1 or 1
-                if am.type in min_types:
+                if am.type in min_types or (am.type == "entry" and aml.balance < 0):
                     sign = sign * -1
                 tax_amount = cround(sign * aml.balance)
                 if tax_amount < 0:

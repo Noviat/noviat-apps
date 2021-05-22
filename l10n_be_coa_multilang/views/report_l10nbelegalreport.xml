@@ -12,11 +12,11 @@
           <div class="row mt32 mb32">
             <div class="col-3">
               <strong>Company Name</strong>
-              <p t-esc="res_company.name"/>
+              <p t-esc="docs.company_id.name"/>
             </div>
             <div class="col-3">
               <strong>VAT Number</strong>
-              <p t-esc="res_company.vat"/>
+              <p t-esc="docs.company_id.vat"/>
             </div>
             <div class="col-3" t-if="docs.type == 'pl'">
               <strong>Start Date</strong>
