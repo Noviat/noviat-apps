@@ -109,6 +109,8 @@ class L10nBeLegalReport(models.TransientModel):
         ]
         if self.target_move == "posted":
             date_dom.append(("move_id.state", "=", "posted"))
+        else:
+            date_dom.append(("move_id.state", "!=", "cancel"))
         if self.type == "pl":
             date_dom.append(("date", ">=", self.date_from))
         return date_dom

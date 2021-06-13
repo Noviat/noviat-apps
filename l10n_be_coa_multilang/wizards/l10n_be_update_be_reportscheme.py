@@ -27,7 +27,7 @@ class L10nBeUpdateBeReportscheme(models.TransientModel):
         accounts = (
             self.env["account.account"]
             .with_context(upd_ctx)
-            .search([("company_id", "=", company.id)])
+            .search([("company_id", "=", company.id), ("deprecated", "=", False)])
         )
         for account in accounts:
             entry, entries = account._get_be_report_scheme_entry(account.code)

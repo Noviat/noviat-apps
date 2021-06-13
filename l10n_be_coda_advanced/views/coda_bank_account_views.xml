@@ -10,14 +10,14 @@
         <field name="bank_id"/>
         <field name="description1"/>
         <field name="journal_id"/>
-        <field name="currency_id" widget="selection"/>
-        <field name="company_id" widget="selection"
+        <field name="currency_id"/>
+        <field name="company_id"
                domain="[('id', 'in', allowed_company_ids)]"
                groups="base.group_multi_company"/>
-        <newline/>
+        <separator/>
         <group expand="0" string="Group By">
-          <filter name="bank" string="Bank Account" context="{'group_by': 'bank_id'}"/>
           <filter name="currency" string="Currency" context="{'group_by': 'currency_id'}"/>
+          <filter name="company" string="Company" context="{'group_by': 'company_id'}"/>
         </group>
       </search>
     </field>
@@ -60,19 +60,18 @@
           <field name="balance_start_enforce"/>
           <field name="discard_dup"/>
           <field name="active"/>
-          <field name="company_id" widget="selection"
-                 domain="[('id', 'in', allowed_company_ids)]"
-                 groups="base.group_multi_company"/>
+          <field name="company_id" groups="base.group_multi_company"/>
         </group>
         <notebook>
           <page string="Default Accounts">
             <separator colspan="4" string="Default Account Mapping"/>
             <group>
-              <field name="transfer_account_id" domain="[('company_id', '=', company_id)]"/>
+              <field name="transfer_account_id"/>
             </group>
           </page>
           <page string="Accounts Mapping">
-            <field colspan="4" name="account_mapping_ids" nolabel="1">
+            <field colspan="4" name="account_mapping_ids" nolabel="1"
+                   context="{'default_company_id': company_id}">
               <tree string="Account Mapping Rules">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
@@ -82,7 +81,8 @@
                 <field name="trans_category_id"/>
                 <field name="struct_comm_type_id"/>
                 <field name="split" invisible="1"/>
-                <field name="account_id" attrs="{'invisible': [('split', '=', True)]}"/>
+                <field name="account_id"
+                       attrs="{'invisible': [('split', '=', True)]}"/>
               </tree>
               <form string="Account Mapping Rules">
                 <group name="main" col="4">
@@ -96,12 +96,11 @@
                   <field name="partner_name"/>
                   <field name="counterparty_number"/>
                   <field name="partner_id"
-                         domain="['|', ('parent_id', '=', False), ('is_company' ,'=', True)]"
                          attrs="{'invisible': [('split', '=', True)]}"/>
                   <newline/>
                   <field name="trans_type_id" context="{'mapping_rule':1}"/>
                   <field name="trans_family_id"/>
-                  <field name="trans_code_id" domain="[('parent_id', '=', trans_family_id)]"/>
+                  <field name="trans_code_id"/>
                   <field name="trans_category_id"/>
                   <field name="freecomm"/>
                   <field name="struct_comm_type_id"/>
@@ -111,11 +110,10 @@
                 </group>
                 <group name="result" col="4" attrs="{'invisible': [('split', '=', True)]}">
                   <separator string="Result" colspan="4"/>
-                  <field name="account_id" attrs="{'required': [('split', '=', False)]}" domain="[('company_id', '=', company_id)]"/>
-                  <field name="analytic_account_id" groups="analytic.group_analytic_accounting"
-                         domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]"/>
+                  <field name="account_id" attrs="{'required': [('split', '=', False)]}"/>
+                  <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
                   <newline/>
-                  <field name="account_tax_id" domain="[('company_id', '=', company_id)]"/>
+                  <field name="account_tax_id"/>
                 </group>
               </form>
             </field>

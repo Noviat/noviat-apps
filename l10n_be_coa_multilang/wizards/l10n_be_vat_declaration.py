@@ -1094,6 +1094,8 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         am_dom = decl._get_move_domain() + [("journal_id", "=", journal.id)]
         if decl.target_move == "posted":
             am_dom.append(("state", "=", "posted"))
+        else:
+            am_dom.append(("state", "!=", "cancel"))
         ams = self.env["account.move"].search(am_dom, order="name, date")
         amls = ams.mapped("line_ids")
 

@@ -1940,7 +1940,7 @@ class AccountCodaImport(models.TransientModel):
       SELECT id, type, state, amount_total, name, invoice_payment_ref, ref,
              '%s'::text AS free_comm
         FROM account_move
-        WHERE invoice_payment_state != 'paid' AND company_id = %s
+        WHERE invoice_payment_state != 'paid' AND company_id = %s AND state = 'posted'
       ) sq
       WHERE round(amount_total, 2) = %s
         """ % (
@@ -1999,6 +1999,7 @@ class AccountCodaImport(models.TransientModel):
             else:
                 domain = [("type", "in", ["in_invoice", "out_refund"])]
             domain += [
+                ("state", "=", "posted"),
                 ("invoice_payment_state", "!=", "paid"),
                 ("invoice_payment_ref", "=", transaction["struct_comm_bba"]),
                 ("company_id", "=", cba.company_id.id),
@@ -2045,7 +2046,7 @@ class AccountCodaImport(models.TransientModel):
           SELECT id, type, state, amount_total, name, invoice_payment_ref,
           '%s'::text AS free_comm_digits
             FROM account_move
-            WHERE invoice_payment_state != 'paid'
+            WHERE invoice_payment_state != 'paid' AND state = 'posted'
               AND company_id = %s
               AND round(amount_total, 2) = %s
           ) sq
@@ -2178,6 +2179,7 @@ class AccountCodaImport(models.TransientModel):
         )
         domain = [
             (search_field, "=", search_input),
+            ("move_state", "=", "posted"),
             ("full_reconcile_id", "=", False),
             ("account_id.reconcile", "=", True),
             ("account_internal_type", "not in", ["payable", "receivable"]),
@@ -2257,6 +2259,7 @@ class AccountCodaImport(models.TransientModel):
 
     def _match_aml_arap_domain(self, st_line, cba, transaction):
         domain = [
+            ("move_state", "=", "posted"),
             ("full_reconcile_id", "=", False),
             ("account_internal_type", "in", ["payable", "receivable"]),
             ("partner_id", "!=", False),
@@ -2486,7 +2489,7 @@ class AccountCodaImport(models.TransientModel):
             )
         if match.get("analytic_account_id"):
             new_aml_dict["analytic_account_id"] = match["analytic_account_id"]
-        # the process_reconciliation method takes assumes that the
+        # the process_reconciliation method assumes that the
         # input mv_line_dict 'debit'/'credit' contains the amount
         # in bank statement line currency and will handle the currency
         # conversions
@@ -2721,6 +2724,7 @@ class AccountCodaImport(models.TransientModel):
                     "acc_type": "iban",
                     "acc_number": iban,
                     "company_id": cba.company_id.id,
+                    "sequence": 100,
                 }
             )
         return feedback

@@ -40,7 +40,7 @@ class CodaBankAccount(models.Model):
     journal_id = fields.Many2one(
         comodel_name="account.journal",
         string="Journal",
-        domain=[("type", "=", "bank")],
+        domain="[('type', '=', 'bank'), ('company_id', 'in', allowed_company_ids)]",
         copy=False,
         required=True,
         help="Bank Journal for the Bank Statement",
@@ -81,7 +81,7 @@ class CodaBankAccount(models.Model):
     transfer_account_id = fields.Many2one(
         comodel_name="account.account",
         string="Internal Funds Transfer Account",
-        domain=[("code", "=like", "58%")],
+        domain="[('code', '=like', '58%'), ('company_id', '=', company_id)]",
         required=True,
         help="Set here the default account that will be used for "
         "internal transfer between own bank accounts "
@@ -151,10 +151,11 @@ class CodaBankAccount(models.Model):
         "CODA Bank Account Configuration without removing it.",
     )
     company_id = fields.Many2one(
-        comodel_name="res.company",
         string="Company",
-        default=lambda self: self.env.company,
-        required=True,
+        store=True,
+        readonly=True,
+        related="journal_id.company_id",
+        change_default=True,
     )
     display_name = fields.Char(
         compute="_compute_display_name",
@@ -172,7 +173,7 @@ class CodaBankAccount(models.Model):
                     raise ValidationError(
                         _(
                             "Configuration error !\n"
-                            "No 'Default Debit Account' defined on your bank journal"
+                            "No 'Default Debit Account' defined on the selected Journal"
                         )
                     )
                 rec.currency_id = (
@@ -182,16 +183,33 @@ class CodaBankAccount(models.Model):
     @api.depends("bank_id", "currency_id", "description1")
     def _compute_display_name(self):
         for rec in self:
-            display_name = rec.bank_id.acc_number + " (" + rec.currency_id.name + ")"
+            if not rec.bank_id.acc_number:
+                raise ValidationError(
+                    _(
+                        "Configuration error !\n"
+                        "No Bank Account Number defined on the selected Journal"
+                    )
+                )
+            else:
+                display_name = (
+                    rec.bank_id.acc_number + " (" + rec.currency_id.name + ")"
+                )
             if rec.description1:
                 display_name += " " + rec.description1
             rec.display_name = (
                 len(display_name) > 55 and display_name[:55] + "..." or display_name
             )
 
-    @api.onchange("company_id")
-    def _onchange_company_id(self):
-        self.transfer_account_id = self.company_id.transfer_account_id
+    @api.onchange("journal_id")
+    def _onchange_journal_id(self):
+        if not self.bank_id.acc_number:
+            raise ValidationError(
+                _(
+                    "Configuration error !\n"
+                    "No Bank Account Number defined on the selected Journal"
+                )
+            )
+        self.transfer_account_id = self.journal_id.company_id.transfer_account_id
 
     def copy(self, default=None):
         default = dict(default or {})

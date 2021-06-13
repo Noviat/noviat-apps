@@ -176,12 +176,16 @@ class L10nBeVatCommon(models.AbstractModel):
         aml_dom = self._get_move_line_date_domain()
         if self.target_move == "posted":
             aml_dom.append(("move_id.state", "=", "posted"))
+        else:
+            aml_dom.append(("move_id.state", "!=", "cancel"))
         return aml_dom
 
     def _get_move_domain(self):
         am_dom = self._get_move_line_date_domain()
         if self.target_move == "posted":
             am_dom.append(("state", "=", "posted"))
+        else:
+            am_dom.append(("state", "!=", "cancel"))
         return am_dom
 
     def _get_company_data(self):

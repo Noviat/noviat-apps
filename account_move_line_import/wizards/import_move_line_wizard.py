@@ -221,7 +221,7 @@ class AccountMoveLineImport(models.TransientModel):
                         else:
                             is_int = cell.value % 1 == 0.0
                             if is_int:
-                                val = 1 and True or False
+                                val = val == 1 and True or False
                             else:
                                 val = None
                         if val is None:

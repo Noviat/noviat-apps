@@ -35,7 +35,8 @@ class CodaAccountMappingRule(models.Model):
         comodel_name="res.partner",
         string="Partner",
         ondelete="cascade",
-        domain=["|", ("parent_id", "=", False), ("is_company", "=", True)],
+        domain="['|', ('parent_id', '=', False), ('is_company' ,'=', True) ,"
+        "'|', ('company_id', '=', company_id), ('company_id', '=', False)]",
         help="Use this field only if you have checked the 'Find Partner' " "option.",
     )
     trans_type_id = fields.Many2one(
@@ -49,7 +50,7 @@ class CodaAccountMappingRule(models.Model):
     trans_code_id = fields.Many2one(
         comodel_name="account.coda.trans.code",
         string="Transaction Code",
-        domain=[("type", "=", "code")],
+        domain="[('parent_id', '=', trans_family_id)]",
     )
     trans_category_id = fields.Many2one(
         comodel_name="account.coda.trans.category", string="Transaction Category"
@@ -75,12 +76,13 @@ class CodaAccountMappingRule(models.Model):
         comodel_name="account.account",
         string="Account",
         ondelete="cascade",
-        domain=[("deprecated", "=", False)],
+        domain="[('deprecated', '=', False), ('company_id', '=', parent.company_id)]",
     )
     account_tax_id = fields.Many2one(
         comodel_name="account.tax",
         string="Tax",
         ondelete="cascade",
+        domain="[('company_id', '=', company_id)]",
         help="Select Tax object for bank costs. "
         "CODA files have seperate lines for Base and VAT amount, "
         "hence only simple tax objects containing the base (82) or "
@@ -94,6 +96,7 @@ class CodaAccountMappingRule(models.Model):
         comodel_name="account.analytic.account",
         string="Analytic Account",
         ondelete="set null",
+        domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]",
     )
 
     @api.model
