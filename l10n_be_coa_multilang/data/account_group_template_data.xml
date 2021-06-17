@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <!-- account.group.template -->
+  <record id="agtn_1" model="account.group.template">
+    <field
+            name="name"
+        >CLASS 1. EQUITY CAPITAL, PROVISIONS AND DEFERRED TAXES AND AMOUNTS PAYABLE AFTER MORE THAN ONE YEAR</field>
+    <field name="code_prefix_start">1</field>
+    <field name="code_prefix_end">1</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_2" model="account.group.template">
+    <field
+            name="name"
+        >CLASS 2. FORMATION EXPENSES, ASSETS AND AMOUNTS RECEIVABLE AFTER MORE THAN ONE YEAR</field>
+    <field name="code_prefix_start">2</field>
+    <field name="code_prefix_end">2</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_3" model="account.group.template">
+    <field name="name">CLASS 3. STOCKS AND CONTRACTS IN PROGRESS</field>
+    <field name="code_prefix_start">3</field>
+    <field name="code_prefix_end">3</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_4" model="account.group.template">
+    <field name="name">CLASS 4. AMOUNTS RECEIVABLE AND PAYABLE WITHIN ONE YEAR</field>
+    <field name="code_prefix_start">4</field>
+    <field name="code_prefix_end">4</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_5" model="account.group.template">
+    <field name="name">CLASS 5. INVESTMENTS AND CASH</field>
+    <field name="code_prefix_start">5</field>
+    <field name="code_prefix_end">5</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_6" model="account.group.template">
+    <field name="name">CLASS 6. CHARGES</field>
+    <field name="code_prefix_start">6</field>
+    <field name="code_prefix_end">6</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_7" model="account.group.template">
+    <field name="name">CLASS 7. INCOMES</field>
+    <field name="code_prefix_start">7</field>
+    <field name="code_prefix_end">7</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_10" model="account.group.template">
+    <field name="name">CAPITAL</field>
+    <field name="code_prefix_start">10</field>
+    <field name="code_prefix_end">10</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_11" model="account.group.template">
+    <field name="name">SHARE PREMIUM ACCOUNT</field>
+    <field name="code_prefix_start">11</field>
+    <field name="code_prefix_end">11</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_12" model="account.group.template">
+    <field name="name">REVALUATION SURPLUSES</field>
+    <field name="code_prefix_start">12</field>
+    <field name="code_prefix_end">12</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_13" model="account.group.template">
+    <field name="name">RESERVES</field>
+    <field name="code_prefix_start">13</field>
+    <field name="code_prefix_end">13</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_14" model="account.group.template">
+    <field name="name">ACCUMULATED PROFITS</field>
+    <field name="code_prefix_start">14</field>
+    <field name="code_prefix_end">14</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_15" model="account.group.template">
+    <field name="name">INVESTMENT GRANTS</field>
+    <field name="code_prefix_start">15</field>
+    <field name="code_prefix_end">15</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_16" model="account.group.template">
+    <field name="name">PROVISIONS FOR LIABILITIES AND CHARGES</field>
+    <field name="code_prefix_start">16</field>
+    <field name="code_prefix_end">16</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_17" model="account.group.template">
+    <field name="name">AMOUNTS PAYABLE AFTER MORE THAN ONE YEAR</field>
+    <field name="code_prefix_start">17</field>
+    <field name="code_prefix_end">17</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_20" model="account.group.template">
+    <field name="name">FORMATION EXPENSES</field>
+    <field name="code_prefix_start">20</field>
+    <field name="code_prefix_end">20</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_21" model="account.group.template">
+    <field name="name">INTANGIBLE ASSETS</field>
+    <field name="code_prefix_start">21</field>
+    <field name="code_prefix_end">21</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_22" model="account.group.template">
+    <field name="name">LAND AND BUILDINGS</field>
+    <field name="code_prefix_start">22</field>
+    <field name="code_prefix_end">22</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_23" model="account.group.template">
+    <field name="name">PLANT, MACHINERY AND EQUIPMENT</field>
+    <field name="code_prefix_start">23</field>
+    <field name="code_prefix_end">23</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_24" model="account.group.template">
+    <field name="name">FURNITURE AND VEHICLES</field>
+    <field name="code_prefix_start">24</field>
+    <field name="code_prefix_end">24</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_25" model="account.group.template">
+    <field name="name">LEASING AND OTHER SIMILAR RIGHTS</field>
+    <field name="code_prefix_start">25</field>
+    <field name="code_prefix_end">25</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_26" model="account.group.template">
+    <field name="name">OTHER TANGIBLE ASSETS</field>
+    <field name="code_prefix_start">26</field>
+    <field name="code_prefix_end">26</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_27" model="account.group.template">
+    <field name="name">ASSETS UNDER CONSTR. AND ADVANCE PAYMENT</field>
+    <field name="code_prefix_start">27</field>
+    <field name="code_prefix_end">27</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_28" model="account.group.template">
+    <field name="name">FINANCIAL ASSETS</field>
+    <field name="code_prefix_start">28</field>
+    <field name="code_prefix_end">28</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_29" model="account.group.template">
+    <field name="name">AMOUNTS RECEIVABLE AFTER MORE THAN ONE YEAR</field>
+    <field name="code_prefix_start">29</field>
+    <field name="code_prefix_end">29</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_30" model="account.group.template">
+    <field name="name">RAW MATERIALS</field>
+    <field name="code_prefix_start">30</field>
+    <field name="code_prefix_end">30</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_31" model="account.group.template">
+    <field name="name">CONSUMABLES</field>
+    <field name="code_prefix_start">31</field>
+    <field name="code_prefix_end">31</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_32" model="account.group.template">
+    <field name="name">GOODS WORK IN PROGRESS</field>
+    <field name="code_prefix_start">32</field>
+    <field name="code_prefix_end">32</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_33" model="account.group.template">
+    <field name="name">FINISHED GOODS</field>
+    <field name="code_prefix_start">33</field>
+    <field name="code_prefix_end">33</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_34" model="account.group.template">
+    <field name="name">GOODS PURCHASED FOR RESALE</field>
+    <field name="code_prefix_start">34</field>
+    <field name="code_prefix_end">34</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_35" model="account.group.template">
+    <field name="name">IMMOVABLE PROPERTY ACQUIRED FOR RESALE</field>
+    <field name="code_prefix_start">35</field>
+    <field name="code_prefix_end">35</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_36" model="account.group.template">
+    <field name="name">ADVANCE PAYMENTS</field>
+    <field name="code_prefix_start">36</field>
+    <field name="code_prefix_end">36</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_37" model="account.group.template">
+    <field name="name">CONTRACTS IN PROGRESS</field>
+    <field name="code_prefix_start">37</field>
+    <field name="code_prefix_end">37</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_40" model="account.group.template">
+    <field name="name">TRADE DEBTORS</field>
+    <field name="code_prefix_start">40</field>
+    <field name="code_prefix_end">40</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_41" model="account.group.template">
+    <field name="name">OTHER AMOUNTS RECEIVABLE</field>
+    <field name="code_prefix_start">41</field>
+    <field name="code_prefix_end">41</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_42" model="account.group.template">
+    <field name="name">DEBTS OF MORE THAN 1 YEAR, PORTION WITHIN THE YEAR</field>
+    <field name="code_prefix_start">42</field>
+    <field name="code_prefix_end">42</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_43" model="account.group.template">
+    <field name="name">FINANCIAL DEBTS</field>
+    <field name="code_prefix_start">43</field>
+    <field name="code_prefix_end">43</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_44" model="account.group.template">
+    <field name="name">TRADE DEBTS</field>
+    <field name="code_prefix_start">44</field>
+    <field name="code_prefix_end">44</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_45" model="account.group.template">
+    <field name="name">TAXES, REMUNERATION AND SOCIAL SECURITY</field>
+    <field name="code_prefix_start">45</field>
+    <field name="code_prefix_end">45</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_46" model="account.group.template">
+    <field name="name">ADVANCES RECEIVED ON CONTRACTS IN PROGRESS</field>
+    <field name="code_prefix_start">46</field>
+    <field name="code_prefix_end">46</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_47" model="account.group.template">
+    <field name="name">DEBTS RELATED TO THE DESTINATION OF THE RESULTS</field>
+    <field name="code_prefix_start">47</field>
+    <field name="code_prefix_end">47</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_48" model="account.group.template">
+    <field name="name">VARIOUS DEBTS</field>
+    <field name="code_prefix_start">48</field>
+    <field name="code_prefix_end">48</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_49" model="account.group.template">
+    <field name="name">ACCRUED CHARGES AND DEFERRED INCOME</field>
+    <field name="code_prefix_start">49</field>
+    <field name="code_prefix_end">49</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_50" model="account.group.template">
+    <field name="name">OWN SHARES</field>
+    <field name="code_prefix_start">50</field>
+    <field name="code_prefix_end">50</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_51" model="account.group.template">
+    <field name="name">SHARES</field>
+    <field name="code_prefix_start">51</field>
+    <field name="code_prefix_end">51</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_52" model="account.group.template">
+    <field name="name">FIXED-INTEREST SECURITIES</field>
+    <field name="code_prefix_start">52</field>
+    <field name="code_prefix_end">52</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_53" model="account.group.template">
+    <field name="name">FIXED DEPOSIT</field>
+    <field name="code_prefix_start">53</field>
+    <field name="code_prefix_end">53</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_54" model="account.group.template">
+    <field name="name">EXPIRED VALUABLES TO CASH IN</field>
+    <field name="code_prefix_start">54</field>
+    <field name="code_prefix_end">54</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_55" model="account.group.template">
+    <field name="name">FINANCE COMPANIES</field>
+    <field name="code_prefix_start">55</field>
+    <field name="code_prefix_end">55</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_56" model="account.group.template">
+    <field name="name">GIRO SERVICE</field>
+    <field name="code_prefix_start">56</field>
+    <field name="code_prefix_end">56</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_57" model="account.group.template">
+    <field name="name">CASH</field>
+    <field name="code_prefix_start">57</field>
+    <field name="code_prefix_end">57</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_58" model="account.group.template">
+    <field name="name">INTERNAL TRANSFERS</field>
+    <field name="code_prefix_start">58</field>
+    <field name="code_prefix_end">58</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_60" model="account.group.template">
+    <field name="name">RAW MATERIALS, CONSUMABLES AND GOODS FOR RESALE</field>
+    <field name="code_prefix_start">60</field>
+    <field name="code_prefix_end">60</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_61" model="account.group.template">
+    <field name="name">SERVICES AND OTHER GOODS</field>
+    <field name="code_prefix_start">61</field>
+    <field name="code_prefix_end">61</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_62" model="account.group.template">
+    <field name="name">REMUNERATIONS, SOCIAL SECURITY COSTS AND PENSIONS</field>
+    <field name="code_prefix_start">62</field>
+    <field name="code_prefix_end">62</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_63" model="account.group.template">
+    <field
+            name="name"
+        >DEPRECIATIONS, AMOUNTS WRITTEN OFF AND PROVISIONS FOR LIABILITIES AND CHARGES</field>
+    <field name="code_prefix_start">63</field>
+    <field name="code_prefix_end">63</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_64" model="account.group.template">
+    <field name="name">OTHER OPERATING CHARGES</field>
+    <field name="code_prefix_start">64</field>
+    <field name="code_prefix_end">64</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_65" model="account.group.template">
+    <field name="name">FINANCIAL CHARGES</field>
+    <field name="code_prefix_start">65</field>
+    <field name="code_prefix_end">65</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_66" model="account.group.template">
+    <field name="name">EXTRAORDINARY CHARGES</field>
+    <field name="code_prefix_start">66</field>
+    <field name="code_prefix_end">66</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_67" model="account.group.template">
+    <field name="name">INCOME TAXES</field>
+    <field name="code_prefix_start">67</field>
+    <field name="code_prefix_end">67</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_68" model="account.group.template">
+    <field name="name">TRANSFER TO DEFERRED TAXES AND UNTAXED RESERVES</field>
+    <field name="code_prefix_start">68</field>
+    <field name="code_prefix_end">68</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_69" model="account.group.template">
+    <field name="name">PROFIT FOR THE PERIOD</field>
+    <field name="code_prefix_start">69</field>
+    <field name="code_prefix_end">69</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_70" model="account.group.template">
+    <field name="name">TURNOVER</field>
+    <field name="code_prefix_start">70</field>
+    <field name="code_prefix_end">70</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_71" model="account.group.template">
+    <field name="name">CHANGES IN STOCKS AND CONTRACTS IN PROGRESS</field>
+    <field name="code_prefix_start">71</field>
+    <field name="code_prefix_end">71</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_72" model="account.group.template">
+    <field name="name">FIXED ASSETS OWN CONSTRUCTION</field>
+    <field name="code_prefix_start">72</field>
+    <field name="code_prefix_end">72</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_74" model="account.group.template">
+    <field name="name">OTHER OPERATING INCOME</field>
+    <field name="code_prefix_start">74</field>
+    <field name="code_prefix_end">74</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_75" model="account.group.template">
+    <field name="name">FINANCIAL INCOME</field>
+    <field name="code_prefix_start">75</field>
+    <field name="code_prefix_end">75</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_76" model="account.group.template">
+    <field name="name">EXTRAORDINARY INCOME</field>
+    <field name="code_prefix_start">76</field>
+    <field name="code_prefix_end">76</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_77" model="account.group.template">
+    <field name="name">ADJUSTMENT OF INCOME TAXES AND TAX PROVISIONS</field>
+    <field name="code_prefix_start">77</field>
+    <field name="code_prefix_end">77</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_78" model="account.group.template">
+    <field name="name">TRANSFER FROM DEFERRED TAXES AND UNTAXED RESERVES</field>
+    <field name="code_prefix_start">78</field>
+    <field name="code_prefix_end">78</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+  <record id="agtn_79" model="account.group.template">
+    <field name="name">PROFIT FOR THE PERIOD</field>
+    <field name="code_prefix_start">79</field>
+    <field name="code_prefix_end">79</field>
+    <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
+  </record>
+
+</odoo>

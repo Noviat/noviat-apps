@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_be_legal_financial_report_scheme_manager,be.legal.financial.report.scheme manager,model_be_legal_financial_report_scheme,account.group_account_manager,1,1,1,1
+access_be_legal_financial_report_scheme_user,be.legal.financial.report.scheme user,model_be_legal_financial_report_scheme,account.group_account_user,1,0,0,0
+access_be_legal_financial_report_chart_manager,be.legal.financial.report.chart manager,model_be_legal_financial_report_chart,account.group_account_manager,1,1,1,1
+access_be_legal_financial_report_chart_user,be.legal.financial.report.chart user,model_be_legal_financial_report_chart,account.group_account_user,1,0,0,0
+
+access_l10n_be_vat_declaration,l10n.be.vat.declaration,model_l10n_be_vat_declaration,account.group_account_user,1,1,1,0
+access_l10n_be_vat_declaration_case,l10n.be.vat.declaration.case,model_l10n_be_vat_declaration_case,account.group_account_user,1,1,1,0
+access_l10n_be_vat_intracom,l10n.be.vat.intracom,model_l10n_be_vat_intracom,account.group_account_user,1,1,1,0
+access_l10n_be_vat_intracom_client,l10n.be.vat.intracom.client,model_l10n_be_vat_intracom_client,account.group_account_user,1,1,1,0
+access_l10n_be_vat_listing,l10n.be.vat.listing,model_l10n_be_vat_listing,account.group_account_user,1,1,1,0
+access_l10n_be_vat_listing_client,l10n.be.vat.listing.client,model_l10n_be_vat_listing_client,account.group_account_user,1,1,1,0
+
+access_l10n_be_legal_report,l10n.be.legal.report,model_l10n_be_legal_report,account.group_account_user,1,1,1,0
+access_l10n_be_legal_report_line,l10n.be.legal.report.line,model_l10n_be_legal_report_line,account.group_account_user,1,1,1,0
+access_l10n_be_coa_multilang_config,l10n.be.coa.multilang.config,model_l10n_be_coa_multilang_config,account.group_account_manager,1,1,1,0
+access_l10n_be_update_be_reportscheme,l10n.be.update.be.reportscheme,model_l10n_be_update_be_reportscheme,account.group_account_manager,1,1,1,0
