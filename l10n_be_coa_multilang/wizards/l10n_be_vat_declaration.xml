@@ -15,7 +15,7 @@
                     />
           <field
                         name="declarant_id"
-                        domain="['|', ('parent_id', '=', company_id), ('id', '=', company_id)]"
+                        domain="['|', ('parent_id', '=', company_partner_id), ('id', '=', company_partner_id)]"
                     />
           <field name="year" />
           <field name="period_length" required="1" />
@@ -34,6 +34,7 @@
           <field name="date_to" />
           <field name="period" />
           <field name="note" />
+          <field name="company_partner_id" />
         </group>
         <footer>
           <button

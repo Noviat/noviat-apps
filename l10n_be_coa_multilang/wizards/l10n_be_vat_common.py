@@ -1,4 +1,4 @@
-# Copyright 2009-2020 Noviat
+# Copyright 2009-2021 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import calendar
@@ -23,6 +23,9 @@ class L10nBeVatCommon(models.AbstractModel):
         default=lambda self: self._default_company_id(),
         required=True,
         string="Company",
+    )
+    company_partner_id = fields.Many2one(
+        comodel_name="res.partner", related="company_id.partner_id", readonly=True
     )
     currency_id = fields.Many2one(
         comodel_name="res.currency", related="company_id.currency_id", readonly=True
