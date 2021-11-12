@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 13.0\n"
 "Report-Msgid-Bugs-To: support@noviat.com\n"
-"POT-Creation-Date: 2020-09-19 20:32:54.758000\n"
-"PO-Revision-Date: 2020-09-19 20:32:54.758000\n"
+"POT-Creation-Date: 2021-09-22 19:00:42.979000\n"
+"PO-Revision-Date: 2021-09-22 19:00:42.979000\n"
 "Last-Translator: Luc De Meyer (Noviat nv/sa)\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -275,11 +275,6 @@ msgstr "Selecteer details"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_import
 msgid "Select your file :"
 msgstr "Selecteer uw bestand:"
-
-#. module: l10n_be_coda_advanced
-#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_import
-msgid "Import CODA File"
-msgstr "Importeer CODA bestand"
 
 #. module: l10n_be_coda_advanced
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_import

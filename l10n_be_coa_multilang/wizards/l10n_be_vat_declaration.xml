@@ -117,12 +117,6 @@
     <field name="target">new</field>
   </record>
 
-  <menuitem id="l10n_be_vat_declaration_menu"
-            name="Periodical VAT Declaration"
-            parent="menu_belgian_statements_and_reports"
-            action="l10n_be_vat_declaration_action"
-            sequence="10"/>
-
   <report id="action_report_l10nbevatdeclaration"
           model="l10n.be.vat.declaration"
           string="Periodical VAT Declaration"

@@ -31,7 +31,8 @@ class AccountAccount(models.Model):
             )
 
     @api.onchange("code")
-    def _onchange_code(self):
+    def onchange_code(self):
+        super().onchange_code()
         countries = self._get_be_scheme_countries()
         if self.code and self.company_id.country_id.code in countries:
 
@@ -59,9 +60,11 @@ class AccountAccount(models.Model):
             if not self.env.context.get("noupdate_account_type"):
                 if self.user_type_id != entry.account_type_id:
                     self.user_type_id = entry.account_type_id
-
-        if hasattr(super(AccountAccount, self), "_onchange_code"):
-            super(AccountAccount, self)._onchange_code()
+                    if (
+                        self.user_type_id.type in ("payable", "receivable")
+                        and not self.reconcile
+                    ):
+                        self.reconcile = True
 
     @api.model
     def search(self, args, offset=0, limit=None, order=None, count=False):
@@ -85,42 +88,25 @@ class AccountAccount(models.Model):
         if company_id:
             company = self.env["res.company"].browse(vals["company_id"])
         else:
-            company = self.env["res.company"]._company_default_get("account.account")
+            company = self.env.company
         if company.country_id.code in self._get_be_scheme_countries():
             entry, entries = self._get_be_report_scheme_entry(vals.get("code", ""))
             if entry:
-                if entry.report_chart_id:
-                    vals["be_report_chart_ids"] = [(4, entry.report_chart_id.id)]
                 if not vals.get("user_type_id"):
-                    vals["user_type_id"] = entry.account_type_id.id
-                if not vals.get("tag_ids"):
-                    vals["tag_ids"] = [(6, 0, entry.account_tag_ids.ids)]
-        return super(AccountAccount, self).create(vals)
+                    user_type = entry.account_type_id
+                    vals["user_type_id"] = user_type.id
+                    if user_type.type in ("receivable", "payable"):
+                        vals["reconcile"] = True
+        account = super().create(vals)
+        account.onchange_code()
+        return account
 
     def write(self, vals):
+        res = super().write(vals)
         if "code" in vals:
-            if len(self) == 1 and vals.get("code") != self.code:
-                company = (
-                    vals.get("company_id")
-                    and self.env["res.company"].browse(vals["company_id"])
-                    or self.company_id
-                )
-                if company.country_id.code in self._get_be_scheme_countries():
-                    update = []
-                    old, entries = self._get_be_report_scheme_entry(self.code)
-                    if old.report_chart_id:
-                        update.append((3, old.report_chart_id.id))
-                    new, entries = self._get_be_report_scheme_entry(
-                        vals.get("code", "")
-                    )
-                    if new.report_chart_id:
-                        update.append((4, new.report_chart_id.id))
-                    if update:
-                        vals["be_report_chart_ids"] = vals.get(
-                            "be_report_chart_ids", []
-                        )
-                        vals["be_report_chart_ids"].extend(update)
-        return super(AccountAccount, self).write(vals)
+            for account in self:
+                account.onchange_code()
+        return res
 
     def _get_be_scheme_countries(self):
         """

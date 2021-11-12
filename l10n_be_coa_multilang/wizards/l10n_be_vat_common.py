@@ -110,8 +110,8 @@ class L10nBeVatCommon(models.AbstractModel):
             self.declarant_id = contacts and contacts[0] or self.company_id.partner_id
         decl_dom = [
             "|",
-            ("parent_id", "=", self.company_id.id),
-            ("id", "=", self.company_id.id),
+            ("parent_id", "=", self.company_id.partner_id.id),
+            ("id", "=", self.company_id.partner_id.id),
         ]
         return {"domain": {"declarant_id": decl_dom}}
 

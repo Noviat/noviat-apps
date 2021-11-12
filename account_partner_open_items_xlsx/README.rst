@@ -22,9 +22,6 @@ which comes with the OCA 'account_financial_report_qweb' module for Odoo 10.0.
 
 The main differences with the OCA Open Items report are:
 
-* This report is available via the action menu on the partner form and list views
-  in order to facilitate the partner selection.
-
 * The excel workbook contains multiple sheets in order to separate the transaction details and overview reports.
 
 * The excel report is based upon a template which can be tailored easily (via res.partner inherit)

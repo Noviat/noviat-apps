@@ -29,6 +29,39 @@ class AccountChartTemplate(models.Model):
                 journal.update({"refund_sequence": True})
         return journal_data
 
+    def _generate_account_groups(self, company):
+        """
+        Code backported from Odoo 14.0 OC and adapted to set parent_id
+        from templates
+        """
+        self.ensure_one()
+        group_templates = self.env["account.group.template"].search(
+            [("chart_template_id", "=", self.id)]
+        )
+        template_vals = []
+        for group_template in group_templates:
+            vals = {
+                "name": group_template.name,
+                "code_prefix": group_template.code_prefix,
+                "company_id": company.id,
+            }
+            template_vals.append((group_template, vals))
+        groups = self._create_records_with_xmlid(
+            "account.group", template_vals, company
+        )
+        for i, group in enumerate(groups):
+            tmpl_parent = template_vals[i][0].parent_id
+            if tmpl_parent:
+                group.parent_id = groups.filtered(
+                    lambda r: r.code_prefix == tmpl_parent.code_prefix
+                )
+        return groups
+
+    def _load(self, sale_tax_rate, purchase_tax_rate, company):
+        ctx = dict(self.env.context, lang=company.partner_id.lang)
+        self.with_context(ctx)._generate_account_groups(company)
+        return super()._load(sale_tax_rate, purchase_tax_rate, company)
+
 
 class AccountTaxRepartitionLineTemplate(models.Model):
     _inherit = "account.tax.repartition.line.template"

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_move_form" model="ir.ui.view">
+    <field name="name">Block Invoice Payment</field>
+    <field name="model">account.move</field>
+    <field name="inherit_id" ref="account.view_move_form"/>
+    <field name="arch" type="xml">
+      <field name="currency_id" position="after">
+        <field name="block_payment" attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund'))]}"/>
+      </field>
+    </field>
+  </record>
+
+</odoo>

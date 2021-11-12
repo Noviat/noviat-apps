@@ -194,7 +194,7 @@ class AccountCodaImport(models.TransientModel):
         else:
             if self.skip_undefined:
                 self._coda_import_note += _(
-                    "\n\nNo matching CODA Bank Account Configuration " "record found !"
+                    "\n\nNo matching CODA Bank Account Configuration record found !"
                 ) + _(
                     "\nPlease check if the 'Bank Account Number', "
                     "'Currency' and 'Account Description' fields "
@@ -209,7 +209,7 @@ class AccountCodaImport(models.TransientModel):
                 skip = True
             else:
                 err_string = _(
-                    "\nNo matching CODA Bank Account Configuration " "record found !"
+                    "\nNo matching CODA Bank Account Configuration record found !"
                 ) + _(
                     "\nPlease check if the 'Bank Account Number', "
                     "'Currency' and 'Account Description' fields "
@@ -440,7 +440,7 @@ class AccountCodaImport(models.TransientModel):
         ]
         if not trans_family:
             err_string = (
-                _("\nThe File contains an invalid " "CODA Transaction Family : %s !")
+                _("\nThe File contains an invalid CODA Transaction Family : %s !")
                 % transaction["trans_family"]
             )
             raise UserError(err_string)
@@ -461,7 +461,7 @@ class AccountCodaImport(models.TransientModel):
         else:
             transaction["trans_code_id"] = None
             transaction["trans_code_desc"] = _(
-                "Transaction Code unknown, " "please consult your bank."
+                "Transaction Code unknown, please consult your bank."
             )
         transaction["trans_category"] = line[58:61]
         trans_category = [
@@ -473,7 +473,7 @@ class AccountCodaImport(models.TransientModel):
         else:
             transaction["trans_category_id"] = None
             transaction["trans_category_desc"] = _(
-                "Transaction Category unknown, " "please consult your bank."
+                "Transaction Category unknown, please consult your bank."
             )
         # positions 61-115 : communication
         if line[61] == "1":
@@ -1475,9 +1475,7 @@ class AccountCodaImport(models.TransientModel):
             if not line:
                 continue
             if line[0] != "0" and not coda_statement:
-                raise UserError(
-                    _("CODA Import Failed." "\nIncorrect input file format")
-                )
+                raise UserError(_("CODA Import Failed.\nIncorrect input file format"))
             elif line[0] == "0":
                 # start of a new statement within the CODA file
                 coda_statement = {}
@@ -1706,7 +1704,7 @@ class AccountCodaImport(models.TransientModel):
             coda.write({"note": old_note + note, "state": "done"})
         else:
             note = (
-                _("Errors detected during the processing of " "CODA File %s :")
+                _("Errors detected during the processing of CODA File %s :")
                 % codafilename
             )
             note += "\n" + self._err_string
@@ -2113,7 +2111,7 @@ class AccountCodaImport(models.TransientModel):
             match["partner_id"] = partner.id
             imls = invoice.line_ids.filtered(
                 lambda r: r.account_id.internal_type in ("payable", "receivable")
-                and not r.full_reconcile_id
+                and not r.reconciled
             )
             cur = cba.currency_id
             if cur == cba.company_id.currency_id:
@@ -2177,12 +2175,28 @@ class AccountCodaImport(models.TransientModel):
         search_field, search_input = self._match_aml_other_domain_field(
             st_line, cba, transaction
         )
+        if not search_field or not search_input:
+            # skip resource intensive mathcing logic
+            return None
+
+        cpy_cur = cba.company_id.currency_id
+        line_cur = st_line.currency_id or st_line.journal_currency_id
+        if line_cur != cpy_cur and line_cur != cba.currency_id:
+            return None
+
         domain = [
             (search_field, "=", search_input),
             ("move_state", "=", "posted"),
-            ("full_reconcile_id", "=", False),
+            ("reconciled", "=", False),
             ("account_id.reconcile", "=", True),
-            ("account_internal_type", "not in", ["payable", "receivable"]),
+            ("account_internal_type", "not in", ("payable", "receivable")),
+        ]
+        amt_fld = "amount_residual"
+        if line_cur == cba.currency_id and line_cur != cpy_cur:
+            amt_fld = "amount_residual_currency"
+        domain += [
+            (amt_fld, ">=", transaction["amount"] - 0.005),
+            (amt_fld, "<=", transaction["amount"] + 0.005),
         ]
         return domain
 
@@ -2190,33 +2204,22 @@ class AccountCodaImport(models.TransientModel):
         """
         check matching with non payable/receivable open accounting entries.
         """
-        cur = cba.currency_id
-        cpy_cur = cba.company_id.currency_id
         match = transaction["matching_info"]
         if match["status"] in ["break", "done"]:
             return reconcile_note
 
         domain = self._match_aml_other_domain(st_line, cba, transaction)
-        amls = self.env["account.move.line"].search(domain)
+        if domain is None:
+            return reconcile_note
+        aml = self.env["account.move.line"].search(domain)
 
-        matches = []
-        for aml in amls:
-            sign = (aml.debit - aml.credit) > 0 and 1 or -1
-            amt_fld = None
-            if cur == cpy_cur:
-                amt_fld = "amount_residual"
-            else:
-                if aml.currency_id == cur:
-                    amt_fld = "amount_residual_currency"
-            if amt_fld:
-                amt = sign * getattr(aml, amt_fld)
-                if cur.is_zero(amt - transaction["amount"]):
-                    matches.append((aml, amt))
-
-        if len(matches) == 1:
+        if len(aml) == 1:
             match["status"] = "done"
-            match["partner_id"] = matches[0][0].partner_id.id
-            match["counterpart_amls"] = matches
+            match["partner_id"] = aml.partner_id.id
+            amt_fld = "amount_residual"
+            if aml.currency_id == cba.currency_id:
+                amt_fld = "amount_residual_currency"
+            match["counterpart_amls"] = [(aml, getattr(aml, amt_fld))]
 
         return reconcile_note
 
@@ -2224,7 +2227,7 @@ class AccountCodaImport(models.TransientModel):
         """
         Customise search input data and field.
 
-        The search field is differenct from the one used in the
+        The search field is different from the one used in the
         standard (manual) bank statement reconciliation.
         By default we search on the 'name' in stead of 'ref' field.
 
@@ -2240,30 +2243,55 @@ class AccountCodaImport(models.TransientModel):
         search_input = transaction["communication"].strip()
         return search_field, search_input
 
-    def _match_aml_arap_refine(self, st_line, cba, transaction, matches):
+    def _match_aml_arap_refine(self, st_line, cba, transaction, amls):
         """
         Refine matching logic by parsing the 'search_field'.
         """
         search_field, search_input = self._match_aml_arap_domain_field(
             st_line, cba, transaction
         )
-        refined = []
-        for entry in matches:
-            aml = entry[0]
-            aml_lookup_field = getattr(aml, search_field)
+        refined = self.env["account.move.line"]
+        for aml in amls:
+            aml_lookup_field = getattr(aml, search_field) or ""
             if transaction["struct_comm_bba"]:
                 aml_lookup_field = re.sub(r"\D", "", aml_lookup_field)
-            if search_input in aml_lookup_field:
-                refined.append(entry)
+                search_input = transaction["struct_comm_raw"].strip()
+            if aml_lookup_field and search_input in aml_lookup_field:
+                refined += aml
         return refined
 
     def _match_aml_arap_domain(self, st_line, cba, transaction):
+        """
+        We assume that open items via miscellaneous entries are encoded in either
+        company currency or bank statement currency, hence we return None for
+        other cases (avoiding extra CPU time for currency conversions).
+        """
+        cpy_cur = cba.company_id.currency_id
+        line_cur = st_line.currency_id or st_line.journal_currency_id
+        if line_cur != cpy_cur and line_cur != cba.currency_id:
+            return None
         domain = [
             ("move_state", "=", "posted"),
-            ("full_reconcile_id", "=", False),
-            ("account_internal_type", "in", ["payable", "receivable"]),
+            ("reconciled", "=", False),
+            ("account_internal_type", "in", ("payable", "receivable")),
             ("partner_id", "!=", False),
         ]
+        amt_fld = "amount_residual"
+        if line_cur == cba.currency_id and line_cur != cpy_cur:
+            amt_fld = "amount_residual_currency"
+        domain += [
+            (amt_fld, ">=", transaction["amount"] - 0.005),
+            (amt_fld, "<=", transaction["amount"] + 0.005),
+        ]
+        if cba.find_bbacom and cba.find_inv_number:
+            # avoid double search on invoices
+            domain.append(
+                (
+                    "move_id.type",
+                    "not in",
+                    ("out_invoice", "out_refund", "in_invoice", "in_refund"),
+                )
+            )
         return domain
 
     def _match_aml_arap(self, st_line, cba, transaction, reconcile_note):
@@ -2274,8 +2302,6 @@ class AccountCodaImport(models.TransientModel):
         As a consequence this logic is by default disabled when creating a new
         'CODA Bank Account'.
         """
-        cur = cba.currency_id
-        cpy_cur = cba.company_id.currency_id
         match = transaction["matching_info"]
         if match["status"] in ["break", "done"]:
             return reconcile_note
@@ -2288,28 +2314,19 @@ class AccountCodaImport(models.TransientModel):
             return reconcile_note
 
         domain = self._match_aml_arap_domain(st_line, cba, transaction)
+        if domain is None:
+            return reconcile_note
         amls = self.env["account.move.line"].search(domain)
 
-        matches = []
-        for aml in amls:
-            sign = (aml.debit - aml.credit) > 0 and 1 or -1
-            amt_fld = None
-            if cur == cpy_cur:
-                amt_fld = "amount_residual"
-            else:
-                if aml.currency_id == cur:
-                    amt_fld = "amount_residual_currency"
-            if amt_fld:
-                amt = sign * getattr(aml, amt_fld)
-                if cur.is_zero(amt - transaction["amount"]):
-                    matches.append((aml, amt))
+        aml = self._match_aml_arap_refine(st_line, cba, transaction, amls)
 
-        matches = self._match_aml_arap_refine(st_line, cba, transaction, matches)
-
-        if len(matches) == 1:
+        if len(aml) == 1:
             match["status"] = "done"
-            match["partner_id"] = matches[0][0].partner_id.id
-            match["counterpart_amls"] = matches
+            match["partner_id"] = aml.partner_id.id
+            amt_fld = "amount_residual"
+            if aml.currency_id == cba.currency_id:
+                amt_fld = "amount_residual_currency"
+            match["counterpart_amls"] = [(aml, getattr(aml, amt_fld))]
 
         return reconcile_note
 
@@ -2774,7 +2791,7 @@ class AccountCodaImport(models.TransientModel):
 
     def _parse_comm_move_101(self, coda_statement, transaction):
         line_note = _(
-            "Credit transfer or cash payment with " "structured format communication"
+            "Credit transfer or cash payment with structured format communication"
         )
         comm = transaction["communication"]
         st_line_name = bba_comm_formatted = (

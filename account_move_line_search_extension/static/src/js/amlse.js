@@ -1,5 +1,5 @@
 /*
-# Copyright 2009-2020 Noviat.
+# Copyright 2009-2021 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 */
 
@@ -37,7 +37,7 @@ odoo.define("account_move_line_search_extension.amlse", function(require) {
             this.current_amount = null;
             this.current_taxes = null;
             this.current_tags = null;
-            this.search_bar_domain = [];
+            this.sidebar_domain = [];
             this.amlse_domain = [];
         },
 
@@ -130,7 +130,8 @@ odoo.define("account_move_line_search_extension.amlse", function(require) {
         get_render_dict: function() {
             /*
             Customise this function to modify the rendering dict for the qweb template.
-            By default the action context is merged into the result of the 'account.move.line, get_amlse_render_dict()' method.
+            By default the action context is merged into the result of the
+            'account.move.line, get_amlse_render_dict()' method.
             */
             var self = this;
             return this._rpc({
@@ -143,28 +144,24 @@ odoo.define("account_move_line_search_extension.amlse", function(require) {
         },
 
         do_search: function() {
-            this.search_bar_domain = this.sidebar.env.domain;
+            this.sidebar_domain = this.sidebar.env.domain.slice();
             this.amlse_domain = this.aml_search_domain();
-            var params = _.extend({}, this.sidebar.env, {
-                amlse_domain: this.amlse_domain,
-            });
-            this.reload(params);
+            this.reload(this.sidebar.env);
         },
 
         reload: function(params) {
             var self = this;
-            if (!params.domain) {
-                params.domain = self.sidebar.env.domain;
-            }
-            if (params.amlse_domain) {
-                params.domain = params.domain.concat(params.amlse_domain);
+            if (params.domain) {
+                this.sidebar_domain = params.domain;
             } else {
-                this.search_bar_domain = params.domain;
-                params.domain = params.domain.concat(this.amlse_domain);
+                this.sidebar_domain = this.sidebar.env.domain.slice();
+                params.domain = this.sidebar.env.domain;
             }
+            params.domain = this.amlse_domain.concat(params.domain);
             return this._super.apply(this, arguments).then(function() {
-                /* Restore search bar domain since the super will set it to the concatenated domain */
-                self.sidebar.env.domain = self.search_bar_domain;
+                /* Restore search bar domain since the super
+                   will set it to the concatenated domain */
+                self.sidebar.env.domain = self.sidebar_domain.slice();
             });
         },
 
@@ -188,11 +185,7 @@ odoo.define("account_move_line_search_extension.amlse", function(require) {
                 domain.push(["journal_id", "=", this.current_journal]);
             if (this.current_date_range) {
                 var dr = this.date_ranges[this.current_date_range - 1];
-                domain.push(
-                    "&",
-                    ["date", ">=", dr.date_start],
-                    ["date", "<=", dr.date_end]
-                );
+                domain.push(["date", ">=", dr.date_start], ["date", "<=", dr.date_end]);
             }
             if (this.current_reconcile)
                 domain.push([

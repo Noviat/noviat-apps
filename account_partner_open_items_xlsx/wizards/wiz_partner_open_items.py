@@ -1,4 +1,4 @@
-# Copyright 2009-2019 Noviat.
+# Copyright 2009-2021 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
@@ -34,6 +34,14 @@ class WizPartnerOpenItems(models.TransientModel):
         string="Partners",
         required=True,
         default=lambda self: self._default_partner_select(),
+    )
+    partner_ids = fields.Many2many(
+        comodel_name="res.partner",
+        column1="wiz_id",
+        column2="partner_id",
+        string="Partners",
+        domain=["|", ("parent_id", "=", False), ("is_company", "=", True)],
+        help="Leave blank to select all partners.",
     )
     add_currency = fields.Boolean(string="Show Currency", help="Show Foreign Currency")
     add_reconcile = fields.Boolean(

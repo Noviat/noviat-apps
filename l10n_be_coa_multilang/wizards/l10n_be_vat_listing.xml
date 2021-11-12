@@ -96,12 +96,6 @@
     <field name="target">new</field>
   </record>
 
-  <menuitem id="l10n_be_vat_listing_menu"
-            name="Annual Listing of VAT subjected Customers"
-            parent="menu_belgian_statements_and_reports"
-            action="l10n_be_vat_listing_action"
-            sequence="30"/>
-
   <report id="action_report_l10nbevatlisting"
           model="l10n.be.vat.listing"
           string="Annual Listing of VAT subjected Customers"

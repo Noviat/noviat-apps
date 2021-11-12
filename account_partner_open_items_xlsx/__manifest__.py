@@ -3,13 +3,13 @@
 
 {
     "name": "Open Journal Items per partner",
-    "version": "13.0.1.0.1",
+    "version": "13.0.1.1.1",
     "license": "AGPL-3",
     "author": "Noviat",
     "website": "http://www.noviat.com",
     "category": "Accounting & Finance",
     "summary": "Open Journal Items per partner at a given date",
     "depends": ["account", "report_xlsx_helper"],
-    "data": ["wizards/wiz_partner_open_items.xml"],
+    "data": ["wizards/wiz_partner_open_items.xml", "views/menu.xml"],
     "installable": True,
 }

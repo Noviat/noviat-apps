@@ -8,10 +8,10 @@ def update_country_state_refs(cr):
     update res.country.state ir_model_data entries
     for migrations from 12.0 l10n_be_coa_multilang module
     """
-    old = 'l10n_be_coa_multilang'
-    new = 'l10n_be_country_state'
-    model = 'res.country.state'
+    old = "l10n_be_coa_multilang"
+    new = "l10n_be_country_state"
+    model = "res.country.state"
     cr.execute(
-        "UPDATE ir_model_data SET module = %s "
-        "WHERE module = %s AND model = %s",
-        (new, old, model))
+        "UPDATE ir_model_data SET module = %s " "WHERE module = %s AND model = %s",
+        (new, old, model),
+    )

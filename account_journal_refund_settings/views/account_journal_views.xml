@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_account_journal_tree" model="ir.ui.view">
+    <field name="name">account.journal.tree</field>
+    <field name="model">account.journal</field>
+    <field name="inherit_id" ref="account.view_account_journal_tree"/>
+    <field name="arch" type="xml">
+      <field name="type" position="after">
+        <field name="refund_usage" attrs="{'invisible': [('type', 'not in', ['sale', 'purchase'])]}"/>
+      </field>
+    </field>
+  </record>
+
+  <record id="view_account_journal_form" model="ir.ui.view">
+    <field name="name">account.journal.form.refund</field>
+    <field name="model">account.journal</field>
+    <field name="inherit_id" ref="account.view_account_journal_form"/>
+    <field name="arch" type="xml">
+      <field name="refund_sequence" position="attributes">
+        <attribute name="attrs">
+          {'invisible': ['|', ('type', 'not in', ['sale', 'purchase']), ('refund_usage', '=', 'regular')]}
+        </attribute>
+      </field>
+      <field name="sequence_id" position="attributes">
+        <attribute name="attrs">{'invisible': [('refund_usage', '=', 'refund')]}</attribute>
+      </field>
+      <field name="refund_sequence_id" position="attributes">
+        <attribute name="attrs">{'invisible': ['|', '|', ('type', 'not in', ['sale', 'purchase']), ('refund_sequence', '!=', True), ('refund_usage', '=', 'regular')]}</attribute>
+      </field>
+      <field name="currency_id" position="after">
+        <field name="refund_usage"
+               attrs="{'invisible': [('type', 'not in', ['sale', 'purchase'])]}"
+               groups="base.group_no_one"/>
+        <field name="refund_journal_id"
+               attrs="{'invisible': ['|', ('type', 'not in', ['sale', 'purchase']), ('refund_usage', '=', 'refund')]}"
+               groups="base.group_no_one"/>
+      </field>
+    </field>
+  </record>
+
+  <record id="account_journal_dashboard_kanban_view" model="ir.ui.view">
+    <field name="name">account.journal.dashboard.kanban</field>
+    <field name="model">account.journal</field>
+    <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
+    <field name="arch" type="xml">
+
+      <field name="type" position="after">
+        <field name="refund_usage"/>
+      </field>
+      <xpath expr="//templates/t[@t-name='kanban-box']//t[@t-set='journal_type']" position="after">
+        <t t-value="record.refund_usage.raw_value" t-set="refund_usage"/>
+      </xpath>
+
+      <!-- 'View' Menu -->
+      <xpath expr="//templates/t[@t-name='JournalManage']/div[contains(@t-if, 'purchase')]//a[@name='open_action'][contains(@context, 'action_move_out_invoice_type')]" position="attributes">
+        <attribute name="t-if">journal_type == 'sale' and refund_usage != 'refund'</attribute>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalManage']/div[contains(@t-if, 'purchase')]//a[@name='open_action'][contains(@context, 'action_move_in_invoice_type')]" position="attributes">
+        <attribute name="t-if">journal_type == 'purchase' and refund_usage != 'refund'</attribute>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalManage']/div[contains(@t-if, 'purchase')]//a[@name='open_action'][contains(@context, 'action_move_out_refund_type')]" position="attributes">
+        <attribute name="t-if">journal_type == 'sale' and refund_usage != 'regular'</attribute>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalManage']/div[contains(@t-if, 'purchase')]//a[@name='open_action'][contains(@context, 'action_move_in_refund_type')]" position="attributes">
+        <attribute name="t-if">journal_type == 'purchase' and refund_usage != 'regular'</attribute>
+      </xpath>
+
+      <!-- 'New' Menu -->
+      <xpath expr="//templates/t[@t-name='JournalManage']/div[contains(@t-if, 'purchase')]//a[@name='action_create_new'][not(@context)]/span[contains(@t-if, 'sale')]" position="attributes">
+        <attribute name="t-if">journal_type == 'sale' and refund_usage != 'refund'</attribute>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalManage']/div[contains(@t-if, 'purchase')]//a[@name='action_create_new'][not(@context)]/span[contains(@t-if, 'purchase')]" position="attributes">
+        <attribute name="t-if">journal_type == 'purchase' and refund_usage != 'refund'</attribute>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalManage']/div[contains(@t-if, 'purchase')]//a[@name='action_create_new'][contains(@context, 'refund')]/span[contains(@t-if, 'sale')]" position="attributes">
+        <attribute name="t-if">journal_type == 'sale' and refund_usage != 'regular'</attribute>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalManage']/div[contains(@t-if, 'purchase')]//a[@name='action_create_new'][contains(@context, 'refund')]/span[contains(@t-if, 'purchase')]" position="attributes">
+        <attribute name="t-if">journal_type == 'purchase' and refund_usage != 'regular'</attribute>
+      </xpath>
+
+      <!-- 'New Invoice/Bill' buttons -->
+      <xpath expr="//templates/t[@t-name='JournalBodySalePurchase']//t[contains(@t-if, 'sale')]/button[@name='action_create_new']" position="attributes">
+        <attribute name="t-if">refund_usage != 'refund'</attribute>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalBodySalePurchase']//t[contains(@t-if, 'sale')]/button[@name='action_create_new']" position="after">
+        <button t-if="refund_usage != 'regular'" type="object" name="action_create_new" class="btn btn-primary o_invoice_new" context="{'refund':True}">
+          <span>New Credit Note</span>
+        </button>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalBodySalePurchase']//t[contains(@t-if, 'purchase')]/button[@name='action_create_new']" position="attributes">
+        <attribute name="t-if">refund_usage != 'refund'</attribute>
+      </xpath>
+      <xpath expr="//templates/t[@t-name='JournalBodySalePurchase']//t[contains(@t-if, 'purchase')]/button[@name='action_create_new']" position="after">
+        <button t-if="refund_usage != 'regular'" type="object" name="action_create_new" class="btn btn-primary o_invoice_new" context="{'refund':True}">
+          <span>New Refund</span>
+        </button>
+      </xpath>
+
+    </field>
+  </record>
+
+</odoo>

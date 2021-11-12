@@ -100,12 +100,6 @@
     <field name="target">new</field>
   </record>
 
-  <menuitem id="l10n_be_legal_report_menu"
-            name="Belgium Balance Sheet and P&amp;L"
-            parent="menu_belgian_statements_and_reports"
-            action="l10n_be_legal_report_action"
-            sequence="40"/>
-
   <report id="action_report_l10nbelegalreport"
           model="l10n.be.legal.report"
           string="Belgium Balance Sheet and P&amp;L"

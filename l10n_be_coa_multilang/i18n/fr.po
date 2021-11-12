@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 13.0\n"
 "Report-Msgid-Bugs-To: support@noviat.com\n"
-"POT-Creation-Date: 2020-12-21 23:10:25.074000\n"
-"PO-Revision-Date: 2020-12-21 23:10:25.074000\n"
+"POT-Creation-Date: 2021-09-12 19:47:59.738000\n"
+"PO-Revision-Date: 2021-09-12 19:47:59.738000\n"
 "Last-Translator: Luc De Meyer (Noviat nv/sa)\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,26 +20,6 @@ msgstr ""
 #: model:account.chart.template,name:l10n_be_coa_multilang.l10n_be_coa_multilang_template
 msgid "Belgian Chart of Accounts (en/nl/fr)"
 msgstr "Plan Comptable Minimum Normalisé Belge (en/nl/fr)"
-
-#. module: l10n_be_coa_multilang
-#: code:addons/l10n_be_coa_multilang/wizard/nov_print_fiscalyear.py:10
-msgid "No records found for your selection!"
-msgstr "Aucun enregistrement trouvé pour votre sélection!"
-
-#. module: l10n_be_coa_multilang
-#: code:addons/l10n_be_coa_multilang/wizard/nov_print_fiscalyear.py:11
-msgid "No Data Available"
-msgstr "Aucune donnée disponible"
-
-#. module: l10n_be_coa_multilang
-#: code:addons/l10n_be_coa_multilang/wizard/nov_print_journal.py:10
-msgid "No records found for your selection!"
-msgstr "Aucun enregistrement trouvé pour votre sélection!"
-
-#. module: l10n_be_coa_multilang
-#: code:addons/l10n_be_coa_multilang/wizard/nov_print_journal.py:11
-msgid "No Data Available"
-msgstr "Aucune donnée disponible"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.ui.menu,name:l10n_be_coa_multilang.l10n_be_legal_report_menu
@@ -345,16 +325,6 @@ msgstr "Partenaire"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_intracom_client__amount
 msgid "Amount"
 msgstr "Montant"
-
-#. module: l10n_be_coa_multilang
-#: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__year
-msgid "Year"
-msgstr "Année"
-
-#. module: l10n_be_coa_multilang
-#: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__limit_amount
-msgid "Limit Amount"
-msgstr "Montant Limite"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__vat
@@ -1035,6 +1005,361 @@ msgstr "Différences positives de change"
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_999999
 msgid "Undistributed Profits/Losses"
 msgstr "Profits/pertes non distribués"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_1
+msgid "CLASS 1. EQUITY CAPITAL, PROVISIONS AND DEFERRED TAXES AND AMOUNTS PAYABLE AFTER MORE THAN ONE YEAR"
+msgstr "CLASSE 1. FONDS PROPRES, PROVISIONS POUR RISQUES & CHARGES ET DETTES A PLUS D'UN AN"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_2
+msgid "CLASS 2. FORMATION EXPENSES, ASSETS AND AMOUNTS RECEIVABLE AFTER MORE THAN ONE YEAR"
+msgstr "CLASSE 2. FRAIS D'ETABLISSEMENT. ACTIFS IMMOBILISES ET CREANCES A PLUS D'UN AN"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_3
+msgid "CLASS 3. STOCKS AND CONTRACTS IN PROGRESS"
+msgstr "CLASSE 3. STOCK ET COMMANDES EN COURS D'EXECUTION"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_4
+msgid "CLASS 4. AMOUNTS RECEIVABLE AND PAYABLE WITHIN ONE YEAR"
+msgstr "CLASSE 4. CREANCES ET DETTES A UN AN AU PLUS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_5
+msgid "CLASS 5. INVESTMENTS AND CASH"
+msgstr "CLASSE 5. PLACEMENTS DE TRESORERIE ET DE VALEURS DISPONIBLES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_6
+msgid "CLASS 6. CHARGES"
+msgstr "CLASSE 6. CHARGES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_7
+msgid "CLASS 7. INCOMES"
+msgstr "CLASSE 7. PRODUITS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_10
+msgid "CAPITAL"
+msgstr "CAPITAL"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_11
+msgid "SHARE PREMIUM ACCOUNT"
+msgstr "PRIMES D'EMISSION"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_12
+msgid "REVALUATION SURPLUSES"
+msgstr "PLUS-VALUES DE REEVALUATION"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_13
+msgid "RESERVES"
+msgstr "RESERVES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_14
+msgid "ACCUMULATED PROFITS"
+msgstr "BENEFICE OU PERTE REPORTE(E)"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_15
+msgid "INVESTMENT GRANTS"
+msgstr "SUBSIDES EN CAPITAL"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_16
+msgid "PROVISIONS FOR LIABILITIES AND CHARGES"
+msgstr "PROVISIONS POUR RISQUES ET CHARGES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_17
+msgid "AMOUNTS PAYABLE AFTER MORE THAN ONE YEAR"
+msgstr "DETTES A PLUS D'UN AN"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_20
+msgid "FORMATION EXPENSES"
+msgstr "FRAIS D'ETABLISSEMENT"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_21
+msgid "INTANGIBLE ASSETS"
+msgstr "IMMOBILISATIONS INCORPORELLES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_22
+msgid "LAND AND BUILDINGS"
+msgstr "TERRAINS ET CONSTRUCTIONS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_23
+msgid "PLANT, MACHINERY AND EQUIPMENT"
+msgstr "INSTALLATIONS, MACHINES ET OUTILLAGE"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_24
+msgid "FURNITURE AND VEHICLES"
+msgstr "MOBILIER ET MATERIEL ROULANT"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_25
+msgid "LEASING AND OTHER SIMILAR RIGHTS"
+msgstr "IMMOBILISATION DETENUES EN LOCATION-FINANCEMENT ET DROITS SIMILAIRES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_26
+msgid "OTHER TANGIBLE ASSETS"
+msgstr "AUTRES IMMOBILISATIONS CORPORELLES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_27
+msgid "ASSETS UNDER CONSTR. AND ADVANCE PAYMENT"
+msgstr "IMMOBILISATIONS CORPORELLES EN COURS ET ACOMPTES VERSES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_28
+msgid "FINANCIAL ASSETS"
+msgstr "IMMOBILISATIONS FINANCIERES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_29
+msgid "AMOUNTS RECEIVABLE AFTER MORE THAN ONE YEAR"
+msgstr "CREANCES A PLUS D'UN AN"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_30
+msgid "RAW MATERIALS"
+msgstr "APPROVISIONNEMENTS - MATIERES PREMIERES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_31
+msgid "CONSUMABLES"
+msgstr "APPROVISIONNEMENTS ET FOURNITURES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_32
+msgid "GOODS WORK IN PROGRESS"
+msgstr "EN COURS DE FABRICATION"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_33
+msgid "FINISHED GOODS"
+msgstr "PRODUITS FINIS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_34
+msgid "GOODS PURCHASED FOR RESALE"
+msgstr "MARCHANDISES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_35
+msgid "IMMOVABLE PROPERTY ACQUIRED FOR RESALE"
+msgstr "IMMEUBLES DESTINES A LA VENTE"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_36
+msgid "ADVANCE PAYMENTS"
+msgstr "ACOMPTES VERSES SUR ACHATS POUR STOCKS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_37
+msgid "CONTRACTS IN PROGRESS"
+msgstr "COMMANDES EN COURS D'EXECUTION"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_40
+msgid "TRADE DEBTORS"
+msgstr "CREANCES COMMERCIALES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_41
+msgid "OTHER AMOUNTS RECEIVABLE"
+msgstr "AUTRES CREANCES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_42
+msgid "DEBTS OF MORE THAN 1 YEAR, PORTION WITHIN THE YEAR"
+msgstr "DETTES A PLUS D'UN AN ECHEANT DANS L'ANNEE"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_43
+msgid "FINANCIAL DEBTS"
+msgstr "DETTES FINANCIERES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_44
+msgid "TRADE DEBTS"
+msgstr "DETTES COMMERCIALES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_45
+msgid "TAXES, REMUNERATION AND SOCIAL SECURITY"
+msgstr "DETTES FISCALES, SALARIALES ET SOCIALES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_46
+msgid "ADVANCES RECEIVED ON CONTRACTS IN PROGRESS"
+msgstr "ACOMPTES RECUS SUR COMMANDES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_47
+msgid "DEBTS RELATED TO THE DESTINATION OF THE RESULTS"
+msgstr "DETTES DECOULANT DE L'AFFECTATION DES RESULTATS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_48
+msgid "VARIOUS DEBTS"
+msgstr "DETTES DIVERSES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_49
+msgid "ACCRUED CHARGES AND DEFERRED INCOME"
+msgstr "COMPTES DE REGULARISATION ET COMPTES D'ATTENTE"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_50
+msgid "OWN SHARES"
+msgstr "ACTIONS PROPRES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_51
+msgid "SHARES"
+msgstr "ACTIONS ET PARTS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_52
+msgid "FIXED-INTEREST SECURITIES"
+msgstr "TITRES A REVENUS FIXES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_53
+msgid "FIXED DEPOSIT"
+msgstr "DEPOTS A TERME"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_54
+msgid "EXPIRED VALUABLES TO CASH IN"
+msgstr "VALEURS ECHUES A L'ENCAISSEMENT"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_55
+msgid "FINANCE COMPANIES"
+msgstr "ETABLISSEMENTS DE CREDIT"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_56
+msgid "GIRO SERVICE"
+msgstr "OFFICE DES CHEQUES POSTAUX"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_57
+msgid "CASH"
+msgstr "CAISSES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_58
+msgid "INTERNAL TRANSFERS"
+msgstr "VIREMENTS INTERNES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_60
+msgid "RAW MATERIALS, CONSUMABLES AND GOODS FOR RESALE"
+msgstr "APPROVISIONNEMENTS ET MARCHANDISES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_61
+msgid "SERVICES AND OTHER GOODS"
+msgstr "SERVICES ET BIENS DIVERS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_62
+msgid "REMUNERATIONS, SOCIAL SECURITY COSTS AND PENSIONS"
+msgstr "REMUNERATIONS, CHARGES SOCIALES ET PENSIONS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_63
+msgid "DEPRECIATIONS, AMOUNTS WRITTEN OFF AND PROVISIONS FOR LIABILITIES AND CHARGES"
+msgstr "AMORTISSEMENTS, REDUCTIONS DE VALEUR ET PROVISIONS POUR RISQUES ET CHARGES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_64
+msgid "OTHER OPERATING CHARGES"
+msgstr "AUTRES CHARGES D'EXPLOITATION"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_65
+msgid "FINANCIAL CHARGES"
+msgstr "CHARGES FINANCIERES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_66
+msgid "EXTRAORDINARY CHARGES"
+msgstr "CHARGES EXCEPTIONNELLES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_67
+msgid "INCOME TAXES"
+msgstr "IMPOTS SUR LE RESULTAT"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_68
+msgid "TRANSFER TO DEFERRED TAXES AND UNTAXED RESERVES"
+msgstr "TRANSFERTS AUX RESERVES IMMUNISEES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_69
+msgid "PROFIT FOR THE PERIOD"
+msgstr "AFFECTATION DES RESULTATS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_70
+msgid "TURNOVER"
+msgstr "CHIFFRE D'AFFAIRES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_71
+msgid "CHANGES IN STOCKS AND CONTRACTS IN PROGRESS"
+msgstr "VARIATION DES STOCKS ET DES COMMANDES EN COURS D'EXECUTION"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_72
+msgid "FIXED ASSETS OWN CONSTRUCTION"
+msgstr "PRODUCTION IMMOBILISEE"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_74
+msgid "OTHER OPERATING INCOME"
+msgstr "AUTRES PRODUITS D'EXPLOITATION"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_75
+msgid "FINANCIAL INCOME"
+msgstr "PRODUITS FINANCIERS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_76
+msgid "EXTRAORDINARY INCOME"
+msgstr "PRODUITS EXCEPTIONNELS"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_77
+msgid "ADJUSTMENT OF INCOME TAXES AND TAX PROVISIONS"
+msgstr "REGULARISATIONS D'IMPOTS ET REPRISES DE PROVISIONS FISCALES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_78
+msgid "TRANSFER FROM DEFERRED TAXES AND UNTAXED RESERVES"
+msgstr "PRELEVEMENT SUR RESERVES IMMUNISEES ET IMPOTS DIFFERES"
+
+#. module: l10n_be_coa_multilang
+#: model:account.group.template,name:l10n_be_coa_multilang.agtn_79
+msgid "PROFIT FOR THE PERIOD"
+msgstr "AFFECTATION AUX RESULTATS"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_BE_3_FULL
@@ -1960,11 +2285,6 @@ msgstr "6% Cocontractant - Approvisionn. et marchandises"
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-00-CC
 msgid "0% Cocontract. - Raw mat., consum. and goods for resale"
 msgstr "0% Cocontractant - Approvisionn. et marchandises"
-
-#. module: l10n_be_coa_multilang
-#: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-00-CC
-msgid "0% Cocontract. - Raw mat., consum. and goods for resale"
-msgstr "6% Cocontractant - Approvisionn. et marchandises"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-CC

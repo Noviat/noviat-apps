@@ -1,4 +1,4 @@
-# Copyright 2019-2020 Noviat
+# Copyright 2019-2021 Noviat
 # Code inspired by OCA account_journal_lock_date 11.0 module
 # # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 

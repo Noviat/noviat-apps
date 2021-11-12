@@ -138,7 +138,7 @@ class AccountPartnerOpenItemsXlsx(models.AbstractModel):
             "INNER JOIN account_move m ON l.move_id = m.id "
             "INNER JOIN account_account a ON l.account_id = a.id "
             "INNER JOIN account_account_type aat ON a.user_type_id = aat.id "
-            "LEFT OUTER JOIN res_currency c ON a.currency_id = c.id "
+            "LEFT OUTER JOIN res_currency c ON l.currency_id = c.id "
             "LEFT OUTER JOIN account_bank_statement b "
             "ON l.statement_id = b.id "
             "LEFT OUTER JOIN res_partner p ON l.partner_id = p.id "
@@ -159,7 +159,9 @@ class AccountPartnerOpenItemsXlsx(models.AbstractModel):
         else:
             account_selection = "AND aat.type = '%s' "
 
-        if wiz.partner_select == "select":
+        if wiz.partner_select == "select" or wiz.partner_ids:
+            if wiz.partner_ids:
+                partners = wiz.partner_ids
             partner_selection = "AND p.id IN %s " % str(partners._ids).replace(
                 ",)", ")"
             )

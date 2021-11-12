@@ -46,7 +46,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
         # TODO: review logic based upon actual setting of
         # account.account,name translate flag
         name = "l10n_account_translate_off"
-        module = self.env["ir.module.module"].search(["name", "=", name])
+        module = self.env["ir.module.module"].search([("name", "=", name)])
         if not module:
             raise UserError(
                 _(
@@ -61,7 +61,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
 
     @api.model
     def _default_coa_lang(self):
-        res = self.env.context.get("lang")
+        res = self.env.context.get("lang") or self.company_id.partner_id.lang
         res = res and res[:2]
         return res in ["fr", "nl"] and res or "en"
 
@@ -144,7 +144,9 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
                     out_rec.with_context({"lang": lang}).write({in_field: value})
 
     def execute(self):  # noqa C901
-        self_no_ctx = self.with_context({"active_test": False})
+        self_cpy_ctx = self.with_context(
+            {"active_test": False, "lang": self.company_id.partner_id.lang}
+        )
 
         if self.monolang_coa:
             to_install = self.env["ir.module.module"].search(
@@ -207,10 +209,10 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
 
         # copy account.account translations
         in_field = "name"
-        account_tmpls = self_no_ctx.env["account.account.template"].search(
+        account_tmpls = self_cpy_ctx.env["account.account.template"].search(
             [("chart_template_id", "in", chart_template_ids)], order="code"
         )
-        accounts = self_no_ctx.env["account.account"].search(
+        accounts = self_cpy_ctx.env["account.account"].search(
             [("company_id", "=", self.company_id.id)], order="code"
         )
         # Remove accounts with no account_template counterpart.
@@ -221,6 +223,13 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
         account_tmpls = account_tmpls.filtered(lambda r: r.code in codes)
         tmpl_codes = account_tmpls.mapped("code")
         accounts = accounts.filtered(lambda r: r.code in tmpl_codes)
+        # account.group
+        groups = self_cpy_ctx.env["account.group"].search(
+            [("company_id", "=", self.company_id.id)], order="code_prefix"
+        )
+        group_tmpls = self_cpy_ctx.env["account.group.template"].search(
+            [("chart_template_id", "in", chart_template_ids)], order="code_prefix",
+        )
         if self.monolang_coa:
             lang = False
             if self.coa_lang == "en":
@@ -256,19 +265,23 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
             account_tmpls = account_tmpls.with_context(lang=lang)
             for i, account in enumerate(accounts):
                 account.name = account_tmpls[i].name
+            group_tmpls = group_tmpls.with_context(lang=lang)
+            for i, group in enumerate(groups):
+                group.name = group_tmpls[i].name
         else:
             for i, account in enumerate(accounts):
                 account.name = account_tmpls[i].name
-            # no field value check to enable mono- to multi-lang
-            # via this config wizard
-            self._copy_xlat(langs, in_field, account_tmpls, accounts, field_check=False)
+            for i, group in enumerate(groups):
+                group.name = group_tmpls[i].name
+            self._copy_xlat(langs, in_field, account_tmpls, accounts)
+            self._copy_xlat(langs, in_field, group_tmpls, groups)
 
         # copy account.tax translations
-        tax_tmpls = self_no_ctx.env["account.tax.template"].search(
+        tax_tmpls = self_cpy_ctx.env["account.tax.template"].search(
             [("chart_template_id", "in", chart_template_ids)],
             order="sequence,description,name",
         )
-        taxes = self_no_ctx.env["account.tax"].search(
+        taxes = self_cpy_ctx.env["account.tax"].search(
             [("company_id", "=", self.company_id.id)], order="sequence,description,name"
         )
         self._field_check("name", tax_tmpls, taxes)
@@ -277,10 +290,10 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
             self._copy_xlat(langs, in_field, tax_tmpls, taxes)
 
         # copy account.fiscal.position translations and note field
-        fpos_tmpls = self_no_ctx.env["account.fiscal.position.template"].search(
+        fpos_tmpls = self_cpy_ctx.env["account.fiscal.position.template"].search(
             [("chart_template_id", "in", chart_template_ids)], order="name"
         )
-        fpos = self_no_ctx.env["account.fiscal.position"].search(
+        fpos = self_cpy_ctx.env["account.fiscal.position"].search(
             [("company_id", "=", self.company_id.id)], order="name"
         )
         # Perform basic sanity check on in/out pairs to protect against

@@ -6,4 +6,34 @@
             parent="account.menu_finance_reports"
             groups="account.group_account_manager"/>
 
+  <menuitem id="l10n_be_vat_declaration_menu"
+            name="Periodical VAT Declaration"
+            parent="menu_belgian_statements_and_reports"
+            action="l10n_be_vat_declaration_action"
+            sequence="10"/>
+
+  <menuitem id="l10n_be_vat_intracom_menu"
+            name="Intracom VAT Declaration"
+            parent="menu_belgian_statements_and_reports"
+            action="l10n_be_vat_intracom_action"
+            sequence="20"/>
+
+  <menuitem id="l10n_be_vat_listing_menu"
+            name="Annual Listing of VAT subjected Customers"
+            parent="menu_belgian_statements_and_reports"
+            action="l10n_be_vat_listing_action"
+            sequence="30"/>
+
+  <menuitem id="l10n_be_legal_report_menu"
+            name="Belgium Balance Sheet and P&amp;L"
+            parent="menu_belgian_statements_and_reports"
+            action="l10n_be_legal_report_action"
+            sequence="40"/>
+
+  <menuitem id="account_group_template_menu"
+            name="Account Group Templates"
+            parent="account_menu.menu_account_coa_settings"
+            action="account_group_template_action"
+            sequence="25"/>
+
 </odoo>

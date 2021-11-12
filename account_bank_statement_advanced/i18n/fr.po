@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 13.0\n"
 "Report-Msgid-Bugs-To: support@noviat.com\n"
-"POT-Creation-Date: 2020-06-06 20:27:41.551000\n"
-"PO-Revision-Date: 2020-06-06 20:27:41.551000\n"
+"POT-Creation-Date: 2021-09-21 21:52:00.371000\n"
+"PO-Revision-Date: 2021-09-21 21:52:00.371000\n"
 "Last-Translator: Luc De Meyer (Noviat nv/sa)\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -207,12 +207,12 @@ msgid "Manual"
 msgstr "Manuelle"
 
 #. module: account_bank_statement_advanced
-#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line_global__type__manual
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line_global__type__coda
 msgid "CODA"
 msgstr "CODA"
 
 #. module: account_bank_statement_advanced
-#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line_global__type__manual
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line_global__type__iso20022
 msgid "ISO 20022"
 msgstr "ISO 20022"
 

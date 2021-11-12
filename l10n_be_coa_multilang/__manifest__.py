@@ -3,7 +3,7 @@
 
 {
     "name": "Belgium - Multilingual Chart of Accounts (en/nl/fr)",
-    "version": "13.0.1.0.6",
+    "version": "13.0.1.1.1",
     "license": "AGPL-3",
     "author": "Noviat",
     "website": "http://www.noviat.com",
@@ -21,8 +21,10 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "security/account_group_security.xml",
         "data/account_chart_template_create_data.xml",
         "data/account_tax_report_line_data.xml",
+        "data/account_group_template_data.xml",
         "data/account_account_template_data.xml",
         "data/account_chart_template_update_data.xml",
         "data/account_tax_group_data.xml",
@@ -33,8 +35,9 @@
         "data/be_legal_financial_report_chart_data.xml",
         "data/be_legal_financial_report_scheme_data.xml",
         "data/ir_sequence_data.xml",
-        "views/menuitem.xml",
         "views/account_account_views.xml",
+        "views/account_group_views.xml",
+        "views/account_group_template_views.xml",
         "views/be_legal_financial_report_scheme_views.xml",
         "views/report_assets_common.xml",
         "views/l10n_be_layouts.xml",
@@ -51,6 +54,7 @@
         "wizards/l10n_be_vat_listing.xml",
         "wizards/l10n_be_legal_report.xml",
         "data/account_chart_template_loading_data.xml",
+        "views/menuitem.xml",
     ],
     "installable": True,
 }

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+  <!-- Australian Bank State Branch Code -->
+  <record id="base.au" model="res.country">
+    <field name="clearing_system_identification">AUBSB</field>
+  </record>
+
+  <!-- Austrian Bankleitzahl -->
+  <record id="base.at" model="res.country">
+    <field name="clearing_system_identification">ATBLZ</field>
+  </record>
+
+  <!-- Canadian Payments Association Payment Routing Number -->
+  <record id="base.ca" model="res.country">
+    <field name="clearing_system_identification">CACPA</field>
+  </record>
+
+  <!-- CNAPS Identifier -->
+  <record id="base.cn" model="res.country">
+    <field name="clearing_system_identification">CNAPS</field>
+  </record>
+
+  <!-- German Bankleitzahl -->
+  <record id="base.de" model="res.country">
+    <field name="clearing_system_identification">DEBLZ</field>
+  </record>
+
+  <!-- Hellenic Bank Identification Code -->
+  <record id="base.gr" model="res.country">
+    <field name="clearing_system_identification">GRHIC</field>
+  </record>
+
+  <!-- Hong Kong Bank Code -->
+  <record id="base.hk" model="res.country">
+    <field name="clearing_system_identification">HKNCC</field>
+  </record>
+
+  <!-- Indian Financial System code -->
+  <record id="base.in" model="res.country">
+    <field name="clearing_system_identification">INFSC</field>
+  </record>
+
+  <!-- Irish National Clearing Code -->
+  <record id="base.ie" model="res.country">
+    <field name="clearing_system_identification">IENCC</field>
+  </record>
+
+  <!-- Italian Domestic Identification Code -->
+  <record id="base.it" model="res.country">
+    <field name="clearing_system_identification">ITNCC</field>
+  </record>
+
+  <!-- Japan Zengin Clearing Code -->
+  <record id="base.jp" model="res.country">
+    <field name="clearing_system_identification">JPZGN</field>
+  </record>
+
+  <!-- New Zealand National Clearing Code -->
+  <record id="base.nz" model="res.country">
+    <field name="clearing_system_identification">NZNCC</field>
+  </record>
+
+  <!-- Polish National Clearing Code -->
+  <record id="base.pl" model="res.country">
+    <field name="clearing_system_identification">PLKNR</field>
+  </record>
+
+  <!-- Portuguese National Clearing Code -->
+  <record id="base.pt" model="res.country">
+    <field name="clearing_system_identification">PTNCC</field>
+  </record>
+
+  <!-- Russian Central Bank Identification Code -->
+  <record id="base.ru" model="res.country">
+    <field name="clearing_system_identification">RUCBC</field>
+  </record>
+
+  <!-- IBG Sort Code -->
+  <record id="base.sg" model="res.country">
+    <field name="clearing_system_identification">SGIBG</field>
+  </record>
+
+  <!-- South African National Clearing Code -->
+  <record id="base.za" model="res.country">
+    <field name="clearing_system_identification">ZANCC</field>
+  </record>
+
+  <!-- Spanish Domestic Interbanking Code -->
+  <record id="base.es" model="res.country">
+    <field name="clearing_system_identification">ESNCC</field>
+  </record>
+
+  <!-- Swiss Clearing Code (BC Code) - Domestic -->
+  <record id="base.ch" model="res.country">
+    <field name="clearing_system_identification">CHBCC</field>
+  </record>
+  <!-- Swiss Clearing Code (SIC Code) - International
+  <record id="base.ch" model="res.country">
+    <field name="clearing_system_identification">CHSIC</field>
+  </record>
+  -->
+
+  <!-- Financial Institution Code -->
+  <record id="base.tw" model="res.country">
+    <field name="clearing_system_identification">TWNCC</field>
+  </record>
+
+  <!-- UK Domestic Sort Code -->
+  <record id="base.uk" model="res.country">
+    <field name="clearing_system_identification">GBDSC</field>
+  </record>
+
+  <!-- Chips Participant Identifier -->
+  <record id="base.us" model="res.country">
+    <field name="clearing_system_identification">USPID</field>
+  </record>
+  <!-- Fedwire Routing Number
+  <record id="base.us" model="res.country">
+    <field name="clearing_system_identification">USABA</field>
+  </record>
+   -->
+
+</odoo>

@@ -202,7 +202,7 @@ class CodaBankAccount(models.Model):
 
     @api.onchange("journal_id")
     def _onchange_journal_id(self):
-        if not self.bank_id.acc_number:
+        if self.journal_id and not self.journal_id.bank_account_id:
             raise ValidationError(
                 _(
                     "Configuration error !\n"

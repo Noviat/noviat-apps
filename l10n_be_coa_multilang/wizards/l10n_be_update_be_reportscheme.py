@@ -34,7 +34,7 @@ class L10nBeUpdateBeReportscheme(models.TransientModel):
             if not entry:
                 non_be_scheme_accounts += account
             else:
-                account._onchange_code()
+                account.onchange_code()
         # write list of entries that are not included in
         # the BNB reports to the note field
         if self.env.context.get("l10n.be.coa.multilang.config"):

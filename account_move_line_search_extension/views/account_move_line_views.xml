@@ -53,7 +53,7 @@
                     groups="base.group_multi_company"
                     optional="hide"
                 />
-                <field name="parent_state" invisible="1" />
+                <field name="parent_state" optional="hide" />
             </amlse>
         </field>
     </record>
@@ -63,7 +63,8 @@
     >
         <field
             name="context"
-        >{'account_move_line_search_extension': 1, 'analytic_journal_id': 1}</field>
+        >{'account_move_line_search_extension': 1, 'analytic_journal_id': 1, 'search_default_posted': 1}</field>
+        <field name="domain">[('display_type', 'not in', ('line_section', 'line_note'))]</field>
         <field name="name">Journal Items Search All</field>
         <field name="res_model">account.move.line</field>
         <field name="view_id" ref="account_move_line_view_amlse" />

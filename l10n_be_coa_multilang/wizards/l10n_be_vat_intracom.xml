@@ -99,12 +99,6 @@
     <field name="target">new</field>
   </record>
 
-  <menuitem id="l10n_be_vat_intracom_menu"
-            name="Intracom VAT Declaration"
-            parent="menu_belgian_statements_and_reports"
-            action="l10n_be_vat_intracom_action"
-            sequence="20"/>
-
   <report id="action_report_l10nbevatintracom"
           model="l10n.be.vat.intracom"
           string="Intracom VAT Declaration"

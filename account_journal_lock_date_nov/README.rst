@@ -6,9 +6,9 @@
 account journal lock date
 =========================
 
-This module is inspired by the OCA account_journal_lock_date 11.0 module but contains a couple of
-significant changes:
+This module is inspired by the OCA account_journal_lock_date 11.0 module.
+Differences compared to the OCA 13.O account_journal_lock_date module:
 
-- No dependency on 'account_permanent_lock_move'
-- By default a lock date on a journal will lock operations for all users,
+- Single Lock Date field. By default a Lock Date on a journal will lock operations for all users,
   including the Financial Advisor (can be relaxed via an inherited module).
+- The Lock Date will be checked when posting the Journal Entries, hence not while creating draft invoices.

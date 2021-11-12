@@ -1,4 +1,4 @@
-# Copyright 2009-2020 Noviat
+# Copyright 2009-2021 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import base64
@@ -14,6 +14,17 @@ import xlrd
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
+
+from .import_wizard_helpers import (
+    cell2bool,
+    cell2char,
+    cell2date,
+    cell2float,
+    cell_is_int,
+    dialect2dict,
+    str2float,
+    str2int,
+)
 
 _logger = logging.getLogger(__name__)
 
@@ -87,7 +98,10 @@ class AccountMoveLineImport(models.TransientModel):
         # the self.aml_data is type 'str' during the onchange processing,
         # hence we convert into bytes so that we can try to determine the
         # csv dialect
-        lines = bytes(self.aml_data, encoding=self.codepage)
+        if not isinstance(self.aml_data, bytes):
+            lines = bytes(self.aml_data, encoding=self.codepage)
+        else:
+            lines = self.aml_data
         lines = base64.decodestring(lines)
         # convert windows & mac line endings to unix style
         lines = lines.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
@@ -165,7 +179,7 @@ class AccountMoveLineImport(models.TransientModel):
                     if cell.ctype == xlrd.XL_CELL_ERROR:
                         if err_msg:
                             err_msg += "\n"
-                        err_msg += _("Incorrect value '%s' " "for field '%s' !") % (
+                        err_msg += _("Incorrect value '%s' for field '%s' !") % (
                             cell.value,
                             hf,
                         )
@@ -174,35 +188,15 @@ class AccountMoveLineImport(models.TransientModel):
                     fmt = self._field_methods[hf]["field_type"]
 
                     if fmt == "char":
-                        if cell.ctype == xlrd.XL_CELL_TEXT:
-                            val = cell.value
-                        elif cell.ctype == xlrd.XL_CELL_NUMBER:
-                            is_int = cell.value % 1 == 0.0
-                            if is_int:
-                                val = str(int(cell.value))
-                            else:
-                                val = str(cell.value)
-                        else:
-                            val = str(cell.value)
+                        val = cell2char(cell)
 
                     elif fmt == "float":
-                        if cell.ctype == xlrd.XL_CELL_TEXT:
-                            amount = cell.value
-                            decimal_separator = "."
-                            dot_i = amount.rfind(".")
-                            comma_i = amount.rfind(",")
-                            if comma_i > dot_i and comma_i > 0:
-                                decimal_separator = ","
-                            val = str2float(amount, decimal_separator)
-                        else:
-                            val = cell.value
+                        val = cell2float(cell)
 
-                    elif fmt in ["integer", "many2one"]:
-                        val = cell.value
-                        if val:
-                            is_int = val % 1 == 0.0
-                            if is_int:
-                                val = int(val)
+                    elif fmt == "integer":
+                        if cell.value:
+                            if cell_is_int(cell):
+                                val = int(cell.value)
                             else:
                                 if err_msg:
                                     err_msg += "\n"
@@ -211,19 +205,15 @@ class AccountMoveLineImport(models.TransientModel):
                                     "for field '%s' of type %s !"
                                 ) % (cell.value, hf, fmt.capitalize())
 
-                    elif fmt == "boolean":
-                        if cell.ctype == xlrd.XL_CELL_TEXT:
-                            val = cell.value.capitalize().strip()
-                            if val in ["", "0", "False"]:
-                                val = False
-                            elif val in ["1", "True"]:
-                                val = True
-                        else:
-                            is_int = cell.value % 1 == 0.0
-                            if is_int:
-                                val = val == 1 and True or False
+                    elif fmt == "many2one":
+                        if cell.value:
+                            if cell_is_int(cell):
+                                val = int(cell.value)
                             else:
-                                val = None
+                                val = cell2char(cell)
+
+                    elif fmt == "boolean":
+                        val = cell2bool(cell)
                         if val is None:
                             if err_msg:
                                 err_msg += "\n"
@@ -233,25 +223,27 @@ class AccountMoveLineImport(models.TransientModel):
                             ) % (cell.value, hf)
 
                     elif fmt == "date":
+                        if cell.value:
+                            val = cell2date(cell, wb.datemode)
+                            if val is None:
+                                if err_msg:
+                                    err_msg += "\n"
+                                err_msg += _(
+                                    "Incorrect value '%s' "
+                                    "for field '%s' of type Date, "
+                                    "it should be YYYY-MM-DD !"
+                                ) % (cell.value, hf)
+
+                    elif fmt == "many2many":
                         if cell.ctype == xlrd.XL_CELL_TEXT:
-                            if cell.value:
-                                val = str2date(cell.value)
-                                if not val:
-                                    if err_msg:
-                                        err_msg += "\n"
-                                    err_msg += _(
-                                        "Incorrect value '%s' "
-                                        "for field '%s' of type Date !"
-                                        " should be YYYY-MM-DD"
-                                    ) % (cell.value, hf)
-                        elif cell.ctype in [xlrd.XL_CELL_NUMBER, xlrd.XL_CELL_DATE]:
-                            val = xlrd.xldate.xldate_as_tuple(cell.value, wb.datemode)
-                            val = datetime(*val).strftime("%Y-%m-%d")
-                        elif cell.ctype == xlrd.XL_CELL_BOOLEAN:
+                            val = cell.value
+                        else:
                             if err_msg:
                                 err_msg += "\n"
                             err_msg += _(
-                                "Incorrect value '%s' " "for field '%s' of type Date !"
+                                "Incorrect value '%s' "
+                                "for field '%s', "
+                                "it should be a comma separated string !"
                             ) % (cell.value, hf)
 
                     else:
@@ -313,7 +305,12 @@ class AccountMoveLineImport(models.TransientModel):
 
             # process input fields
             for i, hf in enumerate(self._header_fields):
-                if i == 0 and line[hf] and line[hf][0] == "#":
+                if (
+                    i == 0
+                    and isinstance(line[hf], str)
+                    and line[hf]
+                    and line[hf][0] == "#"
+                ):
                     # lines starting with # are considered as comment lines
                     break
                 if hf in self._skip_fields:
@@ -402,6 +399,7 @@ class AccountMoveLineImport(models.TransientModel):
                 "method": self._handle_analytic_account,
                 "field_type": "char",
             },
+            "tax grids": {"method": self._handle_tax_grids, "field_type": "many2many"},
         }
         return res
 
@@ -461,13 +459,14 @@ class AccountMoveLineImport(models.TransientModel):
                 self._orm_fields[f]["string"].lower() for f in self._orm_fields
             ]:
                 _logger.error(
-                    _("%s, undefined field '%s' found " "while importing move lines"),
+                    _("%s, undefined field '%s' found while importing move lines"),
                     self._name,
                     hf,
                 )
                 self._skip_fields.append(hf)
                 continue
 
+            orm_field = False
             field_def = self._orm_fields.get(hf)
             if not field_def:
                 for f in self._orm_fields:
@@ -531,9 +530,10 @@ class AccountMoveLineImport(models.TransientModel):
                     else:
                         val = False
                 if val is False:
-                    msg = _(
-                        "Incorrect value '%s' " "for field '%s' of type Integer !"
-                    ) % (line[field], field)
+                    msg = _("Incorrect value '%s' for field '%s' of type Integer !") % (
+                        line[field],
+                        field,
+                    )
                     self._log_line_error(line, msg)
                 else:
                     aml_vals[orm_field] = val
@@ -555,7 +555,7 @@ class AccountMoveLineImport(models.TransientModel):
                     val = str2float(line[field], self.decimal_separator)
                     if val is False:
                         msg = _(
-                            "Incorrect value '%s' " "for field '%s' of type Numeric !"
+                            "Incorrect value '%s' for field '%s' of type Numeric !"
                         ) % (line[field], field)
                         self._log_line_error(line, msg)
                 else:
@@ -572,9 +572,10 @@ class AccountMoveLineImport(models.TransientModel):
                 elif val in ["1", "True"]:
                     val = True
                 if isinstance(val, str):
-                    msg = _(
-                        "Incorrect value '%s' " "for field '%s' of type Boolean !"
-                    ) % (line[field], field)
+                    msg = _("Incorrect value '%s' for field '%s' of type Boolean !") % (
+                        line[field],
+                        field,
+                    )
                     self._log_line_error(line, msg)
             aml_vals[orm_field] = val
 
@@ -584,18 +585,20 @@ class AccountMoveLineImport(models.TransientModel):
             val = line[field]
             if val:
                 if isinstance(val, str):
-                    val = str2int(val.strip(), self.decimal_separator)
-                elif isinstance(val, (float, bool)):
-                    is_int = val % 1 == 0.0
-                    if is_int:
-                        val = int(val)
+                    model = self.env[self._orm_fields[orm_field]["relation"]]
+                    recs = model.search([(model._rec_name, "=", val)])
+                    if not recs:
+                        msg = _("%s '%s' not found !") % (model._name, val)
+                        self._log_line_error(line, msg)
+                        return
+                    elif len(recs) > 1:
+                        msg = _(
+                            "Multiple records of type '%s' with field %s '%s' found !"
+                        ) % (model._name, model._rec_name, val)
+                        self._log_line_error(line, msg)
+                        return
                     else:
-                        val = False
-                if val is False:
-                    msg = _(
-                        "Incorrect value '%s' " "for field '%s' of type Many2one !"
-                    ) % (line[field], field)
-                    self._log_line_error(line, msg)
+                        aml_vals[orm_field] = recs.id
                 else:
                     aml_vals[orm_field] = val
 
@@ -640,7 +643,7 @@ class AccountMoveLineImport(models.TransientModel):
                 return
             elif len(partners) > 1:
                 msg = (
-                    _("Multiple partners with Reference " "or Name '%s' found !")
+                    _("Multiple partners with Reference or Name '%s' found !")
                     % input_val
                 )
                 self._log_line_error(line, msg)
@@ -719,10 +722,29 @@ class AccountMoveLineImport(models.TransientModel):
                 self._log_line_error(line, msg)
             elif len(analytic_accounts) > 1:
                 msg = (
-                    _("Multiple Analytic Accounts found " "that match with '%s' !")
-                    % input
+                    _("Multiple Analytic Accounts found that match with '%s' !") % input
                 )
                 self._log_line_error(line, msg)
+
+    def _handle_tax_grids(self, field, line, move, aml_vals):
+        if not aml_vals.get("tag_ids"):
+            tag_list = line[field].split(",")
+            tags = self.env["account.account.tag"]
+            for tag_name in tag_list:
+                tag = tags.search(
+                    [
+                        ("name", "=", tag_name.strip()),
+                        ("applicability", "=", "taxes"),
+                        ("country_id", "=", move.company_id.country_id.id),
+                    ]
+                )
+                if len(tag) == 1:
+                    tags |= tag
+                else:
+                    msg = _("Tax Grid '%s' not found !") % tag_name
+                    self._log_line_error(line, msg)
+            if tags:
+                aml_vals["tag_ids"] = [(6, 0, tags.ids)]
 
     def _process_line_vals(self, line, move, aml_vals):
         """
@@ -807,47 +829,3 @@ class AccountMoveLineImport(models.TransientModel):
                 + "\n"
             )
         return vals
-
-
-def dialect2dict(dialect):
-    attrs = [
-        "delimiter",
-        "doublequote",
-        "escapechar",
-        "lineterminator",
-        "quotechar",
-        "quoting",
-        "skipinitialspace",
-    ]
-    return {k: getattr(dialect, k) for k in attrs}
-
-
-def str2float(amount, decimal_separator):
-    if not amount:
-        return 0.0
-    try:
-        if decimal_separator == ".":
-            return float(amount.replace(",", ""))
-        else:
-            return float(amount.replace(".", "").replace(",", "."))
-    except Exception:
-        return False
-
-
-def str2int(amount, decimal_separator):
-    if not amount:
-        return 0
-    try:
-        if decimal_separator == ".":
-            return int(amount.replace(",", ""))
-        else:
-            return int(amount.replace(".", "").replace(",", "."))
-    except Exception:
-        return False
-
-
-def str2date(date_str):
-    try:
-        return time.strftime("%Y-%m-%d", time.strptime(date_str, "%Y-%m-%d"))
-    except Exception:
-        return False
