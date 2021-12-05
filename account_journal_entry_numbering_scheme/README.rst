@@ -28,7 +28,7 @@ e.g:
 
 - Starting Sequence : INV2101000
 - Refund Starting Sequence : RINV2101000
-- Sequence Override Regex : ^(?P<prefix1>[A-Z]+)(?P<year>\d{2})(?P<month>\d{2})(?P<seq>\d+)
+- Sequence Override Regex : (?P<prefix1>[A-Z]{1,})(?P<year>\d{2})(?P<month>\d{2})(?P<seq>\d{3,})
 
 This expressions defines the following invoice numbering scheme : INVYYMMSSS whereby SSS will restart at 001 on a monthly basis.
 
