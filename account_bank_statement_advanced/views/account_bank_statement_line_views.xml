@@ -1,0 +1,181 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <record id="view_bank_statement_line_form" model="ir.ui.view">
+    <field name="name">bank.statement.line.form</field>
+    <field name="model">account.bank.statement.line</field>
+    <field name="inherit_id" ref="account.view_bank_statement_line_form" />
+    <field name="arch" type="xml">
+      <form position="attributes">
+        <attribute name="edit">false</attribute>
+        <attribute name="delete">false</attribute>
+      </form>
+      <sheet position="before">
+        <header>
+          <button
+                        class="oe_highlight"
+                        name="manual_reconcile"
+                        attrs="{'invisible': ['|', ('is_reconciled', '=', True), ('state', '!=', 'posted')]}"
+                        string="Manual Reconcile"
+                        type="object"
+                    />
+          <!--
+            placeholder for modules that implement automatic reconciliation, e.g.
+            - l10n_be_coda_advanced
+          -->
+          <button
+                        class="oe_highlight"
+                        name="automatic_reconcile"
+                        attrs="{'invisible': 1}"
+                        string="Automatic Reconcile"
+                        type="object"
+                    />
+          <button
+                        name="button_undo_reconciliation"
+                        attrs="{'invisible': ['|', ('is_reconciled', '=', False), ('state', '=', 'confirm')]}"
+                        string="Revert reconciliation"
+                        type="object"
+                        icon="fa-undo"
+                    />
+         <button
+                        name="button_view_move"
+                        string="Journal Entry"
+                        type="object"
+                        attrs="{'invisible': [('is_reconciled', '=', False)]}"
+                        icon="fa-bars"
+                    />
+        </header>
+      </sheet>
+
+      <xpath expr="//field[@name='state']/parent::group" position="attributes">
+        <attribute name="attrs">{'readonly': [('state', '=', 'confirm')]}</attribute>
+      </xpath>
+
+      <field name="statement_id" position="attributes">
+        <attribute name="readonly">1</attribute>
+      </field>
+
+      <field name="statement_id" position="after">
+        <field name="journal_code" readonly="1" />
+        <field name="state" invisible="1" />
+        <field name="move_state" invisible="1" />
+        <field name="is_reconciled" invisible="1" />
+      </field>
+      <field name="date" position="after">
+        <field name="transaction_date" />
+        <field name="val_date" />
+      </field>
+      <field name="amount" position="after">
+        <field
+                    name="move_state"
+                    attrs="{'invisible': [('is_reconciled', '=', False)]}"
+                />
+        <field
+                    name="globalisation_id"
+                    attrs="{'invisible': [('globalisation_id', '=', False)]}"
+                />
+        <field
+                    name="globalisation_amount"
+                    attrs="{'invisible': [('globalisation_id', '=', False)]}"
+                />
+        <field name="state" invisible="1" />
+      </field>
+      <field name="narration" position="replace" />
+
+      <field name="move_id" position="after">
+        <newline />
+        <separator string="Notes" colspan="4" />
+        <field name="narration" nolabel="1" colspan="4" />
+      </field>
+    </field>
+  </record>
+
+  <record id="view_bank_statement_line_search" model="ir.ui.view">
+    <field name="name">account.bank.statement.line.search</field>
+    <field name="model">account.bank.statement.line</field>
+    <field name="inherit_id" ref="account.view_bank_statement_line_search" />
+    <field name="arch" type="xml">
+      <field name="payment_ref" position="attributes">
+        <attribute
+                    name="filter_domain"
+                >['|', ('payment_ref', 'ilike', self), ('ref', 'ilike', self)]</attribute>
+        <attribute name="string">Bank Transaction</attribute>
+      </field>
+      <field name="payment_ref" position="after">
+        <field name="date" />
+      </field>
+      <field name="date" position="attributes">
+        <attribute name="invisible">1</attribute>
+      </field>
+      <field name="journal_id" position="after">
+        <separator />
+        <field name="amount" />
+        <field name="globalisation_id" string="Glob. Id" />
+        <field name="globalisation_amount" string="Glob. Amount" />
+        <separator />
+        <filter
+                    name="debit"
+                    string="Debit"
+                    domain="[('amount', '&gt;', 0)]"
+                    help="Amount &gt; 0"
+                />
+        <filter
+                    name="credit"
+                    string="Credit"
+                    domain="[('amount', '&lt;', 0)]"
+                    help="Amount &lt; 0"
+                />
+        <separator />
+        <filter
+                    name="no_moves"
+                    string="No Moves"
+                    domain="[('is_reconciled', '=', False)]"
+                    help="Statement Lines without Journal Entreis"
+                />
+        <filter
+                    name="draft"
+                    string="Draft"
+                    domain="[('state', '=', 'draft')]"
+                    help="Draft Statement Lines"
+                />
+        <filter
+                    name="confirm"
+                    string="Confirmed"
+                    domain="[('state', '=', 'confirm')]"
+                    help="Confirmed Statement Lines"
+                />
+        <group expand="0" string="Group By">
+          <filter
+                        string="Journal"
+                        name="journal"
+                        context="{'group_by': 'journal_id'}"
+                    />
+          <filter
+                        string="Statement"
+                        name="statement"
+                        context="{'group_by': 'statement_id'}"
+                    />
+        </group>
+      </field>
+    </field>
+  </record>
+
+  <record id="account.action_bank_statement_line" model="ir.actions.act_window">
+    <field name="name">Bank Transactions</field>
+    <field
+            name="view_ids"
+            eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('account.view_bank_statement_line_tree')}),
+                  (0, 0, {'view_mode': 'form', 'view_id': ref('account.view_bank_statement_line_form')})]"
+        />
+  </record>
+
+  <menuitem
+        id="account_bank_statement_line_menu"
+        name="Bank Transactions"
+        action="account.action_bank_statement_line"
+        parent="account_menu.menu_accounting_bank_and_cash"
+        sequence="11"
+    />
+
+</odoo>

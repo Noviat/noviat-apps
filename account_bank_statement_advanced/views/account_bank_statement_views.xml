@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <record id="view_bank_statement_form" model="ir.ui.view">
+    <field name="name">account.bank.statement.form</field>
+    <field name="model">account.bank.statement</field>
+    <field name="inherit_id" ref="account.view_bank_statement_form" />
+    <field name="arch" type="xml">
+
+      <field name="date" position="after">
+        <field name="accounting_date" />
+      </field>
+      <field name="currency_id" position="after">
+        <field name="foreign_currency" invisible="1" />
+      </field>
+
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']"
+                position="attributes"
+            >
+        <attribute
+                    name="context"
+                >{'statement_date': date, 'accounting_date': accounting_date, 'default_journal_id': journal_id, 'form_view_ref': 'account.view_bank_statement_line_form'}</attribute>
+      </xpath>
+
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree"
+                position="attributes"
+            >
+        <attribute name="decoration-info">is_reconciled</attribute>
+      </xpath>
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='date']"
+                position="before"
+            >
+        <field name="transaction_date" />
+        <field name="val_date" optional="hidden" />
+      </xpath>
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='date']"
+                position="attributes"
+            >
+        <attribute name="string">Accounting Date</attribute>
+        <attribute name="optional">hidden</attribute>
+
+      </xpath>
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='ref']"
+                position="attributes"
+            >
+        <attribute name="groups" />
+      </xpath>
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='amount_currency']"
+                position="attributes"
+            >
+        <attribute name="invisible" />
+        <attribute
+                    name="attrs"
+                >{'column_invisible': [('parent.foreign_currency', '=', False)]}</attribute>
+      </xpath>
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='currency_id']"
+                position="attributes"
+            >
+        <attribute name="invisible" />
+        <attribute
+                    name="attrs"
+                >{'column_invisible': [('parent.foreign_currency', '=', False)]}</attribute>
+      </xpath>
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/button[@name='button_undo_reconciliation']"
+                position="attributes"
+            >
+        <attribute name="string" />
+        <attribute name="help">Revert reconciliation</attribute>
+      </xpath>
+      <xpath
+                expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/button[@name='button_undo_reconciliation']"
+                position="after"
+            >
+        <field name="move_state" optional="hidden" />
+        <button
+                    name="button_view_move"
+                    attrs="{'invisible': [('is_reconciled', '=', False)]}"
+                    help="Move"
+                    type="object"
+                    icon="fa-folder-open-o text-success"
+                />
+        <field name="globalisation_id" string="Glob. Id" />
+      </xpath>
+    </field>
+  </record>
+
+</odoo>
