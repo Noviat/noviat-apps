@@ -3,7 +3,7 @@
 
 {
     "name": "Account Analytic Dimension Policy",
-    "version": "13.0.1.3.1",
+    "version": "13.0.1.3.2",
     "license": "AGPL-3",
     "author": "Noviat",
     "category": "Accounting & Finance",

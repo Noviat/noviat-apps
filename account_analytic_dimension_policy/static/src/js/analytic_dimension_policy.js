@@ -1,5 +1,5 @@
 /*
-# Copyright 2009-2020 Noviat
+# Copyright 2009-2021 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 */
 
@@ -29,24 +29,30 @@ odoo.define("account_analytic_dimensions_policy.analytic_dimensions_policy", fun
         },
 
         reload: function() {
-            var self = this;
             var def_reload = this._super();
-            var mod = self.context.active_model;
-            var mod_id = self.context.active_id;
+            var def_SetDims = this._SetAnalyticDimensionPolicy();
+            return Promise.all([def_reload, def_SetDims]).then(function() {
+                return def_reload;
+            });
+        },
+
+        _SetAnalyticDimensionPolicy: function() {
+            var self = this;
+            var mod = this.context.active_model;
+            var mod_id = this.context.active_id;
             if ("journal_id" in this.context) {
                 mod = "account.journal";
-                mod_id = self.context.journal_id;
+                mod_id = this.context.journal_id;
             }
-            var def_dims = self
-                ._rpc({
-                    model: mod,
-                    method: "search_read",
-                    fields: ["company_id"],
-                    domain: [["id", "=", mod_id]],
-                })
-                .then(function(company) {
-                    self.company_id = company[0].company_id[0];
-                    self._rpc({
+            return this._rpc({
+                model: mod,
+                method: "search_read",
+                fields: ["company_id"],
+                domain: [["id", "=", mod_id]],
+            }).then(function(company) {
+                self.company_id = company[0].company_id[0];
+                return self
+                    ._rpc({
                         model: "account.account",
                         method: "search_read",
                         fields: ["id", "analytic_dimensions"],
@@ -55,33 +61,35 @@ odoo.define("account_analytic_dimensions_policy.analytic_dimensions_policy", fun
                             ["deprecated", "=", false],
                             ["company_id", "=", self.company_id],
                         ],
-                    }).then(function(accounts) {
+                    })
+                    .then(function(accounts) {
                         self.AnalyticDimensionPolicyRequiredAccounts = accounts;
                         self.AnalyticDimensions = [];
                         self.NewAnalyticDimensions = [];
                         self.NewAnalyticDimensionsFields = [];
-                        self._rpc({
-                            model: "account.move.line",
-                            method: "get_analytic_dimension_fields",
-                            args: [self.company_id],
-                        }).then(function(dimensions) {
-                            self.AnalyticDimensions = _.pluck(dimensions, "name");
-                            _.each(dimensions, function(field) {
-                                if (!self.quickCreateFields.includes(field.name)) {
-                                    self.quickCreateFields.push(field.name);
-                                }
-                                if (
-                                    !self.quickCreateFieldsStandard.includes(field.name)
-                                ) {
-                                    self.NewAnalyticDimensions.push(field.name);
-                                    self.NewAnalyticDimensionsFields.push(field);
-                                }
+                        return self
+                            ._rpc({
+                                model: "account.move.line",
+                                method: "get_analytic_dimension_fields",
+                                args: [self.company_id],
+                            })
+                            .then(function(dimensions) {
+                                self.AnalyticDimensions = _.pluck(dimensions, "name");
+                                _.each(dimensions, function(field) {
+                                    if (!self.quickCreateFields.includes(field.name)) {
+                                        self.quickCreateFields.push(field.name);
+                                    }
+                                    if (
+                                        !self.quickCreateFieldsStandard.includes(
+                                            field.name
+                                        )
+                                    ) {
+                                        self.NewAnalyticDimensions.push(field.name);
+                                        self.NewAnalyticDimensionsFields.push(field);
+                                    }
+                                });
                             });
-                        });
                     });
-                });
-            return Promise.all([def_reload, def_dims]).then(function() {
-                return def_reload;
             });
         },
 
@@ -118,9 +126,37 @@ odoo.define("account_analytic_dimensions_policy.analytic_dimensions_policy", fun
             });
             return result;
         },
+
+        _isValid: function(prop) {
+            var isValid = this._super(prop);
+            if (
+                !isValid ||
+                this.AnalyticDimensionPolicyRequiredAccounts === undefined
+            ) {
+                return isValid;
+            }
+
+            var policy = this.AnalyticDimensionPolicyRequiredAccounts.find(
+                item => item.id === prop.account_id.id
+            );
+            _.each(this.AnalyticDimensions, function(dim) {
+                if (policy) {
+                    var analytic_dimensions = policy.analytic_dimensions.split(",");
+                    if (analytic_dimensions.includes(dim)) {
+                        isValid = isValid && prop[dim];
+                    }
+                }
+            });
+            return isValid;
+        },
     });
 
     ReconciliationRenderer.LineRenderer.include({
+        init: function() {
+            this._super.apply(this, arguments);
+            this.model._SetAnalyticDimensionPolicy();
+        },
+
         _renderCreate: function(state) {
             var self = this;
             return Promise.resolve(this._super(state)).then(function() {
@@ -169,31 +205,33 @@ odoo.define("account_analytic_dimensions_policy.analytic_dimensions_policy", fun
         },
 
         _onFieldChanged: function(event) {
-            var self = this;
             this._super(event);
             var fieldName = event.target.name;
             if (fieldName === "account_id") {
                 var account_id = event.data.changes.account_id.id;
-                var policy = this.model.AnalyticDimensionPolicyRequiredAccounts.find(
-                    item => item.id === account_id
-                );
-                _.each(this.model.AnalyticDimensions, function(dim) {
-                    if (self.fields[dim]) {
-                        if (policy) {
-                            var analytic_dimensions = policy.analytic_dimensions.split(
-                                ","
-                            );
-                            if (analytic_dimensions.includes(dim)) {
-                                self.fields[dim].$el.addClass("o_required_modifier");
-                            } else {
-                                self.fields[dim].$el.removeClass("o_required_modifier");
-                            }
+                this._SetAnalyticDimensionModifiers(account_id);
+            }
+        },
+
+        _SetAnalyticDimensionModifiers: function(account_id) {
+            var self = this;
+            var policy = this.model.AnalyticDimensionPolicyRequiredAccounts.find(
+                item => item.id === account_id
+            );
+            _.each(this.model.AnalyticDimensions, function(dim) {
+                if (self.fields[dim]) {
+                    if (policy) {
+                        var analytic_dimensions = policy.analytic_dimensions.split(",");
+                        if (analytic_dimensions.includes(dim)) {
+                            self.fields[dim].$el.addClass("o_required_modifier");
                         } else {
                             self.fields[dim].$el.removeClass("o_required_modifier");
                         }
+                    } else {
+                        self.fields[dim].$el.removeClass("o_required_modifier");
                     }
-                });
-            }
+                }
+            });
         },
     });
 });
