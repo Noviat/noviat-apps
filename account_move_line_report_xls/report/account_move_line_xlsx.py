@@ -1,4 +1,4 @@
-# Copyright 2009-2020 Noviat
+# Copyright 2009-2021 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import logging
@@ -35,6 +35,13 @@ class AccountMoveLineXlsx(models.AbstractModel):
         val = self.env["ir.translation"].search(dom)
         val = val and val[0].value or _(src)
         return val
+
+    def _define_formats(self, workbook):
+        super()._define_formats(workbook)
+        int_format_id = "#"
+        self.format_tcell_integer_center_id = workbook.add_format(
+            {"align": "center", "num_format": int_format_id}
+        )
 
     def _get_ws_params(self, workbook, data, amls):
 
@@ -334,11 +341,11 @@ class AccountMoveLineXlsx(models.AbstractModel):
             "id": {
                 "header": {
                     "value": self._("Id"),
-                    "format": self.format_theader_yellow_right,
+                    "format": self.format_theader_yellow_center,
                 },
                 "lines": {
                     "value": self._render("line.id"),
-                    "format": self.format_tcell_integer_right,
+                    "format": self.format_tcell_integer_center_id,
                 },
                 "width": 12,
             },
