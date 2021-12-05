@@ -1011,8 +1011,13 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
                 "width": 25,
             },
             "move_id": {
-                "header": {"value": self._("Entry Ide")},
+                "header": {"value": self._("Entry ID")},
                 "lines": {"value": self._render("str(l.move_id.id)")},
+                "width": 10,
+            },
+            "move_type": {
+                "header": {"value": self._("Type")},
+                "lines": {"value": self._render("move_type")},
                 "width": 10,
             },
         }
@@ -1096,6 +1101,8 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
 
         report_cache = data["report_cache"]
         wl = ws_params["wanted_list"]
+        if journal.type in ("sale", "purchase"):
+            wl.append("move_type")
         debit_pos = wl.index("debit")
         credit_pos = wl.index("credit")
         start_pos = row_pos + 1
@@ -1131,6 +1138,11 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
                 am_cnt += 1
             else:
                 new_am = False
+            move_type = am.move_type
+            if "invoice" in move_type:
+                move_type = _("Invoice")
+            elif "refund" in move_type:
+                move_type = _("Credit Note")
             tax_codes = []
             tax_amount = None
             for tag in aml.tax_tag_ids:
@@ -1175,6 +1187,7 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
                     "l": aml,
                     "tax_code": ", ".join(tax_codes),
                     "tax_amount": tax_amount and abs(tax_amount),
+                    "move_type": move_type,
                     "format_tcell_center": format_tcell_center,
                     "format_tcell_amount_right": format_tcell_amount_right,
                     "format_tcell_date_left": format_tcell_date_left,

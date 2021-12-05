@@ -46,7 +46,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
         # TODO: review logic based upon actual setting of
         # account.account,name translate flag
         name = "l10n_account_translate_off"
-        module = self.env["ir.module.module"].search(["name", "=", name])
+        module = self.env["ir.module.module"].search([("name", "=", name)])
         if not module:
             raise UserError(
                 _(
