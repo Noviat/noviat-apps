@@ -28,6 +28,11 @@ from .import_wizard_helpers import (
 
 _logger = logging.getLogger(__name__)
 
+_FIELD_TYPE_MAP = {
+    "text": "char",
+    "monetary": "float",
+}
+
 
 class AccountMoveLineImport(models.TransientModel):
     _name = "aml.import"
@@ -274,7 +279,6 @@ class AccountMoveLineImport(models.TransientModel):
             [("deprecated", "=", False), ("company_id", "=", move.company_id.id)]
         )
         self._accounts_dict = {a.code: a.id for a in accounts}
-        self._sum_debit = self._sum_credit = 0.0
         self._get_orm_fields()
         data = base64.decodestring(self.aml_data)
         if self.file_type == "csv":
@@ -479,11 +483,11 @@ class AccountMoveLineImport(models.TransientModel):
             field_type = field_def["type"]
 
             try:
-                ft = field_type == "text" and "char" or field_type
+                ft = _FIELD_TYPE_MAP.get(field_type, field_type)
                 self._field_methods[hf] = {
                     "method": getattr(self, "_handle_orm_%s" % ft),
                     "orm_field": orm_field,
-                    "field_type": field_type,
+                    "field_type": ft,
                 }
             except AttributeError:
                 _logger.error(
@@ -544,20 +548,15 @@ class AccountMoveLineImport(models.TransientModel):
             val = line[field]
             if val:
                 if isinstance(val, str):
-                    val = val.strip()
-                elif isinstance(val, (float, bool)):
-                    is_int = val % 1 == 0.0
-                    if is_int:
-                        val = int(val)
-                    else:
-                        val = False
+                    val = str2float(val.strip(), self.decimal_separator)
+                elif isinstance(val, bool):
+                    val = float(val)
                 if val is False:
-                    val = str2float(line[field], self.decimal_separator)
-                    if val is False:
-                        msg = _(
-                            "Incorrect value '%s' for field '%s' of type Numeric !"
-                        ) % (line[field], field)
-                        self._log_line_error(line, msg)
+                    msg = _("Incorrect value '%s' for field '%s' of type Numeric !") % (
+                        line[field],
+                        field,
+                    )
+                    self._log_line_error(line, msg)
                 else:
                     aml_vals[orm_field] = val
 
@@ -617,7 +616,6 @@ class AccountMoveLineImport(models.TransientModel):
             if isinstance(debit, str):
                 debit = str2float(debit, self.decimal_separator)
             aml_vals["debit"] = debit
-            self._sum_debit += debit
 
     def _handle_credit(self, field, line, move, aml_vals):
         if "credit" not in aml_vals:
@@ -625,7 +623,6 @@ class AccountMoveLineImport(models.TransientModel):
             if isinstance(credit, str):
                 credit = str2float(credit, self.decimal_separator)
             aml_vals["credit"] = credit
-            self._sum_credit += credit
 
     def _handle_partner(self, field, line, move, aml_vals):
         if not aml_vals.get("partner_id"):
@@ -793,20 +790,18 @@ class AccountMoveLineImport(models.TransientModel):
             amt_cur = aml_vals.get("amount_currency", 0.0)
             debit = aml_vals.get("debit", 0.0)
             credit = aml_vals.get("credit", 0.0)
-            ctx = {"date": move.date}
-            cur = (
-                self.env["res.currency"]
-                .with_context(ctx)
-                .browse(aml_vals["currency_id"])
-            )
-            comp_cur = move.company_id.currency_id.with_context(ctx)
+            cur = self.env["res.currency"].browse(aml_vals["currency_id"])
+            company = move.company_id
+            comp_cur = company.currency_id
 
             if (debit or credit) and not amt_cur:
                 amt = debit or -credit
-                aml_vals["amount_currency"] = comp_cur.compute(amt, cur)
+                aml_vals["amount_currency"] = comp_cur._convert(
+                    amt, cur, company, move.date
+                )
 
             elif amt_cur and not (debit or credit):
-                amt = cur.compute(amt_cur, comp_cur)
+                amt = cur._convert(amt_cur, comp_cur, company, move.date)
                 if amt > 0:
                     aml_vals["debit"] = amt
                 else:
@@ -817,15 +812,16 @@ class AccountMoveLineImport(models.TransientModel):
         Use this method if you want to check/modify the
         input values dict before calling the move write() method
         """
-        dp = self.env["decimal.precision"].precision_get("Account")
-        if round(self._sum_debit, dp) != round(self._sum_credit, dp):
+        sum_debit = sum([x[2]["debit"] for x in vals])
+        sum_credit = sum([x[2]["credit"] for x in vals])
+        if not move.currency_id.is_zero(sum_debit - sum_credit):
             self._err_log += (
                 "\n"
                 + _(
                     "Error in input file, Total Debit (%s) is "
                     "different from Total Credit (%s) !"
                 )
-                % (self._sum_debit, self._sum_credit)
+                % (sum_debit, sum_credit)
                 + "\n"
             )
         return vals
