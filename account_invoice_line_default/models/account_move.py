@@ -39,7 +39,7 @@ class AccountMove(models.Model):
                 for el in inv_line_ids:
                     ctx = el.get("context")
                     if ctx:
-                        ctx_strip = ctx.rstrip("}").strip().rstrip(",")
+                        ctx_strip = ctx.strip().rstrip("}").strip().rstrip(",")
                         ctx = ctx_strip + ", " + extra_ctx + "}"
                     else:
                         ctx = "{" + extra_ctx + "}"
