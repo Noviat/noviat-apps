@@ -2040,17 +2040,17 @@ class AccountCodaImport(models.TransientModel):
                 else:
                     amount_rounded = amount_fmt % round(-transaction["amount"], 2)
                 select = r"""
-        SELECT id FROM (
-          SELECT id, type, state, amount_total, name, invoice_payment_ref,
-          '%s'::text AS free_comm_digits
-            FROM account_move
-            WHERE invoice_payment_state != 'paid' AND state = 'posted'
-              AND company_id = %s
-              AND round(amount_total, 2) = %s
-          ) sq
-          WHERE free_comm_digits LIKE
-                '%%'||regexp_replace(invoice_payment_ref, '\D', '', 'g')||'%%'
-
+    SELECT id FROM (
+      SELECT id, type, state, amount_total, name,
+      REGEXP_REPLACE(invoice_payment_ref, '[^0-9]', '', 'g') AS payref_normalised,
+      '%s'::text AS free_comm_digits
+        FROM account_move
+        WHERE invoice_payment_state != 'paid' AND state = 'posted'
+          AND company_id = %s
+          AND ROUND(amount_total, 2) = %s
+      ) sq
+      WHERE LENGTH(payref_normalised) = 12
+        AND free_comm_digits LIKE '%%'||payref_normalised||'%%'
                 """ % (
                     free_comm_digits,
                     cba.company_id.id,
