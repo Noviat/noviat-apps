@@ -33,7 +33,6 @@ class AccountPayment(models.Model):
             self.journal_id = pay_journals
         pj_dom = [("id", "in", pay_journals.ids)]
         res["domain"]["journal_id"] = pj_dom
-        _logger.error("_onchange_amount, exit, res=%s", res)
         return res
 
     @api.onchange("journal_id")
