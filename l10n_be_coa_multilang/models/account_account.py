@@ -58,7 +58,7 @@ class AccountAccount(models.Model):
                         self.tag_ids += new_tag
 
             if not self.env.context.get("noupdate_account_type"):
-                if self.user_type_id != entry.account_type_id:
+                if entry and self.user_type_id != entry.account_type_id:
                     self.user_type_id = entry.account_type_id
                     if (
                         self.user_type_id.type in ("payable", "receivable")
