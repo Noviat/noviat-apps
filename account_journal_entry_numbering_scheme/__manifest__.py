@@ -3,7 +3,7 @@
 
 {
     "name": "Customise Journal Entry Numbering",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "category": "Accounting & Finance",
     "summary": """
         Delete Journal Entries

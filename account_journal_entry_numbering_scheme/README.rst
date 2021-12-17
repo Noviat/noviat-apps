@@ -41,6 +41,18 @@ The following regex will be used if you do not set the Sequence Override Regex:
 ^(?P<prefix1>.*?)(?P<year>((?<=\D)|(?<=^))(\d{4}|(\d{2}(?=\D))))(?P<prefix2>\D*?)(?P<month>\d{2})(?P<prefix3>\D+?)(?P<seq>\d*)(?P<suffix>\D*?)$
 
 
+Known issues / Roadmap
+======================
+
+* auto-removal of Journal sequence_override_regex field.
+
+The standard Odoo account module may set the sequence_override_regex field to Null in case of a non-matching regex.
+cf. https://github.com/odoo/odoo/blob/deb6a8877aeb4d6774a4632b470557ef87acdc3f/addons/account/models/account_move.py#L2250
+This is a rather strange and confusing behaviour.
+We consider to change this behaviour and replace it by a clear error message so that the configuration can be corrected
+manually.
+
+
 Credits
 =======
 

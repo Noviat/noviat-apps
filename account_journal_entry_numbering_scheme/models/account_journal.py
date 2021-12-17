@@ -25,3 +25,19 @@ class AccountJournal(models.Model):
             self.refund_starting_sequence = "R" + self.starting_sequence
         else:
             self.refund_starting_sequence = self.starting_sequence
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            strip_starting_sequence(vals)
+        return super().create(vals_list)
+
+    def write(self, vals):
+        strip_starting_sequence(vals)
+        return super().write(vals)
+
+
+def strip_starting_sequence(vals):
+    for fld in vals:
+        if fld == "sequence_override_regex" and vals[fld]:
+            vals[fld] = vals[fld].strip()

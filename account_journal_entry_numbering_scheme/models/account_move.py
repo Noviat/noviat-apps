@@ -1,11 +1,44 @@
 # Copyright 2009-2021 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, models
+import logging
+
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
+
+from odoo.addons.account.models.sequence_mixin import SequenceMixin
+
+_logger = logging.getLogger(__name__)
 
 
 class AccountMove(models.Model):
     _inherit = "account.move"
+
+    regex_fallback = fields.Boolean(store=False)
+
+    @property
+    def _sequence_monthly_regex(self):
+        return (
+            self.regex_fallback
+            and SequenceMixin._sequence_monthly_regex
+            or super()._sequence_monthly_regex
+        )
+
+    @property
+    def _sequence_yearly_regex(self):
+        return (
+            self.regex_fallback
+            and SequenceMixin._sequence_yearly_regex
+            or super()._sequence_yearly_regex
+        )
+
+    @property
+    def _sequence_fixed_regex(self):
+        return (
+            self.regex_fallback
+            and SequenceMixin._sequence_fixed_regex
+            or super()._sequence_fixed_regex
+        )
 
     @api.depends(lambda self: [self._sequence_field])
     def _compute_split_sequence(self):
@@ -38,9 +71,25 @@ class AccountMove(models.Model):
 
     @api.model
     def _deduce_sequence_number_reset(self, name):
+        ret_val = "never"
         if not name:
             name = self._get_starting_sequence()
-        return super()._deduce_sequence_number_reset(name)
+        try:
+            ret_val = super()._deduce_sequence_number_reset(name)
+        except ValidationError:
+            # import pdb; pdb.set_trace()
+            if self._sequence_monthly_regex != SequenceMixin._sequence_monthly_regex:
+                warn_msg = _(
+                    "Error detected while processing sequence regex: %s, "
+                    "fallback to standard regex: %s"
+                ) % (
+                    self._sequence_monthly_regex,
+                    SequenceMixin._sequence_monthly_regex,
+                )
+                self.regex_fallback = True
+                ret_val = super()._deduce_sequence_number_reset(name)
+                _logger.warning(warn_msg)
+        return ret_val
 
     def _get_sequence_format_param(self, previous):
 
