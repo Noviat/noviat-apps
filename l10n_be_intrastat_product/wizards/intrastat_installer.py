@@ -74,7 +74,7 @@ class IntrastatInstaller(models.TransientModel):
 
         # set company defaults
         module = __name__.split("addons.")[1].split(".")[0]
-        transaction = self.env.ref("%s.intrastat_transaction_1" % module)
+        transaction = self.env.ref("%s.intrastat_transaction_11" % module)
         if not company.intrastat_transaction_out_invoice:
             company.intrastat_transaction_out_invoice = transaction
         if not company.intrastat_transaction_out_refund:
@@ -83,6 +83,33 @@ class IntrastatInstaller(models.TransientModel):
             company.intrastat_transaction_in_invoice = transaction
         if not company.intrastat_transaction_in_refund:
             company.intrastat_transaction_in_refund = transaction
+
+        # Set correct company_id on intrastat transactions.
+        # Installation of this module under OdooBot will
+        # set the company_id to 1 in stead of company that
+        # needs the Belgian Intrastat Declaration.
+        # TODO: make OCA PR for intrastat_product to make
+        # shared intrastat transactions the default behaviour
+        self.env.cr.execute(
+            """
+        SELECT imd.res_id FROM ir_model_data imd
+        JOIN intrastat_transaction it ON imd.res_id=it.id
+        WHERE imd.module=%s AND imd.model='intrastat.transaction'
+          AND it.company_id IS NOT NULL
+          AND it.company_id != %s
+            """,
+            (module, self.company_id.id),
+        )
+        trans_ids = [x[0] for x in self.env.cr.fetchall()]
+        if trans_ids:
+            self.env.cr.execute(
+                """
+            UPDATE intrastat_transaction
+            SET company_id = %s
+            WHERE id IN %s
+                """,
+                (self.company_id.id, tuple(trans_ids)),
+            )
 
         # load intrastat_codes
         self.cn_codes = self.env["hs.code"].search([])
