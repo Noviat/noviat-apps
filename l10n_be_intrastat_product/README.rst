@@ -31,6 +31,14 @@ Cf. https://github.com/OCA/stock-logistics-workflow/tree/13.0/stock_picking_invo
 This modules establishes a link between invoice lines and stock pickings.
 When this module is installed the declaration will take into account refunds created via return pickings.
 
+Multi-company setup
+-------------------
+
+Please ensure to set the Default Company of the OdooBot user to the company
+for which you are installing this localization module.
+Not doing so may result in a conflict with other localization modules (e.g. l10n_fre_intrastat_product).
+
+
 Configuration wizard to load intrastat codes:
 ---------------------------------------------
 

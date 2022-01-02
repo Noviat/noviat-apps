@@ -159,14 +159,13 @@ class L10nBeIntrastatProductDeclaration(models.Model):
         total_inv_weight,
     ):
         """
-        In Belgium accessory cost should not be added.
-        cf. Intrastat guide 2015 NBB/BNB:
-        If transport costs and insurance costs are included in the price
-        of the goods, you do not have to make any additional calculation
-        or estimate in order to deduct them. If they are separately known
-        (e.g. stated on a separate line on the invoice),
-        transport and insurance costs may not be included in the value of
-        the goods
+        In Belgium accessory cost should not be added. cf. Intrastat guide 2020
+        NBB/BNB (intrastat_manual_basis_en.pdf, ISSN 1782-5482).
+        If transport and insurance costs are included in the price of the goods,
+        you do not have to make any additional calculation or estimate in
+        order to deduct them. However, if they are separately known (e.g.
+        stated on a separate line on the invoice), transport and insurance
+        costs may not be included in the value of the goods.
         """
         pass
 
