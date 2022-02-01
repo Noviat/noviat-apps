@@ -151,7 +151,7 @@ class AccountMove(models.Model):
                     order="payment_reference",
                 )
                 if sequences:
-                    prev_seq = int(sequences[-1].reference[12:15])
+                    prev_seq = int(sequences[-1].payment_reference[12:15])
                     if prev_seq < 999:
                         seq = "%03d" % (prev_seq + 1)
                     else:

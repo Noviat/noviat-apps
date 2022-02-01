@@ -24,11 +24,12 @@ The prefix* groups are the separators between the year, month and the actual inc
 
 |
 
-e.g:
+e.g::
 
-- Starting Sequence : INV2101000
-- Refund Starting Sequence : RINV2101000
-- Sequence Override Regex : (?P<prefix1>[A-Z]{1,})(?P<year>\d{2})(?P<month>\d{2})(?P<seq>\d{3,})
+    - Starting Sequence : INV2101000
+    - Refund Starting Sequence : RINV2101000
+    - Sequence Override Regex : (?P<prefix1>[A-Z]{1,})(?P<year>\d{2})(?P<month>\d{2})(?P<seq>\d{3,})
+
 
 This expressions defines the following invoice numbering scheme : INVYYMMSSS whereby SSS will restart at 001 on a monthly basis.
 
@@ -36,9 +37,9 @@ This will result in the following invoice number for e.g. the third invoice of F
 
 |
 
-The following regex will be used if you do not set the Sequence Override Regex:
+The following regex will be used if you do not set the Sequence Override Regex::
 
-^(?P<prefix1>.*?)(?P<year>((?<=\D)|(?<=^))(\d{4}|(\d{2}(?=\D))))(?P<prefix2>\D*?)(?P<month>\d{2})(?P<prefix3>\D+?)(?P<seq>\d*)(?P<suffix>\D*?)$
+  ^(?P<prefix1>.*?)(?P<year>((?<=\D)|(?<=^))(\d{4}|(\d{2}(?=\D))))(?P<prefix2>\D*?)(?P<month>\d{2})(?P<prefix3>\D+?)(?P<seq>\d*)(?P<suffix>\D*?)$
 
 
 Known issues / Roadmap

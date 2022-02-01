@@ -2,15 +2,14 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
-    "name": "Advanced Bank Statement on Odoo Community",
+    "name": "Advanced CODA processing on Odoo Enterprise",
     "version": "14.0.1.0.0",
     "category": "Hidden",
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "author": "Noviat",
     "website": "http://www.noviat.com",
-    "summary": "Advanced Bank Statement on Odoo Enterprise",
-    "depends": ["account_reconciliation_widget", "account_bank_statement_advanced"],
-    "excludes": ["account_accountant"],
+    "summary": "Advanced CODA processing on Odoo Enterprise",
+    "depends": ["account_bank_statement_advanced_oe", "l10n_be_coda_advanced"],
     "data": [
         "views/account_bank_statement_views.xml",
     ],

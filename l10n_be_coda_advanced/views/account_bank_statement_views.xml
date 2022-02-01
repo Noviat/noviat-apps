@@ -9,11 +9,6 @@
             ref="account_bank_statement_advanced.view_bank_statement_form"
         />
     <field name="arch" type="xml">
-      <button name="automatic_reconcile" position="attributes">
-        <attribute
-                    name="attrs"
-                >{'invisible': ['|', '|',  ('all_lines_reconciled', '=', True), ('line_ids', '=', []), ('state', '!=', 'posted')]}</attribute>
-      </button>
       <page name="statement_line_ids" position="after">
         <page string="CODA Notes" name="coda_note">
           <field name="coda_note" />
