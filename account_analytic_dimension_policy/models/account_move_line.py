@@ -51,6 +51,7 @@ class AccountMoveLine(models.Model):
     @api.depends("analytic_dimension_policy", "parent_state")
     def _compute_analytic_dimension_ui_modifier(self):
         for aml in self:
+            company = aml.company_id or self.env.company
             if aml.analytic_dimension_policy == "never":
                 ui_modifier = "readonly"
             elif aml.analytic_dimension_policy == "always" and aml.parent_state not in (
@@ -64,7 +65,7 @@ class AccountMoveLine(models.Model):
             for dim in dims:
                 fld = "{}_ui_modifier".format(dim)
                 setattr(aml, fld, ui_modifier)
-            all_dims = self._get_all_analytic_dimensions(aml.company_id.id)
+            all_dims = self._get_all_analytic_dimensions(company.id)
             for dim in [x for x in all_dims if x not in dims]:
                 fld = "{}_ui_modifier".format(dim)
                 setattr(aml, fld, False)
@@ -104,7 +105,8 @@ class AccountMoveLine(models.Model):
 
     def _get_analytic_dimensions(self):
         self.ensure_one()
-        all_dims = self._get_all_analytic_dimensions(self.company_id.id)
+        company = self.company_id or self.env.company
+        all_dims = self._get_all_analytic_dimensions(company.id)
         aml_dims = self.analytic_dimensions
         dims = aml_dims and [str(x) for x in aml_dims.split(",")] or all_dims
         return dims
