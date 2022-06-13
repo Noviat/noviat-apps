@@ -385,4 +385,4 @@ class L10nBeVatCommon(models.AbstractModel):
             mod_std = "account"
             act_std = "action_account_moves_all_a"
             act_window = self.env.ref("{}.{}".format(mod_std, act_std))
-        return act_window.read()[0]
+        return act_window.sudo().read()[0]

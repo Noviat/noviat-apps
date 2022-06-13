@@ -26,6 +26,7 @@ class BeLegalFinancialReportChart(models.Model):
         inverse_name="parent_id",
         string="Child Entries",
     )
+    level = fields.Integer(compute="_compute_level", string="Level", store=True)
 
     @api.depends("name", "code")
     def name_get(self):
@@ -37,3 +38,11 @@ class BeLegalFinancialReportChart(models.Model):
                 name = entry.name
             result.append((entry.id, name))
         return result
+
+    @api.depends("parent_id", "parent_id.level")
+    def _compute_level(self):
+        for entry in self:
+            level = 0
+            if entry.parent_id:
+                level = entry.parent_id.level + 1
+            entry.level = level

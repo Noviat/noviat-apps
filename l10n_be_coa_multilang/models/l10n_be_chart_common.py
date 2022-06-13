@@ -18,7 +18,6 @@ class L10nBeChartCommon(models.AbstractModel):
     color = fields.Char(help="CSS color unit")
     font = fields.Selection(selection=lambda self: self._selection_font())
     sequence = fields.Integer(default=0)
-    level = fields.Integer(compute="_compute_level", string="Level", store=True)
     info = fields.Text()
 
     @api.model
@@ -32,11 +31,3 @@ class L10nBeChartCommon(models.AbstractModel):
             ("iu", "italic-underline"),
             ("biu", "bold-italic-underline"),
         ]
-
-    @api.depends("parent_id", "parent_id.level")
-    def _compute_level(self):
-        for entry in self:
-            level = 0
-            if entry.parent_id:
-                level = entry.parent_id.level + 1
-            entry.level = level
