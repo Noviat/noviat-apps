@@ -30,6 +30,9 @@ class AccountMoveLine(models.Model):
             "matched_credit_ids",
             "amount_residual",
             "amount_residual_currency",
+            "blocked",
+            "followup_line_id",
+            "followup_date",
         ]
 
     def write(self, vals):

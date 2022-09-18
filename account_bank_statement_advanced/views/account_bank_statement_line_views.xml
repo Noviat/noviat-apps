@@ -47,46 +47,53 @@
         </header>
       </sheet>
 
-      <xpath expr="//field[@name='state']/parent::group" position="attributes">
-        <attribute name="attrs">{'readonly': [('state', '=', 'confirm')]}</attribute>
+      <xpath expr="//field[@name='state']/parent::group" position="replace">
+
+        <group name="main" attrs="{'readonly': [('state', '=', 'confirm')]}">
+          <group name="main-left">
+            <field name="statement_id" readonly="1" />
+            <!-- <field name="journal_code"/> -->
+            <field name="partner_id" />
+            <field name="payment_ref" />
+            <field name="move_id" />
+            <field name="transaction_type" />
+            <field name="sequence" />
+          </group>
+          <group name="main-right">
+            <field name="date" />
+            <field name="transaction_date" />
+            <field name="val_date" />
+            <field name="ref" />
+            <field name="amount" />
+            <field name="amount_currency" groups="base.group_multi_currency" />
+            <field
+                            name="move_state"
+                            attrs="{'invisible': [('is_reconciled', '=', False)]}"
+                        />
+            <field
+                            name="globalisation_id"
+                            attrs="{'invisible': [('globalisation_id', '=', False)]}"
+                        />
+            <field
+                            name="globalisation_amount"
+                            attrs="{'invisible': [('globalisation_id', '=', False)]}"
+                        />
+          </group>
+        </group>
+        <group name="narration" col="1">
+          <separator string="Notes" />
+          <field name="narration" nolabel="1" />
+        </group>
+        <group name="invisitle" invisible="1">
+          <field name="state" />
+          <field name="company_id" />
+          <field name="move_state" />
+          <field name="is_reconciled" />
+          <field name="foreign_currency_id" groups="base.group_multi_currency" />
+        </group>
+
       </xpath>
 
-      <field name="statement_id" position="attributes">
-        <attribute name="readonly">1</attribute>
-      </field>
-
-      <field name="statement_id" position="after">
-        <field name="journal_code" readonly="1" />
-        <field name="state" invisible="1" />
-        <field name="move_state" invisible="1" />
-        <field name="is_reconciled" invisible="1" />
-      </field>
-      <field name="date" position="after">
-        <field name="transaction_date" />
-        <field name="val_date" />
-      </field>
-      <field name="amount" position="after">
-        <field
-                    name="move_state"
-                    attrs="{'invisible': [('is_reconciled', '=', False)]}"
-                />
-        <field
-                    name="globalisation_id"
-                    attrs="{'invisible': [('globalisation_id', '=', False)]}"
-                />
-        <field
-                    name="globalisation_amount"
-                    attrs="{'invisible': [('globalisation_id', '=', False)]}"
-                />
-        <field name="state" invisible="1" />
-      </field>
-      <field name="narration" position="replace" />
-
-      <field name="move_id" position="after">
-        <newline />
-        <separator string="Notes" colspan="4" />
-        <field name="narration" nolabel="1" colspan="4" />
-      </field>
     </field>
   </record>
 

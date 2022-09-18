@@ -1,9 +1,9 @@
-# Copyright 2009-2021 Noviat
+# Copyright 2009-2022 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     "name": "Advanced Bank Statement",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "license": "AGPL-3",
     "author": "Noviat",
     "website": "http://www.noviat.com",
