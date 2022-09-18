@@ -19,7 +19,7 @@ def pre_init_hook(cr):
         ALTER TABLE account_bank_statement_line
           ADD COLUMN transaction_date date;
         UPDATE account_bank_statement_line absl
-          SET transaction_date = date
+          SET transaction_date = am.date
         FROM account_move am
         WHERE absl.move_id = am.id;
             """
