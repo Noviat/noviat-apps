@@ -1,4 +1,4 @@
-# Copyright 2009-2021 Noviat.
+# Copyright 2009-2022 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
@@ -98,12 +98,17 @@ class AccountBankStatementLine(models.Model):
             self.amount_currency = 0.0
 
     @api.model
+    def _prepare_liquidity_move_line_vals(self):
+        rate_date = self.val_date or self.date
+        ctx = dict(self.env.context, rate_date=rate_date)
+        self = self.with_context(ctx)
+        return super()._prepare_liquidity_move_line_vals()
+
+    @api.model
     def _prepare_counterpart_move_line_vals(self, counterpart_vals, move_line=None):
-        """
-        TODO:
-        check and if required adapt standard method to ensure that
-        currency conversion uses the val_date/transaction_date.
-        """
+        rate_date = self.val_date or self.date
+        ctx = dict(self.env.context, rate_date=rate_date)
+        self = self.with_context(ctx)
         return super()._prepare_counterpart_move_line_vals(
             counterpart_vals, move_line=move_line
         )
