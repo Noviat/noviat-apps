@@ -40,17 +40,22 @@ class L10nBeIntrastatProductDeclaration(models.Model):
         transaction = super()._get_intrastat_transaction(inv_line, notedict)
         msg1 = _("Select a 1 digit intrastat transaction code.")
         msg2 = _("Select a 2 digit intrastat transaction code.")
+        module = __name__.split("addons.")[1].split(".")[0]
         if transaction:
             if int(transaction.code) >= 10 and self.year <= "2021":
                 self._format_line_note(inv_line, notedict, [msg1])
             elif int(transaction.code) < 10 and self.year > "2021":
                 self._format_line_note(inv_line, notedict, [msg2])
         else:
-            module = __name__.split("addons.")[1].split(".")[0]
             if self.year <= "2021":
                 transaction = self.env.ref("%s.intrastat_transaction_1" % module)
             else:
                 transaction = self.env.ref("%s.intrastat_transaction_11" % module)
+        invoice = inv_line.move_id
+        if not invoice.intrastat_transaction_id:
+            cp = invoice.commercial_partner_id
+            if not cp.is_company:
+                transaction = self.env.ref("%s.intrastat_transaction_12" % module)
         return transaction
 
     def _get_region(self, inv_line, notedict):
@@ -62,6 +67,15 @@ class L10nBeIntrastatProductDeclaration(models.Model):
             )
             self._account_config_warning(msg)
         return region
+
+    def _get_vat(self, inv_line, notedict):
+        cp = inv_line.move_id.commercial_partner_id
+        b2c = not cp.is_company
+        b2b_na = (cp.vat or "").lower().strip() == "na"
+        if b2c or b2b_na:
+            return "QV999999999999"
+        else:
+            return super()._get_vat(inv_line, notedict)
 
     def _handle_refund(self, inv_line, line_vals, notedict):
         invoice = inv_line.move_id
@@ -134,7 +148,7 @@ class L10nBeIntrastatProductDeclaration(models.Model):
 
         if line_vals:
             if self.declaration_type == "dispatches":
-                vat_number = self._sanitize_vat(inv.partner_id.vat)
+                vat_number = self._sanitize_vat(line_vals["vat"])
                 if not vat_number:
                     line_notes = [
                         _("Missing VAT Number on partner '%s'")
@@ -428,6 +442,12 @@ class L10nBeIntrastatProductComputationLine(models.Model):
         string="VAT Number", help="VAT number of the trading partner"
     )
 
+    @api.constrains("vat")
+    def _check_vat(self):
+        for rec in self:
+            if not rec.vat == "QV999999999999":
+                super(L10nBeIntrastatProductComputationLine, rec)._check_vat()
+
 
 class L10nBeIntrastatProductDeclarationLine(models.Model):
     _name = "l10n.be.intrastat.product.declaration.line"
@@ -449,3 +469,9 @@ class L10nBeIntrastatProductDeclarationLine(models.Model):
     vat_number = fields.Char(
         string="VAT Number", help="VAT number of the trading partner"
     )
+
+    @api.constrains("vat")
+    def _check_vat(self):
+        for rec in self:
+            if not rec.vat == "QV999999999999":
+                super(L10nBeIntrastatProductDeclarationLine, rec)._check_vat()
