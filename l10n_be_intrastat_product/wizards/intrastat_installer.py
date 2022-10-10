@@ -8,11 +8,18 @@ import os
 
 import odoo
 from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
-CN_file_year = "2019"
+CN_file_year = "2022"
 CN_file_delimiter = ";"
+CN_LANGS = {
+    "en": _("English"),
+    "nl": _("Dutch"),
+    "fr": _("French"),
+    "de": _("German"),
+}
 
 
 class IntrastatInstaller(models.TransientModel):
@@ -44,9 +51,7 @@ class IntrastatInstaller(models.TransientModel):
     @api.model
     def _selection_CN_file(self):
         return [
-            (CN_file_year + "_en", CN_file_year + " " + _("English")),
-            (CN_file_year + "_fr", CN_file_year + " " + _("French")),
-            (CN_file_year + "_nl", CN_file_year + " " + _("Dutch")),
+            (CN_file_year + "_" + x, CN_file_year + " " + CN_LANGS[x]) for x in CN_LANGS
         ]
 
     @api.model
@@ -116,8 +121,6 @@ class IntrastatInstaller(models.TransientModel):
     def execute(self):
         res = super().execute()
         company = self.company_id
-        if self.company_id.country_id.code not in ("BE", "be"):
-            return res
 
         # set company defaults
         module = __name__.split("addons.")[1].split(".")[0]
@@ -162,11 +165,11 @@ class IntrastatInstaller(models.TransientModel):
             )
 
         # load intrastat_codes
-        be_cn_codes = self.env["hs.code"].search(
+        hs_codes = self.env["hs.code"].search(
             ["|", ("company_id", "=", company.id), ("company_id", "=", False)]
         )
         cn_lookup = {}
-        for i, c in enumerate(be_cn_codes):
+        for i, c in enumerate(hs_codes):
             cn_lookup[c.local_code] = i
         for adp in odoo.addons.__path__:
             module_path = adp + os.sep + module
@@ -174,8 +177,18 @@ class IntrastatInstaller(models.TransientModel):
                 break
         CN_fn = self.CN_file + "_intrastat_codes.csv"
         CN_fqn = module_path + os.sep + "static/data" + os.sep + CN_fn
+        iso_code = self.CN_file[-2:]
+        langs = self.env["res.lang"].search([("code", "=like", iso_code + "_%")])
+
+        if not langs:
+            raise UserError(
+                _("Language %s is not activated on your system") % CN_LANGS[iso_code]
+            )
         with io.open(CN_fqn, mode="r", encoding="Windows-1252") as CN_file:
             cn_codes = csv.DictReader(CN_file, delimiter=CN_file_delimiter)
-            for row in cn_codes:
-                self._load_code(row, be_cn_codes, cn_codes, cn_lookup)
+            for lang in langs:
+                ctx = dict(self.env.context, lang=lang.code)
+                hs_codes = hs_codes.with_context(ctx)
+                for row in cn_codes:
+                    self._load_code(row, hs_codes, cn_codes, cn_lookup)
         return res
