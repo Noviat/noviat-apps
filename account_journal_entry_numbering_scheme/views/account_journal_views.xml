@@ -6,7 +6,10 @@
     <field name="model">account.journal</field>
     <field name="inherit_id" ref="account.view_account_journal_form" />
     <field name="arch" type="xml">
-      <page name="advanced_settings" position="inside">
+      <xpath
+                expr="//notebook/page[@name='advanced_settings']//field[@name='invoice_reference_type']/parent::group"
+                position="after"
+            >
         <group
                     name="sequence_override_regex"
                     string="Journal Entry Numbering Scheme"
@@ -19,7 +22,7 @@
                     />
           <field name="sequence_override_regex" />
         </group>
-      </page>
+      </xpath>
     </field>
   </record>
 
