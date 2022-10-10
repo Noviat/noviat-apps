@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template">
+
+  <t t-name="web_tree_date_search_toolbar">
+    <div
+            name="web_tree_date_search_toolbar"
+            class="o_web_tree_date_search_toolbar"
+            style="margin-bottom:0px;"
+        >
+      <t t-foreach="dateFilters" t-as="dateFilter">
+          <t t-call="web_tree_date_search_field" />
+      </t>
+    </div>
+  </t>
+
+  <t t-name="web_tree_date_search_field">
+    <table name="web_tree_date_search_field" class="o_web_tree_date_search_input">
+      <thead>
+        <tr>
+          <th name="date_field_label" t-esc="dateFilter.display_name + ' :'" />
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td name="date_from">
+            <div t-att-class="'oe_date_filter_from_' + dateFilter.name" />
+          </td>
+          <td name="date_to">
+            <div t-att-class="'oe_date_filter_to_' + dateFilter.name" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </t>
+
+</templates>
