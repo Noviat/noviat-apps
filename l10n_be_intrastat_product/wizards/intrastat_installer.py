@@ -28,6 +28,7 @@ class IntrastatInstaller(models.TransientModel):
     )
     share_codes = fields.Boolean(
         string="Share Codes",
+        default=True,
         help="Set this flag to share the Intrastat Codes between all "
         "Legal Entities defined in this Odoo Database.\n"
         "This may cause conflicts when requiring Intrastat declarations "
@@ -71,7 +72,7 @@ class IntrastatInstaller(models.TransientModel):
             )
         )
         if not module:
-            _logger.warn(
+            _logger.warning(
                 "No Belgian localisation module found. "
                 "The Intrastat flag on the Intracommunity Fiscal Position "
                 "has not been set."
@@ -88,13 +89,16 @@ class IntrastatInstaller(models.TransientModel):
                 if not fpos.intrastat:
                     fpos.intrastat = True
             except Exception:
-                _logger.warn("Fiscal position '%s' not found", fpos_ref)
+                _logger.warning("Fiscal position '%s' not found", fpos_ref)
 
     @api.model
     def _load_code(self, row, be_cn_codes, cn_codes, cn_lookup):
+        company_id = self.company_id.id
+        if self.share_codes:
+            company_id = False
         vals = {
             "description": row["description"],
-            "company_id": self.share_codes and False or self.company_id.id,
+            "company_id": company_id,
         }
         cn_unit_id = row["unit_id"]
         if cn_unit_id:

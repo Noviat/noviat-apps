@@ -95,6 +95,12 @@ Configuration
 
   You can define a default Intrastat Code on the Product or the Product Category.
 
+* Partner
+
+  Ensure that your Customer records have a valid VAT Number.
+  Specify 'NA' for Customers who are not subject to VAT.
+
+
 Known issues / Roadmap
 ======================
 
