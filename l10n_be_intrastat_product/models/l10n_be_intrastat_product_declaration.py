@@ -69,9 +69,13 @@ class L10nBeIntrastatProductDeclaration(models.Model):
         return region
 
     def _get_vat(self, inv_line, notedict):
-        cp = inv_line.move_id.commercial_partner_id
+        inv = inv_line.move_id
+        cp = inv.commercial_partner_id
         b2c = not cp.is_company
-        b2b_na = (cp.vat or "").lower().strip() == "na"
+        b2b_na = cp.is_company and (
+            (cp.vat or "").lower().strip() == "na"
+            or (not cp.vat and not inv.fiscal_position_id.vat_required)
+        )
         if b2c or b2b_na:
             return "QV999999999999"
         else:
@@ -148,15 +152,12 @@ class L10nBeIntrastatProductDeclaration(models.Model):
 
         if line_vals:
             if self.declaration_type == "dispatches":
-                vat_number = self._sanitize_vat(line_vals["vat"])
-                if not vat_number:
+                if not line_vals["vat"]:
                     line_notes = [
                         _("Missing VAT Number on partner '%s'")
                         % inv.partner_id.name_get()[0][1]
                     ]
                     self._format_line_note(inv_line, notedict, line_notes)
-                else:
-                    line_vals["vat_number"] = vat_number
             # extended declaration
             if self.reporting_level == "extended":
                 incoterm = self._get_incoterm(inv_line, notedict)
@@ -249,8 +250,7 @@ class L10nBeIntrastatProductDeclaration(models.Model):
         res = super()._group_line_hashcode_fields(computation_line)
         if self.declaration_type == "arrivals":
             del res["product_origin_country"]
-        if self.declaration_type == "dispatches":
-            res["vat_number"] = computation_line.vat_number
+            del res["vat"]
         if self.reporting_level == "extended":
             res["incoterm"] = computation_line.incoterm_id.id or False
         return res
@@ -258,8 +258,6 @@ class L10nBeIntrastatProductDeclaration(models.Model):
     @api.model
     def _prepare_grouped_fields(self, computation_line, fields_to_sum):
         vals = super()._prepare_grouped_fields(computation_line, fields_to_sum)
-        if self.declaration_type == "dispatches":
-            vals["vat_number"] = computation_line.vat_number
         if self.reporting_level == "extended":
             vals["incoterm_id"] = computation_line.incoterm_id.id
         return vals
@@ -321,7 +319,7 @@ class L10nBeIntrastatProductDeclaration(models.Model):
                 Item, "Dim", attrib={"prop": "EXCNTORI"}
             ).text = line.product_origin_country_code
             etree.SubElement(Item, "Dim", attrib={"prop": "PARTNERID"}).text = (
-                line.vat_number or ""
+                line.vat or ""
             )
         if self.reporting_level == "extended":
             etree.SubElement(
@@ -398,27 +396,14 @@ class L10nBeIntrastatProductDeclaration(models.Model):
     def _xls_computation_line_fields(self):
         res = super()._xls_computation_line_fields()
         i = res.index("product_origin_country")
-        if self.declaration_type == "dispatches":
-            res.insert(i + 1, "vat_number")
-        else:
-            res.pop(i)
+        res.pop(i)
         return res
 
     def _xls_declaration_line_fields(self):
         res = super()._xls_declaration_line_fields()
         if self.declaration_type == "dispatches":
             i = res.index("hs_code")
-            res.insert(i + 1, "vat_number")
             res.insert(i + 1, "product_origin_country")
-        return res
-
-    def _xls_template(self):
-        res = super()._xls_template()
-        res["vat_number"] = {
-            "header": {"type": "string", "value": _("VAT Number")},
-            "line": {"value": _render("line.vat_number or ''")},
-            "width": 18,
-        }
         return res
 
 
@@ -437,9 +422,6 @@ class L10nBeIntrastatProductComputationLine(models.Model):
         comodel_name="l10n.be.intrastat.product.declaration.line",
         string="Declaration Line",
         readonly=True,
-    )
-    vat_number = fields.Char(
-        string="VAT Number", help="VAT number of the trading partner"
     )
 
     @api.constrains("vat")
@@ -465,9 +447,6 @@ class L10nBeIntrastatProductDeclarationLine(models.Model):
         inverse_name="declaration_line_id",
         string="Computation Lines",
         readonly=True,
-    )
-    vat_number = fields.Char(
-        string="VAT Number", help="VAT number of the trading partner"
     )
 
     @api.constrains("vat")

@@ -27,7 +27,7 @@ If you have already installed these modules,
 you should uninstall them before installing this module.
 
 We recommend to also install the OCA stock_picking_invoice_link module,
-Cf. https://github.com/OCA/stock-logistics-workflow/tree/13.0/stock_picking_invoice_link
+Cf. https://github.com/OCA/stock-logistics-workflow.
 This modules establishes a link between invoice lines and stock pickings.
 When this module is installed the declaration will take into account refunds created via return pickings.
 
@@ -43,20 +43,11 @@ Configuration wizard to load intrastat codes:
 ---------------------------------------------
 
 The module comes with a configuration wizard that allows you to load the intrastat codes into the database.
-The intrastat codes are available in 3 languages : english, dutch, french.
+The intrastat codes are available in 4 languages : english, dutch, french, german.
 
-If your databases has been configured to support multiple languages, we recommend the following procedure so that
-every user sees the intrastat code description in his own language:
+If your databases has been configured to support multiple languages, you should execute the wizard
+for each language that you want to offer to the users.
 
-1. Go to Settings -> Configuration Wizards and open the 'Load Intrastat Codes' wizard.
-2. Change your Preferences to English
-3. Load the intrastat codes, select the english csv file
-4. Change your Preferences to Dutch
-5. Load the intrastat codes, select the dutch csv file
-6. Change your Preferences to French
-7. Load the intrastat codes, select the french csv file
-
-The system will load a large number of codes (9000+) hence this operation will take some time.
 
 Configuration
 =============
@@ -72,33 +63,43 @@ Configuration
 
 * Warehouse
 
-  - Intrastat Region to cope with warehouses in different regions
-
-    The configuration of the Intrastat Region on a Warehouse, requires a login
-    belonging to the "Belgian Intrastat Product Declaration" security group.
+  Intrastat Region to cope with warehouses in different regions
 
 * Inrastat Codes, Supplementary Units, Transaction Tyoes, Transport Modes, Regions
 
-  Cf. menu Accounting / Configuration / Miscellaneous / Intrastat Configuration
+  Cf. menu Accounting / Configuration / Intrastat
 
   The configuration data is loaded when installing the module.
+  We recommend no to change these settings.
 
   A configuration wizard also allows to update the Intrastat Codes so that you can easily
   synchronise your Odoo instance with the latest list of codes supplied with this module
   (an update is published on an annual basis by the Belgian National Bank).
 
-  Some Intrastat Codes require an Intrastat Supplementary Unit.
-  In this case, an extra configuration is needed to map the Intrastat Supplementary Unit
-  to the corresponding Odoo Unit Of Measurement.
-
 * Product
 
   You can define a default Intrastat Code on the Product or the Product Category.
 
+* Fiscal Positions
+
+  Check your Fiscal Positions and set the 'Intrastat' flag for transactations that
+  must be included in the intrastat declaration.
+  We recommend to set the 'VAT required' flag on the 'Intra Community Regime' Fiscal Position.
+  
+  If you have B2C customers or B2B customers which are not subject to VAT you can create a
+  'Intra Community Regime NA' Fiscal Position on which the 'Intrastat' flag is set while the 'VAT required'
+  flag has been turned off.
+
 * Partner
 
-  Ensure that your Customer records have a valid VAT Number.
-  Specify 'NA' for Customers who are not subject to VAT.
+  Ensure that your B2B Customer records have a valid VAT Number.
+  
+  Consider the use of the OCA **account_fiscal_position_vat_check module** to enforce the correct setting. 
+  Cf. https://github.com/OCA/account-financial-tools.
+  
+  If you have not set the 'Detect Automatically' flan on your Intra Community Fiscal Position(s) than you should
+  set the 'Intra Community Regime NA' Fiscal Position on B2B customer records who are not subject to VAT.
+  Alternatively you can also set 'NA' in the VAT number field of such a customer.
 
 
 Known issues / Roadmap
