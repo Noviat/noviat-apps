@@ -1,9 +1,9 @@
-# Copyright 2009-2021 Noviat.
+# Copyright 2009-2022 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     "name": "Intrastat Product Declaration for Belgium",
-    "version": "13.0.1.4.0",
+    "version": "13.0.1.4.1",
     "category": "Intrastat",
     "license": "AGPL-3",
     "summary": "Intrastat Product Declaration for Belgium",

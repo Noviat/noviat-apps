@@ -27,7 +27,7 @@ If you have already installed these modules,
 you should uninstall them before installing this module.
 
 We recommend to also install the OCA stock_picking_invoice_link module,
-Cf. https://github.com/OCA/stock-logistics-workflow/tree/13.0/stock_picking_invoice_link
+Cf. https://github.com/OCA/stock-logistics-workflow.
 This modules establishes a link between invoice lines and stock pickings.
 When this module is installed the declaration will take into account refunds created via return pickings.
 
@@ -36,11 +36,11 @@ Multi-company setup
 
 Please ensure to set the Default Company of the OdooBot user to the company
 for which you are installing this localization module.
-Not doing so may result in a conflict with other localization modules (e.g. l10n_fre_intrastat_product).
+Not doing so may result in a conflict with other localization modules (e.g. l10n_fr_intrastat_product).
 
 
-Configuration wizard to load intrastat codes:
----------------------------------------------
+Configuration wizard to load intrastat codes
+--------------------------------------------
 
 The module comes with a configuration wizard that allows you to load the intrastat codes into the database.
 The intrastat codes are available in 3 languages : english, dutch, french.
@@ -72,24 +72,18 @@ Configuration
 
 * Warehouse
 
-  - Intrastat Region to cope with warehouses in different regions
-
-    The configuration of the Intrastat Region on a Warehouse, requires a login
-    belonging to the "Belgian Intrastat Product Declaration" security group.
+  Intrastat Region to cope with warehouses in different regions
 
 * Inrastat Codes, Supplementary Units, Transaction Tyoes, Transport Modes, Regions
 
-  Cf. menu Accounting / Configuration / Miscellaneous / Intrastat Configuration
+  Cf. menu Accounting / Configuration / Intrastat
 
   The configuration data is loaded when installing the module.
+  We recommend to not change these settings.
 
   A configuration wizard also allows to update the Intrastat Codes so that you can easily
   synchronise your Odoo instance with the latest list of codes supplied with this module
   (an update is published on an annual basis by the Belgian National Bank).
-
-  Some Intrastat Codes require an Intrastat Supplementary Unit.
-  In this case, an extra configuration is needed to map the Intrastat Supplementary Unit
-  to the corresponding Odoo Unit Of Measurement.
 
 * Product
 
@@ -101,8 +95,7 @@ Known issues / Roadmap
 - The current version of the Belgian Intrastat reporting module is only based on invoices.
   Since associated stock moves are not taken into consideration, it is possible that manual
   corrections are required, e.g.
-
-- Product movements without invoices are not included in the current version
+  Product movements without invoices are not included in the current version
   of this module and must be added manually to the report lines
   before generating the ONEGATE XML declaration.
 

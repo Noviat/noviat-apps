@@ -1,4 +1,4 @@
-# Copyright 2009-2021 Noviat.
+# Copyright 2009-2022 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import logging
@@ -169,7 +169,7 @@ class L10nBeIntrastatProductDeclaration(models.Model):
         """
         pass
 
-    def _gather_invoices_init(self):
+    def _gather_invoices_init(self, notedict):
         if self.company_id.country_id.code not in ("be", "BE"):
             raise UserError(
                 _(
