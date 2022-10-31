@@ -3,11 +3,12 @@
 
 {
     "name": "Intrastat Product Declaration for Belgium",
-    "version": "14.0.1.1.1",
+    "version": "14.0.1.1.2",
     "category": "Intrastat",
     "license": "AGPL-3",
     "summary": "Intrastat Product Declaration for Belgium",
     "author": "Noviat",
+    "website": "https://www.noviat.com/",
     "depends": ["intrastat_product"],
     "conflicts": ["l10n_be_intrastat", "report_intrastat"],
     "data": [

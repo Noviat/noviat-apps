@@ -2,7 +2,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import csv
-import io
 import logging
 import os
 
@@ -184,7 +183,7 @@ class IntrastatInstaller(models.TransientModel):
             raise UserError(
                 _("Language %s is not activated on your system") % CN_LANGS[iso_code]
             )
-        with io.open(CN_fqn, mode="r", encoding="Windows-1252") as CN_file:
+        with open(CN_fqn, encoding="Windows-1252") as CN_file:
             cn_codes = csv.DictReader(CN_file, delimiter=CN_file_delimiter)
             for lang in langs:
                 ctx = dict(self.env.context, lang=lang.code)

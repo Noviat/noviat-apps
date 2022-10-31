@@ -70,7 +70,7 @@ Configuration
   Cf. menu Accounting / Configuration / Intrastat
 
   The configuration data is loaded when installing the module.
-  We recommend no to change these settings.
+  We recommend to not change these settings.
 
   A configuration wizard also allows to update the Intrastat Codes so that you can easily
   synchronise your Odoo instance with the latest list of codes supplied with this module
@@ -112,11 +112,12 @@ Known issues / Roadmap
   of this module and must be added manually to the report lines
   before generating the ONEGATE XML declaration.
 
-- Credit Notes are by default assumed to be corrections to the outgoing or incoming
-  invoices within the same reporting period. The product declaration values of the
-  Credit Notes are as a consequence deducted from the declaration lines.
-  You should encode the Credit Note with 'Intrastat Transaction Type = 21' when the goods
-  returned.
+- Refunds on invoices within the same reporting period are deducted from the declaration lines.
+  No controls are executed on Refunds that are not linked to an invoice
+  in the same reporting period.
+  Such Refunds are reported under the default transaction code for refunds.
+  It is recommend to manually set the correct transaction code while Credit Notes
+  are created.
 
 - The current version of the Belgian Intrastat reporting module does not perform a
   cross-check with the VAT declaration.
