@@ -22,14 +22,10 @@ class AccountChartTemplate(models.Model):
             acc_template_ref, company, journals_dict
         )
         for journal in journal_data:
-            if (
-                journal["type"]
-                in (
-                    "sale",
-                    "purchase",
-                )
-                and company.country_id == self.env.ref("base.be")
-            ):
+            if journal["type"] in (
+                "sale",
+                "purchase",
+            ) and company.country_id == self.env.ref("base.be"):
                 journal.update({"refund_sequence": True})
         return journal_data
 

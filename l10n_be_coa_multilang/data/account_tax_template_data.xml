@@ -1280,11 +1280,11 @@
     <field name="type_tax_use">purchase</field>
     <field
             name="invoice_repartition_line_ids"
-            eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_82D'), ref('atrl_86')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', 'account_id': ref('aatn_411059'), 'plus_report_line_ids': [ref('atrl_59')]}), (0, 0, {'factor_percent': -100, 'repartition_type': 'tax', 'account_id': ref('aatn_451055'), 'minus_report_line_ids': [ref('atrl_55')]})]"
+            eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_82D'), ref('atrl_88')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', 'account_id': ref('aatn_411059'), 'plus_report_line_ids': [ref('atrl_59')]}), (0, 0, {'factor_percent': -100, 'repartition_type': 'tax', 'account_id': ref('aatn_451055'), 'minus_report_line_ids': [ref('atrl_55')]})]"
         />
     <field
             name="refund_repartition_line_ids"
-            eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'minus_report_line_ids': [ref('atrl_82D'), ref('atrl_86')],  'plus_report_line_ids': [ref('atrl_84')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', 'account_id': ref('aatn_411059')}), (0, 0, {'factor_percent': -100, 'repartition_type': 'tax', 'account_id': ref('aatn_451055')})]"
+            eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'minus_report_line_ids': [ref('atrl_82D'), ref('atrl_88')],  'plus_report_line_ids': [ref('atrl_84')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', 'account_id': ref('aatn_411059')}), (0, 0, {'factor_percent': -100, 'repartition_type': 'tax', 'account_id': ref('aatn_451055')})]"
         />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
@@ -1324,7 +1324,7 @@
         />
     <field
             name="refund_repartition_line_ids"
-            eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'minus_report_line_ids': [ref('atrl_82D'), ref('atrl_86')],  'plus_report_line_ids': [ref('atrl_84')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax'})]"
+            eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'minus_report_line_ids': [ref('atrl_82D'), ref('atrl_88')],  'plus_report_line_ids': [ref('atrl_84')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax'})]"
         />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
@@ -1344,7 +1344,7 @@
         />
     <field
             name="refund_repartition_line_ids"
-            eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'minus_report_line_ids': [ref('atrl_82D'), ref('atrl_86')],  'plus_report_line_ids': [ref('atrl_84')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax'})]"
+            eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'minus_report_line_ids': [ref('atrl_82D'), ref('atrl_88')],  'plus_report_line_ids': [ref('atrl_84')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax'})]"
         />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>

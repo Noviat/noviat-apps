@@ -31,5 +31,5 @@ class ResPartner(models.Model):
     @api.onchange("vat")
     def _onchange_vat(self):
         self.vat_subjected = self.vat and True or False
-        if hasattr(super(ResPartner, self), "_onchange_vat"):
-            super(ResPartner, self)._onchange_vat()
+        if hasattr(super(), "_onchange_vat"):
+            super()._onchange_vat()

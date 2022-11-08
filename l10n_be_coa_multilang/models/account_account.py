@@ -65,7 +65,7 @@ class AccountAccount(models.Model):
 
     @api.model
     def search(self, args, offset=0, limit=None, order=None, count=False):
-        """ improve performance of _update_be_reportscheme method """
+        """improve performance of _update_be_reportscheme method"""
         if self.env.context.get("update_be_reportscheme"):
             be_companies = (
                 self.env["res.company"]

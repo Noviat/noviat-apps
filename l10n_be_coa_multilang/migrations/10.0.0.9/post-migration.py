@@ -37,7 +37,7 @@ def migrate(cr, version):
         else:
             continue
         if att_name != at_name:
-            _logger.warn("updating account.tax,%s with name '%s'", at_id, att_name)
+            _logger.warning("updating account.tax,%s with name '%s'", at_id, att_name)
             try:
                 with cr.savepoint():
                     cr.execute(
