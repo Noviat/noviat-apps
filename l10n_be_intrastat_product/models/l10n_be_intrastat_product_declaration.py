@@ -183,9 +183,11 @@ class L10nBeIntrastatProductDeclaration(models.Model):
         # Special commodity codes
         # Current version implements only regular credit notes
         special_code = "99600000"
-        hs_code = self.env["hs.code"].search(
-            [("company_id", "=", self.company_id.id), ("local_code", "=", special_code)]
-        )
+        hs_code = self.env["hs.code"].search([("local_code", "=", special_code)])
+        if len(hs_code) > 1:
+            hs_code = hs_code.filtered(
+                lambda r: r.company_id == self.company_id
+            ) or hs_code.filtered(lambda r: not r.company_id)
         if not hs_code:
             action = self.env.ref("%s.intrastat_installer_action" % module)
             msg = (
