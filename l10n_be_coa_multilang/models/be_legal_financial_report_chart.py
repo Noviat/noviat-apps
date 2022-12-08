@@ -42,7 +42,4 @@ class BeLegalFinancialReportChart(models.Model):
     @api.depends("parent_id", "parent_id.level")
     def _compute_level(self):
         for entry in self:
-            level = 0
-            if entry.parent_id:
-                level = entry.parent_id.level + 1
-            entry.level = level
+            entry.level = entry.parent_path.count("/") - 1
