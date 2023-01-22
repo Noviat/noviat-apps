@@ -7,7 +7,7 @@
     <field name="sequence">10</field>
     <field name="description">21%</field>
     <field name="name">21% Services</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -27,7 +27,7 @@
     <field name="sequence">11</field>
     <field name="description">21%</field>
     <field name="name">21% Goods</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -47,7 +47,7 @@
     <field name="sequence">12</field>
     <field name="description">21% - Cash Discount 2%</field>
     <field name="name">21% Services - Cash Discount 2%</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">0</field>
     <field name="amount">20.58</field>
     <field name="amount_type">percent</field>
@@ -67,7 +67,7 @@
     <field name="sequence">13</field>
     <field name="description">21% - Cash Discount 2%</field>
     <field name="name">21% Goods - Cash Discount 2%</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">0</field>
     <field name="amount">20.58</field>
     <field name="amount_type">percent</field>
@@ -87,7 +87,7 @@
     <field name="sequence">14</field>
     <field name="description">21%</field>
     <field name="name">21% Services (Price Incl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="price_include" eval="1" />
     <field name="active">1</field>
     <field name="amount">21</field>
@@ -108,7 +108,7 @@
     <field name="sequence">15</field>
     <field name="description">21%</field>
     <field name="name">21% Goods (Price Incl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="price_include" eval="1" />
     <field name="active">1</field>
     <field name="amount">21</field>
@@ -129,7 +129,7 @@
     <field name="sequence">20</field>
     <field name="description">12%</field>
     <field name="name">12% Services</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">1</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -149,7 +149,7 @@
     <field name="sequence">21</field>
     <field name="description">12%</field>
     <field name="name">12% Goods</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">1</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -169,7 +169,7 @@
     <field name="sequence">30</field>
     <field name="description">6%</field>
     <field name="name">6% Services</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">1</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -189,7 +189,7 @@
     <field name="sequence">31</field>
     <field name="description">6%</field>
     <field name="name">6% Goods</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">1</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -209,7 +209,7 @@
     <field name="sequence">40</field>
     <field name="description">0%</field>
     <field name="name">0% Services</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -229,7 +229,7 @@
     <field name="sequence">41</field>
     <field name="description">0%</field>
     <field name="name">0% Goods</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -249,7 +249,7 @@
     <field name="sequence">50</field>
     <field name="description">0%</field>
     <field name="name">0% Cocontractant</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -269,7 +269,7 @@
     <field name="sequence">60</field>
     <field name="description">0%</field>
     <field name="name">Services within EU</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -289,7 +289,7 @@
     <field name="sequence">61</field>
     <field name="description">0%</field>
     <field name="name">Goods within EU (Code L)</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -309,7 +309,7 @@
     <field name="sequence">62</field>
     <field name="description">0%</field>
     <field name="name">Goods within EU (Code T)</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -329,7 +329,7 @@
     <field name="sequence">70</field>
     <field name="description">0%</field>
     <field name="name">Export Outside EU</field>
-    <field name="tax_group_id" ref="atg_VAT_OUT_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -349,7 +349,7 @@
     <field name="sequence">110</field>
     <field name="description">21%</field>
     <field name="name">21% - Services for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -369,7 +369,7 @@
     <field name="sequence">113</field>
     <field name="description">21%</field>
     <field name="name">21% - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -389,7 +389,7 @@
     <field name="sequence">120</field>
     <field name="description">12%</field>
     <field name="name">12% - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">1</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -409,7 +409,7 @@
     <field name="sequence">130</field>
     <field name="description">6%</field>
     <field name="name">6% - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">1</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -429,7 +429,7 @@
     <field name="sequence">140</field>
     <field name="description">0%</field>
     <field name="name">0% - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -449,7 +449,7 @@
     <field name="sequence">210</field>
     <field name="description">21%</field>
     <field name="name">21% - Services</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -469,7 +469,7 @@
     <field name="sequence">213</field>
     <field name="description">21% - Cash Discount 2%</field>
     <field name="name">21% - Services - Cash Discount 2%</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">20.58</field>
     <field name="amount_type">percent</field>
@@ -489,7 +489,7 @@
     <field name="sequence">216</field>
     <field name="description">21%</field>
     <field name="name">21% - Services (Price Incl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="price_include" eval="1" />
     <field name="active">1</field>
     <field name="amount">21</field>
@@ -510,7 +510,7 @@
     <field name="sequence">220</field>
     <field name="description">21%</field>
     <field name="name">21% - Other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -530,7 +530,7 @@
     <field name="sequence">230</field>
     <field name="description">12%</field>
     <field name="name">12% - Services</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">1</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -550,7 +550,7 @@
     <field name="sequence">240</field>
     <field name="description">12%</field>
     <field name="name">12% - Other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">1</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -570,7 +570,7 @@
     <field name="sequence">250</field>
     <field name="description">6%</field>
     <field name="name">6% - Services</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">1</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -590,7 +590,7 @@
     <field name="sequence">260</field>
     <field name="description">6%</field>
     <field name="name">6% - Other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">1</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -610,7 +610,7 @@
     <field name="sequence">270</field>
     <field name="description">0%</field>
     <field name="name">0% - Services</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -630,7 +630,7 @@
     <field name="sequence">280</field>
     <field name="description">0%</field>
     <field name="name">0% - Other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -650,7 +650,7 @@
     <field name="sequence">310</field>
     <field name="description">21%</field>
     <field name="name">21% - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -670,7 +670,7 @@
     <field name="sequence">320</field>
     <field name="description">12%</field>
     <field name="name">12% - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">1</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -690,7 +690,7 @@
     <field name="sequence">330</field>
     <field name="description">6%</field>
     <field name="name">6% - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">1</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -710,7 +710,7 @@
     <field name="sequence">340</field>
     <field name="description">0%</field>
     <field name="name">0% - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -730,7 +730,7 @@
     <field name="sequence">410</field>
     <field name="description">21% Cocontractant</field>
     <field name="name">21% Cocontract. - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -750,7 +750,7 @@
     <field name="sequence">420</field>
     <field name="description">12% Cocontractant</field>
     <field name="name">12% Cocontract. - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -770,7 +770,7 @@
     <field name="sequence">430</field>
     <field name="description">6% Cocontractant</field>
     <field name="name">6% Cocontract. - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -790,7 +790,7 @@
     <field name="sequence">440</field>
     <field name="description">0% Cocontractant</field>
     <field name="name">0% Cocontract. - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -810,7 +810,7 @@
     <field name="sequence">510</field>
     <field name="description">21% Cocontractant</field>
     <field name="name">21% Cocontract. - Services and other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -830,7 +830,7 @@
     <field name="sequence">520</field>
     <field name="description">12% Cocontractant</field>
     <field name="name">12% Cocontract. - Services and other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -850,7 +850,7 @@
     <field name="sequence">530</field>
     <field name="description">6% Cocontractant</field>
     <field name="name">6% Cocontract. - Services and other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -870,7 +870,7 @@
     <field name="sequence">540</field>
     <field name="description">0% Cocontractant</field>
     <field name="name">0% Cocontract. - Services and other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -890,7 +890,7 @@
     <field name="sequence">610</field>
     <field name="description">21% Cocontractant</field>
     <field name="name">21% Cocontract. - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -910,7 +910,7 @@
     <field name="sequence">620</field>
     <field name="description">12% Cocontractant</field>
     <field name="name">12% Cocontract. - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -930,7 +930,7 @@
     <field name="sequence">630</field>
     <field name="description">6% Cocontractant</field>
     <field name="name">6% Cocontract. - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -950,7 +950,7 @@
     <field name="sequence">640</field>
     <field name="description">0% Cocontractant</field>
     <field name="name">0% Cocontract. - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -970,7 +970,7 @@
     <field name="sequence">710</field>
     <field name="description">Car Expenses - VAT 50% Deductible</field>
     <field name="name">Car Expenses - VAT 50% Deductible (Price Incl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="price_include" eval="1" />
     <field name="active">1</field>
     <field name="amount">21</field>
@@ -991,7 +991,7 @@
     <field name="sequence">713</field>
     <field name="description">Car Expenses - VAT 35% Deductible</field>
     <field name="name">Car Expenses - VAT 35% Deductible (Price Incl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="price_include" eval="1" />
     <field name="active">0</field>
     <field name="amount">21</field>
@@ -1012,7 +1012,7 @@
     <field name="sequence">720</field>
     <field name="description">Car Expenses - VAT 50% Deductible</field>
     <field name="name">Car Expenses - VAT 50% Deductible (Price Excl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1032,7 +1032,7 @@
     <field name="sequence">724</field>
     <field name="description">Car Expenses - VAT 35% Deductible</field>
     <field name="name">Car Expenses - VAT 35% Deductible (Price Excl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">0</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1052,7 +1052,7 @@
     <field name="sequence">730</field>
     <field name="description">Expenses 25% non-deductible</field>
     <field name="name">Expenses 25% non-deductible (Price Incl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="price_include" eval="1" />
     <field name="active">1</field>
     <field name="amount">21</field>
@@ -1073,7 +1073,7 @@
     <field name="sequence">734</field>
     <field name="description">Expenses 25% non-deductible</field>
     <field name="name">Expenses 25% non-deductible (Price Excl.)</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">0</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1093,7 +1093,7 @@
     <field name="sequence">1110</field>
     <field name="description">21% Intracomm.</field>
     <field name="name">21% Intracomm. - Services for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1113,7 +1113,7 @@
     <field name="sequence">1114</field>
     <field name="description">21% Intracomm.</field>
     <field name="name">21% Intracomm. - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1133,7 +1133,7 @@
     <field name="sequence">1120</field>
     <field name="description">12% Intracomm.</field>
     <field name="name">12% Intracomm. - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -1153,7 +1153,7 @@
     <field name="sequence">1130</field>
     <field name="description">6% Intracomm.</field>
     <field name="name">6% Intracomm. - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -1173,7 +1173,7 @@
     <field name="sequence">1140</field>
     <field name="description">0% Intracomm.</field>
     <field name="name">0% Intracomm. - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -1193,7 +1193,7 @@
     <field name="sequence">1210</field>
     <field name="description">21% Intracomm.</field>
     <field name="name">21% Intracomm. - Services</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1213,7 +1213,7 @@
     <field name="sequence">1220</field>
     <field name="description">21% Intracomm.</field>
     <field name="name">21% Intracomm. - Other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1233,7 +1233,7 @@
     <field name="sequence">1230</field>
     <field name="description">12% Intracomm.</field>
     <field name="name">12% Intracomm. - Services</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -1253,7 +1253,7 @@
     <field name="sequence">1240</field>
     <field name="description">12% Intracomm.</field>
     <field name="name">12% Intracomm. - Other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -1273,7 +1273,7 @@
     <field name="sequence">1250</field>
     <field name="description">6% Intracomm.</field>
     <field name="name">6% Intracomm. - Services</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -1293,7 +1293,7 @@
     <field name="sequence">1260</field>
     <field name="description">6% Intracomm.</field>
     <field name="name">6% Intracomm. - Other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -1313,7 +1313,7 @@
     <field name="sequence">1270</field>
     <field name="description">0% Intracomm.</field>
     <field name="name">0% Intracomm. - Services</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -1333,7 +1333,7 @@
     <field name="sequence">1280</field>
     <field name="description">0% Intracomm.</field>
     <field name="name">0% Intracomm. - Other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -1353,7 +1353,7 @@
     <field name="sequence">1310</field>
     <field name="description">21% Intracomm.</field>
     <field name="name">21% Intracomm. - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1373,7 +1373,7 @@
     <field name="sequence">1320</field>
     <field name="description">12% Intracomm.</field>
     <field name="name">12% Intracomm. - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -1393,7 +1393,7 @@
     <field name="sequence">1330</field>
     <field name="description">6% Intracomm.</field>
     <field name="name">6% Intracomm. - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -1413,7 +1413,7 @@
     <field name="sequence">1340</field>
     <field name="description">0% Intracomm.</field>
     <field name="name">0% Intracomm. - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -1433,7 +1433,7 @@
     <field name="sequence">2110</field>
     <field name="description">21% Outside EU</field>
     <field name="name">21% Outside EU - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1453,7 +1453,7 @@
     <field name="sequence">2120</field>
     <field name="description">12% Outside EU</field>
     <field name="name">12% Outside EU - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -1473,7 +1473,7 @@
     <field name="sequence">2130</field>
     <field name="description">6% Outside EU</field>
     <field name="name">6% Outside EU - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -1493,7 +1493,7 @@
     <field name="sequence">2140</field>
     <field name="description">0% Outside EU</field>
     <field name="name">0% Outside EU - Raw mat., consum. and goods for resale</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -1513,7 +1513,7 @@
     <field name="sequence">2210</field>
     <field name="description">21% Outside EU</field>
     <field name="name">21% Outside EU - Services and other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1533,7 +1533,7 @@
     <field name="sequence">2220</field>
     <field name="description">12% Outside EU</field>
     <field name="name">12% Outside EU - Services and other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -1553,7 +1553,7 @@
     <field name="sequence">2230</field>
     <field name="description">6% Outside EU</field>
     <field name="name">6% Outside EU - Services and other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -1573,7 +1573,7 @@
     <field name="sequence">2240</field>
     <field name="description">0% Outside EU</field>
     <field name="name">0% Outside EU - Services and other goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -1593,7 +1593,7 @@
     <field name="sequence">2310</field>
     <field name="description">21% Outside EU</field>
     <field name="name">21% Outside EU - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_21" />
+    <field name="tax_group_id" ref="atg_VAT_21" />
     <field name="active">1</field>
     <field name="amount">21</field>
     <field name="amount_type">percent</field>
@@ -1613,7 +1613,7 @@
     <field name="sequence">2320</field>
     <field name="description">12% Outside EU</field>
     <field name="name">12% Outside EU - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_12" />
+    <field name="tax_group_id" ref="atg_VAT_12" />
     <field name="active">0</field>
     <field name="amount">12</field>
     <field name="amount_type">percent</field>
@@ -1633,7 +1633,7 @@
     <field name="sequence">2330</field>
     <field name="description">6% Outside EU</field>
     <field name="name">6% Outside EU - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_06" />
+    <field name="tax_group_id" ref="atg_VAT_06" />
     <field name="active">0</field>
     <field name="amount">6</field>
     <field name="amount_type">percent</field>
@@ -1653,7 +1653,7 @@
     <field name="sequence">2340</field>
     <field name="description">0% Outside EU</field>
     <field name="name">0% Outside EU - Capital goods</field>
-    <field name="tax_group_id" ref="atg_VAT_IN_00" />
+    <field name="tax_group_id" ref="atg_VAT_00" />
     <field name="active">0</field>
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
@@ -1673,7 +1673,7 @@
     <field name="sequence">3000</field>
     <field name="description">VAT adjustments in favor of the Tax Authority</field>
     <field name="name">VAT adjustments in favor of the Tax Authority</field>
-    <field name="tax_group_id" ref="atg_VAT_CASES" />
+    <field name="tax_group_id" ref="account.tax_group_taxes" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="type_tax_use">sale</field>
@@ -1692,7 +1692,7 @@
     <field name="sequence">3010</field>
     <field name="description">VAT adjustments in favor of the Declarant</field>
     <field name="name">VAT adjustments in favor of the Declarant</field>
-    <field name="tax_group_id" ref="atg_VAT_CASES" />
+    <field name="tax_group_id" ref="account.tax_group_taxes" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="type_tax_use">purchase</field>
@@ -1711,7 +1711,7 @@
     <field name="sequence">3020</field>
     <field name="description">Advance for Operations from December 1 to 20</field>
     <field name="name">Advance for Operations from December 1 to 20</field>
-    <field name="tax_group_id" ref="atg_VAT_CASES" />
+    <field name="tax_group_id" ref="account.tax_group_taxes" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="type_tax_use">sale</field>
@@ -1730,7 +1730,7 @@
     <field name="sequence">4000</field>
     <field name="description">VAT deductible case 59</field>
     <field name="name">VAT deductible case 59</field>
-    <field name="tax_group_id" ref="atg_VAT_CASES" />
+    <field name="tax_group_id" ref="account.tax_group_taxes" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="type_tax_use">purchase</field>
@@ -1749,7 +1749,7 @@
     <field name="sequence">4500</field>
     <field name="description">VAT base case 82</field>
     <field name="name">VAT base case 82</field>
-    <field name="tax_group_id" ref="atg_VAT_CASES" />
+    <field name="tax_group_id" ref="account.tax_group_taxes" />
     <field name="active">1</field>
     <field name="amount">0</field>
     <field name="type_tax_use">purchase</field>

@@ -8,6 +8,7 @@
     <field name="factor">0</field>
     <field name="sequence">1</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_II" model="account.tax.report.line">
@@ -19,6 +20,7 @@
     <field name="color">darkblue</field>
     <field name="parent_id" ref="atrl_I" />
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_IIA" model="account.tax.report.line">
@@ -31,6 +33,7 @@
     <field name="parent_id" ref="atrl_II" />
     <field name="info">Handelingen onderworpen aan een bijzondere regeling</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_00" model="account.tax.report.line">
@@ -58,6 +61,7 @@
             name="info"
         >Roosters [01], [02] en [03] : maatstaf van heffing van de handelingen verricht in België waarvoor de belasting verschuldigd is door de aangever overeenkomstig artikel 51, §1, 1°, van het btw-wetboek.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [01] : handelingen onderworpen aan het tarief van 6 pct.&amp;lt;br/&amp;gt;Rooster [02] : handelingen onderworpen aan het tarief van 12 pct.&amp;lt;br/&amp;gt;Rooster [03] : handelingen onderworpen aan het tarief van 21 pct.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_01" model="account.tax.report.line">
@@ -111,6 +115,7 @@
             name="info"
         >Diensten waarvoor de buitenlands btw verschuldigd is door de medecontractant</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_44" model="account.tax.report.line">
@@ -138,6 +143,7 @@
             name="info"
         >Handelingen waarvoor de btw verschuldigd is door de medecontractant.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_45" model="account.tax.report.line">
@@ -165,6 +171,7 @@
             name="info"
         >Vrijgestelde intracommunautaire leveringen verricht in België en ABC-verkopen.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_46" model="account.tax.report.line">
@@ -177,6 +184,7 @@
             name="info"
         >Rooster [46] : maatstaf van heffing :&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- van de intracommunautaire leveringen van goederen en gelijkgestelde handelingen (overbrengingen) - z. art. 39bis van het btw-wetboek;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- van de leveringen van goederen bedoeld in artikel 25 quinquies, § 3, laatste lid, van het btw-wetboek, verricht in de Lidstaat van aankomst van de verzending of van het vervoer van de goederen.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_46L" model="account.tax.report.line">
@@ -211,6 +219,7 @@
             name="info"
         >Andere vrijgestelde handelingen en handelingen verricht in het buitenland.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_47" model="account.tax.report.line">
@@ -238,6 +247,7 @@
             name="info"
         >Bedrag van de uitgereikte creditnota’s en de negatieve verbeteringen.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_48" model="account.tax.report.line">
@@ -250,6 +260,7 @@
             name="info"
         >Bedrag van de uitgereikte creditnota’s en de negatieve verbeteringen&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [48] : bedrag van de uitgereikte creditnota’s en de negatieve verbeteringen met betrekking tot de handelingen ingeschreven in rooster [46].&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Vanaf 1 jan 2010: &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;[48] : behalve de huidige beoogde verbeteringen zal dit rooster ook de eventuele negatieve verbeteringen van de in rooster [44] vermelde handelingen moeten bevatten (voorheen opgenomen in rooster [49]).</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_48S" model="account.tax.report.line">
@@ -304,6 +315,7 @@
     <field name="color">darkblue</field>
     <field name="parent_id" ref="atrl_I" />
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_IIIA" model="account.tax.report.line">
@@ -318,6 +330,7 @@
             name="info"
         >Bedrag van de inkomende handelingen rekening houdend met de ontvangen creditnota’s en de andere verbeteringen&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [81] : bedrag (aftrekbare btw niet inbegrepen) van de aankopen van handelsgoederen, grond- en hulpstoffen.&amp;lt;br/&amp;gt;Rooster [82] : bedrag (aftrekbare btw niet inbegrepen) van de aankopen van diverse goederen en diensten.&amp;lt;br/&amp;gt;Rooster [83] : bedrag (aftrekbare btw niet inbegrepen) van de aankopen van bedrijfsmiddelen.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;In het geval de belastingplichtige een btw-eenheid betreft, bevat het bedrag van de roosters [81], [82] en [83] in voorkomend geval ook de interne aankopen van de leden van de btw-eenheid.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_81" model="account.tax.report.line">
@@ -330,6 +343,7 @@
             name="info"
         >Bedrag van de inkomende handelingen rekening houdend met de ontvangen creditnota’s en de andere verbeteringen&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [81] : bedrag (aftrekbare btw niet inbegrepen) van de aankopen van handelsgoederen, grond- en hulpstoffen.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_81D" model="account.tax.report.line">
@@ -364,6 +378,7 @@
             name="info"
         >Bedrag van de inkomende handelingen rekening houdend met de ontvangen creditnota’s en de andere verbeteringen&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [82] : bedrag (aftrekbare btw niet inbegrepen) van de aankopen van diverse goederen en diensten.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_82D" model="account.tax.report.line">
@@ -398,6 +413,7 @@
             name="info"
         >Bedrag van de inkomende handelingen rekening houdend met de ontvangen creditnota’s en de andere verbeteringen&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [83] : bedrag (aftrekbare btw niet inbegrepen) van de aankopen van bedrijfsmiddelen.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_83D" model="account.tax.report.line">
@@ -432,6 +448,7 @@
             name="info"
         >Bedrag van de ontvangen creditnota’s en de negatieve verbeteringen.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [84] : bedrag van de ontvangen creditnota’s en de negatieve verbeteringen met betrekking tot de handelingen ingeschreven in rooster [86].&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [85] : bedrag (btw niet inbegrepen) van de ontvangen creditnota’s en negatieve verbeteringen met betrekking tot de andere handelingen van kader III.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_84" model="account.tax.report.line">
@@ -457,6 +474,7 @@
             name="info"
         >Bedrag van de ontvangen creditnota’s en de negatieve verbeteringen&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [85] : bedrag (btw niet inbegrepen) van de ontvangen creditnota’s en negatieve verbeteringen met betrekking tot de andere handelingen van kader III.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_85D" model="account.tax.report.line">
@@ -493,6 +511,7 @@
             name="info"
         >Intracommunautaire verwervingen verricht in België en ABC-verkopen.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [86] : maatstaf van heffing van :&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- de intracommunautaire verwervingen van goederen en gelijkgestelde handelingen verricht in België waarvoor de belasting verschuldigd is door de aangever overeenkomstig artikel 51, §1, 2° van het btw-wetboek;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- de intracommunautaire verwervingen verricht onder de voorwaarden van artikel 25quinquies, §3, laatste lid, van het btw-wetboek;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- de leveringen van goederen bedoeld in artikel 25ter, §1, tweede lid, 3°, van het btw-wetboek waarvoor de belasting verschuldigd is door de aangever overeenkomstig artikel 51, §2, 2°, van het btw-wetboek.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;De over deze handelingen verschuldigde belasting moet worden ingeschreven in rooster [55].</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_86" model="account.tax.report.line">
@@ -520,6 +539,7 @@
             name="info"
         >Andere inkomende handelingen waarvoor de btw verschuldigd is door de aangever&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [87] : maatstaf van heffing van de andere inkomende handelingen verricht in België waarvoor de belasting verschuldigd is door de aangever.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Het betreft :&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- de handelingen waarvoor de belasting verschuldigd is door de medecontractant (aangever) op grond van artikel 51, §2, 1°, 5° en 6°, van het btw-Wetboek;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- de werken in onroerende staat of gelijkgestelde handelingen (art. 20, K.B. nr. 1);&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- de leveringen van beleggingsgoud (met belastingheffing), van goud of halffabrikaten met een zuiverheid van ten minste 325 duizendsten (art. 20bis, K.B. nr. 1);&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;- de invoer van goederen afkomstig van niet Lidstaten van de Europese Unie, met verlegging van de heffing naar het binnenland (art. 5, §3, K.B. nr. 7);</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_87" model="account.tax.report.line">
@@ -545,6 +565,7 @@
     <field name="parent_id" ref="atrl_III" />
     <field name="info">Intracommunautaire diensten met verlegging van heffing</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_88" model="account.tax.report.line">
@@ -585,6 +606,7 @@
     <field name="parent_id" ref="atrl_VI" />
     <field name="info">Totaal van de roosters 54, 55, 56, 57, 61 en 63.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_IVA" model="account.tax.report.line">
@@ -601,6 +623,7 @@
             name="info"
         >BTW op de handelingen aangegeven in de roosters 01, 02, 03, 86 en 87.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [54] : bedrag van de verschuldigde belasting op de handelingen vermeld in de roosters [01], [02] en [03].&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [55] : bedrag van de verschuldigde belasting op de handelingen vermeld in rooster [86].&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [56] : bedrag van de verschuldigde belasting op de handelingen vermeld in rooster [87], met uitzondering van de handelingen waarvoor de belasting wordt vermeld in rooster [57].</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_54" model="account.tax.report.line">
@@ -654,6 +677,7 @@
             name="info"
         >BTW op invoeren met verlegging van heffing&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [57] : bedrag van de verschuldigde belasting op invoeren uit niet Lidstaten van de Europese Unie, met verlegging van de heffing naar het binnenland (z. art. 5, §3, K.B. nr. 7).</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_57" model="account.tax.report.line">
@@ -681,6 +705,7 @@
             name="info"
         >Diverse btw-regularisaties in het voordeel van de Staat&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [61] : diverse btw-herzieningen in het voordeel van de Staat (ontoereikende heffingen vastgesteld door de aangever, herzieningen van de aftrek, regularisaties ingevolge administratieve beslissingen).&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Het bedrag van het debetsaldo van de rekening-courant die de administratie voor de belastingplichtige bijhoudt, mag GEENSZINS in de aangifte worden vermeld.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_61" model="account.tax.report.line">
@@ -708,6 +733,7 @@
             name="info"
         >Terug te storten btw vermeld op ontvangen creditnota’s&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [63] : bedrag van de terug te storten belasting ingevolge ontvangen creditnota’s (t.t.z. de belasting die op de ontvangen creditnota’s is vermeld).</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_63" model="account.tax.report.line">
@@ -733,6 +759,7 @@
     <field name="parent_id" ref="atrl_VI" />
     <field name="info">Totaal van de roosters 59, 62 en 64.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_VA" model="account.tax.report.line">
@@ -747,6 +774,7 @@
             name="info"
         >Aftrekbare BTW&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [59] : bedrag van de aftrekbare belasting met betrekking tot de inkomende handelingen (art. 45 van het btw-wetboek en het K.B. nr. 3).</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_59" model="account.tax.report.line">
@@ -771,6 +799,7 @@
             name="info"
         >Diverse btw-regularisaties in het voordeel van de aangever.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [62] : diverse btw-herzieningen in het voordeel van de aangever&amp;lt;br/&amp;gt;(belasting waarvan de aangever teruggave kan verkrijgen, herzieningen van de aftrek, regularisaties ingevolge administratieve beslissingen).&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Het bedrag van het creditsaldo van de rekening-courant die de administratie voor de belastingplichtige bijhoudt, mag GEENSZINS in de aangifte worden vermeld.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_62" model="account.tax.report.line">
@@ -798,6 +827,7 @@
             name="info"
         >Te recupereren btw vermeld op uitgereikte creditnota’s.&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Rooster [64] : bedrag van de te recupereren belasting ingevolge uitgereikte creditnota’s (t.t.z. de belasting die op de uitgereikte creditnota’s is vermeld).</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_64" model="account.tax.report.line">
@@ -823,6 +853,7 @@
     <field name="parent_id" ref="atrl_I" />
     <field name="info">Betreft uitsluitend de maandaandgifte van de december.</field>
     <field name="invisible" eval="0" />
+    <field name="formula">None</field>
     <field name="report_id" ref="be_vat_report" />
   </record>
   <record id="atrl_91" model="account.tax.report.line">
