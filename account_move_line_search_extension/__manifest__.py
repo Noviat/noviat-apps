@@ -6,7 +6,7 @@
     "version": "14.0.1.0.0",
     "license": "AGPL-3",
     "author": "Noviat",
-    "website": "http://www.noviat.com",
+    "website": "https://www.noviat.com/",
     "category": "Accounting & Finance",
     "depends": ["account", "date_range"],
     "data": [

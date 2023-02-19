@@ -11,6 +11,6 @@ class ResPartner(models.Model):
     def search(self, args, offset=0, limit=None, order=None, count=False):
         if self._context.get("account_move_line_search_extension"):
             args.extend(["|", ("active", "=", False), ("active", "=", True)])
-        return super(ResPartner, self).search(
+        return super().search(
             args, offset=offset, limit=limit, order=order, count=count
         )

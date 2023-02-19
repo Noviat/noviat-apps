@@ -12,53 +12,16 @@ class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
     @api.model
-    def search(self, args, offset=0, limit=None, order=None, count=False):
+    def _search(self, domain, *args, **kwargs):
         if "account_move_line_search_extension" in self.env.context:
-            for arg in args:
+            domain = self._get_amlse_domain(domain)
+        return super()._search(domain, *args, **kwargs)
 
-                if arg[0] == "amount_search" and len(arg) == 3:
-                    digits = self.env["decimal.precision"].precision_get("Account")
-                    val = str2float(arg[2])
-                    if val is not None:
-                        if arg[2][0] in ["+", "-"]:
-                            f1 = "balance"
-                            f2 = "amount_currency"
-                        else:
-                            f1 = "abs(balance)"
-                            f2 = "abs(amount_currency)"
-                            val = abs(val)
-                        query = (
-                            "SELECT id FROM account_move_line "
-                            "WHERE round({0} - {2}, {3}) = 0.0 "
-                            "OR round({1} - {2}, {3}) = 0.0"
-                        ).format(f1, f2, val, digits)
-                        # pylint: disable=E8103
-                        self.env.cr.execute(query)
-                        res = self.env.cr.fetchall()
-                        ids = res and [x[0] for x in res] or [0]
-                        arg[0] = "id"
-                        arg[1] = "in"
-                        arg[2] = ids
-                    else:
-                        arg[0] = "id"
-                        arg[1] = "="
-                        arg[2] = 0
-                    break
-
-            for arg in args:
-                if arg[0] == "analytic_account_search":
-                    ana_dom = [
-                        "|",
-                        ("name", "ilike", arg[2]),
-                        ("code", "ilike", arg[2]),
-                    ]
-                    arg[0] = "analytic_account_id"
-                    arg[2] = self.env["account.analytic.account"].search(ana_dom).ids
-                    break
-
-        return super().search(
-            args, offset=offset, limit=limit, order=order, count=count
-        )
+    @api.model
+    def _web_read_group(self, domain, *args, **kwargs):
+        if "account_move_line_search_extension" in self.env.context:
+            domain = self._get_amlse_domain(domain)
+        return super()._web_read_group(domain, *args, **kwargs)
 
     @api.model
     def fields_view_get(
@@ -98,6 +61,52 @@ class AccountMoveLine(models.Model):
 
     def _get_amlse_groups(self):
         return ["analytic.group_analytic_accounting"]
+
+    @api.model
+    def _get_amlse_domain(self, domain):
+        for dom in domain:
+            if dom[0] == "amount_search" and len(dom) == 3:
+                # digits = 2 for performance reasons:
+                # retrieving the currency rounding would require
+                # res_currency join and hence slower query
+                digits = 2
+                val = str2float(dom[2])
+                if val is not None:
+                    if dom[2][0] in ["+", "-"]:
+                        f1 = "balance"
+                        f2 = "amount_currency"
+                    else:
+                        f1 = "abs(balance)"
+                        f2 = "abs(amount_currency)"
+                        val = abs(val)
+                    query = (
+                        "SELECT id FROM account_move_line "
+                        "WHERE round({0} - {2}, {3}) = 0.0 "
+                        "OR round({1} - {2}, {3}) = 0.0"
+                    ).format(f1, f2, val, digits)
+                    # pylint: disable=E8103
+                    self.env.cr.execute(query)
+                    res = self.env.cr.fetchall()
+                    ids = res and [x[0] for x in res] or [0]
+                    dom[0] = "id"
+                    dom[1] = "in"
+                    dom[2] = ids
+                else:
+                    dom[0] = "id"
+                    dom[1] = "="
+                    dom[2] = 0
+                break
+
+        for dom in domain:
+            if dom[0] == "analytic_account_search":
+                ana_dom = [
+                    "|",
+                    ("name", "ilike", dom[2]),
+                    ("code", "ilike", dom[2]),
+                ]
+                dom[0] = "analytic_account_id"
+                dom[2] = self.env["account.analytic.account"].search(ana_dom).ids
+        return domain
 
 
 def str2float(val):

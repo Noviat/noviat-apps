@@ -1,4 +1,4 @@
-# Copyright 2009-2021 Noviat
+# Copyright 2009-2023 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import calendar
@@ -12,6 +12,8 @@ from lxml import etree
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 from odoo.modules.module import get_module_resource
+
+from odoo.addons.web.controllers.main import clean_action
 
 
 class L10nBeVatCommon(models.AbstractModel):
@@ -70,7 +72,8 @@ class L10nBeVatCommon(models.AbstractModel):
     )
     file_name = fields.Char()
     file_save = fields.Binary(string="Save File", readonly=True)
-    comments = fields.Text(string="Comments")
+    draft_moves = fields.Boolean()
+    comments = fields.Text()
     note = fields.Text(string="Notes", default="")
 
     @api.model
@@ -135,10 +138,18 @@ class L10nBeVatCommon(models.AbstractModel):
             dom.append(("state", "=", "draft"))
             check_draft = self.env["account.move"].search_count(dom)
             if check_draft:
-                warning = _("Draft entries found for the selected period.")
-                if warning not in self.note:
-                    self.note += warning
-                    self.note += "\n"
+                self.draft_moves = True
+
+    def view_draft_moves(self):
+        dom = self._get_move_line_date_domain()
+        dom.append(("state", "=", "draft"))
+        act = self.env["ir.actions.act_window"]._for_xml_id(
+            "account.action_move_journal_line"
+        )
+        act = clean_action(act, env=self.env)
+        act["domain"] = dom
+        act["context"] = {}
+        return act
 
     def create_xls(self):
         raise UserError(_("The XLS export function is not available."))
@@ -381,8 +392,15 @@ class L10nBeVatCommon(models.AbstractModel):
         mod = "account_move_line_search_extension"
         act = "account_move_line_action_search_extension"
         act_window = self.env.ref("{}.{}".format(mod, act), raise_if_not_found=False)
-        if not act_window:
-            mod_std = "account"
-            act_std = "action_account_moves_all_a"
-            act_window = self.env.ref("{}.{}".format(mod_std, act_std))
-        return act_window.sudo().read()[0]
+        if act_window:
+            res = act_window.sudo().read()[0]
+            res["context"] = {"account_move_line_search_extension": 1}
+        else:
+            view = self.env.ref("account.view_move_line_tax_audit_tree")
+            res = {
+                "type": "ir.actions.act_window",
+                "name": _("Journal Items for Tax Audit"),
+                "res_model": "account.move.line",
+                "views": [(view.id, "list"), (False, "form")],
+            }
+        return res

@@ -33,6 +33,7 @@
           <field name="date_from" />
           <field name="date_to" />
           <field name="period" />
+          <field name="draft_moves" />
           <field name="note" />
           <field name="company_partner_id" />
         </group>
@@ -92,16 +93,34 @@
                         readonly="1"
                         groups="base.group_multi_company"
                     />
-          <newline />
-          <form class="o_form_label">Options for the Intervat XML Declaration:</form>
-          <newline />
+          <div colspan="6" col="1">
+            <strong>Options for the Intervat XML Declaration:</strong>
+          </div>
           <field name="ask_restitution" />
           <field name="ask_payment" />
           <field name="client_nihil" string="Last Declaration" />
         </group>
-        <div attrs="{'invisible': [('note', '=', '')]}">
-          <field name="note" class="alert alert-info" role="alert" readonly="1" />
+
+        <div
+                    id="warnings"
+                    class="alert alert-info"
+                    role="alert"
+                    attrs="{'invisible': [('draft_moves', '=', False), ('note', '=', '')]}"
+                >
+          <field name="draft_moves" invisible="1" />
+          <div id="draft_moves">
+            <button
+                            class="pl-0 pr-0"
+                            name="view_draft_moves"
+                            type="object"
+                            role="alert"
+                            string="Draft entries"
+                        />
+            <span> found for the selected period.</span>
+          </div>
+          <field name="note" attrs="{'invisible': [('note', '=', '')]}" readonly="1" />
         </div>
+
         <notebook>
           <page name="declaration" string="Periodical VAT Declaration">
             <field name="case_ids" nolabel="1" readonly="1">
