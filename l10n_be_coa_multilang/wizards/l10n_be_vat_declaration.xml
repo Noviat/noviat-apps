@@ -21,10 +21,11 @@
           <field name="target_move"/>
         </group>
         <group name="date_range" invisible="1">
-          <field name="date_from"/>
-          <field name="date_to"/>
-          <field name="period"/>
-          <field name="note"/>
+          <field name="date_from" />
+          <field name="date_to" />
+          <field name="period" />
+          <field name="draft_moves" />
+          <field name="note" />
         </group>
         <footer>
           <button name="generate_declaration" string="View Declaration" type="object" class="oe_highlight"/>
@@ -62,9 +63,26 @@
           <field name="ask_payment"/>
           <field name="client_nihil" string="Last Declaration"/>
         </group>
-        <div attrs="{'invisible': [('note', '=', '')]}">
-          <field name="note" class="alert alert-info" role="alert" readonly="1"/>
+        <div
+                    id="warnings"
+                    class="alert alert-info"
+                    role="alert"
+                    attrs="{'invisible': [('draft_moves', '=', False), ('note', '=', '')]}"
+                >
+          <field name="draft_moves" invisible="1" />
+          <div id="draft_moves">
+            <button
+                            class="pl-0 pr-0"
+                            name="view_draft_moves"
+                            type="object"
+                            role="alert"
+                            string="Draft entries"
+                        />
+            <span> found for the selected period.</span>
+          </div>
+          <field name="note" attrs="{'invisible': [('note', '=', '')]}" readonly="1" />
         </div>
+
         <notebook>
           <page name="declaration" string="Periodical VAT Declaration">
             <field name="case_ids" nolabel="1" readonly="1">

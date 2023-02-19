@@ -458,7 +458,7 @@ class FixedAssetImport(models.TransientModel):
         time_start = time.time()
         self._err_log = ""
         self._get_orm_fields()
-        data = base64.decodestring(self.fa_data)
+        data = base64.decodebytes(self.fa_data)
         lines = self._read_xls(data)
 
         fa_vals_list = []

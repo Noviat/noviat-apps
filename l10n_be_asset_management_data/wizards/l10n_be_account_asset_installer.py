@@ -1,4 +1,4 @@
-# Copyright 2009-2021 Noviat.
+# Copyright 2009-2023 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import csv
@@ -6,7 +6,8 @@ import io
 import os
 
 from odoo import _, api, fields, models
-from odoo.modules.module import ad_paths
+
+from odoo.addons import __path__ as ad_paths
 
 
 class L10nBeAccountAssetInstaller(models.TransientModel):

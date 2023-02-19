@@ -63,7 +63,7 @@
     >
         <field
             name="context"
-        >{'account_move_line_search_extension': 1, 'analytic_journal_id': 1, 'search_default_posted': 1}</field>
+        >{'account_move_line_search_extension': 1, 'search_default_posted': 1}</field>
         <field name="domain">[('display_type', 'not in', ('line_section', 'line_note'))]</field>
         <field name="name">Journal Items Search All</field>
         <field name="res_model">account.move.line</field>

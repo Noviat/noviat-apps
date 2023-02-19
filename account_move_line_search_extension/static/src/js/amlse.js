@@ -1,6 +1,6 @@
 /*
-# Copyright 2009-2021 Noviat.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+  Copyright 2009-2022 Noviat.
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 */
 
 odoo.define("account_move_line_search_extension.amlse", function(require) {
@@ -143,9 +143,24 @@ odoo.define("account_move_line_search_extension.amlse", function(require) {
             });
         },
 
+        check_sidebar_domain() {
+            var domain = [];
+            if (this.sidebar_domain) {
+                this.sidebar_domain.forEach(function(sdom) {
+                    if (
+                        !["amount_search", "analytic_account_search"].includes(sdom[0])
+                    ) {
+                        domain.push(sdom);
+                    }
+                });
+            }
+            this.sidebar_domain = domain;
+        },
+
         do_search: function() {
             this.sidebar_domain = this.sidebar.env.domain.slice();
             this.amlse_domain = this.aml_search_domain();
+            this.check_sidebar_domain();
             this.reload(this.sidebar.env);
         },
 
@@ -157,7 +172,8 @@ odoo.define("account_move_line_search_extension.amlse", function(require) {
                 this.sidebar_domain = this.sidebar.env.domain.slice();
                 params.domain = this.sidebar.env.domain;
             }
-            params.domain = this.amlse_domain.concat(params.domain);
+            this.check_sidebar_domain();
+            params.domain = this.amlse_domain.concat(this.sidebar_domain);
             return this._super.apply(this, arguments).then(function() {
                 /* Restore search bar domain since the super
                    will set it to the concatenated domain */
