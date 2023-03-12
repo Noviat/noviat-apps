@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <record id="view_bank_statement_form" model="ir.ui.view">
+    <field name="name">account.bank.statement.form</field>
+    <field name="model">account.bank.statement</field>
+    <field name="inherit_id" ref="account_accountant.view_bank_statement_form" />
+    <field name="arch" type="xml">
+      <!--
+        placeholder for modules that implement automatic reconciliation, e.g.
+        - l10n_be_coda_advanced
+      -->
+      <button name="action_bank_reconcile_bank_statements" position="before">
+        <button
+                    name="automatic_reconcile"
+                    string="Automatic Reconcile"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': 1}"
+                />
+      </button>
+      <button name="action_bank_reconcile_bank_statements" position="attributes">
+        <attribute name="string">Manual Reconcile</attribute>
+      </button>
+    </field>
+  </record>
+
+</odoo>

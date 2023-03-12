@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <record id="be_vat_report" model="account.tax.report">
+    <field name="name">Belgian VAT Report</field>
+    <field name="country_id" ref="base.be" />
+  </record>
+
+</odoo>

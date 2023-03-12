@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <menuitem
+        id="account_bank_statement_line_menu"
+        name="Bank Transactions"
+        action="account.action_bank_statement_line"
+        parent="account_usability.menu_accounting_bank_and_cash"
+        sequence="11"
+    />
+
+</odoo>

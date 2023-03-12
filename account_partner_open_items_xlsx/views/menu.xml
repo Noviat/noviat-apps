@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <menuitem
+        id="wiz_partner_open_items_menu"
+        name="Open Items per Partner"
+        parent="account.menu_finance_entries_accounting_ledgers"
+        action="wiz_partner_open_items_action_partner_select_all"
+        sequence="10"
+    />
+
+</odoo>

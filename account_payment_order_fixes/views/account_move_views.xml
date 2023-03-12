@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="account_invoice_2_payment_line_action" model="ir.actions.act_window">
+        <field name="name">Payment Lines</field>
+        <field name="res_model">account.payment.line</field>
+        <field name="binding_model_id" ref="account.model_account_move" />
+        <field name="domain">[('move_line_id.move_id.id', '=', active_id)]</field>
+        <field name="context">{'payment_line_readonly': 1}</field>
+        <field name="binding_view_types">tree,form</field>
+    </record>
+
+</odoo>

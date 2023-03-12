@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <record id="view_account_journal_form" model="ir.ui.view">
+    <field name="name">account.journal.form.sequence_override_regex</field>
+    <field name="model">account.journal</field>
+    <field name="inherit_id" ref="account.view_account_journal_form" />
+    <field name="arch" type="xml">
+      <xpath
+                expr="//notebook/page[@name='advanced_settings']//field[@name='invoice_reference_type']/parent::group"
+                position="after"
+            >
+        <group
+                    name="sequence_override_regex"
+                    string="Journal Entry Numbering Scheme"
+                    groups="account.group_account_manager"
+                >
+          <field name="starting_sequence" />
+          <field
+                        name="refund_starting_sequence"
+                        attrs="{'invisible': ['|', ('type', 'not in', ('sale', 'purchase')), ('refund_sequence', '=', False)]}"
+                    />
+          <field name="sequence_override_regex" />
+        </group>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

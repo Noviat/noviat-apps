@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <record id="statement_balance_report_action" model="ir.actions.report">
+    <field name="name">Bank Statement Balances Report</field>
+    <field name="model">bank.statement.balance.print</field>
+    <field name="report_type">qweb-pdf</field>
+    <field
+            name="report_name"
+        >account_bank_statement_advanced.statement_balance_report</field>
+    <field
+            name="report_file"
+        >account_bank_statement_advanced.statement_balance_report</field>
+    <field name="binding_view_types">list</field>
+  </record>
+
+</odoo>

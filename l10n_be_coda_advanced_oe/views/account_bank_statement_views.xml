@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <record id="view_bank_statement_form" model="ir.ui.view">
+    <field name="name">account.bank.statement.form</field>
+    <field name="model">account.bank.statement</field>
+    <field
+            name="inherit_id"
+            ref="account_bank_statement_advanced_oe.view_bank_statement_form"
+        />
+    <field name="arch" type="xml">
+      <button name="automatic_reconcile" position="attributes">
+        <attribute
+                    name="attrs"
+                >{'invisible': ['|', '|',  ('all_lines_reconciled', '=', True), ('line_ids', '=', []), ('state', '!=', 'posted')]}</attribute>
+      </button>
+    </field>
+  </record>
+
+</odoo>
