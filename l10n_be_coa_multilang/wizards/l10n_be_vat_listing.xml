@@ -15,6 +15,7 @@
                     />
           <field
                         name="declarant_id"
+                        required="1"
                         domain="['|', ('parent_id', '=', company_partner_id), ('id', '=', company_partner_id)]"
                     />
           <field name="year" />

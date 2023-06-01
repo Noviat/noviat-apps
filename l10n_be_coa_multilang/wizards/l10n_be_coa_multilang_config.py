@@ -261,7 +261,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
                 account.name = account_tmpls[i].name
             # no field value check to enable mono- to multi-lang
             # via this config wizard
-            self._copy_xlat(langs, in_field, account_tmpls, accounts, field_check=False)
+            self._copy_xlat(langs, in_field, account_tmpls, accounts)
 
         # copy account.group translations
         ag_tmpls = self_no_ctx.env["account.group.template"].search(

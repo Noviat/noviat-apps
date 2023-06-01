@@ -15,6 +15,7 @@
                     />
           <field
                         name="declarant_id"
+                        required="1"
                         domain="['|', ('parent_id', '=', company_partner_id), ('id', '=', company_partner_id)]"
                     />
           <field name="year" />
@@ -100,7 +101,6 @@
           <field name="ask_payment" />
           <field name="client_nihil" string="Last Declaration" />
         </group>
-
         <div
                     id="warnings"
                     class="alert alert-info"
@@ -108,19 +108,18 @@
                     attrs="{'invisible': [('draft_moves', '=', False), ('note', '=', '')]}"
                 >
           <field name="draft_moves" invisible="1" />
-          <div id="draft_moves">
+          <div id="draft_moves" attrs="{'invisible': [('draft_moves', '=', False)]}">
             <button
-                            class="pl-0 pr-0"
+                            class="pl-0 pr-0 font-weight-bold align-baseline"
                             name="view_draft_moves"
                             type="object"
-                            role="alert"
+                            role="button"
                             string="Draft entries"
                         />
             <span> found for the selected period.</span>
           </div>
           <field name="note" attrs="{'invisible': [('note', '=', '')]}" readonly="1" />
         </div>
-
         <notebook>
           <page name="declaration" string="Periodical VAT Declaration">
             <field name="case_ids" nolabel="1" readonly="1">

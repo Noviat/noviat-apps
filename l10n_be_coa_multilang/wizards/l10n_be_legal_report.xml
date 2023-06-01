@@ -20,7 +20,6 @@
         </group>
         <group name="invisible" invisible="1">
           <field name="type" />
-          <field name="declarant_id" />
         </group>
         <footer>
           <button
@@ -78,7 +77,6 @@
         </group>
         <group name="invisible" invisible="1">
           <field name="type" />
-          <field name="declarant_id" />
         </group>
         <group name="entries">
           <field name="line_ids" nolabel="1" readonly="1">
@@ -111,7 +109,7 @@
             </tree>
             <form string="Report Entry">
               <group>
-                <field name="chart_id" string="Report Entry" />
+                <field name="chart_id" />
                 <field name="amount" attrs="{'invisible': [('code', '=', False)]}" />
                 <field name="code" invisible="1" />
               </group>

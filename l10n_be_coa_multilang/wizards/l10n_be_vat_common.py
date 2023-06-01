@@ -34,7 +34,6 @@ class L10nBeVatCommon(models.AbstractModel):
     )
     declarant_id = fields.Many2one(
         comodel_name="res.partner",
-        required=True,
         string="Declarant",
         help="Select the contact for the declaration",
     )
