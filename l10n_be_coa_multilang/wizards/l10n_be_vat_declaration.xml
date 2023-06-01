@@ -11,7 +11,9 @@
           <field name="company_id"
                  options="{'no_create': True, 'no_open': True}"
                  groups="base.group_multi_company"/>
-          <field name="declarant_id"/>
+          <field name="declarant_id"
+                 required="1"
+                 domain="['|', ('parent_id', '=', company_partner_id), ('id', '=', company_partner_id)]"/>
           <field name="year"/>
           <field name="period_length" required="1"/>
           <field name="month"
@@ -26,6 +28,7 @@
           <field name="period" />
           <field name="draft_moves" />
           <field name="note" />
+          <field name="company_partner_id" />
         </group>
         <footer>
           <button name="generate_declaration" string="View Declaration" type="object" class="oe_highlight"/>

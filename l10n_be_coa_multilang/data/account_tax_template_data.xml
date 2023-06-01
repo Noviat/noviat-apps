@@ -1166,7 +1166,7 @@
     <field name="amount">0</field>
     <field name="amount_type">percent</field>
     <field name="type_tax_use">purchase</field>
-    <field name="invoice_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_82D')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax'})]"/>
+    <field name="invoice_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'plus_report_line_ids': [ref('atrl_83D')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax'})]"/>
     <field name="refund_repartition_line_ids" eval="[(5, 0, 0), (0, 0, {'repartition_type': 'base', 'minus_report_line_ids': [ref('atrl_83D'), ref('atrl_87')],  'plus_report_line_ids': [ref('atrl_85D')]}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax'})]"/>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template"/>
   </record>

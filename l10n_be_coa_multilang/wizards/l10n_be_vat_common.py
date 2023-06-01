@@ -26,12 +26,14 @@ class L10nBeVatCommon(models.AbstractModel):
         required=True,
         string="Company",
     )
+    company_partner_id = fields.Many2one(
+        comodel_name="res.partner", related="company_id.partner_id", readonly=True
+    )
     currency_id = fields.Many2one(
         comodel_name="res.currency", related="company_id.currency_id", readonly=True
     )
     declarant_id = fields.Many2one(
         comodel_name="res.partner",
-        required=True,
         string="Declarant",
         help="Select the contact for the declaration",
     )
