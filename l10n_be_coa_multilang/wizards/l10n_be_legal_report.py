@@ -191,7 +191,7 @@ class L10nBeLegalReportLine(models.TransientModel):
 
     report_id = fields.Many2one(comodel_name="l10n.be.legal.report", string="Report")
     chart_id = fields.Many2one(
-        comodel_name="be.legal.financial.report.chart", string="Code"
+        comodel_name="be.legal.financial.report.chart", string="Report Entry"
     )
     code = fields.Char(related="chart_id.code")
     amount = fields.Monetary(currency_field="currency_id")
