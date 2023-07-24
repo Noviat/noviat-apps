@@ -118,7 +118,9 @@ class L10nBeVatDeclaration(models.TransientModel):
         )
 
         self._validate_xmlschema(xml_string, "NewTVA-in_v0_9.xsd")
-        self.file_name = "vat_declaration_%s.xml" % self.period
+        self.file_name = "{nbr}_vat_declaration_{period}.xml".format(
+            nbr=self._get_company_vat(), period=self.period
+        )
         self.file_save = base64.encodebytes(xml_string)
 
         return self._action_save_xml()
@@ -315,7 +317,7 @@ class L10nBeVatDeclaration(models.TransientModel):
         VAT declaration validation rules
         Cf. https://eservices.minfin.fgov.be/intervat
         """
-        is_zero = self.currency_id.is_zero
+        cround = self.currency_id.round
         passed = "\u2705"
         failed = "\u26D4"
 
@@ -340,63 +342,106 @@ class L10nBeVatDeclaration(models.TransientModel):
         # non-blocking controls
         # The text strings of the controls are modeled after the implementation
         # in Exact Online
+        control_vals = (
+            "\n"
+            + 9 * " "
+            + _("Value left")
+            + " = {left}, "
+            + _("Value right")
+            + " = {right}"
+        )
+
         control = "[01] * 6% + [02] * 12% + [03] * 21% = [54]"
-        c1 = cvalues["01"] * 0.06 + cvalues["02"] * 0.12 + cvalues["03"] * 0.21
-        if is_zero(c1 - cvalues["54"]):
+        vl = cround(cvalues["01"] * 0.06 + cvalues["02"] * 0.12 + cvalues["03"] * 0.21)
+        vr = cround(cvalues["54"])
+        if vl == vr:
             self.controls = passed + " : " + control
         else:
             self.controls = failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
 
         control = "([84] + [86] + [88]) * 21% >= [55]"
         self.controls += "\n"
-        c1 = (cvalues["84"] + cvalues["86"] + cvalues["88"]) * 0.21
-        if c1 >= cvalues["55"]:
+        vl = cround((cvalues["84"] + cvalues["86"] + cvalues["88"]) * 0.21)
+        vr = cround(cvalues["55"])
+        if vl - vr >= 0:
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
 
         control = "([85] + [87]) * 21% >= ([56] + [57])"
         self.controls += "\n"
-        c1 = (cvalues["85"] + cvalues["87"]) * 0.21
-        if c1 >= (cvalues["56"] + cvalues["57"]):
+        vl = cround((cvalues["85"] + cvalues["87"]) * 0.21)
+        vr = cround(cvalues["56"] + cvalues["57"])
+        if vl - vr >= 0:
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
 
         control = "([81] + [82] + [83] + [84] + [85]) * 50% >= [59]"
         self.controls += "\n"
-        c1 = (
-            cvalues["81"]
-            + cvalues["82"]
-            + cvalues["83"]
-            + cvalues["84"]
-            + cvalues["85"]
-        ) * 0.50
-        if c1 >= cvalues["59"]:
+        vl = cround(
+            (
+                cvalues["81"]
+                + cvalues["82"]
+                + cvalues["83"]
+                + cvalues["84"]
+                + cvalues["85"]
+            )
+            * 0.50
+        )
+        vr = cvalues["59"]
+        if vl - vr >= 0:
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
 
         control = "[85] * 21% >= [63]"
+        vl = cround(cvalues["85"] * 0.21)
+        vr = cround(cvalues["63"])
         self.controls += "\n"
-        if cvalues["85"] * 0.21 >= cvalues["63"]:
+        if vl - vr >= 0:
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
 
         control = "[49] * 21% >= [64]"
+        vl = cround(cvalues["49"] * 0.21)
+        vr = cround(cvalues["64"])
         self.controls += "\n"
-        if cvalues["49"] * 0.21 >= cvalues["64"]:
+        if vl - vr >= 0:
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
 
-        control = "[55] > 0 if [86] or [88] > 0"
+        control = "[55] > 0 if ([86] or [88]) > 0"
         self.controls += "\n"
-        if cvalues["86"] + cvalues["88"] and not cvalues["55"]:
+        vl = cround(cvalues["55"])
+        vr = cround(cvalues["86"] + cvalues["88"])
+        if vr and not vl:
             self.controls += failed + " : " + control
         else:
             self.controls += passed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
 
     def _node_VATDeclaration(self, parent, ns_map, ref):
 

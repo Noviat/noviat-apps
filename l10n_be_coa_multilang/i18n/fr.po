@@ -77,6 +77,18 @@ msgid "Controls"
 msgstr "Contrôles"
 
 #. module: l10n_be_coa_multilang
+#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
+#, python-format
+msgid "Value left"
+msgstr "Partie gauche"
+
+#. module: l10n_be_coa_multilang
+#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
+#, python-format
+msgid "Value right"
+msgstr "Partie droite"
+
+#. module: l10n_be_coa_multilang
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_declaration_view_form_declaration
 msgid "Last Declaration"
 msgstr "Dernière déclaration"
