@@ -343,7 +343,7 @@ class L10nBeVatDeclaration(models.TransientModel):
             + _("Value left")
             + " = {left}, "
             + _("Value right")
-            + "= {right}"
+            + " = {right}"
         )
 
         control = "[01] * 6% + [02] * 12% + [03] * 21% = [54]"
@@ -426,12 +426,17 @@ class L10nBeVatDeclaration(models.TransientModel):
             left="{:.2f}".format(vl), right="{:.2f}".format(vr)
         )
 
-        control = "[55] > 0 if [86] or [88] > 0"
+        control = "[55] > 0 if ([86] or [88]) > 0"
         self.controls += "\n"
-        if (cvalues["86"] + cvalues["88"]) and cround(cvalues["55"]) > 0:
-            self.controls += passed + " : " + control
-        else:
+        vl = cround(cvalues["55"])
+        vr = cround(cvalues["86"] + cvalues["88"])
+        if vr and not vl:
             self.controls += failed + " : " + control
+        else:
+            self.controls += passed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
 
     def _node_VATDeclaration(self, parent, ns_map, ref):
 
