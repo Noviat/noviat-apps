@@ -106,7 +106,9 @@ class L10nBeVatListing(models.TransientModel):
         )
 
         self._validate_xmlschema(xml_string, "NewLK-in_v0_9.xsd")
-        self.file_name = "vat_list_%s.xml" % self.year
+        self.file_name = "{nbr}_vat_list_{period}.xml".format(
+            nbr=self._get_company_vat(), period=self.period
+        )
         self.file_save = base64.encodebytes(xml_string)
 
         return self._action_save_xml()
