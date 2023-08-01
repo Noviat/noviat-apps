@@ -14,6 +14,12 @@ from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
+FIELD_TYPE_MAP = {
+    "text": "char",
+    "selection": "char",
+    "monetary": "float",
+}
+
 
 class FixedAssetImport(models.TransientModel):
     _name = "fixed.asset.import"
@@ -139,7 +145,7 @@ class FixedAssetImport(models.TransientModel):
             field_type = field_def["type"]
 
             try:
-                ft = field_type == "text" and "char" or field_type
+                ft = FIELD_TYPE_MAP.get(field_type, field_type)
                 wiz_dict["field_methods"][hf] = {
                     "method": getattr(self, "_handle_orm_%s" % ft),
                     "orm_field": orm_field,
@@ -355,6 +361,7 @@ class FixedAssetImport(models.TransientModel):
                         continue
 
                     fmt = wiz_dict["field_methods"][hf]["field_type"]
+                    fmt = FIELD_TYPE_MAP.get(fmt, fmt)
 
                     if fmt == "char":
                         if cell.ctype == xlrd.XL_CELL_TEXT:
