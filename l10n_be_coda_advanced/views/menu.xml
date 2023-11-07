@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <menuitem
+        id="menu_coda_configuration"
+        name="CODA Configuration"
+        parent="account.menu_finance_configuration"
+        sequence="30"
+    />
+
+  <menuitem
+        id="coda_bank_account_menu"
+        name="CODA Bank Account Configuration"
+        action="coda_bank_account_action"
+        parent="menu_coda_configuration"
+        sequence="1"
+    />
+
+  <menuitem
+        id="account_coda_trans_type_menu"
+        name="CODA Transaction Types"
+        action="account_coda_trans_type_action"
+        parent="menu_coda_configuration"
+        sequence="2"
+    />
+
+  <menuitem
+        id="account_coda_trans_code_menu"
+        name="CODA Transaction Codes"
+        action="account_coda_trans_code_action"
+        parent="menu_coda_configuration"
+        sequence="3"
+    />
+
+  <menuitem
+        id="account_coda_trans_category_menu"
+        name="CODA Transaction Categories"
+        action="account_coda_trans_category_action"
+        parent="menu_coda_configuration"
+        sequence="4"
+    />
+
+  <menuitem
+        id="account_coda_comm_type_menu"
+        name="CODA Structured Communication Types"
+        action="account_coda_comm_type_action"
+        parent="menu_coda_configuration"
+        sequence="5"
+    />
+
+  <menuitem
+        id="account_coda_import_menu"
+        name="Import CODA Files"
+        parent="account_usability.menu_accounting_bank_and_cash"
+        action="account_coda_import_action"
+        sequence="40"
+    />
+
+  <menuitem
+        id="account_coda_menu"
+        name="Imported CODA Files"
+        parent="account_usability.menu_accounting_bank_and_cash"
+        action="account_coda_action"
+        sequence="41"
+    />
+
+</odoo>

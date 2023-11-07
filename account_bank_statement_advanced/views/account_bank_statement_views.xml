@@ -1,0 +1,303 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <!--
+       Bypass bug caused by missing company_id field in account module.
+       This bug results in problems during upgrade all.
+    -->
+    <record id="view_bank_statement_tree" model="ir.ui.view">
+        <field name="name">account.bank.statement.tree</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_tree" />
+        <field name="arch" type="xml">
+            <field name="is_valid" position="after">
+                <field name="company_id" invisible="1" />
+            </field>
+        </field>
+    </record>
+
+    <record id="account_bank_statement_view_tree" model="ir.ui.view">
+        <field name="name">account.bank.statement.tree</field>
+        <field name="model">account.bank.statement</field>
+        <field name="arch" type="xml">
+            <tree
+                decoration-danger="journal_id and not is_complete or not is_valid"
+                decoration-muted="state == 'draft'"
+            >
+                <field name="name" />
+                <field name="date" />
+                <field name="journal_id" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="balance_start" />
+                <field name="balance_end_real" />
+                <field name="state" />
+                <field name="balance_end" invisible="1" />
+                <field name="currency_id" invisible="1" />
+                <field name="all_lines_processed" invisible="1" />
+                <field name="is_complete" invisible="1" />
+                <field name="is_valid" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_bank_statement_view_form" model="ir.ui.view">
+        <field name="name">account.bank.statement.form</field>
+        <field name="model">account.bank.statement</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form string="Bank Statement">
+                <header>
+                    <button
+                        string="Manual Reconcile"
+                        class="oe_highlight"
+                        name="reconcile_bank_statement_transactions"
+                        type="object"
+                        attrs="{'invisible': ['|', '|', ('all_lines_processed', '=', True), ('line_ids', '=', []), ('state', '=', 'confirm')]}"
+                    />
+                    <button
+                        string="Confirm"
+                        class="oe_highlight"
+                        name="set_to_confirm"
+                        type="object"
+                        attrs="{'invisible':['|', '|', ('all_lines_processed', '=', False), ('is_complete', '=', False), ('state', '=', 'confirm')]}"
+                    />
+                    <button
+                        string="Reset to Draft"
+                        name="set_to_draft"
+                        type="object"
+                        attrs="{'invisible': [('state', '!=', 'confirm')]}"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,confirm"
+                    />
+                </header>
+                <div
+                    class="alert alert-warning text-center"
+                    role="alert"
+                    attrs="{'invisible': [('is_valid','=',True), ('is_complete','=',True)]}"
+                >
+                    <field name="problem_description" />
+                </div>
+                <sheet>
+                    <field name="all_lines_processed" invisible="1" />
+                    <field name="company_id" invisible="1" />
+                    <field name="currency_id" invisible="1" />
+                    <field name="foreign_currency" invisible="1" />
+                    <field name="is_valid" invisible="1" />
+                    <field name="is_complete" invisible="1" />
+                    <field name="move_line_count" invisible="1" />
+                    <field name="import_format" invisible="1" />
+                    <field name="import_format_readonly" invisible="1" />
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            class="oe_stat_button"
+                            name="view_journal_entries"
+                            string="Journal Entries"
+                            type="object"
+                            attrs="{'invisible':[('move_line_count','=', 0)]}"
+                            icon="fa-bars"
+                        />
+                    </div>
+                    <div class="oe_title oe_inline">
+                        <label for="name" />
+                        <h1><field name="name" placeholder="e.g. BNK01-23-015" /></h1>
+                    </div>
+                    <group>
+                        <group name="main-left">
+                            <field
+                                name="journal_id"
+                                domain="[('type', '=', 'bank')]"
+                                attrs="{'readonly': ['|', '|', ('line_ids','!=', []), ('state', '=', 'confirm'), ('import_format_readonly', '=', True)]}"
+                                options="{'no_open': True, 'no_create': True}"
+                            />
+                            <field
+                                name="date"
+                                attrs="{'readonly': ['|', ('state', '=', 'confirm'), ('import_format_readonly', '=', True)]}"
+                                options="{'datepicker': {'warn_future': true}}"
+                            />
+                            <field
+                                name="accounting_date"
+                                attrs="{'readonly': [('state', '=', 'confirm')]}"
+                            />
+                            <field
+                                name='company_id'
+                                options="{'no_create': True}"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                        <group name="main-right">
+                            <label for="balance_start" />
+                            <div>
+                                <field
+                                    name="balance_start"
+                                    class="oe_inline"
+                                    attrs="{'readonly': ['|', ('state', '=', 'confirm'), ('import_format_readonly', '=', True)]}"
+                                />
+                            </div>
+                            <label for="balance_end_real" />
+                            <div>
+                                <field
+                                    name="balance_end_real"
+                                    class="oe_inline"
+                                    attrs="{'readonly': ['|', ('state', '=', 'confirm'), ('import_format_readonly', '=', True)]}"
+                                />
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Transactions" name="statement_line_ids">
+                            <field
+                                name="line_ids"
+                                attrs="{'readonly': [('state', '=', 'confirm')]}"
+                                context="{'default_transaction_date': date, 'default_journal_id': journal_id, 'default_journal_id': journal_id, 'form_view_ref': 'account_bank_statement_advanced.account_bank_statement_line_view_form', 'import_format': import_format}"
+                            >
+                                <tree
+                                    editable="bottom"
+                                    decoration-info="is_reconciled == False"
+                                    default_order="sequence"
+                                    limit="500"
+                                >
+                                    <!-- Invisible fields -->
+                                    <field name="company_id" invisible="1" />
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="import_format" invisible="1" />
+                                    <field name="is_reconciled" invisible="1" />
+                                    <field name="is_readonly" invisible="1" />
+                                    <field name="journal_id" invisible="1" />
+                                    <field name="partner_bank_id" invisible="1" />
+                                    <field name="state" invisible="1" />
+                                    <field name="suitable_journal_ids" invisible="1" />
+                                    <!-- Visible fields -->
+                                    <field name="sequence" widget="handle" />
+                                    <button
+                                        name="view_transaction_details"
+                                        title="View Details"
+                                        type="object"
+                                        icon="fa-external-link"
+                                        class="o_handle_cell"
+                                    />
+                                    <field
+                                        name="transaction_date"
+                                        attrs="{'readonly': [('is_readonly', '=', True)]}"
+                                    />
+                                    <field
+                                        name="val_date"
+                                        optional="hide"
+                                        attrs="{'readonly': [('is_readonly', '=', True)]}"
+                                    />
+                                    <field
+                                        name="date"
+                                        string="Accounting Date"
+                                        optional="hide"
+                                        attrs="{'readonly': [('is_readonly', '=', True)]}"
+                                    />
+                                    <field
+                                        name="payment_ref"
+                                        attrs="{'readonly': [('is_readonly', '=', True)]}"
+                                    />
+                                    <field
+                                        name="partner_id"
+                                        domain="['|', ('parent_id','=', False), ('is_company','=',True)]"
+                                        attrs="{'readonly': [('is_readonly', '=', True)]}"
+                                    />
+                                    <field
+                                        name="ref"
+                                        optional="hide"
+                                        attrs="{'readonly': [('is_readonly', '=', True)]}"
+                                    />
+                                    <field
+                                        name="narration"
+                                        string="Notes"
+                                        optional="hide"
+                                        attrs="{'readonly': [('is_readonly', '=', True)]}"
+                                    />
+                                    <field
+                                        name="transaction_type"
+                                        optional="hide"
+                                        attrs="{'readonly': [('is_readonly', '=', True)]}"
+                                    />
+                                    <field
+                                        name="amount_currency"
+                                        attrs="{'column_invisible': [('parent.foreign_currency', '=', False)], 'readonly': [('is_readonly', '=', True)], 'invisible': [('amount', '=', 0)]}"
+                                        optional="hide"
+                                        groups="base.group_multi_currency"
+                                    />
+                                    <field
+                                        name="foreign_currency_id"
+                                        optional="hide"
+                                        groups="base.group_multi_currency"
+                                        attrs="{'readonly': [('is_readonly', '=', True)], 'invisible': [('amount', '=', 0)]}"
+                                    />
+                                    <field
+                                        name="amount"
+                                        attrs="{'invisible': [('amount', '=', 0)]}"
+                                    />
+                                    <field
+                                        name="account_number"
+                                        optional="hide"
+                                        attrs="{'invisible': [('amount', '=', 0)]}"
+                                    />
+                                    <button
+                                        name="action_undo_reconciliation"
+                                        type="object"
+                                        attrs="{'invisible': ['|', '|', ('amount', '=', 0), ('is_reconciled', '=', False), ('parent.state', '=', 'confirm')]}"
+                                        title="Revert reconciliation"
+                                        icon="fa-undo"
+                                    />
+                                    <button
+                                        name="button_view_move"
+                                        attrs="{'invisible': ['|', ('amount', '=', 0), ('is_reconciled', '=', False)]}"
+                                        title="Move"
+                                        type="object"
+                                        icon="fa-folder-open-o text-success"
+                                    />
+                                    <field name="globalisation_id" string="Glob. Id" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group
+                        class="oe_subtotal_footer oe_right"
+                        colspan="2"
+                        name="sale_total"
+                    >
+                        <div class="oe_subtotal_footer_separator oe_inline">
+                            <label for="balance_end" />
+                        </div>
+                        <field
+                            name="balance_end"
+                            nolabel="1"
+                            class="oe_subtotal_footer_separator"
+                            force_save="1"
+                        />
+                    </group>
+                    <div class="oe_clear" />
+                </sheet>
+                <div class="o_attachment_preview" />
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_bank_statement_action" model="ir.actions.act_window">
+        <field name="name">Bank Statements</field>
+        <field name="res_model">account.bank.statement</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field
+            name="domain"
+        >['|', ('journal_id', '=', False), ('journal_id.type', '=', 'bank')]</field>
+        <field name="context">{'journal_type':'bank'}</field>
+        <field
+            name="view_ids"
+            eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('account_bank_statement_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('account_bank_statement_view_form')})]"
+        />
+    </record>
+
+</odoo>

@@ -1,0 +1,30 @@
+/*
+# Copyright 2009-2019 Noviat.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+*/
+
+.o_amlse_row {
+    background-color: $table-accent-bg;
+    border-bottom: 1px solid darken($o-control-panel-background-color, 20%);
+}
+
+.o_amlse_input {
+    th,
+    td {
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+
+    select,
+    select option,
+    input[type="text"] {
+        height: 25px;
+        vertical-align: top;
+        display: block;
+        min-width: 40px;
+        width: none;
+        max-width: 150px;
+        background-color: white !important;
+        border: 1px solid darken($o-control-panel-background-color, 20%);
+    }
+}

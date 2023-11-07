@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="account_usability.menu_accounting_statement_bank" model="ir.ui.menu">
+        <field name="action" ref="account_bank_statement_action" />
+    </record>
+
+    <menuitem
+        id="account_bank_statement_line_menu"
+        name="Bank Transactions"
+        action="account_bank_statement_line_action"
+        parent="account_usability.menu_accounting_bank_and_cash"
+        sequence="11"
+    />
+
+</odoo>

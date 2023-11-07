@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="l10n_be_vat_declaration_view_form" model="ir.ui.view">
+        <field name="name">Periodical VAT Declaration</field>
+        <field name="model">l10n.be.vat.declaration</field>
+        <field name="priority" eval="2" />
+        <field name="arch" type="xml">
+            <form string="Periodical VAT Declaration">
+                <group name="selection_criteria">
+                    <field name="company_id" invisible="1" />
+                    <field
+                        name="company_id"
+                        options="{'no_create': True, 'no_open': True}"
+                        groups="base.group_multi_company"
+                    />
+                    <field
+                        name="declarant_id"
+                        required="1"
+                        domain="['|', ('parent_id', '=', company_partner_id), ('id', '=', company_partner_id)]"
+                    />
+                    <field name="year" />
+                    <field name="period_length" required="1" />
+                    <field
+                        name="month"
+                        attrs="{'required': [('period_length', '=', 'month')], 'invisible': [('period_length', '!=', 'month')]}"
+                    />
+                    <field
+                        name="quarter"
+                        attrs="{'required': [('period_length', '=', 'quarter')], 'invisible': [('period_length', '!=', 'quarter')]}"
+                    />
+                    <field name="target_move" />
+                </group>
+                <group name="date_range" invisible="1">
+                    <field name="date_from" />
+                    <field name="date_to" />
+                    <field name="period" />
+                    <field name="draft_moves" />
+                    <field name="note" />
+                    <field name="company_partner_id" />
+                </group>
+                <footer>
+                    <button
+                        name="generate_declaration"
+                        string="View Declaration"
+                        type="object"
+                        class="btn-primary"
+                        data-hotkey="q"
+                    />
+                    <button
+                        string="Cancel"
+                        class="btn-secondary"
+                        special="cancel"
+                        data-hotkey="z"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_be_vat_declaration_view_form_declaration" model="ir.ui.view">
+        <field name="name">Periodical VAT Declaration</field>
+        <field name="model">l10n.be.vat.declaration</field>
+        <field name="priority" eval="1" />
+        <field name="arch" type="xml">
+            <form string="Periodical VAT Declaration">
+                <header>
+                    <button
+                        name="print_declaration"
+                        string="PDF"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button
+                        name="create_xls"
+                        string="Export"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button
+                        name="create_detail_xls"
+                        string="Export Transactions"
+                        type="object"
+                        class="oe_highlight"
+                        help="Export transaction details per journal."
+                    />
+                    <button
+                        name="create_xml"
+                        string="XML"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                </header>
+                <group name="selection_criteria" col="3">
+                    <group name="g1-l">
+                        <field name="period" />
+                    </group>
+                    <group name="g1-m">
+                        <field name="target_move" readonly="1" />
+                    </group>
+                    <group name="g1-r">
+                        <field
+                            name="company_id"
+                            options="{'no_create': True, 'no_open': True}"
+                            readonly="1"
+                            groups="base.group_multi_company"
+                        />
+                    </group>
+                    <div colspan="3" col="1">
+                        <strong>Options for the Intervat XML Declaration:</strong>
+                    </div>
+                    <group name="g2-l">
+                        <field name="ask_restitution" />
+                    </group>
+                    <group name="g2-m">
+                        <field name="ask_payment" />
+                    </group>
+                    <group name="g2-r">
+                        <field name="client_nihil" string="Last Declaration" />
+                    </group>
+                </group>
+                <div
+                    id="warnings"
+                    class="alert alert-info"
+                    role="alert"
+                    attrs="{'invisible': [('draft_moves', '=', False), ('note', '=', '')]}"
+                >
+                    <field name="draft_moves" invisible="1" />
+                    <div
+                        id="draft_moves"
+                        attrs="{'invisible': [('draft_moves', '=', False)]}"
+                    >
+                        <!-- <bold> doesn't work for firefox (v110.0.1) hence we user style -->
+                        <a
+                            name="view_draft_moves"
+                            type="object"
+                            string="Draft entries"
+                            role="button"
+                            style="font-weight: bold;"
+                        /> found for the selected period.
+                    </div>
+                    <field
+                        name="note"
+                        attrs="{'invisible': [('note', '=', '')]}"
+                        readonly="1"
+                    />
+                </div>
+                <notebook>
+                    <page name="declaration" string="Periodical VAT Declaration">
+                        <field name="case_ids" nolabel="1" readonly="1">
+                            <tree
+                                limit="55"
+                                decoration-primary="color == 'darkblue'"
+                                decoration-danger="color == 'red'"
+                                decoration-bf="font and 'b' in font"
+                                decoration-uf="font and 'u' in font"
+                                decoration-it="font and 'i' in font"
+                            >
+                                <field name="sequence" invisible="1" />
+                                <field name="color" invisible="1" />
+                                <field name="font" invisible="1" />
+                                <field name="case_id" />
+                                <field name="amount" />
+                                <button
+                                    name="view_move_lines"
+                                    type="object"
+                                    string="Journal Items"
+                                    icon="fa-search-plus"
+                                />
+                            </tree>
+                            <form string="Periodical VAT Declaration">
+                                <group name="main">
+                                    <group name="main-left">
+                                        <field name="case_id" />
+                                    </group>
+                                    <group name="main-right">
+                                        <field name="amount" />
+                                    </group>
+                                </group>
+                                <notebook attrs="{'invisible': [('info', '=', False)]}">
+                                    <page name="info" string="Info">
+                                        <field name="info" widget="html" />
+                                    </page>
+                                </notebook>
+                            </form>
+                        </field>
+                    </page>
+                    <page name="comments" string="Comments">
+                        <group>
+                            <label
+                                for="comments"
+                                string="Comments to be Added to the Declaration"
+                                colspan="2"
+                            />
+                            <field name="comments" nolabel="1" colspan="2" />
+                        </group>
+                    </page>
+                    <page name="controls" string="Controls">
+                        <group>
+                            <field name="controls" nolabel="1" colspan="2" />
+                        </group>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_be_vat_declaration_action" model="ir.actions.act_window">
+        <field name="name">Periodical VAT Declaration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">l10n.be.vat.declaration</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="l10n_be_vat_declaration_view_form" />
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="l10n_be_vat_declaration_menu"
+        name="Periodical VAT Declaration"
+        parent="menu_belgian_statements_and_reports"
+        action="l10n_be_vat_declaration_action"
+        sequence="10"
+    />
+
+    <record id="action_report_l10nbevatdeclaration" model="ir.actions.report">
+        <field name="name">Periodical VAT Declaration</field>
+        <field name="model">l10n.be.vat.declaration</field>
+        <field name="report_type">qweb-pdf</field>
+        <field
+            name="report_name"
+        >l10n_be_coa_multilang.report_l10nbevatdeclaration</field>
+        <field
+            name="report_file"
+        >l10n_be_coa_multilang.report_l10nbevatdeclaration</field>
+        <field name="print_report_name">(object._get_file_base_name())</field>
+    </record>
+
+</odoo>

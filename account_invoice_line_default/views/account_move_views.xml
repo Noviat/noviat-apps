@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <data>
+                <field name="ref" position="after">
+                    <field
+                        name="invoice_description"
+                        attrs="{'invisible': [('move_type', '=', 'entry')]}"
+                    />
+                </field>
+                <field name="invoice_line_ids" position="attributes">
+                    <attribute name="context" operation="update">
+                        {
+                            'default_name': invoice_description,
+                         }
+                    </attribute>
+                </field>
+            </data>
+        </field>
+    </record>
+
+    <record id="view_invoice_tree" model="ir.ui.view">
+        <field name="name">account.move.tree.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree" />
+        <field name="arch" type="xml">
+            <data>
+                <field name="ref" position="after">
+                    <field
+                        name="invoice_description"
+                        invisible="context.get('default_move_type') not in ('in_invoice', 'in_refund', 'in_receipt')"
+                    />
+                </field>
+            </data>
+        </field>
+    </record>
+
+</odoo>

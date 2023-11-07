@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="account_multi_company_menu_config"
+        name="Multi-Company Configuration"
+        parent="account.menu_finance_configuration"
+        sequence="40"
+    />
+
+    <menuitem
+        id="account_reinvoice_journal_mapping_multi_company_menu"
+        action="account_reinvoice_journal_mapping_multi_company_action"
+        parent="account_multi_company_menu_config"
+        sequence="10"
+    />
+
+</odoo>

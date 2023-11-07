@@ -1,0 +1,5120 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_be_coda_advanced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-21 17:45+0000\n"
+"PO-Revision-Date: 2023-10-21 17:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Bank Journal: %(journal_name)s\n"
+"CODA Version: %(coda_version)s\n"
+"CODA Sequence Number: %(coda_seq_number)s\n"
+"Paper Statement Sequence Number: %(paper_nb_seq_number)s\n"
+"Bank Account: %(bank)s\n"
+"Account Holder Name: %(acc_holder)s\n"
+"Date: %(date)s, Starting Balance:  %(balance_start).2f, Ending Balance: %(balance_end_real).2f%(coda_parsing_note)s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Error while processing CODA File '%(fn)s' :\n"
+"%(err_msg)s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Error while processing CODA File '%(fn)s' :\n"
+"%(tb)s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Error while processing CODA File '%s' :"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Matching CODA Bank Account Configuration record found for Bank Account Number '%(number)s' in Company %(company)s !\n"
+"Please switch to this Company in order to import statements for this Bank Account Number !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"No matching CODA Bank Account Configuration record found !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"The CODA Statement %(name)s does not contain transactions, hence no Bank Statement has been created.\n"
+"Select the 'CODA Bank Statement' to check the contents of %(name)s."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"        Bank lookup failed due to missing BIC in Bank Statement for IBAN '%s' !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"        Bank lookup failed due to missing Country definition for Country Code '%s' !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"        Bank lookup failed. Please define a Bank with Code '%(bank_code)s' and Country '%(country)s' !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Application Error ! "
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Application Error : "
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"CODA V%s statements are not supported, please contact your bank !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"CODA parsing error on information data record 3.1, seq nr %s !\n"
+"Please report this issue via your Odoo support channel."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"CODA parsing error on information data record 3.2, seq nr %s!\n"
+"Please report this issue via your Odoo support channel."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"CODA parsing error on information data record 3.3, seq nr %s !\n"
+"Please report this issue via your Odoo support channel."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"CODA parsing error on movement data record 2.2, seq nr %s!\n"
+"Please report this issue via your Odoo support channel."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"CODA parsing error on movement data record 2.3, seq nr %s!'\n"
+"Please report this issue via your Odoo support channel."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Empty File !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Incorrect ending Balance in CODA Statement %(seq)s for Bank Account %(bank)s !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Invalid Header Record !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Missing Header Record !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Movement data records of type 2.%s are not supported !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"No matching CODA Bank Account Configuration record found !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Please check if the 'Bank Account Number', 'Currency' and 'Account Description' fields of your configuration record match with '%(number)s', '%(currency)s' and '%(description)s' !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Please check if the 'Bank Account Number', 'Currency' and 'Account Description' fields of your configuration record match with '%(number)s', '%(currency)s' and '%(description)s' if you need to import statements for this Bank Account Number !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Please treat this CODA File manually !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"System Error : "
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"The CODA File contains empty CODA Statement %(seq)s for Bank Account %(bank)s !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"The CODA processing tries to create Bank Statement %s, but this statement already exists, hence no duplicate Bank Statement has been created."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"The File contains an invalid CODA Transaction Family : %s !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"The File contains an invalid CODA Transaction Type : %s !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"The File contains an invalid Structured Communication Type : %s !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"This Bank Statement statement is linked to CODA FIle %s."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"This CODA File is marked by your bank as a 'Duplicate' !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Transaction Detail Limit reached !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"\n"
+"Unsupported bank account structure !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__bank_statement_count
+msgid "# of Bank Statements"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"'\n"
+"Code Separate Application: %s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"'\n"
+"Configuration Error in journal %s!\n"
+"Please verify the Default Debit and Credit Account settings."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"'\n"
+"Statement Line matching results:"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"'\n"
+"The CODA Statement %(name)s Starting Balance (%(balance_start).2f) does not correspond with the previous Closing Balance (%(balance_start_check).2f) in journal %(journal)s!"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_100
+msgid ""
+"(SEPA) payment with a structured format communication applying the ISO "
+"standard 11649: Structured creditor reference to remittance information"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_05_58
+msgid ""
+"(cancellation of an undue debit of the debtor at the initiative of the "
+"financial institution or the debtor for lack of cover)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_07
+msgid ""
+"- insurance costs of account holders against fatal accidents - passing-on of"
+" several insurance costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "1-st (recurrent)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "A manual reconciliation is required."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda__company_ids
+msgid ""
+"A single CODA File can contain statements from multiple companies. This "
+"field shows all companies for which statements have been created."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_112
+msgid "ATM payment (usually Eurocheque card)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_49_03
+msgid "ATM withdrawal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_113
+#, python-format
+msgid "ATM/POS debit"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_413
+msgid "Acceptance charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_400
+msgid "Acceptance fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_007
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_37
+msgid "Access right to database"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__account_id
+msgid "Account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__account_mapping_ids
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
+msgid "Account Mapping Rules"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__counterparty_number
+msgid "Account Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_030
+msgid "Account insurance"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__accounting_date
+msgid "Accounting Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
+msgid "Accounts Mapping"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__active
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
+msgid "Additional Information"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_201
+msgid "Advice notice commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_412
+msgid "Advice of expiry charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_202
+msgid "Advising commission | Additional advising commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_09
+msgid "Agio on supplier's bill"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_39
+msgid "Agios on guarantees given"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_03_58
+msgid ""
+"Also for vouchers, postal orders, anything but bills of exchange, "
+"acquittances, promissory notes, etc."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_204
+msgid "Amendment fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_54
+msgid "Among other things advances or promissory notes"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Amount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Amount (given by the customer)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_2
+msgid ""
+"Amount as totalised by the bank; e.g. : the total amount of a series of "
+"credit transfers with a structured communication As a matter of principle, "
+"this type will also be used when no detailed data (type 6 or 7) is "
+"following."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_1
+msgid ""
+"Amount as totalised by the customer; e.g. a file regrouping payments of "
+"wages or payments made to suppliers or a file regrouping collections for "
+"which the customer is debited or credited with one single amount. As a "
+"matter of principle, this type is also used when no detailed data is "
+"following (type 5)."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_03_17
+msgid "Amount of the cheque; if any, charges receive code 37"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Amount on which % is calculated"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_64
+msgid ""
+"Amount paid to the issuer by the bank in charge of the placement (firm "
+"underwriting or not); also used for the payment in full of partly-paid "
+"shares, see transaction 05"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__analytic_account_id
+msgid "Analytic Account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Application Error : "
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
+msgid "Archived"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_04
+msgid "At home as well as abroad"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Automatic Reconcile remarks:"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Avgas"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_15
+msgid "Balance due insurance premium"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__bank_id
+msgid "Bank Account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__bank_id
+msgid ""
+"Bank Account Number.\n"
+"The CODA import function will find its CODA processing parameters on this number."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__journal_id
+msgid "Bank Journal for the Bank Statement"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_bank_statement
+msgid "Bank Statement"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Bank Statement '%(name)s' line '%(line_ref)s':"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__coda_st_naming
+msgid "Bank Statement Naming Policy"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
+msgid "Bank Statements"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_16
+msgid "Bank confirmation to revisor or accountant"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_419
+msgid "Bank service fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Basic Amount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_427
+msgid "Belgian Stock Exchange tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_426
+msgid "Belgian broker's commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_05
+msgid "Bill claimed back"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_05
+msgid ""
+"Bill claimed back at the drawer's request (bill claimed back before maturity"
+" date)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_405
+msgid "Bill guarantee commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_122
+msgid "Bills - calculation of interest"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_01
+msgid "Bills of exchange, acquittances, promissory notes; debit of the drawee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_47_11
+msgid "Bills of lading"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_03
+msgid ""
+"Bonds, shares, tap issues of CDs, with or without payment of interest, etc."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__coda_data
+msgid "CODA (Zip) File"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_bank_statement__coda_bank_account_id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__coda_bank_account_id
+msgid "CODA Bank Account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.actions.act_window,name:l10n_be_coda_advanced.coda_bank_account_action
+#: model:ir.model,name:l10n_be_coda_advanced.model_coda_bank_account
+#: model:ir.ui.menu,name:l10n_be_coda_advanced.coda_bank_account_menu
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_search
+msgid "CODA Bank Account Configuration"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.ui.menu,name:l10n_be_coda_advanced.menu_coda_configuration
+msgid "CODA Configuration"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__coda_creation_date
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_search
+msgid "CODA Creation Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_bank_statement__coda_id
+msgid "CODA Data File"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__coda_data
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
+msgid "CODA File"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "CODA File %s has already been imported."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__coda_fname_dummy
+msgid "CODA Filename"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__coda_fname
+msgid "CODA Filename (invisible)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"CODA Import Failed.\n"
+"Incorrect input file format"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "CODA Import failed !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_bank_statement__coda_note
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.view_bank_statement_form
+msgid "CODA Notes"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_comm_type_view_form
+msgid "CODA Structured Communication Type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.actions.act_window,name:l10n_be_coda_advanced.account_coda_comm_type_action
+#: model:ir.ui.menu,name:l10n_be_coda_advanced.account_coda_comm_type_menu
+msgid "CODA Structured Communication Types"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.actions.act_window,name:l10n_be_coda_advanced.account_coda_trans_category_action
+#: model:ir.ui.menu,name:l10n_be_coda_advanced.account_coda_trans_category_menu
+msgid "CODA Transaction Categories"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_trans_category_view_form
+msgid "CODA Transaction Category"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_trans_code_view_form
+msgid "CODA Transaction Code"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.actions.act_window,name:l10n_be_coda_advanced.account_coda_trans_code_action
+#: model:ir.ui.menu,name:l10n_be_coda_advanced.account_coda_trans_code_menu
+msgid "CODA Transaction Codes"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_trans_type_view_form
+msgid "CODA Transaction Type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.actions.act_window,name:l10n_be_coda_advanced.account_coda_trans_type_action
+#: model:ir.ui.menu,name:l10n_be_coda_advanced.account_coda_trans_type_menu
+msgid "CODA Transaction Types"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_coda_comm_type
+msgid "CODA structured communication type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_coda_trans_category
+msgid "CODA transaction category"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_coda_trans_code
+msgid "CODA transaction code"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_bank_statement_line__coda_transaction_dict
+msgid "CODA transaction details"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_coda_trans_type
+msgid "CODA transaction type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_import
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_process
+msgid "Cancel"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_39
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_89
+msgid "Cancellation of a transaction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_35_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_35_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_99
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_49
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_99
+msgid "Cancellation or correction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_13_01
+msgid "Capital and/or interest (specified by the category)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_05
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_54
+msgid "Capital and/or interest term investment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_058
+msgid "Capital premium"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_050
+msgid "Capital term investment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Card Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Card Scheme"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_05
+msgid "Card charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_04
+msgid "Cards"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_35
+msgid "Cash advance"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_53
+msgid "Cash deposit at an ATM"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_50
+msgid "Cash payment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_01
+msgid "Cash withdrawal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_03
+msgid "Cash withdrawal by card (ATM)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_13
+msgid "Cash withdrawal by your branch or agents"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_04
+msgid "Cash withdrawal from an ATM"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_21
+msgid "Cash withdrawal on card (PROTON)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Category"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Central (Pivot) Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_402
+msgid "Certification costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_17
+msgid "Charge for safe custody"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_29
+msgid "Charges collected for: - commercial information - sundry information"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_047
+msgid "Charges extension bill"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_033
+msgid "Charges for a foreign bill"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_21
+msgid "Charges for preparing pay packets"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_416
+msgid "Charges for the deposit of security"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_027
+msgid "Charges for unpaid bills"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_031
+msgid "Charges foreign cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_035
+msgid "Charges foreign documentary bill"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_061
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_47
+msgid "Charging fees for transactions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_03_15
+msgid "Cheque drawn by the bank on itself, usually with charges."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_37
+msgid "Cheque-related costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_03
+msgid "Cheques"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_result
+msgid "Close"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_108
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_35_01
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_35_50
+#, python-format
+msgid "Closing"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_35
+msgid "Closing (periodical settlements for interest, costs,…)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Closing, period from %(period_from)s to %(period_to)s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__code
+msgid "Code"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_19
+msgid ""
+"Collected for securities, gold, pass-books, etc. placed in safe custody"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_17
+msgid "Collected for unsealed deposit of securities, and other parcels"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_406
+msgid "Collection charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_014
+msgid "Collection commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_05
+msgid "Collective payments of wages"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_07
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_07
+msgid "Collective transfer"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_07
+msgid "Collective transfers"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__comment
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_trans_code_view_form
+msgid "Comment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_121
+msgid "Commercial bills"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_05
+msgid "Commercial paper claimed back"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_15
+msgid ""
+"Commission collected to the debit of the customer to whom the bank delivers "
+"a key which gives access to the night safe"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_037
+msgid "Commission for handling charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_13
+msgid "Commission for renting a safe deposit box"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_25
+msgid ""
+"Commission for the renting of boxes put at the disposal for the "
+"correspondence"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_210
+msgid "Commitment fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_208
+msgid "Commitment fee deferred payment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Communication Zone"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_002
+msgid "Communication of the bank"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__company_ids
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__company_id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__company_id
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_search
+msgid "Company"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_51
+msgid "Company issues paper in return for cash"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__company_id
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__company_id
+msgid "Company related to this journal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_68
+msgid "Compensation for missing coupon"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
+msgid "Conditions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/coda_bank_account.py:0
+#: code:addons/l10n_be_coda_advanced/models/coda_bank_account.py:0
+#, python-format
+msgid ""
+"Configuration error !\n"
+"No Bank Account Number defined on the selected Journal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_203
+msgid ""
+"Confirmation fee | Additional confirmation fee | Commitment fee | Flat fee |"
+" Confirmation reservation commission | Additional reservation commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Conformity Code"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_07
+msgid "Contra-entry of a direct credit or of a discount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_35
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_85
+msgid "Correction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_10
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_56
+msgid "Correction for prepaid card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_120
+msgid "Correction of a transaction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_015
+msgid "Correspondent charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_35_37
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_35
+msgid "Costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_407
+msgid "Costs Article 45"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_11
+msgid ""
+"Costs chargeable to clients who ask to have their correspondence kept at "
+"their disposal at the bank's counter"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_06
+msgid "Costs chargeable to the remitter"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_23
+msgid ""
+"Costs charged for all kinds of research (information on past transactions, "
+"address retrieval, ...)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_35
+msgid ""
+"Costs charged for calculating the amount of the tax to be paid (e.g. "
+"Fiscomat)."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_021
+msgid "Costs for drawing up a bank cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_04
+msgid "Costs for holding a documentary cash credit"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_12
+msgid "Costs for opening a bank guarantee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_11
+msgid "Costs for the safe custody of correspondence"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_33
+msgid ""
+"Costs not specified otherwise, often with a manual communication (e.g. for "
+"collecting, ordering funds). VAT excluded = type 0 VAT included = type 3 (at"
+" least 3 articles)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_073
+msgid "Costs of ATM abroad"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_020
+msgid "Costs of physical delivery"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_87
+msgid "Costs refunded"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_37
+msgid "Costs related to commercial paper"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_036
+msgid "Costs relating to a refused cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_02
+msgid "Costs relating to electronic output"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_38
+msgid "Costs relating to incoming foreign and non-SEPA transfers"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_37
+msgid "Costs relating to outgoing foreign transfers and non-SEPA transfers"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_37
+msgid "Costs relating to payment of foreign cheques"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_37
+msgid "Costs relating to the payment of a foreign bill"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_09
+msgid "Counter transactions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_004
+msgid "Counterparty’s banker"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_068
+msgid "Countervalue of an entry"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_072
+msgid "Countervalue of commission to third party"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Country code of the principal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_408
+msgid "Cover commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__create_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__create_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__create_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__create_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__create_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__create_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__create_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__create_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__create_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__create_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__create_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__create_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__create_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__create_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_125
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_13
+#, python-format
+msgid "Credit"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Credit Account Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_68
+msgid "Credit after Proton payments"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_50
+msgid "Credit after a payment at a terminal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_50
+msgid "Credit after collection"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_211
+msgid "Credit arrangement fee | Additional credit arrangement fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_041
+msgid "Credit card costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_003
+msgid "Credit commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_68
+msgid "Credit of a payment via electronic purse"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_50
+msgid "Credit of a payment via terminal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_50
+msgid "Credit of the remitter"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_52
+msgid "Credit provider"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_03
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_03
+msgid ""
+"Credit transfer for which the order has been given once and which is carried"
+" out again at regular intervals without any change."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_01
+msgid ""
+"Credit transfer given by the customer on paper or electronically, even if "
+"the execution date of this transfer is in the future. Domestic payments as "
+"well as euro payments meeting the requirements."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_01
+msgid "Credit transfer given by the customer."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_102
+#, python-format
+msgid ""
+"Credit transfer or cash payment with reconstituted structured format "
+"communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_101
+#, python-format
+msgid "Credit transfer or cash payment with structured format communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_52
+msgid "Credit under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_37
+msgid "Credit-related costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Creditor's Identification Code"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Creditor's Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Cumulative"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Cumulative on network"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__currency_id
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_search
+#, python-format
+msgid "Currency"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Currency exchange rate difference"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_06
+msgid "Damage relating to bills and cheques"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_005
+msgid "Data concerning the correspondent"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_001
+msgid "Data concerning the counterparty"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Date of first transaction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Date of last transaction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_01
+msgid "Debit customer who is loading"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_47_13
+msgid "Debit customer, payment of agios, interest, exchange commission, etc."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_43_01
+msgid ""
+"Debit of a cheque in foreign currency or in EUR in favour of a foreigner"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_09
+msgid "Debit of the agios to the account of the drawee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_39
+msgid "Debit of the drawer after credit under usual reserve or discount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_11
+msgid "Debit of the issuer by the bank in charge of the financial service"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_08
+msgid ""
+"Debit of the remitter when the drawee pays in advance directly to the "
+"remitter (regards bank acceptances)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_05
+msgid ""
+"Debit of the subscriber for the complementary payment of partly-paid shares"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
+msgid "Default Account Mapping"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
+msgid "Default Accounts"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_059
+msgid "Default interest"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__coda_st_naming
+msgid ""
+"Define the rules to create the name of the Bank Statements generated by the CODA processing.\n"
+"E.g. %(code)s%(y)s/%(paper)s\n"
+"\n"
+"Variables:\n"
+"Bank Journal Code: %(code)s\n"
+"Year (of CODA 'New Balance Date') with Century: %(year)s\n"
+"Year (of CODA 'New Balance Date') without Century: %(y)s\n"
+"CODA sequence number: %(coda)s\n"
+"Paper Statement sequence number (as specified on 'Old Balance' record): %(paper_ob)s\n"
+"Paper Statement sequence number (as specified on 'New Balance' record): %(paper)s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_07
+msgid "Definitely unpaid cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_431
+msgid "Delivery of a copy"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_11
+msgid "Department store cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__description
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__description
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__description
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__description
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_trans_type_view_form
+msgid "Description"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Description of the detail"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_5
+msgid ""
+"Detail of 1. Standard procedure is no detailing. However, the customer may "
+"ask for detailed data to be included into his file after the overall record "
+"(type 1)."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_7
+msgid ""
+"Detail of 2. Simple account with detailed data The records in a separate "
+"application keep type 7."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_6
+msgid ""
+"Detail of 2. Simple amount without detailed data. Normally, data of this "
+"kind comes after type 2. The customer may ask for a separate file containing"
+" the detailed data. In that case, one will speak of a 'separate "
+"application'. The records in a separate application keep type 6."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_8
+msgid "Detail of 3."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_9
+msgid "Detail of 7. The records in a separate application keep type 9."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__sequence
+msgid "Determines the order of the rules to assign accounts"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_19
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_68
+msgid "Difference in payment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Direct Debit Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Direct Debit Scheme"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Direct Debit Type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_05
+msgid "Direct debit"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Direct debit - DOM'80"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_107
+msgid "Direct debit – DOM’80"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__discard_dup
+msgid "Discard Duplicates"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_54
+msgid "Discount abroad"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_404
+msgid "Discount commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_13
+msgid "Discount foreign supplier's bills"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__display_name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__display_name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__display_name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__display_name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__display_name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__display_name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__display_name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Distribution sector"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__balance_start_enforce
+msgid ""
+"Do not process Statements with an Opening Balance that doesn't match the "
+"previous Closing Balance."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_45
+msgid "Documentary credit charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_68
+msgid "Documentary export credits"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_19
+msgid "Documentary import credits"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_205
+msgid ""
+"Documentary payment commission | Document commission | Drawdown fee | "
+"Negotiation fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_07
+msgid "Domestic commercial paper"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_01
+msgid "Domestic or local SEPA credit transfers"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__account_coda__state__done
+msgid "Done"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_54
+msgid "Download of prepaid card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__account_coda__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_20
+msgid "Drawing up a certificate"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_032
+msgid "Drawing up a circular cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"Duplicate Bank Account(s) with account number '%(acc_number)s' for partner "
+"'%(partner)s' (id:%(pid)s) have been removed."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__discard_dup
+msgid ""
+"Duplicate Bank Statements will be discarded. Select the corresponding 'CODA "
+"Bank Statement' in order to view the contents of such duplicates."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_31
+msgid "E.g. for signing invoices"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "End Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_418
+msgid "Endorsement commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_104
+#, python-format
+msgid "Equivalent in EUR"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Equivalent in the currency of the account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Errors detected during the processing of CODA File %s :"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_13
+msgid "Eurocheque written out abroad"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_127
+#, python-format
+msgid "European direct debit (SEPA)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_02
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_08
+msgid "Eurozone = countries which have the euro as their official currency"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_50
+msgid "Except Proton"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_012
+msgid "Exchange commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_023
+msgid "Exercising fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_06
+msgid "Extension"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_06
+msgid "Extension of maturity date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Extra information"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__parent_id
+msgid "Family"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_coda_trans_code.py:0
+#, python-format
+msgid "Family %s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_123
+msgid "Fees and commissions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_028
+msgid "Fidelity premium"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_17
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_17
+msgid "Financial centralisation"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_66
+msgid "Financial centralisation (credit)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_17
+msgid "Financial centralisation (debit)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_66
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_66
+msgid "Financial centralization"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_213
+msgid "Financing fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__find_account_move_line
+msgid ""
+"Find matching accounting entry when previous lookups (payment order, invoice, sales order) have failed.\n"
+"This allows e.g. to match with manually encoded accounting entries (journal item 'name' field combined exact match on amount) or non payable/receivable entries."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "First Transaction Sequence Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_52
+msgid ""
+"First credit of cheques, vouchers, luncheon vouchers, postal orders, credit "
+"under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_049
+msgid "Fiscal stamps/stamp duty"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_54
+msgid "Fixed advance – capital and interest"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_55
+msgid "Fixed advance – interest only"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_411
+msgid "Fixed collection charge"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_071
+msgid "Fixed loan advance - availability"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_067
+msgid "Fixed loan advance - extension"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_066
+msgid "Fixed loan advance - reimbursement"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_37
+msgid ""
+"Fixed right, either one-off or periodical; for details, see 'categories'"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_09_50
+msgid ""
+"For own account - the comment for the client is given in the communication; "
+"also for mixed payments (cash + cheques) - not to be communicated to the "
+"clients; for payments made by a third person: see family 01"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_09
+msgid ""
+"For professionals (stockbrokers) only, whoever the issuer may be (Belgian or"
+" foreigner)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_66
+msgid "For professionals such as insurances and stockbrokers"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_27
+msgid "For publications of the financial institution"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_429
+msgid "Foreign Stock Exchange tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_425
+msgid "Foreign broker's commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_43_07
+msgid "Foreign cheque remitted for collection that returns unpaid"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_43
+msgid "Foreign cheques"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_47
+msgid "Foreign commercial paper"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_49
+msgid "Foreign counter transactions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_070
+msgid "Forward arbitrage contracts : sum to be supplied by bank"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_069
+msgid "Forward arbitrage contracts : sum to be supplied by customer"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_03
+msgid "Forward purchase of foreign exchange"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_52
+msgid "Forward sale of foreign exchange"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__freecomm
+msgid "Free Communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Fuel"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_13_05
+msgid "Full or partial reimbursement of a fixed advance at maturity date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__bank_statement_ids
+msgid "Generated Bank Statements"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.view_bank_statement_line_tree
+msgid "Glob. Am."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.view_bank_statement_line_tree
+msgid "Glob. Id"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_100
+msgid "Gross amount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Gross amount in the currency of the account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Gross amount in the original currency"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_search
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_024
+msgid "Growth premium"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Guarantee Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_01
+msgid "Guarantee card charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_026
+msgid "Handling commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_045
+msgid "Handling costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_14
+msgid "Handling costs instalment credit"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_13_15
+msgid ""
+"Hire-purchase agreement under which the financial institution is the lessor"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__id
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "ISO 11649 Communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_58
+msgid "Idem without guarantee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Identification Code"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Identification Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_008
+msgid "Identification of the de ultimate beneficiary/creditor (SEPA SCT/SDD)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_009
+msgid ""
+"Identification of the de ultimate ordering customer/debtor (SEPA SCT/SDD)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_07_37
+msgid ""
+"If any, detail in the category (e.g. costs for presentation for acceptance, "
+"etc.)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__active
+msgid ""
+"If the active field is set to False, it will allow you to hide the CODA Bank"
+" Account Configuration without removing it."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_import
+msgid "Import"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.actions.act_window,name:l10n_be_coda_advanced.account_coda_import_action
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_coda_import
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_import
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_result
+msgid "Import CODA File"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Import CODA File result"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.ui.menu,name:l10n_be_coda_advanced.account_coda_import_menu
+msgid "Import CODA Files"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__date
+msgid "Import Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__note
+msgid "Import Log"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.actions.act_window,name:l10n_be_coda_advanced.account_coda_action
+#: model:ir.ui.menu,name:l10n_be_coda_advanced.account_coda_menu
+msgid "Imported CODA Files"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_68
+msgid "In case coupons attached to a purchased security are missing"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_17
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_66
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_17
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_66
+msgid ""
+"In case of centralisation by the bank, type 2 will be allotted to this "
+"transaction. This total can be followed by the detailed movement."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_09_68
+msgid ""
+"In case of payment accepted under reserve of count; result of undercrediting"
+" - see also transaction 19"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_15
+msgid "In case of subscription before the interest due date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_55
+msgid "Income from payments by GSM"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_025
+msgid "Individual entry for exchange charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_01
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_01
+msgid "Individual transfer order"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_02
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_02
+msgid "Individual transfer order initiated by the bank"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_008
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_29
+msgid "Information charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_006
+msgid "Information concerning the detail amount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_007
+msgid "Information concerning the detail cash"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_011
+msgid "Information pertaining to coupons"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_010
+msgid "Information pertaining to sale or purchase of securities"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_02
+msgid "Instant SEPA credit transfer"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_043
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_07
+msgid "Insurance costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Interest"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_428
+msgid "Interest accrued"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_13_56
+msgid "Interest or capital subsidy"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_002
+msgid "Interest paid"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_065
+msgid "Interest payment advice"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Interest rates, calculation basis"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_001
+msgid "Interest received"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_057
+msgid "Interest subsidy"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_55
+msgid "Interest term investment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_15
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_62
+msgid "Interim interest on subscription"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__transfer_account_id
+msgid "Internal Funds Transfer Account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_41
+msgid "International credit transfers - non-SEPA credit transfers"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_64
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_64
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_41_13
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_41_64
+msgid "Intracompany"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"Invoice %(name)s matching Structured Communication '%(bba)s' has another "
+"currency than this CODA file."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"Invoice %(name)s matching Structured Communication '%(bba)s' has different "
+"residual amounts."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Invoice Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_214
+msgid "Issue commission (delivery order)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_04
+msgid "Issues"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Issuing Institution"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_bank_statement_line__coda_transaction_dict
+msgid "JSON dictionary with the results of the CODA parsing"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda_import__accounting_date
+msgid "Keep empty to use the date in the CODA File"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "LPG"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda____last_update
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type____last_update
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import____last_update
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category____last_update
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code____last_update
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type____last_update
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule____last_update
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Last Transaction Sequence Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__write_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__write_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__write_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__write_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__write_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__write_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__write_uid
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__write_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__write_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__write_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__write_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__write_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__write_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__write_date
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda_import__reconcile
+msgid "Launch Automatic Reconcile after CODA import."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_52
+msgid "Loading GSM cards"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_05
+msgid "Loading Proton"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_01
+msgid "Loading a GSM card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Locality"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__note
+msgid "Log"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_02
+msgid "Long-term loan"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__find_account_move_line
+msgid "Lookup Accounting Entries"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__find_inv_number
+msgid "Lookup Invoice Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__find_partner
+msgid "Lookup Partner"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__find_bbacom
+msgid "Lookup Structured Communication of type 'BBA'"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_074
+msgid "Mailing costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_17
+msgid "Management fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_22
+msgid "Management/custody"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Mandate Reference"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Maturity Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Message"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_106
+msgid ""
+"Method of calculation (VAT, withholding tax on income, commission, etc.)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Minimum applicable"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_403
+msgid "Minimum discount rate"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Minimum not applicable"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_33
+msgid "Miscellaneous fees and commissions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__name
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__name
+#, python-format
+msgid "Name"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_016
+msgid "Negative interest"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_000
+msgid "Net amount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "New Balance"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_15
+msgid "Night safe"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"No partner record assigned: There are multiple partners with the same Bank "
+"Account Number '%s'!"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Nominal Interest Rate or Rate of Charge"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_207
+msgid "Non-conformity fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_56
+msgid "Non-presented certified cheques"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_60
+msgid "Non-presented circular cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Note/coin denomination"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Number of notes/coins"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Number of statements parsed"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Number of statements reconciled"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_124
+msgid "Number of the credit card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_coda
+msgid "Object to store CODA Data Files"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_13_07
+msgid ""
+"Often by standing order or direct debit. In case of direct debit, family 13 "
+"is used."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Old Balance"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_09_13
+msgid "On the account of the head office"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_coda.py:0
+#, python-format
+msgid "Only CODA File objects in state 'draft' can be deleted !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_70
+msgid "Only with stockbrokers when they deliver the securities to the bank"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Original Amount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Other"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_21
+msgid "Other credit applications"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_03_87
+msgid "Overall amount, VAT included"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_200
+msgid "Overall documentary credit charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "POS Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "POS credit - globalisation"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_114
+#, python-format
+msgid "POS credit - individual transaction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_111
+msgid "POS credit – Globalisation"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "POS others"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Paid or reason for refusal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_05
+msgid "Partial payment subscription"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_24
+msgid "Participation in and management of interest refund system"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__partner_name
+msgid "Partner Name"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"Partner Name: %(partner_name)s \n"
+"Partner Account Number: %(counterparty_number)s\n"
+"Transaction Type: %(trans_type)s - %(trans_type_desc)s\n"
+"Transaction Family: %(trans_family)s - %(trans_family_desc)s\n"
+"Transaction Code: %(trans_code)s - %(trans_code_desc)s\n"
+"Transaction Category: %(trans_category)s - %(trans_category_desc)s\n"
+"Structured Communication Type: %(struct_comm_type)s - %(struct_comm_type_desc)s\n"
+"Payment Reference: %(payment_reference)s\n"
+"Communication: %(communication)s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__find_bbacom
+msgid ""
+"Partner lookup and reconciliation via the 'BBA' Structured Communication.'\n"
+"A partial reconciliation will be created when there is no exact match between the Invoice and Bank Transaction amounts."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__find_inv_number
+msgid ""
+"Partner lookup and reconciliation via the Invoice Number when a communication in free format is used.\n"
+"A reconciliation will only be created in case of exact match between the Invoice and Bank Transaction amounts."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__find_partner
+msgid ""
+"Partner lookup via Bank Account Number in order to facilitate the "
+"reconciliation."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_21
+msgid "Pay-packet charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_11
+msgid "Payable coupons/repayable securities"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_01
+msgid "Payment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__payment_reference
+msgid "Payment Reference"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__payment_reference
+msgid ""
+"Payment Reference. For SEPA (SCT or SDD) transactions, the EndToEndReference"
+" is recorded in this field."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_86
+msgid "Payment after cession"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_07
+msgid "Payment by GSM"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_52
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_52
+msgid "Payment by a third person"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_08
+msgid "Payment by means of a payment card outside the Eurozone"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_02
+msgid "Payment by means of a payment card within the Eurozone"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_58
+msgid "Payment by your branch/agents"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_03
+msgid "Payment card charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_042
+msgid "Payment card costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_01
+msgid "Payment commercial paper"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_013
+msgid "Payment commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_11
+msgid "Payment documents abroad"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_08
+msgid "Payment in advance"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_52
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_52
+msgid "Payment in your favour"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_52
+msgid "Payment night safe"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_01
+msgid "Payment of a foreign cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_52
+msgid ""
+"Payment of coupons from a deposit or settlement of coupons delivered over "
+"the counter - credit under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_01
+msgid "Payment of foreign bill"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_03_05
+msgid "Payment of holiday pay, etc."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_05
+msgid "Payment of voucher"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_05
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_05
+msgid "Payment of wages, etc."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_01
+msgid "Payment of your cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_03
+msgid "Payment receipt card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_02
+msgid "Payment to the bank on maturity date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Payment with ISO 11649 structured format communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"Payment with a structured format communication applying the ISO standard "
+"11649"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_06
+msgid "Payment with tank card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Percent"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Percentage"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Period Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_004
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_09
+msgid "Postage"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_09
+msgid ""
+"Postage recouped to the debit of the customer (including forwarding charges)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__balance_start_enforce
+msgid "Prevent invalid Opening Balances"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__description1
+msgid "Primary Account Description"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_053
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_43
+msgid "Printing of forms"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_022
+msgid "Priority costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Private"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_process
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
+msgid "Process"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_coda.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_process
+#, python-format
+msgid "Process CODA File"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
+msgid "Process the CODA File to create Bank Statements"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Product Code"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_029
+msgid "Protest charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Proton loading"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_38
+msgid "Provisionally unpaid"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_39
+msgid "Provisionally unpaid due to other reason than manual presentation"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_10
+msgid "Purchase of Smartcard"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_15
+msgid "Purchase of an international bank cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_01
+msgid ""
+"Purchase of domestic or foreign securities, including subscription rights, "
+"certificates, etc."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_17
+msgid "Purchase of fiscal stamps"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_05
+msgid "Purchase of foreign bank notes"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_07
+msgid "Purchase of gold/pieces"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_09
+msgid "Purchase of petrol coupons"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_01
+msgid "Purchase of securities"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_25
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_70
+msgid "Purchase of traveller’s cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "R transaction Type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_003
+msgid "RBP data"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Rate"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Reason"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_410
+msgid "Reclamation charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__reconcile
+msgid "Reconcile"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__reconcile_matching_details
+msgid "Reconcile Matching Details"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_430
+msgid "Recovery of foreign tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_08
+msgid "Registering compensation for savings accounts"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_414
+msgid "Regularisation charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_19
+msgid "Regularisation costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_05
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_54
+msgid "Reimbursement"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Reimbursement Proton balance"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_87
+msgid "Reimbursement of cheque-related costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_35_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_87
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_87
+msgid "Reimbursement of costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_034
+msgid "Reinvestment fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_66
+msgid "Remittance of cheque by your branch - credit under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_58
+msgid "Remittance of cheques, vouchers, etc. credit after collection"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_50
+msgid "Remittance of commercial paper - credit after collection"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_52
+msgid "Remittance of commercial paper - credit under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_54
+msgid "Remittance of commercial paper for discount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_62
+msgid "Remittance of documents abroad - credit after collection"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_60
+msgid "Remittance of documents abroad - credit under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_50
+msgid "Remittance of foreign bill credit after collection"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_52
+msgid "Remittance of foreign bill credit under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_58
+msgid "Remittance of foreign cheque credit after collection"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_52
+msgid "Remittance of foreign cheque credit under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_56
+msgid "Remittance of guaranteed foreign supplier's bill"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_56
+msgid "Remittance of supplier's bill with guarantee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_58
+msgid "Remittance of supplier's bill without guarantee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_10
+msgid "Renewal of agreed maturity date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_25
+msgid "Renting of direct debit box"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_005
+msgid "Renting of letterbox"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_13
+msgid "Renting of safes"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_58
+msgid ""
+"Repayable securities from a deposit or delivered at the counter - credit "
+"under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_055
+msgid "Repayment loan or credit capital"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_66
+msgid "Repurchase of petrol coupons"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_017
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_23
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_41
+msgid "Research costs"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_56
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_56
+msgid "Reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_052
+msgid "Residence state tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
+msgid "Result"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_result
+msgid "Results :"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_420
+msgid "Retention charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_66
+msgid "Retrocession of issue commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_39
+msgid "Return of an irregular bill of exchange"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_58
+msgid "Reversal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_62
+msgid "Reversal of cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_62
+msgid "Reversal of cheques"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Reversal of purchases"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_64
+msgid "Reversal of settlement of credit card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_60
+msgid "Reversal of voucher"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_063
+msgid "Rounding differences"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__name
+msgid "Rule Name"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_coda_account_mapping_rule
+msgid "Rules Engine to assign accounts during CODA parsing"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "SEPA B2B"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "SEPA core"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_12
+msgid "Safe custody"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_409
+msgid "Safe deposit charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_60
+msgid "Sale of foreign bank notes"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_62
+msgid "Sale of gold/pieces under usual reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_50
+msgid "Sale of securities"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_70
+msgid "Sale of traveller’s cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_search
+msgid "Search CODA Files"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_63
+msgid "Second credit of unpaid cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__description2
+msgid "Secondary Account Description"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_11
+msgid "Securities"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_438
+msgid "Securities account tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_03
+msgid "See annexe III : communication 124"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__account_tax_id
+msgid ""
+"Select Tax object for bank costs. CODA files have seperate lines for Base "
+"and VAT amount, hence only simple tax objects containing the base (82) or "
+"deductible vat (59) case are supported, cf. VAT-V59 and VAT-V82 tax objects "
+"provided as part of the l10n_be_coa_multilang module. Expansion of a single "
+"transaction into multipe lines such as done by the 'Statement Operations' in"
+" the reconcile widget is not supported."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_import
+msgid "Select your file :"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_80
+msgid "Separately charged costs and provisions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
+msgid "Set Done"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__transfer_account_id
+msgid ""
+"Set here the default account that will be used for internal transfer between"
+" own bank accounts (e.g. transfer between current and deposit bank "
+"accounts)."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Settlement Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_03
+#, python-format
+msgid "Settlement credit cards"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_13
+msgid "Settlement of bank acceptances"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_19
+msgid "Settlement of credit cards"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_70
+msgid "Settlement of discount bank acceptance"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_05
+msgid "Settlement of fixed advance"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_50
+msgid "Settlement of instalment credit"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_60
+msgid "Settlement of mortgage loan"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_09
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_70
+msgid "Settlement of securities"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_06
+msgid "Share option plan – exercising an option"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_01
+msgid "Short-term loan"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda_import__reconcile_matching_details
+msgid ""
+"Show details of the transaction and partner lookup when the lookup does not "
+"result in a match."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_3
+msgid ""
+"Simple amount with detailed data; e.g. in case of charges for cross-border "
+"credit transfers."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_0
+msgid ""
+"Simple amount without detailed data; e.g. : an individual credit transfer "
+"(free of charges)."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda_import__skip_undefined
+msgid ""
+"Skip Bank Statements for accounts which have not been defined in the CODA "
+"configuration."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__skip_undefined
+msgid "Skip Undefined"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_19
+msgid "Special charge for safe custody"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_437
+msgid "Speculation tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__split
+msgid "Split"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__split
+msgid ""
+"Split line into two separate lines with transaction amount and transaction "
+"cost."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_01
+msgid "Spot purchase of foreign exchange"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_50
+msgid "Spot sale of foreign exchange"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_03
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_03
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_03
+msgid "Standing order"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Starting Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__state
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_search
+msgid "State"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_bank_statement.py:0
+#, python-format
+msgid "Statement %s confirmed, journal items were created."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Street"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__structcomm
+msgid "Structured Communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__struct_comm_type_id
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda_comm_type__code
+msgid "Structured Communication Type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Structured creditor reference to remittance information"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Structured format communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_27
+msgid "Subscription fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_03
+msgid "Subscription to securities"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_56
+msgid "Subsidy"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_436
+msgid "Supplimentary tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_415
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_39
+msgid "Surety fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_206
+msgid "Surety fee/payment under reserve"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__active
+msgid "Switch on/off this rule."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "System Error : "
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_09_58
+msgid ""
+"Takes priority over transaction 52 (hence a payment made by an agent in a "
+"night safe = 58 and not 52)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__account_tax_id
+msgid "Tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_019
+msgid "Tax on physical delivery"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_435
+msgid "Tax on physical securities"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_039
+msgid "Telecommunications"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Teledata"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_51
+msgid "Tender"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_02
+msgid "Tenders"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_018
+msgid "Tental guarantee charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Term in days"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_126
+msgid "Term investments"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_62
+msgid "Term loan"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Terminal Identification"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Terminal Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_115
+#, python-format
+msgid "Terminal cash deposit"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__counterparty_number
+msgid ""
+"The Bank Account Number of the Partner in the CODA Transaction.\n"
+"You can use this field to set a matching rule on Partners which are not (yet) registered in Odoo. "
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "The CODA File has been processed by"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__description1
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__description2
+msgid ""
+"The Primary or Secondary Account Description should match the corresponding "
+"Account Description in the CODA file."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.constraint,message:l10n_be_coda_advanced.constraint_account_coda_comm_type_code_uniq
+msgid "The Structured Communication Code must be unique !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"The bank account '%(cp_number)s' is not defined for the partner "
+"'%(partner)s' !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_51
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_51
+msgid "The bank takes the initiative for crediting the customer’s account."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_02
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_02
+msgid "The bank takes the initiative for debiting the customer’s account."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.constraint,message:l10n_be_coda_advanced.constraint_coda_bank_account_account_uniq_1
+msgid ""
+"The combination of Bank Account, Primary Account Description and Currency "
+"must be unique !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.constraint,message:l10n_be_coda_advanced.constraint_coda_bank_account_account_uniq_2
+msgid ""
+"The combination of Bank Account, Secondary Account Description and Currency "
+"must be unique !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__currency_id
+msgid "The currency of the CODA Bank Statement"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__partner_name
+msgid ""
+"The name of the partner in the CODA Transaction.\n"
+"You can use this field to set a matching rule on Partners which are not (yet) registered in Odoo. "
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_05
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_07
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_05
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_07
+msgid ""
+"The principal will be debited for the total amount of the file entered."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "There are multiple invoices matching the Invoice Amount and Reference."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "There is no invoice matching the Structured Communication '%s' !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.constraint,message:l10n_be_coda_advanced.constraint_account_coda_coda_uniq
+msgid "This CODA has already been imported !"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Time"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_39
+msgid "To be used for issued circular cheques given in consignment"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Total amount"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_18
+msgid "Trade information"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__category
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__trans_category_id
+msgid "Transaction Category"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Transaction Category unknown, please consult your bank."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__trans_code_id
+#: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__account_coda_trans_code__type__code
+msgid "Transaction Code"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Transaction Code unknown, please consult your bank."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__trans_family_id
+#: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__account_coda_trans_code__type__family
+msgid "Transaction Family"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Transaction Reference"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Transaction Sequence Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__type
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__trans_type_id
+#, python-format
+msgid "Transaction Type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"Transaction Type: %(trans_type)s - %(trans_type_desc)s\n"
+"Transaction Family: %(trans_family)s - %(trans_family_desc)s\n"
+"Transaction Code: %(trans_code)s - %(trans_code_desc)s\n"
+"Transaction Category: %(trans_category)s - %(trans_category_desc)s\n"
+"Structured Communication Type: %(struct_comm_type)s - %(struct_comm_type_desc)s\n"
+"Communication: %(communication)s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_01
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_50
+msgid "Transfer"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_209
+msgid "Transfer commission"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_13
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_02_13
+msgid ""
+"Transfer from one account to another account of the same customer at the "
+"bank's or the customer's initiative (intracompany)."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_13
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_13
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_13
+msgid "Transfer from your account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_50
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_50
+msgid "Transfer in your favour"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_51
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_51
+msgid "Transfer in your favour – initiated by the bank"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_64
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_64
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_41_64
+msgid "Transfer to your account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_26
+msgid "Travel insurance premium"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_009
+msgid "Travelling expenses"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__code
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__type
+msgid "Type"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_00
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_39
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_89
+msgid "Undefined transaction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_00
+msgid "Undefined transactions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_56
+msgid "Unexecutable reimbursement"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_54
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_02_54
+msgid "Unexecutable transfer order"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_13
+msgid "Unissued part (see 64)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Unit Price"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_51
+msgid "Unloading Proton"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_07
+msgid "Unpaid commercial paper"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_05_03
+msgid "Unpaid debt"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_07
+msgid "Unpaid foreign bill"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_43_07
+msgid "Unpaid foreign cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_62
+msgid "Unpaid postal order"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_09
+msgid "Unpaid voucher"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__update_partner
+msgid "Update Partner Bank Accounts"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__update_partner
+msgid ""
+"Update Partner record when the Counterparty's Bank Account has not been "
+"registered yet."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_09
+msgid "Upload of prepaid card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__partner_id
+msgid "Use this field only if you have checked the 'Find Partner' option."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_09_19
+msgid ""
+"Used in case of payments accepted under reserve of count, result of "
+"overcrediting"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__user_id
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_search
+msgid "User"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_011
+msgid "VAT"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "VAT, withholding tax on income, commission, etc."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Validation Date"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Validation Sequence Number"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_33
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_30_83
+msgid "Value (date) correction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_33
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_83
+msgid "Value correction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_37
+msgid "Various costs for possessing or using a payment card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_006
+msgid "Various fees/commissions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_30
+msgid "Various transactions"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_result
+msgid "View Bank Statement(s)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_result
+msgid "View CODA File(s)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_401
+msgid "Visa charges"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Volume"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_212
+msgid "Warehousing fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_64
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_64
+msgid "Warrant"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_14
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_14
+msgid "Warrant fallen due"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_52
+msgid "Whatever the currency of the security"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_11_62
+msgid "When reimbursed separately to the subscriber"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Withdrawal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_09_01
+msgid ""
+"Withdrawal by counter cheque or receipt; cash remitted by the bank clerk"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_051
+msgid "Withholding tax"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_010
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_31
+msgid "Writ service fee"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"You should configure the 'Gain Exchange Rate Account' in your company "
+"settings, to manage automatically the booking of accounting entries related "
+"to differences between exchange rates."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"You should configure the 'Loss Exchange Rate Account' in your company "
+"settings, to manage automatically the booking of accounting entries related "
+"to differences between exchange rates."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_17
+msgid "Your certified cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_64
+msgid "Your issue"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_39
+msgid "Your issue circular cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_54
+msgid "Your payment ATM"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_15
+msgid "Your purchase bank cheque"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_03_03
+msgid "Your purchase by payment card"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_15
+msgid "Your purchase of lottery tickets"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_11
+msgid "Your purchase of luncheon vouchers"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_15
+msgid "Your repayment hire-purchase and similar claims"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_07
+msgid "Your repayment instalment credits"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_11
+msgid "Your repayment mortgage loan"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_13
+msgid "Your repurchase of issue"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_09
+msgid "Your semi-standing order"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_11
+msgid "Your semi-standing order – payment to employees"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_09_64
+msgid "Your winning lottery ticket"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "cancellation"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_03_62
+msgid ""
+"cheques debited on account, but debit cancelled afterwards for lack of cover"
+" (double debit/contra-entry of transaction 01 or 05)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "debtor disagrees"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "debtor's account problem"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "diesel"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "direct debit cancelled or nonexistent"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid ""
+"direct debit number linked to another identification number of the creditor"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "domestic fuel oil"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "europremium"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "guarantee without fixed term"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "last (recurrent)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "lubricants"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_103
+msgid "number (e.g. of the cheque, of the card, etc.)"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "one-off"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_import
+msgid "or"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_105
+msgid "original amount of the transaction"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "other types"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "paid"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "payer disagrees"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "petrol"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "premium 99+"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "premium plus 98 oct"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "premium with lead substitute"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "recurrent"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "refund"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "refusal - other reason"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "refusal - reason not specified"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "regular unleaded"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "reject"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "return"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "reversal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "structured format communication"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "technical problem"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "unspecified"
+msgstr ""

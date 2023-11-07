@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <!--
+    cf. https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes
+    -->
+    <record id="res_bank_BPOTBEB1" model="res.bank">
+        <field name="bban_codes">000,299</field>
+        <field name="bic">BPOTBEB1</field>
+        <field name="name">Bpost</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_GEBABEBB" model="res.bank">
+        <field name="bban_codes">001-049,137,140-149,200-214,220-298</field>
+        <field name="bic">GEBABEBB</field>
+        <field name="name">BNP Paribas Fortis</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_GKCCBEBB" model="res.bank">
+        <field
+            name="bban_codes"
+        >050-099,550-560,562-569,624-625,638,657,672,680,682-683,775-799,830-839</field>
+        <field name="bic">GKCCBEBB</field>
+        <field name="name">Belfius</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_NBBEBEBB203" model="res.bank">
+        <field name="bban_codes">100</field>
+        <field name="bic">NBBEBEBB203</field>
+        <field name="name">Nationale Bank van Belgie</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_NBBEBEBBHCC" model="res.bank">
+        <field name="bban_codes">101</field>
+        <field name="bic">NBBEBEBBHCC</field>
+        <field name="name">Nationale Bank van Belgie (Hoofdkas)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_NICABEBB" model="res.bank">
+        <field name="bban_codes">103-108,850-853,859-860,862-863,865-866</field>
+        <field name="bic">NICABEBB</field>
+        <field name="name">Crelan</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CTBKBEBX" model="res.bank">
+        <field
+            name="bban_codes"
+        >109-110,113-114,119-124,127,129,131,133-134,595-601,950-959</field>
+        <field name="bic">CTBKBEBX</field>
+        <field name="name">Beobank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ABERBE22" model="res.bank">
+        <field name="bban_codes">111</field>
+        <field name="bic">ABERBE22</field>
+        <field name="name">Bank Van Breda</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CPHBBE75" model="res.bank">
+        <field name="bban_codes">125-126,171</field>
+        <field name="bic">CPHBBE75</field>
+        <field name="name">Banque CPH</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_DIGEBEB2" model="res.bank">
+        <field name="bban_codes">130</field>
+        <field name="bic">DIGEBEB2</field>
+        <field name="name">Digiteal</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BNAGBEBB" model="res.bank">
+        <field name="bban_codes">132,634-636,646-647,871,877-879</field>
+        <field name="bic">BNAGBEBB</field>
+        <field name="name">Bank Nagelmackers</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BCMCBEBB" model="res.bank">
+        <field name="bban_codes">150</field>
+        <field name="bic">BCMCBEBB</field>
+        <field name="name">Bancontact Payconiq Company</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_RABOBE22" model="res.bank">
+        <field name="bban_codes">172-173,844</field>
+        <field name="bic">RABOBE22</field>
+        <field name="name">Rabobank Antwerp</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BSCHBEBBRET" model="res.bank">
+        <field name="bban_codes">176</field>
+        <field name="bic">BSCHBEBBRET</field>
+        <field name="name">Santander Consumer Finance België</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BARBBEBB" model="res.bank">
+        <field name="bban_codes">183</field>
+        <field name="bic">BARBBEBB</field>
+        <field name="name">Bank of Baroda</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BBRUBEBB" model="res.bank">
+        <field
+            name="bban_codes"
+        >185,300-399,630-631,652,673,828,880-881,883-884,887-888,910,920,923,929-931,934,936,939,961,971,976</field>
+        <field name="bic">BBRUBEBB</field>
+        <field name="name">ING België</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_SMBCBEBB" model="res.bank">
+        <field name="bban_codes">189</field>
+        <field name="bic">SMBCBEBB</field>
+        <field name="name">Sumitomo Mitsui Banking Corporation (SMBC)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CREGBEBB" model="res.bank">
+        <field name="bban_codes">190-199,728-729,732,742</field>
+        <field name="bic">CREGBEBB</field>
+        <field name="name">CBC</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_KREDBEBB" model="res.bank">
+        <field name="bban_codes">400-499,725-727,730-731,733-741,743-749,868</field>
+        <field name="bic">KREDBEBB</field>
+        <field name="name">KBC</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_MTPSBEBB" model="res.bank">
+        <field name="bban_codes">500</field>
+        <field name="bic">MTPSBEBB</field>
+        <field name="name">Moneytrans Payment Services</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_DHBNBEBB" model="res.bank">
+        <field name="bban_codes">501</field>
+        <field name="bic">DHBNBEBB</field>
+        <field name="name">Demir-Halk Bank (Nederland) (DHB)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_PANXBEB1" model="res.bank">
+        <field name="bban_codes">504</field>
+        <field name="bic">PANXBEB1</field>
+        <field name="name">Unifiedpost Payments</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_DIERBE21" model="res.bank">
+        <field name="bban_codes">507</field>
+        <field name="bic">DIERBE21</field>
+        <field name="name">Dierickx Leys &amp; Cie Effectenbank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_PARBBEBZMDC" model="res.bank">
+        <field name="bban_codes">508</field>
+        <field name="bic">PARBBEBZMDC</field>
+        <field
+            name="name"
+        >BNP Paribas SA, Belgium Branch – Securities Services business</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ABNABE2AIPC" model="res.bank">
+        <field name="bban_codes">509,513,722,960</field>
+        <field name="bic">ABNABE2AIPC</field>
+        <field name="name">ABN AMRO</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_VAPEBE22" model="res.bank">
+        <field name="bban_codes">510</field>
+        <field name="bic">VAPEBE22</field>
+        <field name="name">van de Put &amp; Co Privaatbankiers</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_DNIBBE21" model="res.bank">
+        <field name="bban_codes">512</field>
+        <field name="bic">DNIBBE21</field>
+        <field name="name">NIB Capital Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_PUILBEBB" model="res.bank">
+        <field name="bban_codes">514,942,969</field>
+        <field name="bic">PUILBEBB</field>
+        <field name="name">Puilaetco Private Bankers</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_IRVTBEBB" model="res.bank">
+        <field name="bban_codes">515</field>
+        <field name="bic">IRVTBEBB</field>
+        <field name="name">The Bank of New York Mellon</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_FVLBBE22" model="res.bank">
+        <field name="bban_codes">521,525</field>
+        <field name="bic">FVLBBE22</field>
+        <field name="name">Van Lanschot Bankiers</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_UTWBBEBB" model="res.bank">
+        <field name="bban_codes">522</field>
+        <field name="bic">UTWBBEBB</field>
+        <field name="name">United Taiwan Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_TRIOBEBB" model="res.bank">
+        <field name="bban_codes">523</field>
+        <field name="bic">TRIOBEBB</field>
+        <field name="name">Triodos Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_WAFABEBB" model="res.bank">
+        <field name="bban_codes">524,546</field>
+        <field name="bic">WAFABEBB</field>
+        <field name="name">Attijariwafa bank Europe</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_SHIZBEBB" model="res.bank">
+        <field name="bban_codes">530</field>
+        <field name="bic">SHIZBEBB</field>
+        <field name="name">Shizuoka Bank (Europe)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BKIDBE22" model="res.bank">
+        <field name="bban_codes">541</field>
+        <field name="bic">BKIDBE22</field>
+        <field name="name">BANK OF INDIA</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_LOCYBEBB" model="res.bank">
+        <field name="bban_codes">548</field>
+        <field name="bic">LOCYBEBB</field>
+        <field name="name">Lombard Odier (Europe)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CHASBEBX" model="res.bank">
+        <field name="bban_codes">549</field>
+        <field name="bic">CHASBEBX</field>
+        <field name="name">JP Morgan Chase Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CITIBEBX" model="res.bank">
+        <field name="bban_codes">570-579</field>
+        <field name="bic">CITIBEBX</field>
+        <field name="name">Citibank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_MHCBBEBB" model="res.bank">
+        <field name="bban_codes">581</field>
+        <field name="bic">MHCBBEBB</field>
+        <field name="name">Mizuho Bank Europe Brussels Branch</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_DEGRBEBB" model="res.bank">
+        <field name="bban_codes">583,676,845</field>
+        <field name="bic">DEGRBEBB</field>
+        <field name="name">Banque Degroof Petercam Luxembourg</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_RCBPBEBB" model="res.bank">
+        <field name="bban_codes">585</field>
+        <field name="bic">RCBPBEBB</field>
+        <field name="name">Rothschild &amp; Co Wealth Managemnt Belgium</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CFFRBEB1" model="res.bank">
+        <field name="bban_codes">586</field>
+        <field name="bic">CFFRBEB1</field>
+        <field name="name">Credit Foncier de France</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BIBLBE21" model="res.bank">
+        <field name="bban_codes">587</field>
+        <field name="bic">BIBLBE21</field>
+        <field name="name">BinckBank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CMCIBEB1BTB" model="res.bank">
+        <field name="bban_codes">588</field>
+        <field name="bic">CMCIBEB1BTB</field>
+        <field name="name">CM-CIC Belgium</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BSCHBEBB" model="res.bank">
+        <field name="bban_codes">590-594</field>
+        <field name="bic">BSCHBEBB</field>
+        <field name="name">Santander</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BKCHBEBB" model="res.bank">
+        <field name="bban_codes">605</field>
+        <field name="bic">BKCHBEBB</field>
+        <field name="name">Bank of China (Europe) Brussels Branch</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ICBKBEBB" model="res.bank">
+        <field name="bban_codes">607</field>
+        <field name="bic">ICBKBEBB</field>
+        <field name="name">Industrial and Commercial Bank of China (Europe)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_DEUTBEBE" model="res.bank">
+        <field name="bban_codes">610-613,694,825-826</field>
+        <field name="bic">DEUTBEBE</field>
+        <field name="name">Deutsche Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ADIABE22" model="res.bank">
+        <field name="bban_codes">640</field>
+        <field name="bic">ADIABE22</field>
+        <field name="name">Antwerpse Diamantbank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BBVABEBB" model="res.bank">
+        <field name="bban_codes">642</field>
+        <field name="bic">BBVABEBB</field>
+        <field name="name">Banco Bilbao Vizcaya Argentaria</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BMPBBEBB" model="res.bank">
+        <field name="bban_codes">643</field>
+        <field name="bic">BMPBBEBB</field>
+        <field name="name">Aion</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_JVBABE22" model="res.bank">
+        <field name="bban_codes">645</field>
+        <field name="bic">JVBABE22</field>
+        <field name="name">Bank Van Breda</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BMPBBEBBVOD" model="res.bank">
+        <field name="bban_codes">648</field>
+        <field name="bic">BMPBBEBBVOD</field>
+        <field name="name">Aion</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CEPABEB2" model="res.bank">
+        <field name="bban_codes">649</field>
+        <field name="bic">CEPABEB2</field>
+        <field name="name">Caisse d'Epargne et de Prévoyance Hauts de France</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_REVOBEB2" model="res.bank">
+        <field name="bban_codes">650</field>
+        <field name="bic">REVOBEB2</field>
+        <field name="name">Revolut Belgium</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_KEYTBEBB" model="res.bank">
+        <field name="bban_codes">651</field>
+        <field name="bic">KEYTBEBB</field>
+        <field name="name">Keytrade Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BARCBEBB" model="res.bank">
+        <field name="bban_codes">653</field>
+        <field name="bic">BARCBEBB</field>
+        <field name="name">Barclays Bank Ireland Brussels Branch</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_HABBBEBB" model="res.bank">
+        <field name="bban_codes">658</field>
+        <field name="bic">HABBBEBB</field>
+        <field name="name">Habib Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BCDMBEBB" model="res.bank">
+        <field name="bban_codes">664</field>
+        <field name="bic">BCDMBEBB</field>
+        <field name="name">Banque Chaabi du Maroc</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CMCIBEB1CIC" model="res.bank">
+        <field name="bban_codes">667</field>
+        <field name="bic">CMCIBEB1CIC</field>
+        <field name="name">CM-CIC Belgium</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_SBINBE2X" model="res.bank">
+        <field name="bban_codes">668</field>
+        <field name="bic">SBINBE2X</field>
+        <field name="name">State Bank of India</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_EURBBE99" model="res.bank">
+        <field name="bban_codes">671</field>
+        <field name="bic">EURBBE99</field>
+        <field name="name">Europabank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ABNABE2AIDJ" model="res.bank">
+        <field name="bban_codes">674</field>
+        <field name="bic">ABNABE2AIDJ</field>
+        <field name="name">ABN AMRO Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BYBBBEBB" model="res.bank">
+        <field name="bban_codes">675</field>
+        <field name="bic">BYBBBEBB</field>
+        <field name="name">Byblos Bank Europe</field>
+        <field name="country" ref="base.be" />
+    </record>
+
+    <record id="res_bank_CBPXBE99" model="res.bank">
+        <field name="bban_codes">677</field>
+        <field name="bic">CBPXBE99</field>
+        <field name="name">CBP QUILVEST</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_DELEBE22" model="res.bank">
+        <field name="bban_codes">678</field>
+        <field name="bic">DELEBE22</field>
+        <field name="name">Bank Delen</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_PCHQBEBB" model="res.bank">
+        <field name="bban_codes">679,873,981-984</field>
+        <field name="bic">PCHQBEBB</field>
+        <field name="name">Bpost</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_SGABBEB2" model="res.bank">
+        <field name="bban_codes">684,688</field>
+        <field name="bic">SGABBEB2</field>
+        <field name="name">Société Générale</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BOFABE3X" model="res.bank">
+        <field name="bban_codes">685-686,689</field>
+        <field name="bic">BOFABE3X</field>
+        <field name="name">Bank of America National Association</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_MGTCBEBE" model="res.bank">
+        <field name="bban_codes">687,699</field>
+        <field name="bic">MGTCBEBE</field>
+        <field name="name">Euroclear Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BOTKBEBX" model="res.bank">
+        <field name="bban_codes">693</field>
+        <field name="bic">BOTKBEBX</field>
+        <field name="name">MUFG Bank (Europe)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CRLYBEBB" model="res.bank">
+        <field name="bban_codes">696</field>
+        <field name="bic">CRLYBEBB</field>
+        <field name="name">Crédit Agricole Belgium</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_700" model="res.bank">
+        <field name="bban_codes">700-709,750-774,800-816,963,975</field>
+        <field name="bic">AXABBE22</field>
+        <field name="name">AXA</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ABNABE2A" model="res.bank">
+        <field name="bban_codes">719</field>
+        <field name="bic">ABNABE2A</field>
+        <field name="name">ABN AMRO</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ISAEBEBB" model="res.bank">
+        <field name="bban_codes">817</field>
+        <field name="bic">ISAEBEBB</field>
+        <field name="name">CACEIS Bank Belgian Branch</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_BLUXBEBB" model="res.bank">
+        <field name="bban_codes">823</field>
+        <field name="bic">BLUXBEBB</field>
+        <field name="name">Banque de Luxembourg</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_PRIBBEBB" model="res.bank">
+        <field name="bban_codes">840</field>
+        <field name="bic">PRIBBEBB</field>
+        <field name="name">Edmond de Rothschild Europe</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_MBWMBEBB" model="res.bank">
+        <field name="bban_codes">876</field>
+        <field name="bic">MBWMBEBB</field>
+        <field name="name">MeDirect Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_VDSPBE91" model="res.bank">
+        <field name="bban_codes">890-899</field>
+        <field name="bic">VDSPBE91</field>
+        <field name="name">VDK Spaarbank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CEKVBE88" model="res.bank">
+        <field name="bban_codes">906,908</field>
+        <field name="bic">CEKVBE88</field>
+        <field name="name">Centrale Kredietverlening (C.K.V.)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_TUNZBEB1" model="res.bank">
+        <field name="bban_codes">911</field>
+        <field name="bic">TUNZBEB1</field>
+        <field name="name">Ingenico Financial Solutions</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_EPBFBEBB" model="res.bank">
+        <field name="bban_codes">913</field>
+        <field name="bic">EPBFBEBB</field>
+        <field name="name">EPBF</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_FXBBBEBB" model="res.bank">
+        <field name="bban_codes">914</field>
+        <field name="bic">FXBBBEBB</field>
+        <field name="name">IBANFIRST</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_OONXBEBB" model="res.bank">
+        <field name="bban_codes">915</field>
+        <field name="bic">OONXBEBB</field>
+        <field name="name">Oonex</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_EBPBBEB1" model="res.bank">
+        <field name="bban_codes">926</field>
+        <field name="bic">EBPBBEB1</field>
+        <field name="name">Ebury Partners Belgium</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_VPAYBEB1" model="res.bank">
+        <field name="bban_codes">928</field>
+        <field name="bic">VPAYBEB1</field>
+        <field name="name">VIVA Payment Services</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CLIQBEB1" model="res.bank">
+        <field name="bban_codes">940</field>
+        <field name="bic">CLIQBEB1</field>
+        <field name="name">Banque Centrale de Compensation (Clearnet)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_CVMCBEBB" model="res.bank">
+        <field name="bban_codes">941</field>
+        <field name="bic">CVMCBEBB</field>
+        <field name="name">CA Indosuez Wealth (Europe)</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_JPMGBEBB" model="res.bank">
+        <field name="bban_codes">945</field>
+        <field name="bic">JPMGBEBB</field>
+        <field name="name">JP Morgan Brussels Branch</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_AARBBEB1" model="res.bank">
+        <field name="bban_codes">947</field>
+        <field name="bic">AARBBEB1</field>
+        <field name="name">Aareal Bank - Brussels Branch</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_HSBCBEBB" model="res.bank">
+        <field name="bban_codes">949</field>
+        <field name="bic">HSBCBEBB</field>
+        <field name="name">HSBC Bank</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_FPEBBEB2" model="res.bank">
+        <field name="bban_codes">964</field>
+        <field name="bic">FPEBBEB2</field>
+        <field name="name">Financière des Paiements Electroniques</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_TRWIBEB1" model="res.bank">
+        <field name="bban_codes">967</field>
+        <field name="bic">TRWIBEB1</field>
+        <field name="name">Wise Europe</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ENIBBEBB" model="res.bank">
+        <field name="bban_codes">968</field>
+        <field name="bic">ENIBBEBB</field>
+        <field name="name">Banque Eni</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_ARSPBE22" model="res.bank">
+        <field name="bban_codes">973,978-980</field>
+        <field name="bic">ARSPBE22</field>
+        <field name="name">Argenta</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_PESOBEB1" model="res.bank">
+        <field name="bban_codes">974</field>
+        <field name="bic">PESOBEB1</field>
+        <field name="name">PPS EU</field>
+        <field name="country" ref="base.be" />
+    </record>
+    <record id="res_bank_PAYVBEB2" model="res.bank">
+        <field name="bban_codes">977</field>
+        <field name="bic">PAYVBEB2</field>
+        <field name="name">Paynovate</field>
+        <field name="country" ref="base.be" />
+    </record>
+
+</odoo>

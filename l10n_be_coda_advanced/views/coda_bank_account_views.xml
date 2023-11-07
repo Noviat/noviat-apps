@@ -1,0 +1,209 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="coda_bank_account_view_search" model="ir.ui.view">
+        <field name="name">coda.bank.account.search</field>
+        <field name="model">coda.bank.account</field>
+        <field name="arch" type="xml">
+            <search string="CODA Bank Account Configuration">
+                <field name="name" />
+                <field name="bank_id" />
+                <field name="description1" />
+                <field name="journal_id" />
+                <field name="currency_id" />
+                <field
+                    name="company_id"
+                    domain="[('id', 'in', allowed_company_ids)]"
+                    groups="base.group_multi_company"
+                />
+                <separator />
+                <group expand="0" string="Group By">
+                    <filter
+                        name="currency"
+                        string="Currency"
+                        context="{'group_by': 'currency_id'}"
+                    />
+                    <filter
+                        name="company"
+                        string="Company"
+                        context="{'group_by': 'company_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="coda_bank_account_view_tree" model="ir.ui.view">
+        <field name="name">coda.bank.account.tree</field>
+        <field name="model">coda.bank.account</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="bank_id" />
+                <field name="currency_id" />
+                <field name="description1" />
+                <field name="journal_id" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="coda_bank_account_view_form" model="ir.ui.view">
+        <field name="name">coda.bank.account.form</field>
+        <field name="model">coda.bank.account</field>
+        <field name="arch" type="xml">
+            <form string="CODA Bank Account Configuration">
+                <field name="active" invisible="1" />
+                <field name="company_id" invisible="1" />
+                <widget
+                    name="web_ribbon"
+                    title="Archived"
+                    bg_color="bg-danger"
+                    attrs="{'invisible': [('active', '=', True)]}"
+                />
+                <div class="oe_title">
+                    <label for="name" />
+                    <h1><field name="name" /></h1>
+                </div>
+                <group name="main1">
+                    <group name="main1-left">
+                        <field name="journal_id" />
+                        <field name="description1" />
+                        <field name="description2" />
+                    </group>
+                    <group name="main1-right">
+                        <field name="bank_id" />
+                        <field name="currency_id" />
+                        <field name="coda_st_naming" />
+                    </group>
+                </group>
+                <group name="main2">
+                    <group name="main2-left">
+                        <field
+                            name="find_payment"
+                            attrs="{'invisible': [('has_payment_module', '=', False)]}"
+                        />
+                        <field name="find_bbacom" />
+                        <field name="find_inv_number" />
+                        <field name="find_account_move_line" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                    </group>
+                    <group name="main2-right">
+                        <field name="find_partner" />
+                        <field name="update_partner" />
+                        <field
+                            name="find_so_number"
+                            attrs="{'invisible': [('has_sale_module', '=', False)]}"
+                        />
+                        <field name="balance_start_enforce" />
+                        <field name="discard_dup" />
+                    </group>
+                </group>
+                <group name="invisible" invisible="1">
+                    <field name="has_payment_module" />
+                    <field name="has_sale_module" />
+                </group>
+                <notebook>
+                    <page string="Default Accounts">
+                        <separator colspan="4" string="Default Account Mapping" />
+                        <group>
+                            <field name="transfer_account_id" />
+                        </group>
+                    </page>
+                    <page string="Accounts Mapping">
+                        <field
+                            colspan="4"
+                            name="account_mapping_ids"
+                            nolabel="1"
+                            context="{'default_company_id': company_id}"
+                        >
+                            <tree>
+                                <field name="sequence" widget="handle" />
+                                <field name="name" />
+                                <field name="trans_type_id" />
+                                <field name="trans_family_id" />
+                                <field name="trans_code_id" />
+                                <field name="trans_category_id" />
+                                <field name="struct_comm_type_id" />
+                                <field name="split" invisible="1" />
+                                <field
+                                    name="account_id"
+                                    attrs="{'invisible': [('split', '=', True)]}"
+                                />
+                            </tree>
+                            <form string="Account Mapping Rules">
+                                <field name="company_id" invisible="1" />
+                                <field name="split" invisible="1" />
+                                <group name="main">
+                                    <group name="main-left">
+                                        <field name="name" />
+                                        <field name="active" />
+                                    </group>
+                                    <group name="main-right">
+                                        <field name="sequence" />
+                                        <field name="active" />
+                                    </group>
+                                </group>
+                                <separator name="condition" string="Conditions" />
+                                <group name="c1">
+                                    <group name="c1-left">
+                                        <field name="partner_name" />
+                                        <field
+                                            name="partner_id"
+                                            attrs="{'invisible': [('split', '=', True)]}"
+                                        />
+                                    </group>
+                                    <group name="c1-right">
+                                        <field name="counterparty_number" />
+                                    </group>
+                                </group>
+                                <group name="c2">
+                                    <group name="c2-left">
+                                        <field name="trans_type_id" />
+                                        <field name="trans_code_id" />
+                                        <field name="freecomm" />
+                                        <field name="struct_comm_type_id" />
+                                    </group>
+                                    <group name="c2-right">
+                                        <field name="trans_family_id" />
+                                        <field name="trans_category_id" />
+                                        <field name="payment_reference" />
+                                        <field name="structcomm" />
+                                    </group>
+                                </group>
+                                <separator name="result" string="Result" />
+                                <group
+                                    name="result"
+                                    attrs="{'invisible': [('split', '=', True)]}"
+                                >
+                                    <group name="result-left">
+                                        <field
+                                            name="account_id"
+                                            attrs="{'required': [('split', '=', False)]}"
+                                        />
+                                        <field
+                                            name="analytic_distribution"
+                                            widget="analytic_distribution"
+                                            groups="analytic.group_analytic_accounting"
+                                        />
+                                    </group>
+                                    <group name="result-right">
+                                        <field name="account_tax_id" />"
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="coda_bank_account_action" model="ir.actions.act_window">
+        <field name="name">CODA Bank Account Configuration</field>
+        <field name="res_model">coda.bank.account</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="coda_bank_account_view_search" />
+    </record>
+
+</odoo>

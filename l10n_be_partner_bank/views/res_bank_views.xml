@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <!--
+  We add also bic in this search view which has nothing to do with belgian
+  localisation (and which should imho be part of standard Odoo).
+  This could conflict with community or custom modules doing the same.
+  If we encounter this situation we could either make a seperate module
+  doing only this or extend the search view dynamically via ir.ui.view,get_view
+  and check first if bic has not yet been added.
+
+  TODO:
+  move search on bic to 'account_bank_statement_advanced' and make PR
+  on Odoo standard addons
+  -->
+  <record id="res_bank_view_search" model="ir.ui.view">
+    <field name="name">res.bank.search</field>
+    <field name="model">res.bank</field>
+    <field name="inherit_id" ref="base.res_bank_view_search" />
+    <field name="arch" type="xml">
+      <field name="name" position="after">
+        <field name="bic" />
+        <field name="bban_code_list" string="BBAN Codes" />
+      </field>
+    </field>
+  </record>
+
+  <record id="view_res_bank_form" model="ir.ui.view">
+    <field name="name">res.bank.form.bban_codes</field>
+    <field name="model">res.bank</field>
+    <field name="inherit_id" ref="base.view_res_bank_form" />
+    <field name="arch" type="xml">
+      <field name="active" position="after">
+        <field name="bban_codes" select="1" />
+      </field>
+    </field>
+  </record>
+
+</odoo>

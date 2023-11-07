@@ -1,0 +1,1318 @@
+# Copyright 2009-2023 Noviat
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+import base64
+import logging
+import time
+
+from lxml import etree
+
+from odoo import _, api, fields, models
+
+from odoo.addons.report_xlsx_helper.report.report_xlsx_format import (
+    FORMATS,
+    XLS_HEADERS,
+)
+
+_logger = logging.getLogger(__name__)
+
+
+class L10nBeVatDeclaration(models.TransientModel):
+    _name = "l10n.be.vat.declaration"
+    _inherit = "l10n.be.vat.common"
+    _description = "Periodical VAT Declaration"
+
+    ask_restitution = fields.Boolean(help="Request for refund")
+    ask_payment = fields.Boolean(help="Request for payment forms")
+    client_nihil = fields.Boolean(
+        string="Last Declaration, no clients in client listing",
+        help="Applies only to the last declaration of the calendar year "
+        "or the declaration concerning the cessation of activity:\n"
+        "no clients to be included in the client listing.",
+    )
+    # result view fields
+    case_ids = fields.One2many(
+        comodel_name="l10n.be.vat.declaration.case",
+        inverse_name="declaration_id",
+        string="Cases",
+    )
+    controls = fields.Text()
+
+    def generate_declaration(self):
+        self.ensure_one()
+        case_vals = self._get_case_vals()
+        self.case_ids = [(0, 0, x) for x in case_vals]
+        self._vat_declaration_controls()
+        module = __name__.split("addons.")[1].split(".")[0]
+        result_view = self.env.ref(
+            "{}.{}_view_form_declaration".format(module, self._table)
+        )
+
+        return {
+            "name": _("Periodical VAT Declaration"),
+            "res_id": self.id,
+            "view_type": "form",
+            "view_mode": "form",
+            "res_model": self._name,
+            "target": "inline",
+            "view_id": result_view.id,
+            "type": "ir.actions.act_window",
+        }
+
+    def create_xls(self):
+        report_file = "vat_declaration_%s" % self.period
+        module = __name__.split("addons.")[1].split(".")[0]
+        report_name = "{}.vat_declaration_xls".format(module)
+        report = {
+            "name": _("Periodical VAT Declaration"),
+            "type": "ir.actions.report",
+            "report_type": "xlsx",
+            "report_name": report_name,
+            "report_file": report_name,
+            "context": dict(self.env.context, report_file=report_file),
+            "data": {"dynamic_report": True},
+        }
+        return report
+
+    def create_detail_xls(self):
+        report_file = "vat_detail_%s" % self.period
+        module = __name__.split("addons.")[1].split(".")[0]
+        report_name = "{}.vat_detail_xls".format(module)
+        report = {
+            "name": _("Periodical VAT Declaration details"),
+            "type": "ir.actions.report",
+            "report_type": "xlsx",
+            "report_name": report_name,
+            "report_file": report_name,
+            "context": dict(self.env.context, report_file=report_file),
+            "data": {"dynamic_report": True},
+        }
+        return report
+
+    def create_xml(self):
+        """
+        Intervat XML Periodical VAT Declaration.
+        TODO: add support for 'Representative' (Mandataris)
+        """
+
+        ns_map = {
+            None: "http://www.minfin.fgov.be/VATConsignment",
+            "ic": "http://www.minfin.fgov.be/InputCommon",
+        }
+
+        Doc = etree.Element(
+            "VATConsignment", attrib={"VATDeclarationsNbr": "1"}, nsmap=ns_map
+        )
+
+        # self._node_Representative(Doc, ns_map)
+        ref = self._get_declaration_ref()
+        # self._node_RepresentativeReference(Doc, ns_map, ref)
+
+        self._node_VATDeclaration(Doc, ns_map, ref)
+
+        xml_string = etree.tostring(
+            Doc, pretty_print=True, encoding="ISO-8859-1", xml_declaration=True
+        )
+
+        self._validate_xmlschema(xml_string, "NewTVA-in_v0_9.xsd")
+        self.file_name = self._get_file_base_name() + ".xml"
+        self.file_save = base64.encodebytes(xml_string)
+
+        return self._action_save_xml()
+
+    def print_declaration(self):
+        module = __name__.split("addons.")[1].split(".")[0]
+        return self.env.ref(
+            "%s.action_report_l10nbevatdeclaration" % module
+        ).report_action(self)
+
+    def _get_file_base_name(self):
+        return "{}_vat_declaration".format(self._get_company_vat()) + (
+            self.period and "_{}".format(self.period) or ""
+        )
+
+    def _intervat_cases(self):
+        return [
+            "00",
+            "01",
+            "02",
+            "03",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "54",
+            "55",
+            "56",
+            "57",
+            "59",
+            "61",
+            "62",
+            "63",
+            "64",
+            "71",
+            "72",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "91",
+        ]
+
+    def _get_tax_tag_ids(self, cases):
+        if not cases:
+            return []
+        engines = list(set(cases.expression_ids.mapped("engine")))
+        if engines != ["tax_tags"]:
+            raise NotImplementedError
+        formulas = list(set(cases.expression_ids.mapped("formula")))
+        tax_tag_ids = []
+        for formula in formulas:
+            tax_tags = self.env["account.account.tag"]._get_tax_tags(
+                formula, self.company_id.country_id.id
+            )
+            tax_tag_ids += [x.id for x in tax_tags if x.id not in tax_tag_ids]
+        return tax_tag_ids
+
+    def _get_case_domain(self, case_report):
+        tax_tag_ids = []
+        if case_report.code in ("VI", "71", "72"):
+            case_xx = self.env.ref("l10n_be_coa_multilang.atrl_IV")
+            case_yy = self.env.ref("l10n_be_coa_multilang.atrl_V")
+            cases = case_report.search(
+                [
+                    ("children_ids", "=", False),
+                    "|",
+                    ("parent_id", "child_of", case_xx.id),
+                    ("parent_id", "child_of", case_yy.id),
+                ]
+            )
+            if case_report.code in ("71", "72"):
+                declaration_line = self.case_ids.filtered(
+                    lambda r: r.case_id == case_report
+                )
+                if not declaration_line.amount:
+                    cases = case_report.browse()
+        elif case_report.children_ids:
+            cases = case_report.search(
+                [
+                    ("parent_id", "child_of", case_report.id),
+                    ("children_ids", "=", False),
+                ]
+            )
+        else:
+            cases = case_report
+        tax_tag_ids = self._get_tax_tag_ids(cases)
+        return [("tax_tag_ids", "in", tax_tag_ids)]
+
+    def _calc_parent_case_amounts(self, report_line, amounts):
+        if report_line.id not in amounts:
+            for child in report_line.children_ids:
+                if child.id not in amounts:
+                    self._calc_parent_case_amounts(child, amounts)
+            amounts[report_line.id] = sum(
+                [x.factor * amounts[x.id] for x in report_line.children_ids]
+            )
+
+    def _get_case_amounts(self, case_root, tax_code_map):
+        if case_root.code == "VI":
+            report_lines = case_root.browse()
+        else:
+            report_lines = case_root.search(
+                [
+                    ("parent_id", "child_of", case_root.id),
+                    ("children_ids", "=", False),
+                    ("code", "not in", ("71", "72")),
+                ]
+            )
+        amounts = dict.fromkeys(report_lines.mapped("id"), 0.0)
+        dom = self._get_move_line_domain()
+        dom_min = [("tax_tag_invert", "=", True)]
+        dom_plus = [("tax_tag_invert", "=", False)]
+        for report_line in report_lines:
+            tc = report_line.code
+            for tag in tax_code_map[tc]:
+                aml_dom = dom + [("tax_tag_ids", "in", tag.id)]
+                sign = tag.tax_negate and -1 or 1
+                flds = ["balance"]
+                groupby = []
+                amt = self.env["account.move.line"].read_group(
+                    aml_dom + dom_plus, flds, groupby
+                )[0]
+                amounts[report_line.id] += self.currency_id.round(
+                    sign * (amt["balance"] or 0.0)
+                )
+                amt = self.env["account.move.line"].read_group(
+                    aml_dom + dom_min, flds, groupby
+                )[0]
+                amounts[report_line.id] += self.currency_id.round(
+                    sign * -1 * (amt["balance"] or 0.0)
+                )
+
+        self._calc_parent_case_amounts(case_root, amounts)
+
+        return amounts
+
+    def _calc_case_vals(self, report_line, case_vals, case_amounts):
+        amount = case_amounts.get(report_line.id, 0.0)
+        active = not report_line.invisible and not (
+            report_line.hide_if_zero and not amount
+        )
+        case_vals.append(
+            {
+                "case_id": report_line.id,
+                "active": active,
+                "amount": amount,
+            }
+        )
+        for child in report_line.children_ids:
+            self._calc_case_vals(child, case_vals, case_amounts)
+
+    def _get_tax_code_map(self):
+        """
+        :return: dict
+            key: tax code
+            value: list of tags
+        """
+        tax_tags = (
+            self.env["account.account.tag"]
+            .with_context(active_test=False)
+            .search(
+                [
+                    ("country_id", "=", self.env.ref("base.be").id),
+                    ("applicability", "=", "taxes"),
+                ]
+            )
+        )
+        be_tax_codes = self._intervat_cases()
+        tax_code_map = {}
+        be_tax_tags = self.env["account.account.tag"]
+        for tag in tax_tags:
+            tc = tag.name[1:]
+            if tc[:2] not in be_tax_codes:
+                continue
+            else:
+                be_tax_tags |= tag
+                if tc not in tax_code_map:
+                    tax_code_map[tc] = tag
+                else:
+                    tax_code_map[tc] |= tag
+        return tax_code_map, tax_tags
+
+    def _get_case_vals(self):
+        report_roots = self.env["account.report.line"].search(
+            [
+                ("report_id.country_id", "=", self.env.ref("base.be").id),
+                ("parent_id", "=", False),
+                (
+                    "report_id",
+                    "=",
+                    self.env.ref("l10n_be_coa_multilang.account_report_be_vat").id,
+                ),
+            ]
+        )
+        tax_code_map, tax_tags = self._get_tax_code_map()
+        case_amounts = {}
+        for report_root in report_roots:
+            if report_root.code == "VI":  # VAT Balance (71-72)
+                case_xx = self.env.ref("l10n_be_coa_multilang.atrl_IV")
+                case_yy = self.env.ref("l10n_be_coa_multilang.atrl_V")
+                vat_balance = case_amounts[case_xx.id] - case_amounts[case_yy.id]
+                case_amounts[report_root.id] = vat_balance
+                for entry in report_root.children_ids:
+                    if entry.code == "71":
+                        case_amounts[entry.id] = vat_balance > 0 and vat_balance or 0.0
+                    elif entry.code == "72":
+                        case_amounts[entry.id] = vat_balance < 0 and -vat_balance or 0.0
+                    else:
+                        raise NotImplementedError
+            else:
+                case_amounts.update(self._get_case_amounts(report_root, tax_code_map))
+
+        case_vals = []
+        for report_root in report_roots:
+            self._calc_case_vals(report_root, case_vals, case_amounts)
+        return case_vals
+
+    def _vat_declaration_controls(self):
+        """
+        VAT declaration validation rules
+        Cf. https://eservices.minfin.fgov.be/intervat
+        """
+        cround = self.currency_id.round
+        passed = "\u2705"
+        failed = "\u26D4"
+
+        intervat_cases = self.case_ids.filtered(
+            lambda x: x.case_id.code in self._intervat_cases()
+        )
+        cvalues = {x.case_id.code: x.amount for x in intervat_cases}
+
+        # blocking controls
+        negative_cases = intervat_cases.filtered(lambda x: x.amount < 0.0)
+        if negative_cases:
+            self.note += _("Negative values found for cases %s") % [
+                str(x.case_id.code) for x in negative_cases
+            ]
+            self.note += "\n"
+            self.note += _(
+                "These needs to be corrected before submitting the VAT declaration."
+            )
+            self.note += "\n"
+
+        # non-blocking controls
+        # The text strings of the controls are modeled after the implementation
+        # in Exact Online
+        control_vals = (
+            "\n"
+            + 9 * " "
+            + _("Value left")
+            + " = {left}, "
+            + _("Value right")
+            + " = {right}"
+        )
+
+        control = "[01] * 6% + [02] * 12% + [03] * 21% = [54]"
+        vl = cround(cvalues["01"] * 0.06 + cvalues["02"] * 0.12 + cvalues["03"] * 0.21)
+        vr = cround(cvalues["54"])
+        if vl == vr:
+            self.controls = passed + " : " + control
+        else:
+            self.controls = failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
+
+        control = "([84] + [86] + [88]) * 21% >= [55]"
+        self.controls += "\n"
+        vl = cround((cvalues["84"] + cvalues["86"] + cvalues["88"]) * 0.21)
+        vr = cround(cvalues["55"])
+        if vl - vr >= 0:
+            self.controls += passed + " : " + control
+        else:
+            self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
+
+        control = "([85] + [87]) * 21% >= ([56] + [57])"
+        self.controls += "\n"
+        vl = cround((cvalues["85"] + cvalues["87"]) * 0.21)
+        vr = cround(cvalues["56"] + cvalues["57"])
+        if vl - vr >= 0:
+            self.controls += passed + " : " + control
+        else:
+            self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
+
+        control = "([81] + [82] + [83] + [84] + [85]) * 50% >= [59]"
+        self.controls += "\n"
+        vl = cround(
+            (
+                cvalues["81"]
+                + cvalues["82"]
+                + cvalues["83"]
+                + cvalues["84"]
+                + cvalues["85"]
+            )
+            * 0.50
+        )
+        vr = cvalues["59"]
+        if vl - vr >= 0:
+            self.controls += passed + " : " + control
+        else:
+            self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
+
+        control = "[85] * 21% >= [63]"
+        vl = cround(cvalues["85"] * 0.21)
+        vr = cround(cvalues["63"])
+        self.controls += "\n"
+        if vl - vr >= 0:
+            self.controls += passed + " : " + control
+        else:
+            self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
+
+        control = "[49] * 21% >= [64]"
+        vl = cround(cvalues["49"] * 0.21)
+        vr = cround(cvalues["64"])
+        self.controls += "\n"
+        if vl - vr >= 0:
+            self.controls += passed + " : " + control
+        else:
+            self.controls += failed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
+
+        control = "[55] > 0 if ([86] or [88]) > 0"
+        self.controls += "\n"
+        vl = cround(cvalues["55"])
+        vr = cround(cvalues["86"] + cvalues["88"])
+        if vr and not vl:
+            self.controls += failed + " : " + control
+        else:
+            self.controls += passed + " : " + control
+        self.controls += control_vals.format(
+            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
+        )
+
+    def _node_VATDeclaration(self, parent, ns_map, ref):
+
+        VATDeclaration = etree.SubElement(
+            parent,
+            "VATDeclaration",
+            attrib={"SequenceNumber": "1", "DeclarantReference": ref},
+        )
+
+        # ReplacedVATDeclaration not supported at this point in time
+        # TODO:
+        # Create object to save legal VAT declarations in order to
+        # and add support of replacements.
+        # self._node_ReplacedVATDeclaration(
+        #     VATDeclaration, ns_map, replace_ref)
+
+        self._node_Declarant(VATDeclaration, ns_map)
+        self._node_Period(VATDeclaration, ns_map)
+
+        # Deduction not supported at this point in time
+        # self._node_Deduction(VATDeclaration, ns_map)
+
+        self._node_Data(VATDeclaration, ns_map)
+
+        ClientListingNihil = etree.SubElement(VATDeclaration, "ClientListingNihil")
+        ClientListingNihil.text = self.client_nihil and "YES" or "NO"
+
+        etree.SubElement(
+            VATDeclaration,
+            "Ask",
+            attrib={
+                "Restitution": self.ask_restitution and "YES" or "NO",
+                "Payment": self.ask_payment and "YES" or "NO",
+            },
+        )
+
+        # TODO: add support for attachments
+        # self._node_FileAttachment(parent, ns_map)
+
+        self._node_Comment(VATDeclaration, ns_map)
+
+        # Justification not supported at this point in time
+
+    def _get_grid_list(self):
+
+        grid_list = []
+        for entry in self.case_ids:
+            if entry.case_id.code in self._intervat_cases():
+                if self.currency_id.round(entry.amount):
+                    grid_list.append(
+                        {"grid": int(entry.case_id.code), "amount": entry.amount}
+                    )
+        grid_list.sort(key=lambda k: k["grid"])
+        return grid_list
+
+    def _node_Data(self, VATDeclaration, ns_map):
+        Data = etree.SubElement(VATDeclaration, "Data")
+
+        grid_list = self._get_grid_list()
+
+        for entry in grid_list:
+            Amount = etree.SubElement(
+                Data, "Amount", attrib={"GridNumber": str(entry["grid"])}
+            )
+            Amount.text = "%.2f" % entry["amount"]
+
+
+class L10nBeVatDeclarationCase(models.TransientModel):
+    _name = "l10n.be.vat.declaration.case"
+    _order = "sequence"
+    _description = "Periodical VAT Declaration line"
+
+    declaration_id = fields.Many2one(
+        comodel_name="l10n.be.vat.declaration", string="Periodical VAT Declaration"
+    )
+    name = fields.Char(compute="_compute_name")
+    case_id = fields.Many2one(comodel_name="account.report.line", string="Case")
+    amount = fields.Monetary(currency_field="currency_id")
+    sequence = fields.Integer(related="case_id.sequence", store=True)
+    active = fields.Boolean()
+    color = fields.Char(related="case_id.color")
+    font = fields.Selection(related="case_id.font")
+    currency_id = fields.Many2one(related="declaration_id.currency_id", readonly=1)
+    info = fields.Text(related="case_id.info")
+
+    @api.depends("case_id.name")
+    def _compute_name(self):
+        for rec in self:
+            name = rec.case_id.name
+            if name[0].isdigit():
+                name = name.split(" - ", 1)[1]
+            else:
+                name = name.split(" ", 1)[1]
+            rec.name = name
+
+    def view_move_lines(self):
+        self.ensure_one()
+        act_window = self.declaration_id._move_lines_act_window()
+        aml_dom = self.declaration_id._get_move_line_domain()
+        case_dom = self.declaration_id._get_case_domain(self.case_id)
+        act_window["domain"] = aml_dom + case_dom
+        return act_window
+
+
+class L10nBeVatDeclarationXlsx(models.AbstractModel):
+    _name = "report.l10n_be_coa_multilang.vat_declaration_xls"
+    _inherit = "report.report_xlsx.abstract"
+    _description = "VAT declaration excel export"
+
+    def _get_ws_params(self, workbook, data, declaration):
+
+        col_specs = {
+            "case": {
+                "header": {"value": _("Case")},
+                "lines": {"value": self._render("c.case_id.code")},
+                "width": 8,
+            },
+            "name": {
+                "header": {"value": _("Description")},
+                "lines": {"value": self._render("c.name")},
+                "width": 70,
+            },
+            "amount": {
+                "header": {
+                    "value": _("Amount"),
+                    "format": FORMATS["format_theader_yellow_right"],
+                },
+                "lines": {
+                    "value": self._render("c.amount"),
+                    "format": FORMATS["format_tcell_amount_right"],
+                },
+                "width": 18,
+            },
+        }
+        wanted_list = ["case", "name", "amount"]
+
+        return [
+            {
+                "ws_name": "vat_declaration_%s" % declaration.period,
+                "generate_ws_method": "_generate_declaration",
+                "title": _("Periodical VAT Declaration"),
+                "wanted_list": wanted_list,
+                "col_specs": col_specs,
+            }
+        ]
+
+    def _generate_declaration(self, workbook, ws, ws_params, data, declaration):
+
+        ws.set_portrait()
+        ws.fit_to_pages(1, 0)
+        ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
+        ws.set_footer(XLS_HEADERS["xls_footers"]["standard"])
+
+        self._set_column_width(ws, ws_params)
+
+        row_pos = 0
+        row_pos = self._declaration_title(ws, row_pos, ws_params, data, declaration)
+        row_pos = self._declaration_info(ws, row_pos, ws_params, data, declaration)
+        row_pos = self._declaration_lines(ws, row_pos, ws_params, data, declaration)
+
+    def _declaration_title(self, ws, row_pos, ws_params, data, declaration):
+        return self._write_ws_title(ws, row_pos, ws_params)
+
+    def _declaration_info(self, ws, row_pos, ws_params, data, declaration):
+        ws.write_string(row_pos, 1, _("Company") + ":", FORMATS["format_left_bold"])
+        ws.write_string(row_pos, 2, declaration.company_id.name)
+        row_pos += 1
+        ws.write_string(row_pos, 1, _("VAT Number") + ":", FORMATS["format_left_bold"])
+        ws.write_string(row_pos, 2, declaration.company_id.vat or "")
+        row_pos += 1
+        ws.write_string(row_pos, 1, _("Period") + ":", FORMATS["format_left_bold"])
+        ws.write_string(row_pos, 2, declaration.period)
+        row_pos += 1
+        ws.write_string(
+            row_pos, 1, _("Target Moves") + ":", FORMATS["format_left_bold"]
+        )
+        ws.write_string(
+            row_pos,
+            2,
+            declaration.target_move == "all"
+            and _("All Entries")
+            or _("Posted Entries"),
+        )
+        return row_pos + 2
+
+    def _declaration_lines(self, ws, row_pos, ws_params, data, declaration):
+
+        row_pos = self._write_line(
+            ws,
+            row_pos,
+            ws_params,
+            col_specs_section="header",
+            default_format=FORMATS["format_theader_yellow_left"],
+        )
+
+        ws.freeze_panes(row_pos, 0)
+
+        for c in declaration.case_ids:
+            row_pos = self._write_line(
+                ws,
+                row_pos,
+                ws_params,
+                col_specs_section="lines",
+                render_space={"c": c},
+                default_format=FORMATS["format_tcell_left"],
+            )
+
+        return row_pos + 1
+
+
+class L10nBeVatDetailXlsx(models.AbstractModel):
+    _name = "report.l10n_be_coa_multilang.vat_detail_xls"
+    _inherit = "report.report_xlsx.abstract"
+    _description = "vat declaration transactions report"
+
+    def _define_formats(self, wb):
+        """
+        Add new formats to draw a black line between Journal Entries.
+        We use formats without bottom border in order to avoid
+        conflicting top and bottom cell borders.
+        """
+        super()._define_formats(wb)
+
+        num_format = "#,##0.00"
+        date_format = "YYYY-MM-DD"
+
+        border_grey = "#D3D3D3"
+        border = {"border": True, "border_color": border_grey}
+        FORMATS["format_tcell_top_grey_left"] = wb.add_format(
+            dict(border, align="left")
+        )
+        FORMATS["format_tcell_top_grey_left"].set_bottom(0)
+        FORMATS["format_tcell_top_grey_center"] = wb.add_format(
+            dict(border, align="center")
+        )
+        FORMATS["format_tcell_top_grey_center"].set_bottom(0)
+        FORMATS["format_tcell_top_grey_amount_right"] = wb.add_format(
+            dict(border, num_format=num_format, align="right")
+        )
+        FORMATS["format_tcell_top_grey_amount_right"].set_bottom(0)
+        FORMATS["format_tcell_top_grey_date_left"] = wb.add_format(
+            dict(border, num_format=date_format, align="left")
+        )
+        FORMATS["format_tcell_top_grey_date_left"].set_bottom(0)
+
+        border = {
+            "border": True,
+            "top_color": "black",
+            "left_color": border_grey,
+            "right_color": border_grey,
+        }
+        FORMATS["format_tcell_top_black_left"] = wb.add_format(
+            dict(border, align="left")
+        )
+        FORMATS["format_tcell_top_black_left"].set_bottom(0)
+        FORMATS["format_tcell_top_black_center"] = wb.add_format(
+            dict(border, align="center")
+        )
+        FORMATS["format_tcell_top_black_center"].set_bottom(0)
+        FORMATS["format_tcell_top_black_amount_right"] = wb.add_format(
+            dict(border, num_format=num_format, align="right")
+        )
+        FORMATS["format_tcell_top_black_amount_right"].set_bottom(0)
+        FORMATS["format_tcell_top_black_date_left"] = wb.add_format(
+            dict(border, num_format=date_format, align="left")
+        )
+        FORMATS["format_tcell_top_black_date_left"].set_bottom(0)
+        return
+
+    def _get_ws_params(self, wb, data, decl):
+        report_cache = {}
+        dummy, report_cache["tax_tags"] = decl._get_tax_code_map()
+        aml_dom = decl._get_move_line_domain()
+        flds = ["journal_id", "debit"]
+        groupby = ["journal_id"]
+        totals = self.env["account.move.line"].read_group(aml_dom, flds, groupby)
+        j_dict = {}
+        for entry in totals:
+            if entry["debit"]:
+                j_dict[entry["journal_id"][0]] = entry["debit"]
+        j_ids = list(j_dict.keys())
+        report_cache["journal_totals"] = j_dict
+        # search i.s.o. browse for account.journal _order
+        # active_test = False needed to add support for the
+        # inactive journals
+        j_mod = self.env["account.journal"].with_context(active_test=False)
+        report_cache["journals"] = j_mod.search([("id", "in", j_ids)])
+        data["report_cache"] = report_cache
+        slist = [self._get_centralisation_ws_params(wb, data, decl)]
+        for journal in report_cache["journals"]:
+            slist.append(self._get_journal_ws_params(wb, data, decl, journal))
+        return slist
+
+    def _get_centralisation_ws_params(self, wb, data, decl):
+
+        col_specs = {
+            "code": {
+                "header": {"value": _("Code")},
+                "lines": {"value": self._render("journal.code")},
+                "width": 10,
+            },
+            "name": {
+                "header": {"value": _("Journal")},
+                "lines": {"value": self._render("journal.name")},
+                "width": 45,
+            },
+            "debit": {
+                "header": {
+                    "value": _("Total Debit/Credit"),
+                    "format": FORMATS["format_theader_yellow_right"],
+                },
+                "lines": {
+                    "type": "number",
+                    "value": self._render("debit"),
+                    "format": FORMATS["format_tcell_amount_right"],
+                },
+                "totals": {
+                    "type": "formula",
+                    "value": self._render("total_debit_formula"),
+                    "format": FORMATS["format_theader_yellow_amount_right"],
+                },
+                "width": 20,
+            },
+        }
+        wl = ["code", "name", "debit"]
+
+        title = (10 * " ").join(
+            [
+                decl.company_id.name,
+                _("Journal Centralisation"),
+                decl.period,
+                decl.target_move == "all" and _("All Entries") or _("Posted Entries"),
+            ]
+        )
+
+        return {
+            "ws_name": _("Centralisation"),
+            "generate_ws_method": "_centralisation_report",
+            "title": title,
+            "wanted_list": wl,
+            "col_specs": col_specs,
+        }
+
+    def _centralisation_report(self, wb, ws, ws_params, data, decl):
+
+        ws.set_portrait()
+        ws.fit_to_pages(1, 0)
+        ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
+        ws.set_footer(XLS_HEADERS["xls_footers"]["standard"])
+
+        self._set_column_width(ws, ws_params)
+
+        row_pos = 0
+        row_pos = self._centralisation_title(ws, row_pos, ws_params, data, decl)
+        row_pos = self._centralisation_lines(ws, row_pos, ws_params, data, decl)
+
+    def _centralisation_title(self, ws, row_pos, ws_params, data, decl):
+        return self._write_ws_title(ws, row_pos, ws_params)
+
+    def _centralisation_lines(self, ws, row_pos, ws_params, data, decl):
+
+        report_cache = data["report_cache"]
+        if not report_cache["journals"]:
+            no_entries = _("No records found for the selected period.")
+            row_pos = ws.write_string(
+                row_pos, 0, no_entries, FORMATS["format_left_bold"]
+            )
+            return
+
+        wl = ws_params["wanted_list"]
+        debit_pos = wl.index("debit")
+        start_pos = row_pos + 1
+
+        row_pos = self._write_line(
+            ws,
+            row_pos,
+            ws_params,
+            col_specs_section="header",
+            default_format=FORMATS["format_theader_yellow_left"],
+        )
+
+        ws.freeze_panes(row_pos, 0)
+
+        for journal in report_cache["journals"]:
+            debit = report_cache["journal_totals"][journal.id]
+            row_pos = self._write_line(
+                ws,
+                row_pos,
+                ws_params,
+                col_specs_section="lines",
+                render_space={"journal": journal, "debit": debit},
+                default_format=FORMATS["format_tcell_left"],
+            )
+
+        debit_start = self._rowcol_to_cell(start_pos, debit_pos)
+        debit_stop = self._rowcol_to_cell(row_pos - 1, debit_pos)
+        total_debit_formula = "SUM({}:{})".format(debit_start, debit_stop)
+        row_pos = self._write_line(
+            ws,
+            row_pos,
+            ws_params,
+            col_specs_section="totals",
+            render_space={"total_debit_formula": total_debit_formula},
+            default_format=FORMATS["format_theader_yellow_left"],
+        )
+
+        return row_pos + 1
+
+    def _get_journal_template(self):
+        template = {
+            "move_name": {
+                "header": {"value": _("Entry")},
+                "lines": {
+                    "value": self._render(
+                        "l.move_id.name != '/' and l.move_id.name "
+                        "or ('*' + str(l.move_id))"
+                    )
+                },
+                "width": 20,
+            },
+            "move_date": {
+                "header": {"value": _("Effective Date")},
+                "lines": {
+                    "value": self._render(
+                        "datetime.combine(l.date, datetime.min.time())"
+                    ),
+                    "format": self._render("format_tcell_date_left"),
+                },
+                "width": 13,
+            },
+            "acc_code": {
+                "header": {"value": _("Account")},
+                "lines": {"value": self._render("l.account_id.code")},
+                "width": 12,
+            },
+            "acc_name": {
+                "header": {"value": _("Account Name")},
+                "lines": {"value": self._render("l.account_id.name")},
+                "width": 36,
+            },
+            "aml_name": {
+                "header": {"value": _("Label")},
+                "lines": {"value": self._render("l.name")},
+                "width": 42,
+            },
+            "journal_code": {
+                "header": {"value": _("Journal")},
+                "lines": {"value": self._render("l.journal_id.code")},
+                "width": 10,
+            },
+            "journal": {
+                "header": {"value": _("Journal")},
+                "lines": {"value": self._render("l.journal_id.name")},
+                "width": 20,
+            },
+            "analytic_account_name": {
+                "header": {"value": _("Analytic Account")},
+                "lines": {
+                    "value": self._render(
+                        "l.analytic_account_id and l.analytic_account_id.name"
+                    )
+                },
+                "width": 20,
+            },
+            "analytic_account_code": {
+                "header": {"value": _("Analytic Account Reference")},
+                "lines": {
+                    "value": self._render(
+                        "l.analytic_account_id and l.analytic_account_id.code or ''"
+                    )
+                },
+                "width": 20,
+            },
+            "partner_name": {
+                "header": {"value": _("Partner")},
+                "lines": {"value": self._render("l.partner_id and l.partner_id.name")},
+                "width": 36,
+            },
+            "partner_ref": {
+                "header": {"value": _("Partner Reference")},
+                "lines": {
+                    "value": self._render("l.partner_id and l.partner_id.ref or ''")
+                },
+                "width": 10,
+            },
+            "date_maturity": {
+                "header": {"value": _("Maturity Date")},
+                "lines": {
+                    "value": self._render(
+                        "datetime.combine(l._maturity, datetime.min.time())"
+                    ),
+                    "format": self._render("format_tcell_date_left"),
+                },
+                "width": 13,
+            },
+            "debit": {
+                "header": {
+                    "value": _("Debit"),
+                    "format": FORMATS["format_theader_yellow_right"],
+                },
+                "lines": {
+                    "value": self._render("l.debit"),
+                    "format": self._render("format_tcell_amount_right"),
+                },
+                "totals": {
+                    "type": "formula",
+                    "value": self._render("debit_formula"),
+                    "format": FORMATS["format_theader_yellow_amount_right"],
+                },
+                "width": 18,
+            },
+            "credit": {
+                "header": {
+                    "value": _("Credit"),
+                    "format": FORMATS["format_theader_yellow_right"],
+                },
+                "lines": {
+                    "value": self._render("l.credit"),
+                    "format": self._render("format_tcell_amount_right"),
+                },
+                "totals": {
+                    "type": "formula",
+                    "value": self._render("credit_formula"),
+                    "format": FORMATS["format_theader_yellow_amount_right"],
+                },
+                "width": 18,
+            },
+            "balance": {
+                "header": {
+                    "value": _("Balance"),
+                    "format": FORMATS["format_theader_yellow_right"],
+                },
+                "lines": {
+                    "value": self._render("l.balance"),
+                    "format": self._render("format_tcell_amount_right"),
+                },
+                "totals": {
+                    "type": "formula",
+                    "value": self._render("bal_formula"),
+                    "format": FORMATS["format_theader_yellow_amount_right"],
+                },
+                "width": 18,
+            },
+            "full_reconcile": {
+                "header": {
+                    "value": _("Rec."),
+                    "format": FORMATS["format_theader_yellow_center"],
+                },
+                "lines": {
+                    "value": self._render(
+                        "l.full_reconcile_id and l.full_reconcile_id.name"
+                    ),
+                    "format": self._render("format_tcell_center"),
+                },
+                "width": 12,
+            },
+            "reconcile_amount": {
+                "header": {"value": _("Reconcile Amount")},
+                "lines": {
+                    "value": self._render(
+                        "l.full_reconcile_id and l.balance or "
+                        "(sum(l.matched_credit_ids.mapped('amount')) - "
+                        "sum(l.matched_debit_ids.mapped('amount')))"
+                    ),
+                    "format": self._render("format_tcell_amount_right"),
+                },
+                "width": 12,
+            },
+            "tax_code": {
+                "header": {
+                    "value": _("Case"),
+                    "format": FORMATS["format_theader_yellow_center"],
+                },
+                "lines": {
+                    "value": self._render("tax_code"),
+                    "format": self._render("format_tcell_center"),
+                },
+                "width": 10,
+            },
+            "tax_amount": {
+                "header": {
+                    "value": _("VAT Amount"),
+                    "format": FORMATS["format_theader_yellow_right"],
+                },
+                "lines": {
+                    "value": self._render("tax_amount"),
+                    "format": self._render("format_tcell_amount_right"),
+                },
+                "width": 18,
+            },
+            "amount_currency": {
+                "header": {
+                    "value": _("Am. Currency"),
+                    "format": FORMATS["format_theader_yellow_right"],
+                },
+                "lines": {
+                    "value": self._render("l.amount_currency"),
+                    "format": self._render("format_tcell_amount_right"),
+                },
+                "width": 18,
+            },
+            "currency_name": {
+                "header": {
+                    "value": _("Curr."),
+                    "format": FORMATS["format_theader_yellow_center"],
+                },
+                "lines": {
+                    "value": self._render("l.currency_id and l.currency_id.name"),
+                    "format": self._render("format_tcell_center"),
+                },
+                "width": 6,
+            },
+            "move_ref": {
+                "header": {"value": _("Entry Reference")},
+                "lines": {"value": self._render("l.move_id.name")},
+                "width": 25,
+            },
+            "move_id": {
+                "header": {"value": _("Entry ID")},
+                "lines": {"value": self._render("str(l.move_id.id)")},
+                "width": 10,
+            },
+            "move_type": {
+                "header": {"value": _("Type")},
+                "lines": {"value": self._render("move_type")},
+                "width": 14,
+            },
+        }
+        return template
+
+    def _get_vat_summary_template(self):
+        """
+        XLS Template VAT Summary
+        """
+        template = {
+            "tax_code": {
+                "header": {"value": _("Case")},
+                "lines": {"value": self._render("tc")},
+                "width": 6,
+            },
+            "tax_amount": {
+                "header": {
+                    "value": _("Amount"),
+                    "format": FORMATS["format_theader_yellow_right"],
+                },
+                "lines": {
+                    "value": self._render("tax_totals[tc]"),
+                    "format": FORMATS["format_tcell_amount_right"],
+                },
+                "width": 18,
+            },
+        }
+        return template
+
+    def _get_journal_ws_params(self, wb, data, decl, journal):
+        col_specs = self._get_journal_template()
+        col_specs.update(self.env["account.journal"]._report_xlsx_template())
+        wl = self.env["account.journal"]._report_xlsx_fields()
+        title = (10 * " ").join(
+            [
+                decl.company_id.name,
+                journal.name + "({})".format(journal.code),
+                decl.period,
+                dict(decl._fields["target_move"]._description_selection(self.env)).get(
+                    decl.target_move
+                ),
+            ]
+        )
+        ws_params_summary = {
+            "col_specs": self._get_vat_summary_template(),
+            "wanted_list": ["tax_code", "tax_amount"],
+        }
+        return {
+            "ws_name": journal.code,
+            "generate_ws_method": "_journal_report",
+            "title": title,
+            "wanted_list": wl,
+            "col_specs": col_specs,
+            "ws_params_summary": ws_params_summary,
+            "journal": journal,
+        }
+
+    def _journal_report(self, wb, ws, ws_params, data, decl):
+
+        time_start = time.time()
+        ws.set_landscape()
+        ws.fit_to_pages(1, 0)
+        ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
+        ws.set_footer(XLS_HEADERS["xls_footers"]["standard"])
+
+        self._set_column_width(ws, ws_params)
+
+        row_pos = 0
+        journal = ws_params["journal"]
+        row_pos = self._journal_title(ws, row_pos, ws_params, data, decl, journal)
+        row_pos = self._journal_lines(ws, row_pos, ws_params, data, decl, journal)
+        time_end = time.time() - time_start
+        _logger.debug(
+            "VAT Transaction report processing time for Journal %s = %.3f seconds",
+            journal.code,
+            time_end,
+        )
+
+    def _journal_title(self, ws, row_pos, ws_params, data, decl, journal):
+        return self._write_ws_title(ws, row_pos, ws_params)
+
+    def _journal_lines(self, ws, row_pos, ws_params, data, decl, journal):
+
+        report_cache = data["report_cache"]
+        wl = ws_params["wanted_list"]
+        if journal.type in ("sale", "purchase"):
+            wl.append("move_type")
+        debit_pos = wl.index("debit")
+        credit_pos = wl.index("credit")
+        start_pos = row_pos + 1
+
+        row_pos = self._write_line(
+            ws,
+            row_pos,
+            ws_params,
+            col_specs_section="header",
+            default_format=FORMATS["format_theader_yellow_left"],
+        )
+
+        ws.freeze_panes(row_pos, 0)
+
+        am_dom = decl._get_move_domain() + [("journal_id", "=", journal.id)]
+        if decl.target_move == "posted":
+            am_dom.append(("state", "=", "posted"))
+        else:
+            am_dom.append(("state", "!=", "cancel"))
+        ams = self.env["account.move"].search(am_dom, order="name, date")
+        amls = ams.mapped("line_ids")
+
+        tax_totals = {}
+        cround = decl.company_id.currency_id.round
+        am = self.env["account.move"]
+        new_am = False
+        am_cnt = 0
+        for aml in amls:
+            if aml.move_id != am:
+                am = aml.move_id
+                new_am = True
+                am_cnt += 1
+            else:
+                new_am = False
+            move_type = am.move_type
+            if "invoice" in move_type:
+                move_type = _("Invoice")
+            elif "refund" in move_type:
+                move_type = _("Credit Note")
+            tax_codes = []
+            tax_amount = None
+            for tag in aml.tax_tag_ids:
+                if tag not in report_cache["tax_tags"]:
+                    continue
+                tc = tc_str = tag.name[1:]
+                sign = tag.tax_negate and -1 or 1
+                if aml.tax_tag_invert:
+                    sign = sign * -1
+                tax_amount = cround(sign * aml.balance)
+                if tax_amount < 0:
+                    tc_str += "(-1)"
+                if tc_str not in tax_codes:
+                    tax_codes.append(tc_str)
+                    if tc not in tax_totals:
+                        tax_totals[tc] = tax_amount
+                    else:
+                        tax_totals[tc] += tax_amount
+
+            if new_am and am_cnt > 1:
+                default_format = FORMATS["format_tcell_top_black_left"]
+                format_tcell_center = FORMATS["format_tcell_top_black_center"]
+                format_tcell_amount_right = FORMATS[
+                    "format_tcell_top_black_amount_right"
+                ]
+                format_tcell_date_left = FORMATS["format_tcell_top_black_date_left"]
+            else:
+                default_format = FORMATS["format_tcell_top_grey_left"]
+                format_tcell_center = FORMATS["format_tcell_top_grey_center"]
+                format_tcell_amount_right = FORMATS[
+                    "format_tcell_top_grey_amount_right"
+                ]
+                format_tcell_date_left = FORMATS["format_tcell_top_grey_date_left"]
+            row_pos = self._write_line(
+                ws,
+                row_pos,
+                ws_params,
+                col_specs_section="lines",
+                render_space={
+                    "l": aml,
+                    "tax_code": ", ".join(tax_codes),
+                    "tax_amount": tax_amount and abs(tax_amount),
+                    "move_type": move_type,
+                    "format_tcell_center": format_tcell_center,
+                    "format_tcell_amount_right": format_tcell_amount_right,
+                    "format_tcell_date_left": format_tcell_date_left,
+                },
+                default_format=default_format,
+            )
+
+        debit_start = self._rowcol_to_cell(start_pos, debit_pos)
+        debit_stop = self._rowcol_to_cell(row_pos - 1, debit_pos)
+        debit_formula = "SUM({}:{})".format(debit_start, debit_stop)
+        credit_start = self._rowcol_to_cell(start_pos, credit_pos)
+        credit_stop = self._rowcol_to_cell(row_pos - 1, credit_pos)
+        credit_formula = "SUM({}:{})".format(credit_start, credit_stop)
+        debit_cell = self._rowcol_to_cell(row_pos, debit_pos)
+        credit_cell = self._rowcol_to_cell(row_pos, credit_pos)
+        bal_formula = debit_cell + "-" + credit_cell
+
+        row_pos = self._write_line(
+            ws,
+            row_pos,
+            ws_params,
+            col_specs_section="totals",
+            render_space={
+                "debit_formula": debit_formula,
+                "credit_formula": credit_formula,
+                "bal_formula": bal_formula,
+            },
+            default_format=FORMATS["format_theader_yellow_left"],
+        )
+
+        ws_params_summary = ws_params["ws_params_summary"]
+        row_pos += 1
+        tcs = list(tax_totals.keys())
+        tcs.sort()
+        if tcs:
+            row_pos = self._write_line(
+                ws,
+                row_pos,
+                ws_params_summary,
+                col_specs_section="header",
+                default_format=FORMATS["format_theader_yellow_left"],
+            )
+            for tc in tcs:
+                row_pos = self._write_line(
+                    ws,
+                    row_pos,
+                    ws_params_summary,
+                    col_specs_section="lines",
+                    render_space={"l": aml, "tc": tc, "tax_totals": tax_totals},
+                    default_format=FORMATS["format_tcell_left"],
+                )
+
+        return row_pos + 1

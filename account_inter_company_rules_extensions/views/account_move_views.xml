@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">account.invoice.search.ico</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <filter name="to_check" position="before">
+                <separator />
+                <filter
+                    name="intercompany_invoice"
+                    string="Intercompany"
+                    domain="[('intercompany_invoice', '=', True)]"
+                    help="Intercompany Invoices"
+                />
+            </filter>
+        </field>
+    </record>
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.invoice.form.ico</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <field name="to_check" position="after">
+                <field
+                    name="intercompany_invoice_ref"
+                    attrs="{'invisible': [('intercompany_invoice_ref', '=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>

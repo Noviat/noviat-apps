@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="wiz_partner_open_items_view_form" model="ir.ui.view">
+        <field name="name">Open Items per Partner</field>
+        <field name="model">wiz.partner.open.items</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Open Items">
+                <group>
+                    <group>
+                        <field name="date_at" />
+                        <field name="add_currency" />
+                        <field name="add_reconcile" />
+                    </group>
+                    <group>
+                        <field name="target_move" />
+                        <field
+                            name="result_selection"
+                            attrs="{'required': [('accounts', '=', False)], 'invisible': [('accounts', '=', True)]}"
+                        />
+                        <field
+                            name="company_id"
+                            widget="selection"
+                            domain="[('id', 'in', allowed_company_ids)]"
+                            groups="base.group_multi_company"
+                        />
+                    </group>
+                    <newline />
+                    <group>
+                        <field
+                            name="partner_select"
+                            invisible="context.get('default_partner_select')"
+                        />
+
+                        <field
+                            name="partner_ids"
+                            widget="many2many_tags"
+                            colspan="4"
+                            placeholder="Leave blank to select all partners"
+                            invisible="not context.get('default_partner_select')"
+                        />
+                        <field
+                            name="account_ids"
+                            style="height:110px;"
+                            widget="many2many_tags"
+                            placeholder="Leave blank to select Receivable/Payable accounts"
+                            options="{'no_create': True}"
+                            colspan="4"
+                        />
+                    </group>
+                    <group>
+                        <field name="accounts" invisible="1" />
+                    </group>
+                </group>
+                <footer>
+                    <button
+                        name="xls_export"
+                        string="Export"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wiz_partner_open_items_action" model="ir.actions.act_window">
+        <field name="name">Open Items per Partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wiz.partner.open.items</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wiz_partner_open_items_view_form" />
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="base.model_res_partner" />
+        <field name="binding_type">action</field>
+    </record>
+
+    <record
+        id="wiz_partner_open_items_action_partner_select_all"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Open Items per Partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wiz.partner.open.items</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wiz_partner_open_items_view_form" />
+        <field name="context">{'default_partner_select': 'all'}</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

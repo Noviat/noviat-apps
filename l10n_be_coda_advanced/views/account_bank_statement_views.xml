@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <record id="view_bank_statement_form" model="ir.ui.view">
+    <field name="name">account.bank.statement.coda.form</field>
+    <field name="model">account.bank.statement</field>
+    <field
+            name="inherit_id"
+            ref="account_bank_statement_advanced.account_bank_statement_view_form"
+        />
+    <field name="arch" type="xml">
+      <button name="reconcile_bank_statement_transactions" position="before">
+        <button
+                    name="automatic_reconcile"
+                    string="Automatic Reconcile"
+                    type="object"
+                    class="btn-primary"
+                    attrs="{'invisible': ['|', '|', '|', ('all_lines_processed', '=', True), ('line_ids', '=', []), ('state', '=', 'confirm'), ('import_format', '!=', 'coda')]}"
+                />
+      </button>
+      <field name="line_ids" position="attributes">
+        <attribute
+                    name="attrs"
+                >{'readonly': ['|', ('state', '=', 'confirm'), ('import_format', '=', 'coda')]}</attribute>
+      </field>
+      <xpath
+                expr="//field[@name='line_ids']//button[@name='view_transaction_details']"
+                position="attributes"
+            >
+        <attribute
+                    name="attrs"
+                >{'invisible': [('import_format', '=', 'coda')]}</attribute>
+      </xpath>
+      <page name="statement_line_ids" position="after">
+        <page string="CODA Notes" name="coda_note">
+          <field name="coda_note" />
+        </page>
+      </page>
+    </field>
+  </record>
+
+</odoo>

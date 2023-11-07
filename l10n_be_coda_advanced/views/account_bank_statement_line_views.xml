@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="view_bank_statement_line_tree" model="ir.ui.view">
+        <field name="name">bank.statement.line.list</field>
+        <field name="model">account.bank.statement.line</field>
+        <field
+            name="inherit_id"
+            ref="account_bank_statement_advanced.account_bank_statement_line_view_tree"
+        />
+        <field name="arch" type="xml">
+            <field name="amount" position="after">
+                <field name="globalisation_id" string="Glob. Id" />
+                <field name="globalisation_amount" string="Glob. Am." />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_bank_statement_line_form" model="ir.ui.view">
+        <field name="name">bank.statement.line.form</field>
+        <field name="model">account.bank.statement.line</field>
+        <field
+            name="inherit_id"
+            ref="account_bank_statement_advanced.account_bank_statement_line_view_form"
+        />
+        <field name="arch" type="xml">
+            <button name="manual_reconcile" position="before">
+                <button
+                    name="button_close"
+                    type="object"
+                    string="Close"
+                    class="btn-primary"
+                    attrs="{'invisible': ['|', '|', ('is_reconciled', '=', False), ('amount', '=', 0), ('import_format', '!=', 'coda')]}"
+                    data-hotkey="z"
+                />
+                <button
+                    string="Automatic Reconcile"
+                    class="btn-primary"
+                    name="automatic_reconcile"
+                    type="object"
+                    attrs="{'invisible': ['|', '|', ('is_reconciled', '=', True), ('amount', '=', 0), ('import_format', '!=', 'coda')]}"
+                    data-hotkey="z"
+                />
+            </button>
+            <field name="transaction_type" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': [('import_format', '=', 'coda')]}</attribute>
+            </field>
+            <group name="invisible" position="inside">
+                <field name="import_format" />
+            </group>
+            <sheet position="after">
+                <footer />
+            </sheet>
+        </field>
+    </record>
+
+</odoo>
