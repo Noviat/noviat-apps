@@ -232,7 +232,7 @@
                                     />
                                     <field
                                         name="amount"
-                                        attrs="{'invisible': [('amount', '=', 0)]}"
+                                        attrs="{'invisible': [('transaction_type', '=', 'globalisation')]}"
                                     />
                                     <field
                                         name="account_number"

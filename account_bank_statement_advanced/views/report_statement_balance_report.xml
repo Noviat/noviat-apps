@@ -24,17 +24,16 @@
                         <thead>
                             <tr>
                                 <th
-                                    style="border-bottom:1px solid black !important;"
+                                    style="text-align:left; border-bottom:1px solid black !important;"
                                 >Name</th>
                                 <th
-                                    style="border-bottom:1px solid black !important;"
+                                    style="text-align:left; border-bottom:1px solid black !important;"
                                 >Date</th>
                                 <th
-                                    style="border-bottom:1px solid black !important;"
+                                    style="text-align:left; border-bottom:1px solid black !important;"
                                 >Journal</th>
                                 <th
-                                    class="text-right"
-                                    style="border-bottom:1px solid black !important;"
+                                    style="text-align:right; border-bottom:1px solid black !important;"
                                 >Closing Balance</th>
                             </tr>
                         </thead>
@@ -49,7 +48,7 @@
                                 <td>
                                     <span t-esc="l['j_code']" />
                                 </td>
-                                <td class="text-right">
+                                <td style="text-align:right">
                                     <span
                                         t-esc="l['s_balance']"
                                         t-options="{'widget': 'monetary', 'display_currency': l['currency']}"
@@ -73,7 +72,7 @@
                                         />:
                                     </strong>
                                 </td>
-                                <td class="text-right">
+                                <td style="text-align:right">
                                     <strong>
                                         <span
                                             t-esc="t['total_amount']"
@@ -91,10 +90,10 @@
                         <div class="col-4" style="margin-top:50px;">
                             <span t-esc="report_date" />
                         </div>
-                        <div class="col-4 text-center" style="margin-top:50px;">
+                        <div class="col-4" style="text-align:center; margin-top:50px;">
                             <span t-esc="company.name" />
                         </div>
-                        <div class="col-4 text-right" style="margin-top:50px;">
+                        <div class="col-4" style="text-align:right; margin-top:50px;">
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <span class="page" />

@@ -322,11 +322,6 @@ msgid "CODA Filename"
 msgstr "CODA bestandsnaam"
 
 #. module: l10n_be_coda_advanced
-#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import_coda_fname_dummy
-msgid "CODA Filename"
-msgstr "CODA bestandsnaam"
-
-#. module: l10n_be_coda_advanced
 #: code:addons/l10n_be_coda_advanced/wizard/coda_import.py:10
 #, python-format
 msgid "Bank Statements"

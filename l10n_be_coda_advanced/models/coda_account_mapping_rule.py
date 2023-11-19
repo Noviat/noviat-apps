@@ -2,6 +2,9 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import api, fields, models
+from odoo.tools.safe_eval import safe_eval
+
+from ..wizards.coda_helpers import repl_special
 
 
 class CodaAccountMappingRule(models.Model):
@@ -109,22 +112,33 @@ class CodaAccountMappingRule(models.Model):
                 vals[fld] = vals[fld].strip()
 
     @api.model
-    def rule_get(
-        self,
-        coda_bank_account_id,
-        partner_name=None,
-        counterparty_number=None,
-        partner_id=None,
-        trans_type_id=None,
-        trans_family_id=None,
-        trans_code_id=None,
-        trans_category_id=None,
-        struct_comm_type_id=None,
-        freecomm=None,
-        structcomm=None,
-        payment_reference=None,
-        split=False,
-    ):
+    def _rule_get(self, transaction, st_line, coda_bank_account):
+
+        if transaction["struct_comm_type"]:
+            structcomm = transaction["communication"]
+            freecomm = None
+        else:
+            structcomm = None
+            freecomm = transaction["communication"]
+            if not freecomm and transaction.get("upper_transaction"):
+                freecomm = repl_special(
+                    transaction["upper_transaction"]["communication"].strip()
+                )
+
+        eval_dict = {
+            "coda_bank_account_id": coda_bank_account.id,
+            "partner_name": transaction["partner_name"] or None,
+            "counterparty_number": transaction["counterparty_number"] or None,
+            "partner_id": transaction["matching_info"].get("partner_id"),
+            "trans_type_id": transaction["trans_type_id"],
+            "trans_family_id": transaction["trans_family_id"],
+            "trans_code_id": transaction["trans_code_id"],
+            "trans_category_id": transaction["trans_category_id"],
+            "struct_comm_type_id": transaction["struct_comm_type_id"],
+            "freecomm": freecomm,
+            "structcomm": structcomm,
+            "payment_reference": transaction["payment_reference"] or None,
+        }
 
         select = (
             "SELECT partner_name, counterparty_number, partner_id, "
@@ -133,15 +147,14 @@ class CodaAccountMappingRule(models.Model):
             "struct_comm_type_id, freecomm, structcomm, "
             "account_id, analytic_distribution, account_tax_id, payment_reference"
         )
-        select += self._rule_select_extra(coda_bank_account_id) + " "
+        select += self._rule_select_extra(coda_bank_account) + " "
         select += (
             "FROM coda_account_mapping_rule "
-            "WHERE active = True AND coda_bank_account_id = %s "
-            "AND COALESCE(split, False) = %s "
+            "WHERE active = True AND coda_bank_account_id = {cba_id} "
             "ORDER BY sequence"
-        ) % (coda_bank_account_id, split)
-        self._cr.execute(select)
-        rules = self._cr.dictfetchall()
+        ).format(cba_id=coda_bank_account.id)
+        self.env.cr.execute(select)
+        rules = self.env.cr.dictfetchall()
         condition = (
             "(not rule['partner_name'] or "
             "(partner_name == rule['partner_name'])) and "
@@ -171,26 +184,24 @@ class CodaAccountMappingRule(models.Model):
             "account_tax_id",
             "analytic_distribution",
         ]
-        result_fields += self._rule_result_extra(coda_bank_account_id)
+        result_fields += self._rule_result_extra(coda_bank_account.id)
         res = {}
         for rule in rules:
-            if eval(condition):  # pylint: disable=W0123,W8112
+            if safe_eval(condition, dict(eval_dict, rule=rule)):
                 for f in result_fields:
                     res[f] = rule[f]
                 break
         return res
 
-    def _rule_select_extra(self, coda_bank_account_id):
+    def _rule_select_extra(self, coda_bank_account):
         """
         Use this method to customize the mapping rule engine.
-        Cf. l10n_be_coda_analytic_plan module for an example.
         """
         return ""
 
-    def _rule_result_extra(self, coda_bank_account_id):
+    def _rule_result_extra(self, coda_bank_account):
         """
         Use this method to customize the mapping rule engine.
-        Cf. l10n_be_coda_analytic_plan module for an example.
         """
         return []
 

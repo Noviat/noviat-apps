@@ -410,10 +410,12 @@ class AccountBankStatementLine(models.Model):
                  this account.move.line record
         """
         self.ensure_one()
+        self.move_id.state = "draft"
         liquidity_aml = self.move_id.line_ids.filtered(
             lambda r: r.account_id == self.journal_id.default_account_id
         )
         suspense_aml = self.move_id.line_ids - liquidity_aml
+        to_reconcile = []
         for i, vals in enumerate(amls_vals):
             balance = vals.get("balance")
             if balance:
@@ -429,4 +431,6 @@ class AccountBankStatementLine(models.Model):
                 aml = self.env["accoount.move.line"].create(vals)
             if counterpart_aml_id:
                 cp_aml = self.env["account.move.line"].browse(counterpart_aml_id)
-                (aml + cp_aml).reconcile()
+                to_reconcile.append(aml + cp_aml)
+        self.move_id._post()
+        [x.reconcile() for x in to_reconcile]

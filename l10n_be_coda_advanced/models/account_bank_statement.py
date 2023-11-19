@@ -3,7 +3,7 @@
 
 import time
 
-from odoo import _, fields, models
+from odoo import _, api, fields, models
 
 
 class AccountBankStatement(models.Model):
@@ -14,6 +14,13 @@ class AccountBankStatement(models.Model):
     coda_bank_account_id = fields.Many2one(
         string="CODA Bank Account", comodel_name="coda.bank.account"
     )
+
+    @api.depends("create_date")
+    def _compute_name(self):
+        for rec in self:
+            if rec.import_format != "coda" or not rec.name:
+                super(AccountBankStatement, rec)._compute_name()
+        return
 
     def button_confirm_bank(self):
         """

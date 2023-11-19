@@ -11,7 +11,6 @@
           <separator string="Select your file :" colspan="2" />
           <field name="coda_data" filename="coda_fname" />
           <field name="coda_fname" invisible="1" />
-          <field name="coda_fname_dummy" />
           <field name="accounting_date" />
           <field name="reconcile" />
           <field
@@ -25,10 +24,15 @@
                         name="coda_import"
                         string="Import"
                         type="object"
-                        class="oe_highlight"
+                        class="btn-primary"
+                        data-hotkey="q"
                     />
-          or
-          <button string="Cancel" class="oe_link" special="cancel" />
+          <button
+                        string="Cancel"
+                        class="btn-secondary"
+                        special="cancel"
+                        data-hotkey="z"
+                    />
         </footer>
       </form>
     </field>

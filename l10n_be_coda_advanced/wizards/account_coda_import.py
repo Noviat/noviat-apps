@@ -78,12 +78,7 @@ class AccountCodaImport(models.TransientModel):
     _description = "Import CODA File"
 
     coda_data = fields.Binary(string="CODA (Zip) File", required=True)
-    coda_fname = fields.Char(
-        string="CODA Filename (invisible)", default="", required=True
-    )
-    coda_fname_dummy = fields.Char(
-        related="coda_fname", string="CODA Filename", readonly=True
-    )
+    coda_fname = fields.Char(string="CODA Filename", default="", required=True)
     accounting_date = fields.Date(help="Keep empty to use the date in the CODA File")
     reconcile = fields.Boolean(
         help="Launch Automatic Reconcile after CODA import.", default=True
@@ -98,10 +93,6 @@ class AccountCodaImport(models.TransientModel):
         default=True,
     )
     note = fields.Text(string="Log")
-
-    @api.onchange("coda_data")
-    def onchange_fdata(self):
-        self.coda_fname_dummy = self.coda_fname
 
     @api.model
     def _check_account_payment(self, wiz_dict):
@@ -246,28 +237,26 @@ class AccountCodaImport(models.TransientModel):
         # we already initialise the coda_statement['name'] field
         # with the currently available date
         # in case an 8 record is present, this data will be updated
-        if cba.coda_st_naming:
-            coda_statement["name"] = cba.coda_st_naming % {
-                "code": cba.journal_id.code or "",
-                "year": coda_statement["date"][:4],
-                "y": coda_statement["date"][2:4],
-                "coda": coda_statement["coda_seq_number"],
-                "paper_ob": coda_statement["paper_ob_seq_number"],
-                "paper": coda_statement["paper_ob_seq_number"],
-            }
-            # We have to skip the already processed statements
-            # when we reprocess CODA file
-            if wiz_dict["coda_id"]:
-                old_statements = self.env["account.bank.statement"].search(
-                    [
-                        ("coda_id", "=", wiz_dict["coda_id"]),
-                        ("name", "=", coda_statement["name"]),
-                    ]
-                )
-                if old_statements:
-                    skip = True
-        else:
-            coda_statement["name"] = "/"
+        coda_statement["name"] = cba.coda_st_naming % {
+            "code": cba.journal_id.code or "",
+            "year": coda_statement["date"][:4],
+            "y": coda_statement["date"][2:4],
+            "coda": coda_statement["coda_seq_number"],
+            "paper_ob": coda_statement["paper_ob_seq_number"],
+            "paper": coda_statement["paper_ob_seq_number"],
+        }
+        # We have to skip the already processed statements
+        # when we reprocess CODA file
+        if wiz_dict["coda_id"]:
+            old_statements = self.env["account.bank.statement"].search(
+                [
+                    ("coda_id", "=", wiz_dict["coda_id"]),
+                    ("name", "=", coda_statement["name"]),
+                ]
+            )
+            if old_statements:
+                skip = True
+
         # hook to allow further customisation
         if not skip:
             self._coda_statement_init_hook(wiz_dict, coda_statement)
@@ -887,32 +876,29 @@ class AccountCodaImport(models.TransientModel):
         coda_statement["balance_end_real"] = bal_end
 
         # update coda_statement['name'] with data from 8 record
-        if cba.coda_st_naming:
-            coda_statement["name"] = cba.coda_st_naming % {
-                "code": cba.journal_id.code or "",
-                "year": coda_statement["new_balance_date"]
-                and coda_statement["new_balance_date"][:4]
-                or coda_statement["date"][:4],
-                "y": coda_statement["new_balance_date"]
-                and coda_statement["new_balance_date"][2:4]
-                or coda_statement["date"][2:4],
-                "coda": coda_statement["coda_seq_number"],
-                "paper_ob": coda_statement["paper_ob_seq_number"],
-                "paper": coda_statement["paper_nb_seq_number"],
-            }
-            # We have to skip the already processed statements
-            # when we reprocess CODA file
-            if wiz_dict["coda_id"]:
-                old_statements = self.env["account.bank.statement"].search(
-                    [
-                        ("coda_id", "=", wiz_dict["coda_id"]),
-                        ("name", "=", coda_statement["name"]),
-                    ]
-                )
-                if old_statements:
-                    coda_statement["skip"] = True
-        else:
-            coda_statement["name"] = "/"
+        coda_statement["name"] = cba.coda_st_naming % {
+            "code": cba.journal_id.code or "",
+            "year": coda_statement["new_balance_date"]
+            and coda_statement["new_balance_date"][:4]
+            or coda_statement["date"][:4],
+            "y": coda_statement["new_balance_date"]
+            and coda_statement["new_balance_date"][2:4]
+            or coda_statement["date"][2:4],
+            "coda": coda_statement["coda_seq_number"],
+            "paper_ob": coda_statement["paper_ob_seq_number"],
+            "paper": coda_statement["paper_nb_seq_number"],
+        }
+        # We have to skip the already processed statements
+        # when we reprocess CODA file
+        if wiz_dict["coda_id"]:
+            old_statements = self.env["account.bank.statement"].search(
+                [
+                    ("coda_id", "=", wiz_dict["coda_id"]),
+                    ("name", "=", coda_statement["name"]),
+                ]
+            )
+            if old_statements:
+                coda_statement["skip"] = True
 
         return coda_parsing_note
 
@@ -1893,25 +1879,9 @@ class AccountCodaImport(models.TransientModel):
         # defined in rules engine
         if not match_info.get("counterpart_amls") or match_info.get("account_id"):
             if cba.account_mapping_ids:
-                kwargs = {
-                    "coda_bank_account_id": cba.id,
-                    "partner_name": transaction["partner_name"] or None,
-                    "counterparty_number": transaction["counterparty_number"] or None,
-                    "partner_id": match_info.get("partner_id"),
-                    "trans_type_id": transaction["trans_type_id"],
-                    "trans_family_id": transaction["trans_family_id"],
-                    "trans_code_id": transaction["trans_code_id"],
-                    "trans_category_id": transaction["trans_category_id"],
-                    "struct_comm_type_id": transaction["struct_comm_type_id"],
-                    "freecomm": transaction["communication"]
-                    if not transaction["struct_comm_type"]
-                    else None,
-                    "structcomm": transaction["communication"]
-                    if transaction["struct_comm_type"]
-                    else None,
-                    "payment_reference": transaction["payment_reference"] or None,
-                }
-                rule = self.env["coda.account.mapping.rule"].rule_get(**kwargs)
+                rule = self.env["coda.account.mapping.rule"]._rule_get(
+                    transaction, st_line, cba
+                )
                 if rule:
                     for k in rule:
                         match_info[k] = rule[k]
@@ -1955,7 +1925,7 @@ class AccountCodaImport(models.TransientModel):
 
         # match on payment reference
         if cba.has_payment_module and cba.find_payment:
-            reconcile_note = self._match_payment_reference(
+            reconcile_note = self._match_pain_reference(
                 wiz_dict, st_line, cba, transaction, reconcile_note
             )
             if match_status in ["break", "done"]:
@@ -1994,7 +1964,7 @@ class AccountCodaImport(models.TransientModel):
 
         return reconcile_note
 
-    def _match_payment_reference(
+    def _match_pain_reference(
         self, wiz_dict, st_line, cba, transaction, reconcile_note
     ):
         """
@@ -2009,11 +1979,11 @@ class AccountCodaImport(models.TransientModel):
 
         payment = self.env["account.payment"]
         if "account.payment.order" in self.env:
-            payment = self._match_payment_reference_oca(
+            payment = self._match_pain_reference_oca(
                 wiz_dict, st_line, cba, transaction, reconcile_note
             )
         if not payment and "account.batch.payment" in self.env:
-            payment = self._match_payment_reference_oe(
+            payment = self._match_pain_reference_oe(
                 wiz_dict, st_line, cba, transaction, reconcile_note
             )
 
@@ -2027,7 +1997,7 @@ class AccountCodaImport(models.TransientModel):
         match_info["partner_id"] = aml.partner_id.id
         return reconcile_note
 
-    def _match_payment_reference_oca(
+    def _match_pain_reference_oca(
         self, wiz_dict, st_line, cba, transaction, reconcile_note
     ):
         """
@@ -2042,7 +2012,7 @@ class AccountCodaImport(models.TransientModel):
             return self.env["account.payment"]
         return self.env["account.payment"].search([("move_id", "=", e2e_id)])
 
-    def _match_payment_reference_oe(
+    def _match_pain_reference_oe(
         self, wiz_dict, st_line, cba, transaction, reconcile_note
     ):
         """
@@ -2187,7 +2157,7 @@ class AccountCodaImport(models.TransientModel):
             ]
         return reconcile_note
 
-    def _match_invoice_number(
+    def _match_invoice_payment_reference(
         self, wiz_dict, st_Line, cba, transaction, reconcile_note, free_comm
     ):
         """
@@ -2202,32 +2172,42 @@ class AccountCodaImport(models.TransientModel):
             amount_rounded = amount_fmt % round(-transaction["amount"], 2)
 
         select = """
-    SELECT id FROM (
-      SELECT id, move_type, state, amount_total, name, payment_reference, ref,
-             '{}'::text AS free_comm
-        FROM account_move
-        WHERE payment_state != 'paid' AND company_id = {} AND state = 'posted'
-      ) sq
-      WHERE round(amount_total, 2) = {}
+            SELECT id FROM account_move
+              WHERE payment_state != 'paid'
+                AND company_id = {cpy_id}
+                AND state = 'posted'
+                AND round(amount_total, 2) = {amount}
         """.format(
-            free_comm,
-            cba.company_id.id,
-            amount_rounded,
+            cpy_id=cba.company_id.id,
+            amount=amount_rounded,
         )
 
         # 'out_invoice', 'in_refund'
         if transaction["amount"] > 0:
-            select2 = (
-                " AND move_type = 'out_invoice' AND free_comm ilike '%'||name||'%'"
+            select2 = """
+                AND move_type = 'out_invoice'
+                AND POSITION(name IN '{free_comm}') > 0
+            """.format(
+                free_comm=free_comm
             )
             self.env.cr.execute(select + select2)  # pylint: disable=E8103
             res = self.env.cr.fetchall()
             if res:
                 inv_ids = [x[0] for x in res]
             else:
-                select2 = (
-                    " AND move_type = 'in_refund' AND"
-                    " free_comm ilike '%'||payment_reference||'%'"
+                select2 = """
+                    AND move_type = 'in_refund'
+                    AND (
+                      (
+                        COALESCE(payment_reference, '') != ''
+                        AND POSITION(payment_reference IN '{free_comm}') > 0
+                      ) OR (
+                        COALESCE(ref, '') != ''
+                        AND POSITION(ref IN '{free_comm}') > 0
+                      )
+                    )
+                """.format(
+                    free_comm=free_comm
                 )
                 self.env.cr.execute(select + select2)  # pylint: disable=E8103
                 res = self.env.cr.fetchall()
@@ -2236,18 +2216,30 @@ class AccountCodaImport(models.TransientModel):
 
         # 'in_invoice', 'out_refund'
         else:
-            select2 = (
-                " AND move_type = 'in_invoice'"
-                " AND (free_comm ilike '%'||payment_reference||'%'"
-                "   OR free_comm ilike '%'||ref||'%')"
+            select2 = """
+                AND move_type = 'in_invoice'
+                AND (
+                  (
+                    COALESCE(payment_reference, '') != ''
+                    AND POSITION(payment_reference IN '{free_comm}') > 0
+                  ) OR (
+                    COALESCE(ref, '') != ''
+                    AND POSITION(ref IN '{free_comm}') > 0
+                  )
+                )
+            """.format(
+                free_comm=free_comm
             )
             self.env.cr.execute(select + select2)  # pylint: disable=E8103
             res = self.env.cr.fetchall()
             if res:
                 inv_ids = [x[0] for x in res]
             else:
-                select2 = (
-                    " AND move_type = 'out_refund' AND free_comm ilike '%'||name||'%'"
+                select2 = """
+                    AND move_type = 'out_refund'
+                    AND POSITION(name IN '{free_comm}') > 0
+                """.format(
+                    free_comm=free_comm
                 )
                 self.env.cr.execute(select + select2)  # pylint: disable=E8103
                 res = self.env.cr.fetchall()
@@ -2359,7 +2351,7 @@ class AccountCodaImport(models.TransientModel):
             ):
                 free_comm = repl_special(transaction["payment_reference"].strip())
             if free_comm:
-                inv_ids = self._match_invoice_number(
+                inv_ids = self._match_invoice_payment_reference(
                     wiz_dict, st_line, cba, transaction, reconcile_note, free_comm
                 )
             if not inv_ids:
@@ -2369,7 +2361,7 @@ class AccountCodaImport(models.TransientModel):
                     free_comm = repl_special(
                         transaction["upper_transaction"]["communication"].strip()
                     )
-                    inv_ids = self._match_invoice_number(
+                    inv_ids = self._match_invoice_payment_reference(
                         wiz_dict, st_line, cba, transaction, reconcile_note, free_comm
                     )
 
@@ -2807,6 +2799,8 @@ class AccountCodaImport(models.TransientModel):
             new_aml_dict.update(
                 {"tax_ids": [(6, 0, tax.ids)], "tax_tag_ids": [(6, 0, tag.ids)]}
             )
+        else:
+            new_aml_dict["tax_ids"] = []
         if match_info.get("analytic_distribution"):
             new_aml_dict["analytic_distribution"] = match_info["analytic_distribution"]
         return new_aml_dict
@@ -2847,48 +2841,6 @@ class AccountCodaImport(models.TransientModel):
                 )
             counterpart_aml_dicts.append(counterpart_aml_dict)
         return counterpart_aml_dicts
-
-    def _prepare_exchange_diff_aml(self, st_line, rate_diff_currency, bal_diff):
-        """
-        TODO: remove this method.
-        This method is no longer used since as from Odoo 14.0 we rely on the standard
-        st_line reconcile method.
-        This method generates the exchange difference booking in the excange difference
-        journal which is different from the previous versions where an exchange
-        difference line was added to the entry in the bank journal.
-        """
-        expense_exchange_account = (
-            st_line.company_id.expense_currency_exchange_account_id
-        )
-        if not expense_exchange_account:
-            raise UserError(
-                _(
-                    "You should configure the 'Loss Exchange Rate Account' "
-                    "in your company settings, to manage automatically "
-                    "the booking of accounting entries related to "
-                    "differences between exchange rates."
-                )
-            )
-        income_exchange_account = st_line.company_id.income_currency_exchange_account_id
-        if not income_exchange_account:
-            raise UserError(
-                _(
-                    "You should configure the 'Gain Exchange Rate Account' "
-                    "in your company settings, to manage automatically "
-                    "the booking of accounting entries related to "
-                    "differences between exchange rates."
-                )
-            )
-        rate_diff_account = (
-            bal_diff > 0 and expense_exchange_account or income_exchange_account
-        )
-        return {
-            "name": _("Currency exchange rate difference"),
-            "debit": bal_diff > 0 and bal_diff or 0.0,
-            "credit": bal_diff < 0 and -bal_diff or 0.0,
-            "account_id": rate_diff_account.id,
-            "partner_id": st_line.partner_id.id,
-        }
 
     def _create_move_and_reconcile(
         self, wiz_dict, st_line, cba, transaction, reconcile_note

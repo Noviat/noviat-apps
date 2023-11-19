@@ -111,10 +111,10 @@ class AccountBankStatement(models.Model):
         Replace this method to work on transaction_date i.s.o. date.
         """
         for stmt in self:
-            sorted_lines = stmt.line_ids.sorted("internal_index")
+            sorted_lines = stmt.line_ids.sorted(key=lambda r: r.internal_index or "Z")
             stmt.first_line_index = sorted_lines[:1].internal_index
             if not stmt.date:
-                stmt.date = sorted_lines.transaction_date
+                stmt.date = sorted_lines[-1:].transaction_date
 
     @api.depends("line_ids.journal_id")
     def _compute_journal_id(self):
@@ -137,6 +137,18 @@ class AccountBankStatement(models.Model):
             if rec.import_format in READONLY_IMPORT_FORMATS:
                 rec.line_ids.unlink()
         return super().unlink()
+
+    @api.returns("self", lambda value: value.id)
+    def copy(self, default=None):
+        if self.import_format in READONLY_IMPORT_FORMATS:
+            raise UserError(
+                _(
+                    "You cannot duplicate a bank statement with "
+                    "import format '%(import_format)s'.",
+                    import_format=self.import_format,
+                )
+            )
+        return super().copy(default=default)
 
     def set_to_draft(self):
         return self.write({"state": "draft"})
