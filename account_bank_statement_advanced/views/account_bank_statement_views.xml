@@ -50,6 +50,7 @@
             >
         <attribute name="groups" />
       </xpath>
+      <!--
       <xpath
                 expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='amount_currency']"
                 position="attributes"
@@ -59,6 +60,8 @@
                     name="attrs"
                 >{'column_invisible': [('parent.foreign_currency', '=', False)]}</attribute>
       </xpath>
+      -->
+      <!--
       <xpath
                 expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='currency_id']"
                 position="attributes"
@@ -68,6 +71,7 @@
                     name="attrs"
                 >{'column_invisible': [('parent.foreign_currency', '=', False)]}</attribute>
       </xpath>
+      -->
       <xpath
                 expr="//page[@name='statement_line_ids']/field[@name='line_ids']/tree/button[@name='button_undo_reconciliation']"
                 position="attributes"

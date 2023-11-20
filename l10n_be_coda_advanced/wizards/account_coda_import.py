@@ -844,30 +844,33 @@ class AccountCodaImport(models.TransientModel):
         # get list of lines parsed already
         coda_transactions = coda_statement["coda_transactions"]
 
-        last_transaction = coda_statement["main_move_stack"][-1]
-        if last_transaction["type"] == "globalisation" and not last_transaction.get(
-            "detail_cnt"
-        ):
-            # demote record with globalisation code from
-            # 'globalisation' to 'regular' when no detail records
-            main_transaction_seq = last_transaction["sequence"]
-            to_demote = coda_transactions[main_transaction_seq]
-            to_demote.update(
-                {
-                    "type": "regular",
-                    "glob_lvl_flag": 0,
-                    "globalisation_amount": False,
-                    "amount": last_transaction["globalisation_amount"],
-                }
-            )
-            # add closing globalisation level on previous detail record
-            # in order to correctly close moves that have been 'promoted'
-            # to globalisation
-            if last_transaction.get("detail_cnt") and last_transaction.get("promoted"):
-                closeglobalise = coda_transactions[transaction_seq - 1]
-                closeglobalise.update(
-                    {"glob_lvl_flag": last_transaction["glob_lvl_flag"]}
+        if coda_transactions:
+            last_transaction = coda_statement["main_move_stack"][-1]
+            if last_transaction["type"] == "globalisation" and not last_transaction.get(
+                "detail_cnt"
+            ):
+                # demote record with globalisation code from
+                # 'globalisation' to 'regular' when no detail records
+                main_transaction_seq = last_transaction["sequence"]
+                to_demote = coda_transactions[main_transaction_seq]
+                to_demote.update(
+                    {
+                        "type": "regular",
+                        "glob_lvl_flag": 0,
+                        "globalisation_amount": False,
+                        "amount": last_transaction["globalisation_amount"],
+                    }
                 )
+                # add closing globalisation level on previous detail record
+                # in order to correctly close moves that have been 'promoted'
+                # to globalisation
+                if last_transaction.get("detail_cnt") and last_transaction.get(
+                    "promoted"
+                ):
+                    closeglobalise = coda_transactions[transaction_seq - 1]
+                    closeglobalise.update(
+                        {"glob_lvl_flag": last_transaction["glob_lvl_flag"]}
+                    )
         coda_statement["paper_nb_seq_number"] = line[1:4]
         bal_end = list2float(line[42:57])
         new_balance_date = str2date(line[57:63])
@@ -1265,7 +1268,7 @@ class AccountCodaImport(models.TransientModel):
             and transaction.get("struct_comm_details")
         ):
             amount_eur = transaction["struct_comm_details"].get("amount_eur")
-            if amount_eur:
+            if amount_eur and transaction["type"] == "regular":
                 st_line_vals.update(
                     {
                         "foreign_currency_id": cba.company_id.currency_id.id,
@@ -1320,6 +1323,7 @@ class AccountCodaImport(models.TransientModel):
         return [transaction_copy]
 
     def coda_import(self):
+        self = self.with_context(allowed_company_ids=self.env.user.company_ids.ids)
         import_results = []
         wiz_dict = {
             "ziperr_log": "",
@@ -1335,10 +1339,10 @@ class AccountCodaImport(models.TransientModel):
                     coda, statements, note = self._coda_parsing(
                         wiz_dict, codafile=coda_file[1], codafilename=coda_file[2]
                     )
-                    import_results += [(coda, statements, note)]
                     if self.reconcile:
                         statements.button_post()
-            except UserError as e:
+                    import_results += [(coda, statements, note)]
+            except (UserError, ValidationError) as e:
                 err_string = _(
                     "\n\nError while processing CODA File '%(fn)s' :\n%(err_msg)s"
                 ) % {
@@ -1385,6 +1389,8 @@ class AccountCodaImport(models.TransientModel):
                 wiz_note += entry[2]
                 time_start = time.time()
                 for statement in statements:
+                    self = self.with_company(statement.company_id)
+                    statement = statement.with_company(statement.company_id)
                     reconcile_note = self._automatic_reconcile(wiz_dict, statement)
                     if reconcile_note:
                         wiz_note += "\n\n"
@@ -1991,7 +1997,7 @@ class AccountCodaImport(models.TransientModel):
         """
         return reconcile_note
 
-    def _match_invoice_number(
+    def _match_invoice_payment_reference(
         self, wiz_dict, st_Line, cba, transaction, reconcile_note, free_comm
     ):
         """
@@ -2006,32 +2012,42 @@ class AccountCodaImport(models.TransientModel):
             amount_rounded = amount_fmt % round(-transaction["amount"], 2)
 
         select = """
-    SELECT id FROM (
-      SELECT id, move_type, state, amount_total, name, payment_reference, ref,
-             '{}'::text AS free_comm
-        FROM account_move
-        WHERE payment_state != 'paid' AND company_id = {} AND state = 'posted'
-      ) sq
-      WHERE round(amount_total, 2) = {}
+            SELECT id FROM account_move
+              WHERE payment_state != 'paid'
+                AND company_id = {cpy_id}
+                AND state = 'posted'
+                AND round(amount_total, 2) = {amount}
         """.format(
-            free_comm,
-            cba.company_id.id,
-            amount_rounded,
+            cpy_id=cba.company_id.id,
+            amount=amount_rounded,
         )
 
         # 'out_invoice', 'in_refund'
         if transaction["amount"] > 0:
-            select2 = (
-                " AND move_type = 'out_invoice' AND free_comm ilike '%'||name||'%'"
+            select2 = """
+                AND move_type = 'out_invoice'
+                AND POSITION(name IN '{free_comm}') > 0
+            """.format(
+                free_comm=free_comm
             )
             self.env.cr.execute(select + select2)  # pylint: disable=E8103
             res = self.env.cr.fetchall()
             if res:
                 inv_ids = [x[0] for x in res]
             else:
-                select2 = (
-                    " AND move_type = 'in_refund' AND"
-                    " free_comm ilike '%'||payment_reference||'%'"
+                select2 = """
+                    AND move_type = 'in_refund'
+                    AND (
+                      (
+                        COALESCE(payment_reference, '') != ''
+                        AND POSITION(payment_reference IN '{free_comm}') > 0
+                      ) OR (
+                        COALESCE(ref, '') != ''
+                        AND POSITION(ref IN '{free_comm}') > 0
+                      )
+                    )
+                """.format(
+                    free_comm=free_comm
                 )
                 self.env.cr.execute(select + select2)  # pylint: disable=E8103
                 res = self.env.cr.fetchall()
@@ -2040,18 +2056,30 @@ class AccountCodaImport(models.TransientModel):
 
         # 'in_invoice', 'out_refund'
         else:
-            select2 = (
-                " AND move_type = 'in_invoice'"
-                " AND (free_comm ilike '%'||payment_reference||'%'"
-                "   OR free_comm ilike '%'||ref||'%')"
+            select2 = """
+                AND move_type = 'in_invoice'
+                AND (
+                  (
+                    COALESCE(payment_reference, '') != ''
+                    AND POSITION(payment_reference IN '{free_comm}') > 0
+                  ) OR (
+                    COALESCE(ref, '') != ''
+                    AND POSITION(ref IN '{free_comm}') > 0
+                  )
+                )
+            """.format(
+                free_comm=free_comm
             )
             self.env.cr.execute(select + select2)  # pylint: disable=E8103
             res = self.env.cr.fetchall()
             if res:
                 inv_ids = [x[0] for x in res]
             else:
-                select2 = (
-                    " AND move_type = 'out_refund' AND free_comm ilike '%'||name||'%'"
+                select2 = """
+                    AND move_type = 'out_refund'
+                    AND POSITION(name IN '{free_comm}') > 0
+                """.format(
+                    free_comm=free_comm
                 )
                 self.env.cr.execute(select + select2)  # pylint: disable=E8103
                 res = self.env.cr.fetchall()
@@ -2163,7 +2191,7 @@ class AccountCodaImport(models.TransientModel):
             ):
                 free_comm = repl_special(transaction["payment_reference"].strip())
             if free_comm:
-                inv_ids = self._match_invoice_number(
+                inv_ids = self._match_invoice_payment_reference(
                     wiz_dict, st_line, cba, transaction, reconcile_note, free_comm
                 )
             if not inv_ids:
@@ -2173,7 +2201,7 @@ class AccountCodaImport(models.TransientModel):
                     free_comm = repl_special(
                         transaction["upper_transaction"]["communication"].strip()
                     )
-                    inv_ids = self._match_invoice_number(
+                    inv_ids = self._match_invoice_payment_reference(
                         wiz_dict, st_line, cba, transaction, reconcile_note, free_comm
                     )
 

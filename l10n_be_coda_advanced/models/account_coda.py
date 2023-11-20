@@ -76,6 +76,9 @@ class AccountCoda(models.Model):
             if not rec.bank_statement_ids:
                 rec.note = False
 
+    def set_to_done(self):
+        return self.write({"state": "done"})
+
     def process(self):
         self.ensure_one()
         wiz_vals = {"coda_data": self.coda_data, "coda_fname": self.name}

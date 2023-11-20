@@ -141,7 +141,7 @@
                     name="no_moves"
                     string="No Moves"
                     domain="[('is_reconciled', '=', False)]"
-                    help="Statement Lines without Journal Entreis"
+                    help="Statement Lines without Journal Entries"
                 />
         <filter
                     name="draft"

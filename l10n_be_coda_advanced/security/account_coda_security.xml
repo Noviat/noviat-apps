@@ -7,7 +7,7 @@
       <field eval="True" name="global" />
       <field
             name="domain_force"
-        >['|', ('company_ids', '=', False), ('company_ids', 'in', company_ids)]</field>
+        >['|', ('company_ids', '=', False), ('company_ids', 'in', user.company_ids.ids)]</field>
     </record>
 
 </odoo>

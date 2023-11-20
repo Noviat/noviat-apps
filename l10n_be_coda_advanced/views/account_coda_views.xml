@@ -43,6 +43,7 @@
                         groups="account.group_account_manager"
                         help="Process the CODA File to create Bank Statements"
                     />
+          <button name="set_to_done" type="object" states="draft" string="Set Done" />
           <field name="state" widget="statusbar" />
         </header>
         <group colspan="4" col="4">

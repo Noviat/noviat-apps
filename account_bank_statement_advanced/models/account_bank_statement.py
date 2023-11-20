@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 
 class AccountBankStatement(models.Model):
@@ -16,6 +17,29 @@ class AccountBankStatement(models.Model):
         readonly=True,
     )
     foreign_currency = fields.Boolean(compute="_compute_foreign_currency", store=True)
+
+    @api.constrains("name", "journal_id", "date")
+    def _check_name(self):
+        for rec in self:
+            if not all([rec.name, rec.journal_id, rec.date]):
+                continue
+            dup = self.search_count(
+                [
+                    ("id", "!=", rec.id),
+                    ("name", "=", rec.name),
+                    ("journal_id", "=", rec.journal_id.id),
+                    ("date", "=", rec.date),
+                ]
+            )
+            if dup:
+                message = _(
+                    "Statement %(st_name)s, Journal %(journal)s, dated %(date)s "
+                    "has already been encoded.",
+                    st_name=rec.name,
+                    journal=rec.journal_id.name,
+                    date=rec.date,
+                )
+                raise UserError(message)
 
     @api.depends("currency_id")
     def _compute_foreign_currency(self):
