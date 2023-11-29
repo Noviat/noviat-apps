@@ -1245,6 +1245,7 @@ class AccountCodaImport(models.TransientModel):
             "globalisation_id": transaction["globalisation_id"],
             "payment_reference": transaction["payment_reference"],
             "statement_id": coda_statement["bank_st_id"],
+            "journal_id": cba.journal_id.id,
             "name": move_name,
             "narration": transaction["note"].replace("\n", "<br>"),
             "coda_transaction_dict": json.dumps(transaction),

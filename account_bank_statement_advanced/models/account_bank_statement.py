@@ -151,6 +151,11 @@ class AccountBankStatement(models.Model):
         return super().copy(default=default)
 
     def set_to_draft(self):
+        for rec in self:
+            moves = rec.line_ids.mapped("move_id").sorted("date")
+            oldest = moves and moves[0]
+            if oldest:
+                oldest._check_fiscalyear_lock_date()
         return self.write({"state": "draft"})
 
     def set_to_confirm(self):

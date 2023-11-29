@@ -256,6 +256,7 @@ class AccountBankStatementLine(models.Model):
             skip_sync = False
             if statement_id:
                 statement = self.env["account.bank.statement"].browse(statement_id)
+                vals["journal_id"] = statement.journal_id.id
                 if not vals.get("transaction_date"):
                     vals["transaction_date"] = statement.date
                 if not vals.get("date"):
