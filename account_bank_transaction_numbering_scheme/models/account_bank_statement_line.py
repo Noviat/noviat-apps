@@ -15,7 +15,7 @@ class AccountBankStatementLine(models.Model):
                 vals.get("statement_id")
                 or self.env.context.get("default_statement_id")
                 or (
-                    self.env.context.get("accive_model") == "account.bank.statement"
+                    self.env.context.get("active_model") == "account.bank.statement"
                     and self.env.context["active_id"]
                 )
             )

@@ -249,14 +249,15 @@ class AccountBankStatementLine(models.Model):
                 vals.get("statement_id")
                 or self.env.context.get("default_statement_id")
                 or (
-                    self.env.context.get("accive_model") == "account.bank.statement"
+                    self.env.context.get("active_model") == "account.bank.statement"
                     and self.env.context["active_id"]
                 )
             )
             skip_sync = False
             if statement_id:
                 statement = self.env["account.bank.statement"].browse(statement_id)
-                vals["journal_id"] = statement.journal_id.id
+                if statement.journal_id:
+                    vals["journal_id"] = statement.journal_id.id
                 if not vals.get("transaction_date"):
                     vals["transaction_date"] = statement.date
                 if not vals.get("date"):
