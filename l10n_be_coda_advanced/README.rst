@@ -96,6 +96,27 @@ Installation instructions
 
 This module is **NOT** compatible with the **l10n_be_coda** module.
 
+The approach to use the bank statement name combined with the transaction
+sequence to generate the accounting entry names conflict with the
+use of the 'Register Payment' button. 
+
+|
+
+This is not an issue when
+
+- disabling this button for the CODA journals (cf. account_invoice_pay_filter module)
+- use the OCA account_banking_sepa_credit_transfer module to create payment orders
+  and configure the payment mode to prevent generation of a transfer booking.
+  
+We also recommend to set the configure set the payment_debit_account_id and payment_credit_account_id
+to 'deprecated' for the financial journals with CODA processing.
+
+
+Known Issues / Roadmap
+----------------------
+
+Make this module compatible with Odoo OE Batch Payments.
+
 
 Assistance
 ----------

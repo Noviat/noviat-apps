@@ -17,7 +17,7 @@ def migrate(cr, version):
         data = coda.coda_data
         if data and not is_base64(data):
             coda.coda_data = base64.b64encode(data)
-            _logger.warn(
+            _logger.warning(
                 "CODA File %s (%s) has been repaired",
                 coda.name,
                 coda.coda_creation_date,

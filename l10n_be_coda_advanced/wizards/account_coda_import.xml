@@ -74,7 +74,7 @@
                         string="View Bank Statement(s)"
                         type="object"
                         class="oe_highlight"
-                        invisible="not context.get('coda_ids')"
+                        invisible="not context.get('bank_statement_ids')"
                     />
           <button
                         name="action_open_coda_files"
