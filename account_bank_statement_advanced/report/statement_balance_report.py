@@ -1,4 +1,4 @@
-# Copyright 2009-2021 Noviat.
+# Copyright 2009-2022 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
@@ -27,7 +27,7 @@ class StatementBalanceReport(models.AbstractModel):
             raise UserError(_("No financial journals found for your company!"))
         self.env.cr.execute(
             "SELECT s.name AS s_name, s.date AS s_date, j.code AS j_code, "
-            "s.balance_end_real AS s_balance, "
+            "COALESCE(s.balance_end_real, 0) AS s_balance, "
             "COALESCE(jcu.id,ccu.id) AS j_curr_id "
             "FROM account_bank_statement s "
             "INNER JOIN account_journal j ON s.journal_id = j.id "

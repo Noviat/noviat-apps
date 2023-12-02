@@ -1,4 +1,4 @@
-# Copyright 2009-2022 Noviat.
+# Copyright 2009-2023 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
@@ -81,7 +81,12 @@ class AccountBankStatementLine(models.Model):
     def _default_transaction_date(self):
         return self.env.context.get("statement_date")
 
-    @api.onchange("foreign_currency_id", "val_date", "transaction_date")
+    @api.onchange("transaction_date")
+    def _onchange_transaction_date(self):
+        if self.transaction_date:
+            self.date = self.transaction_date
+
+    @api.onchange("foreign_currency_id", "transaction_date")
     def _onchange_foreign_currency_id(self):
         if (
             self.foreign_currency_id
@@ -91,8 +96,8 @@ class AccountBankStatementLine(models.Model):
             self.amount_currency = self.currency_id._convert(
                 self.amount,
                 self.foreign_currency_id,
-                self.company_id,
-                self.val_date or self.transaction_date,
+                self.journal_id.company_id,
+                self.transaction_date,
             )
         if not self.foreign_currency_id or self.foreign_currency_id == self.currency_id:
             self.amount_currency = 0.0

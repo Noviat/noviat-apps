@@ -137,7 +137,7 @@
                     name="no_moves"
                     string="No Moves"
                     domain="[('is_reconciled', '=', False)]"
-                    help="Statement Lines without Journal Entreis"
+                    help="Statement Lines without Journal Entries"
                 />
         <filter
                     name="draft"
@@ -154,14 +154,15 @@
         <group expand="0" string="Group By">
           <filter
                         string="Journal"
-                        name="journal"
+                        name="group_by_journal"
                         context="{'group_by': 'journal_id'}"
                     />
           <filter
                         string="Statement"
-                        name="statement"
+                        name="group_by_statement"
                         context="{'group_by': 'statement_id'}"
                     />
+          <filter string="Date" name="group_by_date" context="{'group_by':'date'}" />
         </group>
       </field>
     </field>
