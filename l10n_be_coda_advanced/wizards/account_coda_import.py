@@ -3133,8 +3133,8 @@ class AccountCodaImport(models.TransientModel):
         period_from = str2date(comm[42:48])
         period_to = str2date(comm[48:54])
         st_line_name = _("Closing, period from %(period_from)s to %(period_to)s") % {
-            period_from,
-            period_to,
+            "period_from": period_from,
+            "period_to": period_to,
         }
         comm_fields = [
             {
