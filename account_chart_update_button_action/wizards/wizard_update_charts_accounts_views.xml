@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_update_multi_chart" model="ir.ui.view">
+        <field name="name">Update Chart of Accounts Inherited view</field>
+        <field name="model">wizard.update.charts.accounts</field>
+        <field name="inherit_id" ref="account_chart_update.view_update_multi_chart" />
+        <field name="arch" type="xml">
+            <field name="tax_ids" position="before">
+                <button
+                    name="action_remove_all_new"
+                    string="Remove All New"
+                    type="object"
+                /> -
+                <button
+                    name="action_remove_all_updated"
+                    string="Remove All Updated"
+                    type="object"
+                /> -
+                <button
+                    name="action_remove_all_deleted"
+                    string="Remove All Deleted"
+                    type="object"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>
