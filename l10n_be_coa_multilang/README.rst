@@ -29,16 +29,6 @@ This module activates the following functionality:
 
 This module has been tested for use with Odoo Enterprise as well as Odoo Community.
 
-Installation guidelines
-=======================
-
-It is recommended not to install l10n_be when using this module.
-
-The l10n_be module is 'auto_installed' when creating a new database with the
-Country field set to Belgium. As a consequence we recommend to leave this
-field empty. The company country will be set to Belgium afterwards by the
-l10n_be_coa_multilang setup wizard.
-
 Configuration
 =============
 
@@ -68,7 +58,6 @@ will be used for the Intervat XML VAT declarations.
 Roadmap
 =======
 
-- fix compatibility issues with l10n_be
 - implement carry_over_condition_method
 - refine coa autotyping with new account types (e.g. off_balance, expense_depreciation)
 - fiscal position EU privé
