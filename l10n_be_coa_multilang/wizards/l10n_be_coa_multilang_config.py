@@ -25,7 +25,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
     load_fr_FR = fields.Boolean(string="Load French (fr_FR) Translation")
     monolang_coa = fields.Boolean(
         string="Monolingual Chart of Accounts",
-        default=lambda self: self._default_coa_lang(),
+        default=lambda self: self._default_monolang_coa(),
         help="If checked, the General Account will become "
         "a monolingual field. \n"
         "This behaviour can be changed afterwards via "
@@ -43,8 +43,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
 
     @api.model
     def _default_monolang_coa(self):
-        # TODO: review logic based upon actual setting of
-        # account.account,name translate flag
+        translate = self.env["account.account"]._fields["name"].translate
         name = "l10n_account_translate_off"
         module = self.env["ir.module.module"].search([("name", "=", name)])
         if not module:
@@ -56,8 +55,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
                 )
                 % name
             )
-        if module.state == "installed":
-            return True
+        return not translate and True or False
 
     @api.model
     def _default_coa_lang(self):

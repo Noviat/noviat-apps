@@ -1,4 +1,4 @@
-# Copyright 2009-2020 Noviat
+# Copyright 2009-2024 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import base64
@@ -168,7 +168,7 @@ class L10nBeVatListing(models.TransientModel):
                     "entries": [client],
                 }
         for k in vat_group:
-            if vat_group[k]["base_total"] >= self.limit_amount:
+            if abs(vat_group[k]["base_total"]) >= self.limit_amount:
                 client_list += vat_group[k]["entries"]
 
         client_list.sort(key=lambda k: k["vat"])
