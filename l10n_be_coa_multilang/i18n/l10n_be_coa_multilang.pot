@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-24 10:35+0000\n"
-"PO-Revision-Date: 2023-07-24 10:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,63 +19,41 @@ msgid "(object._get_file_base_name())"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-00
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-00
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-00
 msgid "0% - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-00-G
 msgid "0% - Other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-00
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-00
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-00
 msgid "0% - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-00-S
 msgid "0% - Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-00-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-00-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-00-CC
 msgid "0% Cocontract. - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-00-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-00-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-00-CC
 msgid "0% Cocontract. - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-00-CC
 msgid "0% Cocontract. - Services and other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-00-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-00-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-00-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-00-CC
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-00-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-00-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-00-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-00-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-00-CC
@@ -86,21 +62,11 @@ msgid "0% Cocontractant"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-00-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-00-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-G
 msgid "0% Goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-00-EU
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-00-EU
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-00-EU
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-00-EU
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-00-EU
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-00-EU-G
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-00-EU-S
@@ -109,40 +75,26 @@ msgid "0% Intracomm."
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-00-EU
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-00-EU
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-00-EU
 msgid "0% Intracomm. - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-EU-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-EU-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-00-EU-G
 msgid "0% Intracomm. - Other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-00-EU
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-00-EU
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-00-EU
 msgid "0% Intracomm. - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-EU-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-EU-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-00-EU-S
 msgid "0% Intracomm. - Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-00-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-00-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-00-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-00-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-00-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-00-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-00-ROW-CC
@@ -150,29 +102,21 @@ msgid "0% Outside EU"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-00-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-00-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-00-ROW-CC
 msgid "0% Outside EU - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-00-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-00-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-00-ROW-CC
 msgid "0% Outside EU - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-00-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-00-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-00-ROW-CC
 msgid "0% Outside EU - Services and other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-00-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-00-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-S
 msgid "0% Services"
 msgstr ""
@@ -198,18 +142,6 @@ msgid "03 - Operations subject to 21% VAT"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-12
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-12
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-OUT-12-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-OUT-12-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-12
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-12
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-OUT-12-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-OUT-12-S
 #: model:account.tax.group,name:l10n_be_coa_multilang.atg_VAT_12
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-12
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-12-G
@@ -221,61 +153,41 @@ msgid "12%"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-12
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-12
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-12
 msgid "12% - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-12-G
 msgid "12% - Other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-12
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-12
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-12
 msgid "12% - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-12-S
 msgid "12% - Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-12-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-12-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-12-CC
 msgid "12% Cocontract. - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-12-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-12-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-12-CC
 msgid "12% Cocontract. - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-12-CC
 msgid "12% Cocontract. - Services and other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-12-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-12-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-12-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-12-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-12-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-12-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-12-CC
@@ -283,21 +195,11 @@ msgid "12% Cocontractant"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-12-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-12-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-12-G
 msgid "12% Goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-12-EU
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-12-EU
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-12-EU
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-12-EU
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-12-EU
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-12-EU-G
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-12-EU-S
@@ -306,40 +208,26 @@ msgid "12% Intracomm."
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-12-EU
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-12-EU
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-12-EU
 msgid "12% Intracomm. - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-EU-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-EU-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-12-EU-G
 msgid "12% Intracomm. - Other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-12-EU
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-12-EU
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-12-EU
 msgid "12% Intracomm. - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-EU-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-EU-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-12-EU-S
 msgid "12% Intracomm. - Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-12-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-12-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-12-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-12-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-12-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-12-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-12-ROW-CC
@@ -347,54 +235,26 @@ msgid "12% Outside EU"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-12-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-12-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-12-ROW-CC
 msgid "12% Outside EU - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-12-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-12-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-12-ROW-CC
 msgid "12% Outside EU - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-12-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-12-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-12-ROW-CC
 msgid "12% Outside EU - Services and other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-12-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-12-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-12-S
 msgid "12% Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-INC-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-21
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-OUT-21-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-OUT-21-INC-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-OUT-21-INC-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-OUT-21-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-INC-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-21
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-OUT-21-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-OUT-21-INC-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-OUT-21-INC-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-OUT-21-S
 #: model:account.tax.group,name:l10n_be_coa_multilang.atg_VAT_21
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-21-G
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-21-S
@@ -410,19 +270,11 @@ msgid "21%"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-21
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-21
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-21
 msgid "21% - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-CD2-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-OUT-21-CD2-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-OUT-21-CD2-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-CD2-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-OUT-21-CD2-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-OUT-21-CD2-S
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-21-CD2-S
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-OUT-21-CD2-G
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-OUT-21-CD2-S
@@ -430,75 +282,51 @@ msgid "21% - Cash Discount 2%"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-G
 msgid "21% - Other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-21-G
 msgid "21% - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-S
 msgid "21% - Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-INC-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-INC-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-INC-S
 msgid "21% - Services (Price Incl.)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-CD2-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-CD2-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-CD2-S
 msgid "21% - Services - Cash Discount 2%"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-21-S
 msgid "21% - Services for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-21-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-21-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-21-CC
 msgid "21% Cocontract. - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-21-CC
 msgid "21% Cocontract. - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-CC
 msgid "21% Cocontract. - Services and other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-21-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-21-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-21-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-21-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-21-CC
@@ -506,37 +334,21 @@ msgid "21% Cocontractant"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-21-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-21-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-G
 msgid "21% Goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-21-INC-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-21-INC-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-INC-G
 msgid "21% Goods (Price Incl.)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-21-CD2-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-21-CD2-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-CD2-G
 msgid "21% Goods - Cash Discount 2%"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-21-EU
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-21-EU
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-21-EU-G
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-21-EU-S
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-21-EU-G
@@ -546,47 +358,31 @@ msgid "21% Intracomm."
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-21-EU
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-21-EU
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-21-EU
 msgid "21% Intracomm. - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-EU-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-EU-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-EU-G
 msgid "21% Intracomm. - Other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-EU-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-EU-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-21-EU-G
 msgid "21% Intracomm. - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-EU-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-EU-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-EU-S
 msgid "21% Intracomm. - Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-EU-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-EU-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-21-EU-S
 msgid "21% Intracomm. - Services for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-21-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-21-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-21-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-21-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-21-ROW-CC
@@ -594,43 +390,31 @@ msgid "21% Outside EU"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-21-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-21-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-21-ROW-CC
 msgid "21% Outside EU - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-21-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-21-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-21-ROW-CC
 msgid "21% Outside EU - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-21-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-21-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-ROW-CC
 msgid "21% Outside EU - Services and other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-21-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-21-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-S
 msgid "21% Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-21-INC-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-21-INC-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-INC-S
 msgid "21% Services (Price Incl.)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-21-CD2-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-21-CD2-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-CD2-S
 msgid "21% Services - Cash Discount 2%"
 msgstr ""
@@ -716,61 +500,41 @@ msgid "59 - Deductible VAT"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-06
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-06
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-06
 msgid "6% - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-06-G
 msgid "6% - Other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-06
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-06
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-06
 msgid "6% - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-06-S
 msgid "6% - Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-06-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-06-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-06-CC
 msgid "6% Cocontract. - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-06-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-06-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-06-CC
 msgid "6% Cocontract. - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-06-CC
 msgid "6% Cocontract. - Services and other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-06-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-06-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-06-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-06-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-06-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-06-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-06-CC
@@ -778,21 +542,11 @@ msgid "6% Cocontractant"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-06-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-06-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-06-G
 msgid "6% Goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-06-EU
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-06-EU
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-06-EU
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-EU-G
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-EU-S
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-06-EU
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-06-EU
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-06-EU-G
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-06-EU-S
@@ -801,40 +555,26 @@ msgid "6% Intracomm."
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-06-EU
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-06-EU
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-06-EU
 msgid "6% Intracomm. - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-EU-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-EU-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-06-EU-G
 msgid "6% Intracomm. - Other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-06-EU
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-06-EU
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-06-EU
 msgid "6% Intracomm. - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-EU-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-EU-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-06-EU-S
 msgid "6% Intracomm. - Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V81-06-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V83-06-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V81-06-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-ROW-CC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V83-06-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-06-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-06-ROW-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-06-ROW-CC
@@ -842,29 +582,21 @@ msgid "6% Outside EU"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V83-06-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V83-06-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-06-ROW-CC
 msgid "6% Outside EU - Capital goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V81-06-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V81-06-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-06-ROW-CC
 msgid "6% Outside EU - Raw mat., consum. and goods for resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-06-ROW-CC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-06-ROW-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-06-ROW-CC
 msgid "6% Outside EU - Services and other goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-06-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-06-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-06-S
 msgid "6% Services"
 msgstr ""
@@ -1042,50 +774,41 @@ msgid "<strong>Year</strong>"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_49
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_49
+#: model:ir.model.constraint,message:l10n_be_coa_multilang.constraint_account_report_line_code_uniq
+msgid "A report line with the same code already exists."
+msgstr ""
+
+#. module: l10n_be_coa_multilang
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_49
 msgid "ACCRUED CHARGES AND DEFERRED INCOME"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_14
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_14
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_14
 msgid "ACCUMULATED PROFITS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_77
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_77
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_77
 msgid "ADJUSTMENT OF INCOME TAXES AND TAX PROVISIONS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_36
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_36
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_36
 msgid "ADVANCE PAYMENTS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_46
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_46
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_46
 msgid "ADVANCES RECEIVED ON CONTRACTS IN PROGRESS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_17
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_17
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_17
 msgid "AMOUNTS PAYABLE AFTER MORE THAN ONE YEAR"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_29
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_29
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_29
 msgid "AMOUNTS RECEIVABLE AFTER MORE THAN ONE YEAR"
 msgstr ""
@@ -1096,15 +819,12 @@ msgid "ASSETS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_27
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_27
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_27
 msgid "ASSETS UNDER CONSTR. AND ADVANCE PAYMENT"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: model:ir.model,name:l10n_be_coa_multilang.model_account_account
 #, python-format
@@ -1118,7 +838,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Account Name"
@@ -1166,10 +885,6 @@ msgid "Advance Payments"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-V91
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-V91
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-V91
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-V91
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-V91
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-V91
 msgid "Advance for Operations from December 1 to 20"
@@ -1195,11 +910,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_legal_report__target_move__all
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_common__target_move__all
@@ -1218,7 +929,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Am. Currency"
 msgstr ""
@@ -1226,12 +936,8 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__amount
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_declaration_case__amount
@@ -1290,14 +996,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Analytic Account"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Analytic Account Reference"
@@ -1315,9 +1019,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
@@ -1375,19 +1076,7 @@ msgid "August"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model_terms:account.fiscal.position,note:l10n_be_coa_multilang.1_afptn_cocontractant
-#: model_terms:account.fiscal.position,note:l10n_be_coa_multilang.2_afptn_cocontractant
-msgid "Auto-liquidation de la TVA."
-msgstr ""
-
-#. module: l10n_be_coa_multilang
-#: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.view_account_form
-msgid "BNB/NBB report entries"
-msgstr ""
-
-#. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: model:account.report.column,name:l10n_be_coa_multilang.tax_report_vat_balance
 #, python-format
@@ -1410,13 +1099,17 @@ msgid "Bank"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
+#: model:account.account.template,name:l10n_be_coa_multilang.aatn_599000
+msgid "Bank Suspense account"
+msgstr ""
+
+#. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__be_legal_financial_report_scheme__account_type__asset_cash
 msgid "Bank and Cash"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__base_amount
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatlisting
@@ -1445,7 +1138,6 @@ msgstr ""
 #: model:ir.model,name:l10n_be_coa_multilang.model_be_legal_financial_report_scheme
 #: model:ir.ui.menu,name:l10n_be_coa_multilang.be_legal_financial_report_scheme_menu
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.be_legal_financial_report_scheme_view_form_view
-#: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.be_legal_financial_report_scheme_view_tree
 msgid "Belgian Legal Financial Report Scheme"
 msgstr ""
 
@@ -1490,29 +1182,21 @@ msgid "Bills of Exchange Payable"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_10
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_10
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_10
 msgid "CAPITAL"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_57
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_57
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_57
 msgid "CASH"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_71
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_71
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_71
 msgid "CHANGES IN STOCKS AND CONTRACTS IN PROGRESS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_1
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_1
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_1
 msgid ""
 "CLASS 1. EQUITY CAPITAL, PROVISIONS AND DEFERRED TAXES AND AMOUNTS PAYABLE "
@@ -1520,8 +1204,6 @@ msgid ""
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_2
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_2
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_2
 msgid ""
 "CLASS 2. FORMATION EXPENSES, ASSETS AND AMOUNTS RECEIVABLE AFTER MORE THAN "
@@ -1529,50 +1211,36 @@ msgid ""
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_3
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_3
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_3
 msgid "CLASS 3. STOCKS AND CONTRACTS IN PROGRESS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_4
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_4
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_4
 msgid "CLASS 4. AMOUNTS RECEIVABLE AND PAYABLE WITHIN ONE YEAR"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_5
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_5
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_5
 msgid "CLASS 5. INVESTMENTS AND CASH"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_6
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_6
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_6
 msgid "CLASS 6. CHARGES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_7
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_7
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_7
 msgid "CLASS 7. INCOMES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_31
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_31
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_31
 msgid "CONSUMABLES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_37
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_37
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_37
 msgid "CONTRACTS IN PROGRESS"
 msgstr ""
@@ -1606,58 +1274,39 @@ msgid "Capital"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-CAR35-EXC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-CAR35-INC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-CAR35-EXC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-CAR35-INC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR35-EXC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR35-INC
 msgid "Car Expenses - VAT 35% Deductible"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-CAR35-EXC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-CAR35-EXC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR35-EXC
 msgid "Car Expenses - VAT 35% Deductible (Price Excl.)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-CAR35-INC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-CAR35-INC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR35-INC
 msgid "Car Expenses - VAT 35% Deductible (Price Incl.)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-CAR50-EXC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-CAR50-INC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-CAR50-EXC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-CAR50-INC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR50-EXC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR50-INC
 msgid "Car Expenses - VAT 50% Deductible"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-CAR50-EXC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-CAR50-EXC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR50-EXC
 msgid "Car Expenses - VAT 50% Deductible (Price Excl.)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-CAR50-INC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-CAR50-INC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR50-INC
 msgid "Car Expenses - VAT 50% Deductible (Price Incl.)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
@@ -1682,8 +1331,17 @@ msgid "Cash at Bank and in Hand"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
+#: model:account.account.template,name:l10n_be_coa_multilang.aatn_758400
+msgid "Cash difference gains"
+msgstr ""
+
+#. module: l10n_be_coa_multilang
+#: model:account.account.template,name:l10n_be_coa_multilang.aatn_658400
+msgid "Cash difference losses"
+msgstr ""
+
+#. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Centralisation"
@@ -1729,13 +1387,9 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__code
-#: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__chart_id
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__code
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_intracom_client__code
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatintracom
@@ -1789,12 +1443,8 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_coa_multilang_config__company_id
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__company_id
@@ -1818,7 +1468,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/models/account_account.py:0
 #: code:addons/l10n_be_coa_multilang/models/account_account.py:0
 #, python-format
 msgid "Configuration Error in the Belgian Legal Financial Report Scheme."
@@ -1880,7 +1529,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Credit"
 msgstr ""
@@ -1899,14 +1547,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Credit Note"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Curr."
@@ -1956,22 +1602,16 @@ msgid "DEBTS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_42
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_42
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_42
 msgid "DEBTS OF MORE THAN 1 YEAR, PORTION WITHIN THE YEAR"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_47
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_47
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_47
 msgid "DEBTS RELATED TO THE DESTINATION OF THE RESULTS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_63
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_63
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_63
 msgid ""
 "DEPRECIATIONS, AMOUNTS WRITTEN OFF AND PROVISIONS FOR LIABILITIES AND "
@@ -1980,7 +1620,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Debit"
@@ -2039,8 +1678,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Description"
@@ -2087,22 +1724,16 @@ msgid "EQUITY CAPITAL"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_54
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_54
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_54
 msgid "EXPIRED VALUABLES TO CASH IN"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_66
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_66
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_66
 msgid "EXTRAORDINARY CHARGES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_76
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_76
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_76
 msgid "EXTRAORDINARY INCOME"
 msgstr ""
@@ -2116,14 +1747,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Effective Date"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__date_to
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_common__date_to
@@ -2147,7 +1776,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Entry"
 msgstr ""
@@ -2155,14 +1783,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Entry ID"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Entry Reference"
@@ -2194,25 +1820,17 @@ msgid "Expenses"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-ND25-EXC
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-IN-V82-ND25-INC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-ND25-EXC
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-IN-V82-ND25-INC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-ND25-EXC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-ND25-INC
 msgid "Expenses 25% non-deductible"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-ND25-EXC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-ND25-EXC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-ND25-EXC
 msgid "Expenses 25% non-deductible (Price Excl.)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-IN-V82-ND25-INC
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-IN-V82-ND25-INC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-ND25-INC
 msgid "Expenses 25% non-deductible (Price Incl.)"
 msgstr ""
@@ -2226,8 +1844,6 @@ msgid "Export"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-00-ROW
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-00-ROW
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-ROW
 msgid "Export Outside EU"
 msgstr ""
@@ -2243,50 +1859,36 @@ msgid "Export transaction details per journal."
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.fiscal.position,name:l10n_be_coa_multilang.1_afptn_extracom
-#: model:account.fiscal.position,name:l10n_be_coa_multilang.2_afptn_extracom
 #: model:account.fiscal.position.template,name:l10n_be_coa_multilang.afptn_extracom
 msgid "Extra Community Regime"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_55
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_55
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_55
 msgid "FINANCE COMPANIES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_28
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_28
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_28
 msgid "FINANCIAL ASSETS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_65
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_65
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_65
 msgid "FINANCIAL CHARGES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_43
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_43
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_43
 msgid "FINANCIAL DEBTS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_75
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_75
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_75
 msgid "FINANCIAL INCOME"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_33
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_33
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_33
 msgid "FINISHED GOODS"
 msgstr ""
@@ -2297,37 +1899,27 @@ msgid "FIXED ASSETS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_72
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_72
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_72
 msgid "FIXED ASSETS OWN CONSTRUCTION"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_53
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_53
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_53
 msgid "FIXED DEPOSIT"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_52
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_52
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_52
 msgid "FIXED-INTEREST SECURITIES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_20
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_20
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_20
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311000
 msgid "FORMATION EXPENSES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_24
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_24
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_24
 msgid "FURNITURE AND VEHICLES"
 msgstr ""
@@ -2404,7 +1996,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_update_be_reportscheme.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_update_be_reportscheme.py:0
 #, python-format
 msgid ""
 "Following accounts are not included in the legal Belgian Balance and P&L reports:\n"
@@ -2431,22 +2022,16 @@ msgid "Furniture and Vehicles"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_56
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_56
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_56
 msgid "GIRO SERVICE"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_34
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_34
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_34
 msgid "GOODS PURCHASED FOR RESALE"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_32
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_32
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_32
 msgid "GOODS WORK IN PROGRESS"
 msgstr ""
@@ -2462,15 +2047,11 @@ msgid "Goods purchased for Resale"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-00-EU-G
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-00-EU-G
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-EU-G
 msgid "Goods within EU (Code L)"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-00-EU-T
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-00-EU-T
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-EU-T
 msgid "Goods within EU (Code T)"
 msgstr ""
@@ -2574,36 +2155,26 @@ msgid "III.E Intra Community Services"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_35
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_35
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_35
 msgid "IMMOVABLE PROPERTY ACQUIRED FOR RESALE"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_67
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_67
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_67
 msgid "INCOME TAXES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_21
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_21
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_21
 msgid "INTANGIBLE ASSETS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_58
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_58
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_58
 msgid "INTERNAL TRANSFERS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_15
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_15
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_15
 msgid "INVESTMENT GRANTS"
 msgstr ""
@@ -2693,7 +2264,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/migrations/10.0.0.9/pre-migration.py:0
-#: code:addons/l10n_be_coa_multilang/migrations/10.0.0.9/pre-migration.py:0
 #, python-format
 msgid ""
 "Installation of module 'l10n_be_coa_multilang failed.\n"
@@ -2706,17 +2276,12 @@ msgid "Intangible Assets"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.fiscal.position,name:l10n_be_coa_multilang.1_afptn_intracom
-#: model:account.fiscal.position,name:l10n_be_coa_multilang.2_afptn_intracom
 #: model:account.fiscal.position.template,name:l10n_be_coa_multilang.afptn_intracom
 msgid "Intra Community Regime"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
@@ -2745,7 +2310,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "Invalid Year !"
 msgstr ""
@@ -2770,7 +2334,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Invoice"
 msgstr ""
@@ -2794,9 +2357,6 @@ msgstr ""
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: model:ir.model,name:l10n_be_coa_multilang.model_account_journal
 #, python-format
 msgid "Journal"
@@ -2804,7 +2364,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Journal Centralisation"
@@ -2820,7 +2379,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "Journal Items for Tax Audit"
@@ -2845,15 +2403,11 @@ msgid "June"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_22
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_22
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_22
 msgid "LAND AND BUILDINGS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_25
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_25
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_25
 msgid "LEASING AND OTHER SIMILAR RIGHTS"
 msgstr ""
@@ -2865,7 +2419,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Label"
@@ -2976,12 +2529,6 @@ msgid "Listing"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model_terms:account.fiscal.position,note:l10n_be_coa_multilang.1_afptn_intracom
-#: model_terms:account.fiscal.position,note:l10n_be_coa_multilang.2_afptn_intracom
-msgid "Livraison intracommunautaire exemptée de TVA / Auto-liquidation."
-msgstr ""
-
-#. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_coa_multilang_config__load_nl_BE
 msgid "Load Dutch (nl_BE) Translation"
 msgstr ""
@@ -3018,7 +2565,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Maturity Date"
 msgstr ""
@@ -3035,14 +2581,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #, python-format
 msgid "Missing VAT number for partner '%s'"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
 #, python-format
 msgid ""
@@ -3081,22 +2625,17 @@ msgid "Name"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.fiscal.position,name:l10n_be_coa_multilang.1_afptn_national
-#: model:account.fiscal.position,name:l10n_be_coa_multilang.2_afptn_national
 #: model:account.fiscal.position.template,name:l10n_be_coa_multilang.afptn_national
 msgid "National Regime"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.fiscal.position,name:l10n_be_coa_multilang.1_afptn_cocontractant
-#: model:account.fiscal.position,name:l10n_be_coa_multilang.2_afptn_cocontractant
 #: model:account.fiscal.position.template,name:l10n_be_coa_multilang.afptn_cocontractant
 msgid "National Regime - Cocontractant"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Negative values found for cases %s"
@@ -3105,14 +2644,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "No 'City' for %s"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "No 'Street' for %s"
@@ -3121,14 +2658,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "No 'ZIP Code' for %s"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "No 'email' for %s"
@@ -3137,14 +2672,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "No 'phone' for %s"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #, python-format
 msgid "No Belgian VAT subjected customers found."
@@ -3153,14 +2686,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #, python-format
 msgid "No Intracom transactions found for %s."
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #, python-format
 msgid "No VAT subjected transactions found for %s."
@@ -3169,7 +2700,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "No company VAT number"
 msgstr ""
@@ -3177,10 +2707,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #, python-format
 msgid "No records found for the selected period."
@@ -3237,8 +2764,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatintracom
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatlisting
@@ -3247,36 +2772,26 @@ msgid "Nr"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_41
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_41
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_41
 msgid "OTHER AMOUNTS RECEIVABLE"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_64
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_64
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_64
 msgid "OTHER OPERATING CHARGES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_74
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_74
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_74
 msgid "OTHER OPERATING INCOME"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_26
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_26
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_26
 msgid "OTHER TANGIBLE ASSETS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_50
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_50
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_50
 msgid "OWN SHARES"
 msgstr ""
@@ -3384,6 +2899,16 @@ msgid "Output VAT - current account balance"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
+#: model:account.account.template,name:l10n_be_coa_multilang.aatn_589900
+msgid "Outstanding Payments Account"
+msgstr ""
+
+#. module: l10n_be_coa_multilang
+#: model:account.account.template,name:l10n_be_coa_multilang.aatn_589000
+msgid "Outstanding Receipts Account"
+msgstr ""
+
+#. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_312410
 msgid "Own Shares"
 msgstr ""
@@ -3397,17 +2922,11 @@ msgid "PDF"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_23
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_23
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_23
 msgid "PLANT, MACHINERY AND EQUIPMENT"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_69
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_79
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_69
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_79
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_69
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_79
 msgid "PROFIT FOR THE PERIOD"
@@ -3419,8 +2938,6 @@ msgid "PROVISIONS AND DEFERRED TAXES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_16
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_16
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_16
 msgid "PROVISIONS FOR LIABILITIES AND CHARGES"
 msgstr ""
@@ -3451,10 +2968,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__company_partner_id
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_common__company_partner_id
@@ -3471,7 +2985,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Partner Reference"
@@ -3490,8 +3003,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__period
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_common__period
@@ -3516,9 +3027,6 @@ msgstr ""
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: model:ir.actions.act_window,name:l10n_be_coa_multilang.l10n_be_vat_declaration_action
 #: model:ir.actions.report,name:l10n_be_coa_multilang.action_report_l10nbevatdeclaration
 #: model:ir.model,name:l10n_be_coa_multilang.model_l10n_be_vat_declaration
@@ -3533,7 +3041,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Periodical VAT Declaration details"
@@ -3558,11 +3065,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_common__target_move__posted
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_declaration__target_move__posted
@@ -3653,36 +3156,26 @@ msgid "Quarter"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_30
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_30
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_30
 msgid "RAW MATERIALS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_60
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_60
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_60
 msgid "RAW MATERIALS, CONSUMABLES AND GOODS FOR RESALE"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_62
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_62
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_62
 msgid "REMUNERATIONS, SOCIAL SECURITY COSTS AND PENSIONS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_13
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_13
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_13
 msgid "RESERVES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_12
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_12
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_12
 msgid "REVALUATION SURPLUSES"
 msgstr ""
@@ -3700,7 +3193,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Rec."
 msgstr ""
@@ -3712,7 +3204,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Reconcile Amount"
@@ -3741,7 +3232,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__chart_id
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__report_id
-#: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_legal_report_view_form_report
 msgid "Report"
 msgstr ""
 
@@ -3752,6 +3242,7 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_scheme__report_chart_id
+#: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__chart_id
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_legal_report_view_form_report
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.view_account_form
 msgid "Report Entry"
@@ -3800,8 +3291,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_update_be_reportscheme.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_update_be_reportscheme.py:0
 #, python-format
 msgid "Results"
@@ -3818,22 +3307,16 @@ msgid "Revaluation Surpluses"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_61
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_61
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_61
 msgid "SERVICES AND OTHER GOODS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_11
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_11
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_11
 msgid "SHARE PREMIUM ACCOUNT"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_51
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_51
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_51
 msgid "SHARES"
 msgstr ""
@@ -3854,7 +3337,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "Save XML"
@@ -3898,8 +3380,6 @@ msgid "Services and Other Goods"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-OUT-00-EU-S
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-OUT-00-EU-S
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-EU-S
 msgid "Services within EU"
 msgstr ""
@@ -3933,7 +3413,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__date_from
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_common__date_from
@@ -3972,8 +3451,6 @@ msgid "Suspense account"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_45
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_45
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_45
 msgid "TAXES, REMUNERATION AND SOCIAL SECURITY"
 msgstr ""
@@ -3989,36 +3466,26 @@ msgid "TOTAL LIABILITIES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_40
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_40
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_40
 msgid "TRADE DEBTORS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_44
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_44
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_44
 msgid "TRADE DEBTS"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_78
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_78
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_78
 msgid "TRANSFER FROM DEFERRED TAXES AND UNTAXED RESERVES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_68
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_68
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_68
 msgid "TRANSFER TO DEFERRED TAXES AND UNTAXED RESERVES"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_70
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_70
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_70
 msgid "TURNOVER"
 msgstr ""
@@ -4036,10 +3503,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__target_move
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_common__target_move
@@ -4048,11 +3512,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__target_move
 #, python-format
 msgid "Target Moves"
-msgstr ""
-
-#. module: l10n_be_coa_multilang
-#: model:ir.model,name:l10n_be_coa_multilang.model_account_tax_repartition_line_template
-msgid "Tax Repartition Line Template"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
@@ -4083,7 +3542,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "The XLS export function is not available."
 msgstr ""
@@ -4091,15 +3549,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "The XML export function is not available."
 msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
 #, python-format
@@ -4111,7 +3566,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_coa_multilang_config.py:0
 #, python-format
 msgid ""
 "The setup of the Accounts has failed since language '%s' is not installed on"
@@ -4120,7 +3574,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "These needs to be corrected before submitting the VAT declaration."
@@ -4138,7 +3591,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Total Debit/Credit"
@@ -4189,7 +3641,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__type
 #, python-format
 msgid "Type"
@@ -4222,7 +3673,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_common.py:0
 #, python-format
 msgid "Unknown Error"
@@ -4301,8 +3751,6 @@ msgid "V.C Deductible VAT from Outgoing Credit Notes"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.group,name:l10n_be_coa_multilang.1_agtn_48
-#: model:account.group,name:l10n_be_coa_multilang.2_agtn_48
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_48
 msgid "VARIOUS DEBTS"
 msgstr ""
@@ -4310,8 +3758,6 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__vat_amount
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatlisting
@@ -4378,15 +3824,9 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #. odoo-python
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_legal_report.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_intracom.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_intracom_client__vat
@@ -4404,30 +3844,18 @@ msgid "VAT Subjected"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-V62
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-V62
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-V62
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-V62
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-V62
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-V62
 msgid "VAT adjustments in favor of the Declarant"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-V61
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-V61
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-V61
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-V61
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-V61
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-V61
 msgid "VAT adjustments in favor of the Tax Authority"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-V82
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-V82
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-V82
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-V82
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-V82
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-V82
 msgid "VAT base case 82"
@@ -4439,10 +3867,6 @@ msgid "VAT declaration excel export"
 msgstr ""
 
 #. module: l10n_be_coa_multilang
-#: model:account.tax,description:l10n_be_coa_multilang.1_attn_VAT-V59
-#: model:account.tax,description:l10n_be_coa_multilang.2_attn_VAT-V59
-#: model:account.tax,name:l10n_be_coa_multilang.1_attn_VAT-V59
-#: model:account.tax,name:l10n_be_coa_multilang.2_attn_VAT-V59
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-V59
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-V59
 msgid "VAT deductible case 59"
@@ -4507,7 +3931,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
-#: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_listing.py:0
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__year
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_common__year
