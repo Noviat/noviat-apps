@@ -5,103 +5,122 @@
   <record id="aatn_400000" model="account.account.template">
     <field name="name">Customers</field>
     <field name="code">400000</field>
+    <field name="account_type">asset_receivable</field>
     <field name="reconcile" eval="1" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_400100" model="account.account.template">
     <field name="name">Customers (POS)</field>
     <field name="code">400100</field>
+    <field name="account_type">asset_receivable</field>
     <field name="reconcile" eval="1" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_411000" model="account.account.template">
     <field name="name">Input VAT - current account balance</field>
     <field name="code">411000</field>
+    <field name="account_type">asset_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_411059" model="account.account.template">
     <field name="name">VAT Deductible</field>
     <field name="code">411059</field>
+    <field name="account_type">asset_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_411062" model="account.account.template">
     <field name="name">VAT Deductible - Correction Case 62</field>
     <field name="code">411062</field>
+    <field name="account_type">asset_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_411064" model="account.account.template">
     <field name="name">VAT Deductible - Outgoing Credit Notes</field>
     <field name="code">411064</field>
+    <field name="account_type">asset_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_440000" model="account.account.template">
     <field name="name">Suppliers</field>
     <field name="code">440000</field>
+    <field name="account_type">liability_payable</field>
     <field name="reconcile" eval="1" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_451000" model="account.account.template">
     <field name="name">Output VAT - current account balance</field>
     <field name="code">451000</field>
+    <field name="account_type">liability_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_451054" model="account.account.template">
     <field name="name">VAT Debt</field>
     <field name="code">451054</field>
+    <field name="account_type">liability_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_451055" model="account.account.template">
     <field name="name">VAT Debt - Intracommunity</field>
     <field name="code">451055</field>
+    <field name="account_type">liability_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_451056" model="account.account.template">
     <field name="name">VAT Debt - Cocontractant</field>
     <field name="code">451056</field>
+    <field name="account_type">liability_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_451057" model="account.account.template">
     <field name="name">VAT Debt - Import</field>
     <field name="code">451057</field>
+    <field name="account_type">liability_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_451061" model="account.account.template">
     <field name="name">VAT Debt - Correction Case 61</field>
     <field name="code">451061</field>
+    <field name="account_type">liability_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_451063" model="account.account.template">
     <field name="name">VAT Debt - Incoming Credit Notes</field>
     <field name="code">451063</field>
+    <field name="account_type">liability_current</field>
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_499000" model="account.account.template">
     <field name="name">Suspense account</field>
     <field name="code">499000</field>
+    <field name="account_type">liability_current</field>
     <field name="reconcile" eval="1" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_550001" model="account.account.template">
     <field name="name">Bank</field>
     <field name="code">550001</field>
+    <field name="account_type">asset_cash</field>
     <field name="nocreate" eval="1" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_570001" model="account.account.template">
     <field name="name">Cash</field>
     <field name="code">570001</field>
+    <field name="account_type">asset_cash</field>
     <field name="nocreate" eval="1" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_589000" model="account.account.template">
     <field name="name">Outstanding Receipts Account</field>
     <field name="code">589000</field>
+    <field name="account_type">asset_current</field>
     <field name="reconcile" eval="1" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_589900" model="account.account.template">
     <field name="name">Outstanding Payments Account</field>
     <field name="code">589900</field>
+    <field name="account_type">asset_current</field>
     <field name="reconcile" eval="1" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
@@ -114,48 +133,56 @@
   <record id="aatn_600000" model="account.account.template">
     <field name="name">Purchases of raw materials</field>
     <field name="code">600000</field>
+    <field name="account_type">expense</field>
     <field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_654000" model="account.account.template">
     <field name="name">Exchange rate losses</field>
     <field name="code">654000</field>
+    <field name="account_type">expense</field>
     <field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_657000" model="account.account.template">
     <field name="name">Early payment discounts</field>
     <field name="code">657000</field>
+    <field name="account_type">expense</field>
     <field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_658400" model="account.account.template">
     <field name="name">Cash difference losses</field>
     <field name="code">658400</field>
+    <field name="account_type">expense</field>
     <field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_700000" model="account.account.template">
     <field name="name">Sales</field>
     <field name="code">700000</field>
+    <field name="account_type">income</field>
     <field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_754000" model="account.account.template">
     <field name="name">Exchange rate gains</field>
     <field name="code">754000</field>
+    <field name="account_type">income</field>
     <field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_757000" model="account.account.template">
     <field name="name">Early payment discounts</field>
     <field name="code">757000</field>
+    <field name="account_type">income</field>
     <field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
   <record id="aatn_758400" model="account.account.template">
     <field name="name">Cash difference gains</field>
     <field name="code">758400</field>
+    <field name="account_type">income</field>
     <field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]" />
     <field name="chart_template_id" ref="l10n_be_coa_multilang_template" />
   </record>
