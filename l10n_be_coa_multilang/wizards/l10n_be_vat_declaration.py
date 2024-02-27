@@ -1,4 +1,4 @@
-# Copyright 2009-2021 Noviat
+# Copyright 2009-2022 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import base64
@@ -299,6 +299,9 @@ class l10nBeVatDeclaration(models.TransientModel):
         elif case_code in (self._base_in_refund_cases() +
                            self._tax_debt_in_refund_cases()):
             inv_type = 'in_refund'
+        # we find 81ND, 82ND, 83ND in in_invoice and in_refund
+        if inv_type == 'in_invoice' and case_code in ['81ND', '82ND', '83ND']:
+            inv_type = 'in'
         if inv_type:
             # filter out invoice or refund cases based on
             # transaction sign when the Journal Item
@@ -356,6 +359,35 @@ class l10nBeVatDeclaration(models.TransientModel):
                     " or "
                     "(not {aml}.invoice_id and ({aml}.credit > 0)))"
                 ) % inv_type
+            elif inv_type == 'in':
+
+                in_invoice_args = [
+                    '|',
+                    ('invoice_id.type', '=', 'in_invoice'),
+                    '&',
+                    ('invoice_id', '=', False),
+                    ('debit', '>', 0),
+                ]
+                in_refund_args = [
+                    '|',
+                    ('invoice_id.type', '=', 'in_refund'),
+                    '&',
+                    ('invoice_id', '=', False),
+                    ('credit', '>', 0),
+                ]
+                inv_type_args = ['|'] + in_invoice_args + in_refund_args
+
+                in_invoice_check = (
+                    "({aml}.invoice_id.type == 'in_invoice'"
+                    " or "
+                    "(not {aml}.invoice_id and ({aml}.debit > 0)))"
+                )
+                in_refund_check = (
+                    "({aml}.invoice_id.type == 'in_refund'"
+                    " or "
+                    "(not {aml}.invoice_id and ({aml}.credit > 0)))"
+                )
+                inv_check = in_invoice_check + ' or ' + in_refund_check
             else:
                 inv_type_args = [
                     '|',
