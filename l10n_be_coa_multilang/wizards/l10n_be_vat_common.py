@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2009-2017 Noviat
+# Copyright 2009-2021 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import calendar
@@ -107,8 +107,9 @@ class l10nBeVatCommon(models.AbstractModel):
                 or self.company_id.partner_id
         decl_dom = [
             '|',
-            ('parent_id', '=', self.company_id.id),
-            ('id', '=', self.company_id.id)]
+            ('parent_id', '=', self.company_id.partner_id.id),
+            ('id', '=', self.company_id.partner_id.id),
+        ]
         return {'domain': {'declarant_id': decl_dom}}
 
     @api.onchange('year', 'period_length', 'month', 'quarter')

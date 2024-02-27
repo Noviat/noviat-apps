@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright 2009-2021 Noviat
+# Copyright 2009-2024 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     'name': 'Belgium - Multilingual Chart of Accounts (en/nl/fr)',
-    'version': '10.0.1.4.4',
+    'version': '10.0.1.4.7',
     'license': 'AGPL-3',
     'author': "Noviat",
     'website': 'http://www.noviat.com',
