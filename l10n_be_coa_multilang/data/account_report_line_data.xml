@@ -882,10 +882,10 @@ bedrijfsmiddelen.
       <record id="account_report_expression_IIIB" model="account.report.expression">
         <field name="label">balance</field>
         <field name="engine">aggregation</field>
-        <field name="formula">84.balance + 85.balance + 86.balance</field>
+        <field name="formula">84.balance + 85.balance</field>
       </record>
     </field>
-    <field name="factor">0</field>
+    <field name="factor">1</field>
     <field name="sequence">220</field>
     <field name="font">u</field>
     <field name="color">darkblue</field>
@@ -1005,7 +1005,7 @@ negatieve verbeteringen met betrekking tot de andere handelingen van kader III.
         <field name="formula">86.balance</field>
       </record>
     </field>
-    <field name="factor">0</field>
+    <field name="factor">1</field>
     <field name="sequence">230</field>
     <field name="font">u</field>
     <field name="color">darkblue</field>
@@ -1120,7 +1120,7 @@ in rooster [55].
         <field name="formula">87.balance</field>
       </record>
     </field>
-    <field name="factor">0</field>
+    <field name="factor">1</field>
     <field name="sequence">240</field>
     <field name="font">u</field>
     <field name="color">darkblue</field>
@@ -1233,7 +1233,7 @@ verlegging van de heffing naar het binnenland (art. 5, §3, K.B. nr. 7);
         <field name="formula">88.balance</field>
       </record>
     </field>
-    <field name="factor">0</field>
+    <field name="factor">1</field>
     <field name="sequence">250</field>
     <field name="font">u</field>
     <field name="color">darkblue</field>
@@ -1405,7 +1405,7 @@ rekening met de bedragen van de rekening-courant die de administratie voor hem b
         <field name="engine">aggregation</field>
         <field
                     name="formula"
-                >IVA.balance + IVB.balance + IVB.balance + IVC.balance + IVD.balance</field>
+                >IVA.balance + IVB.balance + IVC.balance + IVD.balance</field>
       </record>
     </field>
     <field name="factor">1</field>

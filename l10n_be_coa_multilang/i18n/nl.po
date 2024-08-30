@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 16:09+0000\n"
-"PO-Revision-Date: 2023-12-08 03:45+0000\n"
+"PO-Revision-Date: 2024-04-10 17:55+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Dutch <https://translation.noviat.com/projects/accounting-v16/"
 "l10n_be_coa_multilang/nl/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.2\n"
+"X-Generator: Weblate 5.4.2\n"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.actions.report,print_report_name:l10n_be_coa_multilang.action_report_l10nbevatdeclaration
@@ -1489,8 +1489,9 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model,name:l10n_be_coa_multilang.model_res_partner
+#, fuzzy
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_312220

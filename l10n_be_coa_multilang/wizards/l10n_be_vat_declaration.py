@@ -1,4 +1,4 @@
-# Copyright 2009-2023 Noviat
+# Copyright 2009-2024 Noviat
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import base64
@@ -168,10 +168,9 @@ class L10nBeVatDeclaration(models.TransientModel):
     def _get_tax_tag_ids(self, cases):
         if not cases:
             return []
-        engines = list(set(cases.expression_ids.mapped("engine")))
-        if engines != ["tax_tags"]:
-            raise NotImplementedError
-        formulas = list(set(cases.expression_ids.mapped("formula")))
+        formulas = cases.expression_ids.filtered(
+            lambda r: r.engine == "tax_tags"
+        ).mapped("formula")
         tax_tag_ids = []
         for formula in formulas:
             tax_tags = self.env["account.account.tag"]._get_tax_tags(
