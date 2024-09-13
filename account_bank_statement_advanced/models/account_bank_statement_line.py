@@ -1,4 +1,4 @@
-# Copyright 2009-2023 Noviat.
+# Copyright 2009-2024 Noviat.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 
@@ -176,6 +176,33 @@ class AccountBankStatementLine(models.Model):
             foreign_currency,
         )
 
+    def _synchronize_from_moves(self, changed_fields):
+        """
+        Standard Odoo breaks on the use case of a bank transaction whereby
+        the company currency value is provided within the bank transaction.
+        """
+        to_restore = {}
+        for st_line in self:
+            company_currency = st_line.journal_id.company_id.currency_id
+            journal_currency = st_line.journal_id.currency_id or company_currency
+            if (
+                st_line.foreign_currency_id == company_currency
+                and journal_currency != company_currency
+            ):
+                to_restore[st_line.id] = {
+                    "foreign_currency_id": st_line.foreign_currency_id.id,
+                    "amount_currency": st_line.amount_currency,
+                }
+        res = super()._synchronize_from_moves(changed_fields)
+        for stl_id in to_restore:
+            st_line = self.filtered(lambda r: r.id == stl_id)
+            if (
+                st_line.foreign_currency_id.id
+                != to_restore[stl_id]["foreign_currency_id"]
+            ):
+                super(ABSL, st_line).write(to_restore[stl_id])
+        return res
+
     def _synchronize_to_moves(self, changed_fields):
         """
         Replace (NO SUPER !) of this method to address a functional shortcoming
@@ -259,17 +286,19 @@ class AccountBankStatementLine(models.Model):
                 if statement.journal_id:
                     vals["journal_id"] = statement.journal_id.id
                 if not vals.get("transaction_date"):
-                    vals["transaction_date"] = statement.date
+                    vals["transaction_date"] = statement.date or vals.get("date")
                 if not vals.get("date"):
                     vals["date"] = statement.accounting_date or statement.date
                 if statement.import_format in READONLY_IMPORT_FORMATS:
                     skip_sync = True
             else:
-                vals["transaction_date"] = vals["date"]
+                vals["transaction_date"] = vals.get("date")
             if not vals.get("amount"):
                 vals_list_no_amount.append(vals)
             elif skip_sync:
                 vals_list_skip_sync.append(vals)
+            if not vals["transaction_date"]:
+                vals["transaction_date"] = fields.Date.context_today(self)
 
         # do not create amls when no amount (e.g. globalisation line)
         if vals_list_no_amount:
@@ -408,8 +437,9 @@ class AccountBankStatementLine(models.Model):
             creation of account.move.line records to balance the liquidity line.
             The following keys in such a dictionary result in extra processing:
             - balance : substitute for debit/credit
-            - counterpart_aml_id : if given the newly created line will be reonciled
-                 this account.move.line record
+            - counterpart_aml (or counterpart_aml_id) :
+                 the newly created line will be reconciled with this counterpart_aml
+                 record, you can pass either the counterpart record or the record id.
         """
         self.ensure_one()
         self.move_id.state = "draft"
@@ -424,15 +454,20 @@ class AccountBankStatementLine(models.Model):
                 vals["debit"] = balance > 0 and balance or 0.0
                 vals["credit"] = balance < 0 and -balance or 0.0
                 vals.pop("balance")
-            counterpart_aml_id = vals.pop("counterpart_aml_id", False)
+            cp_aml = vals.pop("counterpart_aml", False)
+            cp_aml_id = vals.pop("counterpart_aml_id", False)
+            if cp_aml_id and not cp_aml:
+                cp_aml = self.env["account.move.line"].browse(cp_aml_id)
             if i == 0:
                 aml = suspense_aml
                 aml.write(vals)
             else:
                 vals["move_id"] = self.move_id.id
                 aml = self.env["accoount.move.line"].create(vals)
-            if counterpart_aml_id:
-                cp_aml = self.env["account.move.line"].browse(counterpart_aml_id)
+            if cp_aml:
                 to_reconcile.append(aml + cp_aml)
         self.move_id._post()
-        [x.reconcile() for x in to_reconcile]
+        res = []
+        for amls in to_reconcile:
+            res.append(amls.reconcile())
+        return res

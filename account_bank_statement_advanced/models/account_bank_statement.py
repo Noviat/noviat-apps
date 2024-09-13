@@ -1,4 +1,4 @@
-# Copyright 2009-2023 Noviat.
+# Copyright 2009-2024 Noviat.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import _, api, fields, models
@@ -11,10 +11,7 @@ class AccountBankStatement(models.Model):
     _inherit = ["account.bank.statement", "mail.thread"]
     _name = "account.bank.statement"
 
-    name = fields.Char(
-        states={"draft": [("readonly", False)]},
-        readonly=True,
-    )
+    name = fields.Char()
     accounting_date = fields.Date(
         help="If set, the accounting entries associated with the "
         "bank statement transactions will default to this date.\n"
@@ -40,9 +37,6 @@ class AccountBankStatement(models.Model):
         help="Technical field that is set by the import_format.\n"
         "The following statement fields become readonly when this flag is set:\n"
         "date, balance_start, balance_end_real, journal_id.",
-    )
-    journal_id = fields.Many2one(
-        readonly=False,
     )
     move_line_ids = fields.One2many(
         comodel_name="account.move.line",
@@ -180,7 +174,9 @@ class AccountBankStatement(models.Model):
         self.ensure_one()
         act_oe = "action_open_bank_reconcile_widget"
         if hasattr(self, act_oe):
-            return getattr(self, act_oe)()
+            act = getattr(self, act_oe)()
+            act["domain"].append(("amount", "!=", 0))
+            return act
         elif "account.reconcile.abstract" in self.env:  # account_reconcile_oca
             act_name = "account_reconcile_oca.action_bank_statement_line_reconcile"
             action = self.env["ir.actions.actions"]._for_xml_id(act_name)

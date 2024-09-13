@@ -26,5 +26,5 @@ Installation
 The reconcile on selected lines requires one of the following modules to be installed:
 
 - account_accountant (Odoo Enterprise)
-- account_reconciliation_widget (https://github.com/OCA/account-reconcile/tree/14.0)
+- account_reconciliation_widget (https://github.com/OCA/account-reconcile)
 

@@ -37,23 +37,24 @@ class AccountMoveLine(models.Model):
 
     def write(self, vals):
         for move_line in self:
-            st = move_line.statement_id
-            if st and st.state == "confirm":
-                for k in vals:
-                    if k not in self._get_excluded_fields():
-                        raise UserError(
-                            _(
-                                "Operation not allowed ! "
-                                "\nYou cannot modify an Accounting Entry "
-                                "that is linked to a Validated Bank Statement. "
-                                "\nStatement = %(st_name)s"
-                                "\nMove = %(move)s (id:%(id)s)\nUpdate Values = %(vals)s"
+            if not move_line._context.get("skip_bank_statement_check"):
+                st = move_line.statement_id
+                if st and st.state == "confirm":
+                    for k in vals:
+                        if k not in self._get_excluded_fields():
+                            raise UserError(
+                                _(
+                                    "Operation not allowed ! "
+                                    "\nYou cannot modify an Accounting Entry "
+                                    "that is linked to a Validated Bank Statement. "
+                                    "\nStatement = %(st_name)s"
+                                    "\nMove = %(move)s (id:%(id)s)\nUpdate Values = %(vals)s"
+                                )
+                                % {
+                                    "st_name": st.name,
+                                    "move": move_line.move_id.name,
+                                    "id": move_line.move_id.id,
+                                    "vals": vals,
+                                }
                             )
-                            % {
-                                "st_name": st.name,
-                                "move": move_line.move_id.name,
-                                "id": move_line.move_id.id,
-                                "vals": vals,
-                            }
-                        )
         return super().write(vals)
