@@ -1,0 +1,855 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_bank_statement_advanced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-18 13:45+0000\n"
+"PO-Revision-Date: 2024-12-18 13:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
+msgid "<span>Bank Statement Balances Report</span>"
+msgstr "<span>Informe de saldos del extracto bancario</span>"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
+msgid "<span>Total</span>"
+msgstr "<span>Total</span>"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__accounting_date
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Accounting Date"
+msgstr "Fecha contable"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__all_lines_processed
+msgid "All Lines Processed"
+msgstr "Todas las líneas procesadas"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__amount
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Amount < 0"
+msgstr "Cantidad < 0"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Amount > 0"
+msgstr "Cantidad > 0"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cantidad de adjuntos"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_automatic_reconcile_result_view_form
+msgid "Automatic Reconcile Result View"
+msgstr "Vista de resultados de conciliación automática"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement_line.py:0
+#, python-format
+msgid "Automatic Reconcile remarks:"
+msgstr "Observaciones de la conciliación automática:"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model,name:account_bank_statement_advanced.model_account_bank_statement
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Bank Statement"
+msgstr "Extracto bancario"
+
+#. module: account_bank_statement_advanced
+#: model:ir.actions.act_window,name:account_bank_statement_advanced.bank_statement_balance_print_action
+#: model:ir.actions.report,name:account_bank_statement_advanced.statement_balance_report_action
+#: model:ir.model,name:account_bank_statement_advanced.model_bank_statement_balance_print
+#: model:ir.model,name:account_bank_statement_advanced.model_report_account_bank_statement_advanced_statement_balance_report
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_balance_print_view_form
+msgid "Bank Statement Balances Report"
+msgstr "Informe de saldos del extracto bancario"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model,name:account_bank_statement_advanced.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea de extracto bancario"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__bank_statement_line_ids
+msgid "Bank Statement Lines"
+msgstr "Líneas del extracto bancario"
+
+#. module: account_bank_statement_advanced
+#: model:ir.actions.act_window,name:account_bank_statement_advanced.account_bank_statement_action
+msgid "Bank Statements"
+msgstr "Extractos bancarios"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_form
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Bank Transaction"
+msgstr "Transacción bancaria"
+
+#. module: account_bank_statement_advanced
+#: model:ir.actions.act_window,name:account_bank_statement_advanced.account_bank_statement_line_action
+#: model:ir.ui.menu,name:account_bank_statement_advanced.account_bank_statement_line_menu
+msgid "Bank Transactions"
+msgstr "Transacciones bancarias"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model,name:account_bank_statement_advanced.model_account_bank_statement_line_global
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_global_view_form
+msgid "Batch Payment Info"
+msgstr "Información de pago por lotes"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line_global__type__coda
+msgid "CODA"
+msgstr "CODA"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_balance_print_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_global_view_form
+msgid "Child Batch Payments"
+msgstr "Pagos por lotes secundarios"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__child_ids
+msgid "Child Codes"
+msgstr "Códigos secundarios"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
+msgid "Closing Balance"
+msgstr "Saldo de cierre"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__code
+msgid "Code"
+msgstr "Código"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line__globalisation_id
+msgid ""
+"Code to identify transactions belonging to the same globalisation level "
+"within a batch payment"
+msgstr "Código para identificar las transacciones que pertenecen al mismo nivel de globalización dentro de un pago por lotes"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement__state__confirm
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Confirmed Statement"
+msgstr "Extracto confirmado"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Confirmed Statement Lines"
+msgstr "Líneas de extracto confirmadas"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__counterparty_bic
+msgid "Counterparty BIC"
+msgstr "BIC de la contraparte"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__counterparty_currency
+msgid "Counterparty Currency"
+msgstr "Moneda de la contraparte"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__counterparty_number
+msgid "Counterparty Number"
+msgstr "Número de contraparte"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__create_uid
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_automatic_reconcile_result_view__create_uid
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__create_date
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_automatic_reconcile_result_view__create_date
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__creditor_reference
+msgid "Creditor Reference"
+msgstr "Referencia del acreedor"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__creditor_reference_type
+msgid "Creditor Reference Type"
+msgstr "Tipo de referencia del acreedor"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line__creditor_reference_type
+msgid ""
+"Creditor Reference Type. For SEPA (SCT) transactions, the <CdtrRefInf> type "
+"is recorded in this field.\n"
+"E.g. 'BBA' for belgian structured communication (Code 'SCOR', Issuer 'BBA'"
+msgstr ""
+"Tipo de referencia del acreedor. Para transacciones SEPA (SCT), el tipo <CdtrRefInf>"
+"se registra en este campo.\n"
+"Por ejemplo, 'BBA' para una comunicación estructurada belga (Código 'SCOR', Emisor 'BBA')"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line__creditor_reference
+msgid ""
+"Creditor Reference. For SEPA (SCT) transactions, the <CdtrRefInf> reference "
+"is recorded in this field."
+msgstr "Referencia del acreedor. Para transacciones SEPA (SCT), la referencia <CdtrRefInf> se registra en este campo."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model,name:account_bank_statement_advanced.model_res_currency
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__date
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_move__date
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_payment__date
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__date_balance
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Debit"
+msgstr "Débito"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__display_name
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_automatic_reconcile_result_view__display_name
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Draft Statement"
+msgstr "Extracto en borrador"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Draft Statement Lines"
+msgstr "Líneas de extracto en borrador"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__journal_ids
+msgid "Financial Journal(s)"
+msgstr "Diario(s) financiero(s)"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__foreign_currency
+msgid "Foreign Currency"
+msgstr "Moneda extranjera"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__globalisation_amount
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Glob. Amount"
+msgstr "Cant. Global"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Glob. Id"
+msgstr "Id. Global"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__globalisation_id
+msgid "Globalisation ID"
+msgstr "ID de globalización"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__id
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_automatic_reconcile_result_view__id
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line_global__type__iso20022
+msgid "ISO 20022"
+msgstr "ISO 20022"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, existen nuevos mensajes que requieren su atención."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen errores de entrega."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__accounting_date
+msgid ""
+"If set, the accounting entries associated with the bank statement "
+"transactions will default to this date.\n"
+"This is useful if the accounting period in which the entries should normally "
+"be booked is already closed."
+msgstr "Si se establece, las entradas contables asociadas con las transacciones del extracto bancario tendrán esta fecha por defecto.\nEsto es útil si el período contable en el que normalmente se deberían registrar las entradas ya está cerrado."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__import_format
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__import_format
+msgid "Import Format"
+msgstr "Formato de importación"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__import_format_readonly
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__import_format_readonly
+msgid "Import Format Readonly"
+msgstr "Formato de importación de solo lectura"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__is_readonly
+msgid "Is Readonly"
+msgstr "Es de solo lectura"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
+#, python-format
+msgid "It is not allowed to remove a confirmed Bank Statement."
+msgstr "No se permite eliminar un Extracto Bancario confirmado."
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__journal_code
+msgid "Journal Code"
+msgstr "Código del diario"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+#, python-format
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement_line.py:0
+#: model:ir.model,name:account_bank_statement_advanced.model_account_move
+#, python-format
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model,name:account_bank_statement_advanced.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__move_line_ids
+msgid "Journal Items"
+msgstr "Apuntes contables"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_balance_print_view_form
+msgid "Keep empty for using all journals"
+msgstr "Dejar en blanco para usar todos los diarios"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global____last_update
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_automatic_reconcile_result_view____last_update
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__write_uid
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_automatic_reconcile_result_view__write_uid
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__write_date
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_automatic_reconcile_result_view__write_date
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line_global__type__manual
+msgid "Manual"
+msgstr "Manual"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_form
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Manual Reconcile"
+msgstr "Conciliación manual"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__import_format
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line__import_format
+msgid ""
+"Manual encoding is assumed when import_format is not set.\n"
+"With manual encoding fields such as journal_id, balance_start, "
+"balance_end_real are always editable for 'draft' statements."
+msgstr ""
+"Se asume codificación manual cuando no se establece el formato de importación.\n"
+"Con la codificación manual, campos como journal_id, balance_start, balance_end_real siempre son editables para extractos en estado 'borrador'."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement_line.py:0
+#, python-format
+msgid ""
+"Missing reconcile widget.\n"
+"You should install one of the following modules:\n"
+"%s"
+msgstr ""
+"Falta el widget de conciliación.\n"
+"Debería instalar uno de los siguientes módulos:\n"
+"%s"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Move"
+msgstr "Asiento"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__move_line_count
+msgid "Move Line Count"
+msgstr "Cantidad de líneas de asiento"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
+msgid "Name"
+msgstr "Nombre"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/report/statement_balance_report.py:0
+#, python-format
+msgid "No financial journals found for your company!"
+msgstr "¡No se encontraron diarios financieros para su compañía!"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/report/statement_balance_report.py:0
+#, python-format
+msgid "No records found for your selection!"
+msgstr "¡No se encontraron registros para su selección!"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_automatic_reconcile_result_view__note
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_form
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_tree
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren acción"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__name
+msgid "OBI"
+msgstr "OBI"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_automatic_reconcile_result_view_form
+msgid "Ok"
+msgstr "Aceptar"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_move.py:0
+#, python-format
+msgid ""
+"Operation not allowed ! \n"
+"You cannot cancel an Accounting Entry that is linked to a Validated Bank "
+"Statement."
+msgstr ""
+"¡Operación no permitida! \n"
+"No puede cancelar una entrada contable vinculada a un Extracto Bancario validado."
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_move_line.py:0
+#, python-format
+msgid ""
+"Operation not allowed ! \n"
+"You cannot delete an Accounting Entry that is linked to a Validated Bank "
+"Statement."
+msgstr ""
+"¡Operación no permitida! \n"
+"No puede eliminar una entrada contable vinculada a un Extracto Bancario validado."
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_move_line.py:0
+#, python-format
+msgid ""
+"Operation not allowed ! \n"
+"You cannot modify an Accounting Entry that is linked to a Validated Bank "
+"Statement. \n"
+"Statement = %(st_name)s\n"
+"Move = %(move)s (id:%(id)s)\n"
+"Update Values = %(vals)s"
+msgstr ""
+"¡Operación no permitida! \n"
+"No puede modificar una entrada contable vinculada a un Extracto Bancario validado. \n"
+"Extracto = %(st_name)s\n"
+"Asiento = %(move)s (id:%(id)s)\n"
+"Actualizar valores = %(vals)s"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_move.py:0
+#, python-format
+msgid ""
+"Operation not allowed ! \n"
+"You cannot unpost an Accounting Entry that is linked to a Validated Bank "
+"Statement."
+msgstr ""
+"¡Operación no permitida! \n"
+"No puede anular la publicación de una entrada contable vinculada a un Extracto Bancario validado."
+
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line_global__name
+msgid "Originator to Beneficiary Information"
+msgstr "Información del Ordenante al Beneficiario"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__parent_id
+msgid "Parent Code"
+msgstr "Código principal"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__payment_reference
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__payment_reference
+msgid "Payment Reference"
+msgstr "Referencia de pago"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line__payment_reference
+msgid ""
+"Payment Reference. For SEPA (SCT or SDD) transactions, the EndToEndReference "
+"is recorded in this field."
+msgstr "Referencia de pago. Para transacciones SEPA (SCT o SDD), la EndToEndReference se registra en este campo."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line_global__payment_reference
+msgid ""
+"Payment Reference. For SEPA (SCT or SDD) transactions, the "
+"PaymentInformationIdentification is recorded in this field."
+msgstr "Referencia de pago. Para transacciones SEPA (SCT o SDD), la PaymentInformationIdentification se registra en este campo."
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_balance_print_view_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__reconcile_state
+msgid "Reconcile State"
+msgstr "Estado de conciliación"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line__reconcile_state__reconciled
+msgid "Reconciled"
+msgstr "Conciliado"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__name
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Reset to Draft"
+msgstr "Restablecer a borrador"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_automatic_reconcile_result_view_form
+msgid "Results :"
+msgstr "Resultados:"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_form
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Revert reconciliation"
+msgstr "Revertir conciliación"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Search Bank Statements Line"
+msgstr "Buscar líneas de extractos bancarios"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_balance_print_view_form
+msgid "Select Balance Date"
+msgstr "Seleccionar fecha de saldo"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_balance_print_view_form
+msgid "Select Financial Journals"
+msgstr "Seleccionar diarios financieros"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_bank_statement_balance_print__journal_ids
+msgid ""
+"Select here the Financial Journal(s) you want to include in your Bank "
+"Statement Balances Report."
+msgstr "Seleccione aquí el o los diarios financieros que desea incluir en su Informe de saldos del extracto bancario."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line__journal_code
+msgid ""
+"Shorter name used for display. The journal entries of this journal will also "
+"be named using this prefix by default."
+msgstr "Nombre más corto utilizado para la visualización. Por defecto, las entradas del diario tendrán este prefijo."
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Statement"
+msgstr "Extracto"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
+#, python-format
+msgid ""
+"Statement %(st_name)s, Journal %(journal)s, dated %(date)s has already been "
+"encoded."
+msgstr ""
+"El extracto %(st_name)s, del diario %(journal)s, con fecha %(date)s ya ha sido registrado."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__statement_date
+msgid "Statement Date"
+msgstr "Fecha del extracto"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Statement Lines to be processed"
+msgstr "Líneas de extracto pendientes de procesar"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__statement_state
+msgid "Statement State"
+msgstr "Estado del extracto"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__all_lines_processed
+msgid "Technical field indicating that all statement lines are processed."
+msgstr "Campo técnico que indica que todas las líneas del extracto están procesadas."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__import_format_readonly
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement_line__import_format_readonly
+msgid ""
+"Technical field that is set by the import_format.\n"
+"The following statement fields become readonly when this flag is set:\n"
+"date, balance_start, balance_end_real, journal_id."
+msgstr ""
+"Campo técnico establecido por el formato de importación.\n"
+"Cuando se marca, los siguientes campos del extracto se vuelven de solo lectura:\n"
+"fecha, balance_start, balance_end_real, journal_id."
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.constraint,message:account_bank_statement_advanced.constraint_account_bank_statement_line_global_code_uniq
+msgid "The code must be unique !"
+msgstr "¡El código debe ser único!"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__transaction_date
+msgid "Transaction Date"
+msgstr "Fecha de la transacción"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_global_view_form
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "Transactions"
+msgstr "Transacciones"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model,name:account_bank_statement_advanced.model_bank_statement_automatic_reconcile_result_view
+msgid "Transient Model to display Automatic Reconcile results"
+msgstr "Modelo transitorio para mostrar los resultados de la conciliación automática"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line_global__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement_line__reconcile_state__unreconciled
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
+msgid "Unreconciled"
+msgstr "No conciliado"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__val_date
+msgid "Value Date"
+msgstr "Fecha valor"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "View Details"
+msgstr "Ver detalles"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields,help:account_bank_statement_advanced.field_account_bank_statement__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
+#, python-format
+msgid ""
+"You cannot duplicate a bank statement with import format "
+"'%(import_format)s'."
+msgstr ""
+"No se puede duplicar un extracto bancario con el formato de importación  "
+"'%(import_format)s'."
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
+msgid "e.g. BNK01-23-015"
+msgstr "p.ej. BNK01-23-015"
+
+#. module: account_bank_statement_advanced
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.bank_statement_balance_print_view_form
+msgid "or"
+msgstr "o"
