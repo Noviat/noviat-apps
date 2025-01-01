@@ -1,4 +1,4 @@
-# Copyright 2009-2023 Noviat.
+# Copyright 2009-2024 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import base64
@@ -16,7 +16,6 @@ _logger = logging.getLogger(__name__)
 
 FIELD_TYPE_MAP = {
     "text": "char",
-    "selection": "char",
     "monetary": "float",
 }
 
@@ -54,6 +53,7 @@ class FixedAssetImport(models.TransientModel):
     def _input_fields(self):
         res = {
             "reference": {"method": self._handle_reference, "field_type": "char"},
+            "code": {"method": self._handle_reference, "field_type": "char"},
             "partner": {"method": self._handle_partner, "field_type": "char"},
             "asset profile": {"method": self._handle_profile, "field_type": "char"},
             "name": {"required": True},
@@ -134,6 +134,7 @@ class FixedAssetImport(models.TransientModel):
                 continue
 
             field_def = wiz_dict["orm_fields"].get(hf)
+            f = False
             if not field_def:
                 for f in wiz_dict["orm_fields"]:
                     if wiz_dict["orm_fields"][f]["string"].lower() == hf:
@@ -151,6 +152,11 @@ class FixedAssetImport(models.TransientModel):
                     "orm_field": orm_field,
                     "field_type": field_type,
                 }
+
+                if f in wiz_dict["field_methods"]:
+                    wiz_dict["field_methods"][hf].update(wiz_dict["field_methods"][f])
+                    continue
+
             except AttributeError:
                 _logger.error(
                     _(
@@ -184,8 +190,21 @@ class FixedAssetImport(models.TransientModel):
         fa_vals[orm_field] = line[field]
 
     def _handle_orm_selection(self, field, line, fa_vals, wiz_dict, orm_field=False):
+        input_val = line[field]
         orm_field = orm_field or field
-        fa_vals[orm_field] = line[field]
+        field_def = wiz_dict["orm_fields"][orm_field]
+        vals = []
+        for entry in wiz_dict["orm_fields"][orm_field]["selection"]:
+            if input_val in (entry[0], entry[1]):
+                vals.append(entry[0])
+        if len(vals) != 1:
+            msg = _(
+                "Incorrect value '%(value)s' "
+                "for field '%(field)s' of type Selection !"
+            ) % {"value": input_val, "field": field_def["string"]}
+            self._log_line_error(line, msg, wiz_dict)
+        else:
+            fa_vals[orm_field] = vals[0]
 
     def _handle_orm_integer(self, field, line, fa_vals, wiz_dict, orm_field=False):
         orm_field = orm_field or field
@@ -234,22 +253,43 @@ class FixedAssetImport(models.TransientModel):
 
     def _handle_orm_many2one(self, field, line, fa_vals, wiz_dict, orm_field=False):
         orm_field = orm_field or field
-        val = line[field]
-        if isinstance(val, str):
-            val = str2int(val)
-        if val and not isinstance(val, int):
-            msg = _(
-                "Incorrect value '%(value)s' "
-                "for field '%(field)s' of type Many2One !"
-                "\nYou should specify the database key "
-                "or contact your IT department "
-                "to add support for this field."
-            ) % {"value": line[field], "field": field}
-            self._log_line_error(line, msg, wiz_dict)
-        else:
-            fa_vals[orm_field] = val
+        input_val = line[field]
+        field_def = wiz_dict["orm_fields"][orm_field]
+        val_id = False
+        if isinstance(input_val, str):
+            val_id = str2int(input_val)
+        if isinstance(val_id, bool) or not isinstance(val_id, int):
+            if not isinstance(input_val, str):
+                msg = _(
+                    "Incorrect value '%(value)s' "
+                    "for field '%(field)s' of type Many2One !"
+                ) % {"value": input_val, "field": field_def["string"]}
+                self._log_line_error(line, msg, wiz_dict)
+                return
+            else:
 
-    def _handle_reference(self, field, line, fa_vals, wiz_dict):
+                record = self.env[field_def["relation"]].search(
+                    [("name", "=", input_val)]
+                )
+                if not record:
+                    msg = _("Field '%(fld)s' with name '%(val)s' not found !") % {
+                        "fld": field_def["string"],
+                        "val": input_val,
+                    }
+                    self._log_line_error(line, msg, wiz_dict)
+                    return
+                elif len(record) > 1:
+                    msg = _(
+                        "Multiple records for field '%(fld)s' with name '%(val)s' found !"
+                    ) % {"fld": field_def["string"], "val": input_val}
+                    self._log_line_error(line, msg, wiz_dict)
+                    return
+                else:
+                    val_id = record.id
+
+        fa_vals[orm_field] = val_id
+
+    def _handle_reference(self, field, line, fa_vals, wiz_dict, orm_field=False):
         code = line[field]
         if code:
             dups = self.env["account.asset"].search([("code", "=", code)])
@@ -261,7 +301,7 @@ class FixedAssetImport(models.TransientModel):
                 return
             fa_vals["code"] = code
 
-    def _handle_partner(self, field, line, fa_vals, wiz_dict):
+    def _handle_partner(self, field, line, fa_vals, wiz_dict, orm_field=False):
         if not fa_vals.get("partner_id"):
             input_val = line[field]
             part_mod = self.env["res.partner"]
@@ -285,7 +325,7 @@ class FixedAssetImport(models.TransientModel):
                 partner = partners[0]
                 fa_vals["partner_id"] = partner.id
 
-    def _handle_profile(self, field, line, fa_vals, wiz_dict):
+    def _handle_profile(self, field, line, fa_vals, wiz_dict, orm_field=False):
         if not fa_vals.get("profile_id"):
             input_val = line[field]
             profile = self.env["account.asset.profile"].search(
@@ -296,10 +336,9 @@ class FixedAssetImport(models.TransientModel):
                 self._log_line_error(line, msg, wiz_dict)
                 return
             elif len(profile) > 1:
-                msg = _(
-                    "Multiple profiles with Internal Reference "
-                    "or Name '%(value)s' found !"
-                ) % {"value": input_val}
+                msg = _("Multiple profiles with name '%(value)s' found !") % {
+                    "value": input_val
+                }
                 self._log_line_error(line, msg, wiz_dict)
                 return
             else:
@@ -313,7 +352,8 @@ class FixedAssetImport(models.TransientModel):
         all_fields = wiz_dict["field_methods"]
         required_fields = [x for x in all_fields if all_fields[x].get("required")]
         for rf in required_fields:
-            if rf not in fa_vals:
+            orm_field = wiz_dict["field_methods"][rf].get("orm_field") or rf
+            if orm_field not in fa_vals:
                 msg = _(
                     "The '%(field)s' field is a required field "
                     "that must be correctly set."
@@ -365,7 +405,7 @@ class FixedAssetImport(models.TransientModel):
                     fmt = wiz_dict["field_methods"][hf]["field_type"]
                     fmt = FIELD_TYPE_MAP.get(fmt, fmt)
 
-                    if fmt == "char":
+                    if fmt in ("char", "selection"):
                         if cell.ctype == xlrd.XL_CELL_TEXT:
                             val = cell.value
                         elif cell.ctype == xlrd.XL_CELL_NUMBER:
@@ -384,13 +424,14 @@ class FixedAssetImport(models.TransientModel):
                         else:
                             val = cell.value
 
-                    elif fmt in ["integer", "many2one"]:
+                    elif fmt == "integer":
                         val = cell.value
                         if val:
-                            is_int = val % 1 == 0.0
-                            if is_int:
+
+                            try:
+                                is_int = val % 1 == 0.0
                                 val = int(val)
-                            else:
+                            except Exception:
                                 if err_msg:
                                     err_msg += "\n"
                                 err_msg += _(
@@ -401,6 +442,10 @@ class FixedAssetImport(models.TransientModel):
                                     "field": hf,
                                     "type": fmt.capitalize(),
                                 }
+
+                    elif fmt == "many2one":
+                        # controls: cf. _handle_orm_many2one
+                        val = cell.value
 
                     elif fmt == "boolean":
                         if cell.ctype == xlrd.XL_CELL_TEXT:
@@ -490,16 +535,13 @@ class FixedAssetImport(models.TransientModel):
                 if line[hf] == "":
                     continue
 
-                if wiz_dict["field_methods"][hf].get("orm_field"):
-                    wiz_dict["field_methods"][hf]["method"](
-                        hf,
-                        line,
-                        fa_vals,
-                        wiz_dict,
-                        orm_field=wiz_dict["field_methods"][hf]["orm_field"],
-                    )
-                else:
-                    wiz_dict["field_methods"][hf]["method"](hf, line, fa_vals, wiz_dict)
+                wiz_dict["field_methods"][hf]["method"](
+                    hf,
+                    line,
+                    fa_vals,
+                    wiz_dict,
+                    orm_field=wiz_dict["field_methods"][hf].get("orm_field"),
+                )
 
             if fa_vals:
                 self._process_fa_vals(line, fa_vals, wiz_dict)

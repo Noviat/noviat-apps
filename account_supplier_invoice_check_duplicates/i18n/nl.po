@@ -1,0 +1,55 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_supplier_invoice_check_duplicates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-07 16:09+0000\n"
+"PO-Revision-Date: 2023-12-08 03:45+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Dutch <https://translation.noviat.com/projects/accounting-v16/"
+"account_supplier_invoice_check_duplicates/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.16.2\n"
+
+#. module: account_supplier_invoice_check_duplicates
+#: model:ir.model.fields,help:account_supplier_invoice_check_duplicates.field_account_bank_statement_line__force_encoding
+#: model:ir.model.fields,help:account_supplier_invoice_check_duplicates.field_account_move__force_encoding
+#: model:ir.model.fields,help:account_supplier_invoice_check_duplicates.field_account_payment__force_encoding
+msgid "Accept the encoding of this invoice although it looks like a duplicate."
+msgstr ""
+
+#. module: account_supplier_invoice_check_duplicates
+#. odoo-python
+#: code:addons/account_supplier_invoice_check_duplicates/models/account_move.py:0
+#, python-format
+msgid ""
+"Duplicated vendor reference detected. You probably encoded twice the same "
+"vendor bill/credit note. Duplicate invoice(s): %s.\n"
+"Check 'Force Encoding' when this is not a duplicate."
+msgstr ""
+
+#. module: account_supplier_invoice_check_duplicates
+#: model:ir.model.fields,field_description:account_supplier_invoice_check_duplicates.field_account_bank_statement_line__force_encoding
+#: model:ir.model.fields,field_description:account_supplier_invoice_check_duplicates.field_account_move__force_encoding
+#: model:ir.model.fields,field_description:account_supplier_invoice_check_duplicates.field_account_payment__force_encoding
+msgid "Force Encoding"
+msgstr ""
+
+#. module: account_supplier_invoice_check_duplicates
+#: model:ir.model,name:account_supplier_invoice_check_duplicates.model_account_move
+msgid "Journal Entry"
+msgstr "Boeking"
+
+#. module: account_supplier_invoice_check_duplicates
+#. odoo-python
+#: code:addons/account_supplier_invoice_check_duplicates/models/account_move.py:0
+#, python-format
+msgid "Open list"
+msgstr ""

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 16:21+0000\n"
-"PO-Revision-Date: 2024-04-14 13:55+0000\n"
+"PO-Revision-Date: 2024-10-08 07:55+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: French <https://translation.noviat.com/projects/"
 "accounting-v16/account_bank_statement_advanced/fr/>\n"
@@ -174,10 +174,16 @@ msgid "Company"
 msgstr "Société"
 
 #. module: account_bank_statement_advanced
-#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement__state__confirm
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
 msgid "Confirm"
 msgstr "Confirmer"
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement__state__confirm
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.view_bank_statement_search
+#, fuzzy
+msgid "Confirmed"
+msgstr "Confirmé"
 
 #. module: account_bank_statement_advanced
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
@@ -255,9 +261,6 @@ msgid "Currency"
 msgstr "Devise"
 
 #. module: account_bank_statement_advanced
-#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__date
-#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_move__date
-#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_payment__date
 #: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__date_balance
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
@@ -279,6 +282,7 @@ msgstr ""
 
 #. module: account_bank_statement_advanced
 #: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement__state__draft
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.view_bank_statement_search
 msgid "Draft"
 msgstr "Brouillon"
 

@@ -3,7 +3,7 @@
 
 {
     "name": "Account Move Line Import",
-    "version": "16.0.1.0.2",
+    "version": "16.0.1.0.3",
     "license": "AGPL-3",
     "author": "Noviat",
     "website": "https://www.noviat.com/",

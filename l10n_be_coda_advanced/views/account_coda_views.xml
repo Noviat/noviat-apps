@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
   <record id="account_coda_view_tree" model="ir.ui.view">
@@ -29,7 +29,7 @@
         <header>
           <button
                         name="set_to_draft"
-                        states="done"
+                        states="error,done"
                         string="Set to Draft"
                         type="object"
                         groups="account.group_account_manager"
@@ -37,13 +37,18 @@
           <button
                         name="process"
                         class="oe_highlight"
-                        states="draft"
+                        states="draft,error"
                         string="Process"
                         type="object"
                         groups="account.group_account_manager"
                         help="Process the CODA File to create Bank Statements"
                     />
-          <button name="set_to_done" type="object" states="draft" string="Set Done" />
+          <button
+                        name="set_to_done"
+                        type="object"
+                        states="draft,error"
+                        string="Set Done"
+                    />
           <field name="state" widget="statusbar" />
         </header>
         <group colspan="4" col="4">

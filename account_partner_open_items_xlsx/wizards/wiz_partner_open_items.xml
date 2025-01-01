@@ -7,13 +7,16 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Open Items">
-                <group>
-                    <group>
+                <group name="invisible">
+                    <field name="accounts" invisible="1" />
+                </group>
+                <group name="main">
+                    <group name="left">
                         <field name="date_at" />
                         <field name="add_currency" />
                         <field name="add_reconcile" />
                     </group>
-                    <group>
+                    <group name="right">
                         <field name="target_move" />
                         <field
                             name="result_selection"
@@ -26,17 +29,14 @@
                             groups="base.group_multi_company"
                         />
                     </group>
-                    <newline />
-                    <group>
+                    <group name="full-width" colspan="4">
                         <field
                             name="partner_select"
                             invisible="context.get('default_partner_select')"
                         />
-
                         <field
                             name="partner_ids"
                             widget="many2many_tags"
-                            colspan="4"
                             placeholder="Leave blank to select all partners"
                             invisible="not context.get('default_partner_select')"
                         />
@@ -46,11 +46,7 @@
                             widget="many2many_tags"
                             placeholder="Leave blank to select Receivable/Payable accounts"
                             options="{'no_create': True}"
-                            colspan="4"
                         />
-                    </group>
-                    <group>
-                        <field name="accounts" invisible="1" />
                     </group>
                 </group>
                 <footer>

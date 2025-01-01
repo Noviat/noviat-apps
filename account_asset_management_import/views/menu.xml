@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="fixed_asset_import_menu"
+        parent="account_asset_management.menu_finance_config_assets"
+        action="fixed_asset_import_action"
+        sequence="100"
+    />
+
+</odoo>

@@ -1,45 +1,180 @@
-# French translation of Odoo Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#    * account_partner_open_items_xlsx
+# 	* account_partner_open_items_xlsx
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 13.0\n"
-"Report-Msgid-Bugs-To: support@noviat.com\n"
-"POT-Creation-Date: 2020-10-06 12:14:04.564000\n"
-"PO-Revision-Date: 2020-10-06 12:14:04.564000\n"
-"Last-Translator: Luc De Meyer (Noviat nv/sa)\n"
-"Language-Team: \n"
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-07 16:21+0000\n"
+"PO-Revision-Date: 2024-04-28 03:55+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: French <https://translation.noviat.com/projects/accounting-"
+"v16/account_partner_open_items_xlsx/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: French\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.4.2\n"
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.actions.act_window,name:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Open Items per Partner"
-msgstr "Écritures non léttrées par partenaire"
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "AP"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__date_at
-msgid "Date at"
-msgstr "Date au"
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "AR"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__target_move
-msgid "Target Moves"
-msgstr "Mouvements cibles"
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Account"
+msgstr "Compte"
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__target_move__posted:0
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__account_ids
+msgid "Accounts"
+msgstr "Comptes"
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__target_move__all
+#, python-format
+msgid "All Entries"
+msgstr "Toutes les écritures"
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__partner_select__all
+msgid "All Partners"
+msgstr "Tous les partenaires"
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__target_move__posted
+#, python-format
 msgid "All Posted Entries"
 msgstr "Toutes les écritures comptabilisées"
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__target_move__all:0
-msgid "All Entries"
-msgstr "Toutes les écritures"
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Balance"
+msgstr "Solde"
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Bill Date"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model_terms:ir.ui.view,arch_db:account_partner_open_items_xlsx.wiz_partner_open_items_view_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model,name:account_partner_open_items_xlsx.model_res_partner
+#, fuzzy
+msgid "Contact"
+msgstr "Contact"
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Cur."
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Cur.Original"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Cur.Reconciled"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, fuzzy, python-format
+msgid "Date"
+msgstr "Date"
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__date_at
+msgid "Date At"
+msgstr "Date au"
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Description"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Details"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Document"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Due Date"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model_terms:ir.ui.view,arch_db:account_partner_open_items_xlsx.wiz_partner_open_items_view_form
+msgid "Export"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
 #: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__result_selection
@@ -47,32 +182,184 @@ msgid "Filter on"
 msgstr "Filtrer sur"
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__result_selection__customer:0
-msgid "Receivable Accounts"
-msgstr "Comptes clients"
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__accounts
+msgid "Filter on selected accounts"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__result_selection__supplier:0
-msgid "Payable Accounts"
-msgstr "Comptes fournisseurs"
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__id
+msgid "ID"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__result_selection__customer_supplier:0
-msgid "Receivable and Payable Accounts"
-msgstr "Comptes clients et fournisseurs"
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Journal"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model_terms:ir.ui.view,arch_db:account_partner_open_items_xlsx.wiz_partner_open_items_view_form
+msgid "Leave blank to select Receivable/Payable accounts"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,help:account_partner_open_items_xlsx.field_wiz_partner_open_items__account_ids
+msgid ""
+"Leave blank to select all Receivable/Payable accountsYou can use this field "
+"to select any general account that can be reconciled."
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model_terms:ir.ui.view,arch_db:account_partner_open_items_xlsx.wiz_partner_open_items_view_form
+msgid "Leave blank to select all partners"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,help:account_partner_open_items_xlsx.field_wiz_partner_open_items__partner_ids
+msgid "Leave blank to select all partners."
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Move Line Id"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "No Open Items found for your selection"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "No partner allocated"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#: model_terms:ir.ui.view,arch_db:account_partner_open_items_xlsx.wiz_partner_open_items_view_form
+#, python-format
+msgid "Open Items"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.actions.act_window,name:account_partner_open_items_xlsx.wiz_partner_open_items_action
+#: model:ir.actions.act_window,name:account_partner_open_items_xlsx.wiz_partner_open_items_action_partner_select_all
+#: model:ir.ui.menu,name:account_partner_open_items_xlsx.wiz_partner_open_items_menu
+msgid "Open Items per Partner"
+msgstr "Écritures non léttrées par partenaire"
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model,name:account_partner_open_items_xlsx.model_wiz_partner_open_items
+msgid "Open Items per partner at a given date"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model,name:account_partner_open_items_xlsx.model_report_account_partner_open_items_xlsx_partner_open_items_xlsx
+msgid "Open Journal Items per partner"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Open Payables"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Open Receivables"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Original"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Overview"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Partner Reference"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__partner_ids
 #: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__partner_select
 msgid "Partners"
 msgstr "Partenaires"
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__partner_select__all:0
-msgid "All Partners"
-msgstr "Tous les partenaires"
+#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__result_selection__liability_payable
+msgid "Payable Accounts"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__partner_select__select:0
+#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__result_selection__asset_receivable
+msgid "Receivable Accounts"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__result_selection__all
+msgid "Receivable and Payable Accounts"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Reconcile Details"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Reconciled"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
+#: model:ir.model.fields.selection,name:account_partner_open_items_xlsx.selection__wiz_partner_open_items__partner_select__select
 msgid "Selected Partners"
 msgstr "Partenaires sélectionnés"
 
@@ -82,157 +369,56 @@ msgid "Show Currency"
 msgstr "Avec devise"
 
 #. module: account_partner_open_items_xlsx
+#: model:ir.model.fields,help:account_partner_open_items_xlsx.field_wiz_partner_open_items__add_currency
+msgid "Show Foreign Currency"
+msgstr ""
+
+#. module: account_partner_open_items_xlsx
 #: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__add_reconcile
 msgid "Show Reconcile"
 msgstr "Avec rapprochement"
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__account_ids
-msgid "Accounts"
-msgstr "Comptes"
+#: model:ir.model.fields,help:account_partner_open_items_xlsx.field_wiz_partner_open_items__add_reconcile
+msgid ""
+"Show Reconcile Details:\n"
+"The identifiers of the matched Journal Items are added to the report in "
+"order to show which entries have been partially reconciled at the selected "
+"date.\n"
+"In case the entry has been fully reconciled after the selected date, the "
+"full reconcile reference will also be added as a value between brackets at "
+"the end of the Reconcile Details string."
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__company_id
-msgid "Company"
-msgstr "Société"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Open Items"
-msgstr "Écritures non léttrées"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "No partner allocated"
-msgstr "Écritures sans partenaire"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "n/a"
-msgstr "n/a"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Partner"
-msgstr "Partenaire"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Partner Reference"
-msgstr "Référence du partenaire"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Original"
-msgstr "Original"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Reconciled"
-msgstr "Lettré"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Balance"
-msgstr "Solde"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Document"
-msgstr "Document"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Supplier Invoice No"
-msgstr "No facture fournisseur"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
 msgid "Source Document"
-msgstr "Document d'origine"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Date"
-msgstr "Date"
+#: model:ir.model.fields,help:account_partner_open_items_xlsx.field_wiz_partner_open_items__date_at
+msgid ""
+"Specify a date in order to retrieve the Open Items at a certain moment in "
+"the past."
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Due Date"
-msgstr "Echéance"
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "Supplier Invoice No"
+msgstr ""
 
 #. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Description"
-msgstr "Description"
+#: model:ir.model.fields,field_description:account_partner_open_items_xlsx.field_wiz_partner_open_items__target_move
+msgid "Target Moves"
+msgstr "Mouvements cibles"
 
 #. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Account"
-msgstr "Compte"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Journal"
-msgstr "Journal"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Cur."
-msgstr "Dev."
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Cur.Original"
-msgstr "Original dev."
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Cur.Reconciled"
-msgstr "Lettré dev."
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Reconcile Details"
-msgstr "Détails lettrage"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Move Line Id"
-msgstr "Move Line Id"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Details"
-msgstr "Détails"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Open Receivables"
-msgstr "Débiteurs"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Open Payables"
-msgstr "Créditeurs"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "Overview"
-msgstr "Vue globale"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "All Posted Entries"
-msgstr "Toutes les écritures comptabilisées"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "All Entries"
-msgstr "Toutes les écritures"
-
-#. module: account_partner_open_items_xlsx
-#: model_terms:ir.actions.act_window,help:account_partner_open_items_xlsx.wiz_partner_open_items_action
-msgid "No Open Items found for your selection"
-msgstr "Aucune écriture non léttrée"
-
+#. odoo-python
+#: code:addons/account_partner_open_items_xlsx/report/account_partner_open_items_xlsx.py:0
+#, python-format
+msgid "n/a"
+msgstr ""

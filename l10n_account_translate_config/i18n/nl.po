@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_account_translate_config
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-07 16:09+0000\n"
+"PO-Revision-Date: 2023-12-07 16:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_account_translate_config
+#: model_terms:ir.ui.view,arch_db:l10n_account_translate_config.res_config_settings_view_form
+msgid "Chart of Accounts"
+msgstr ""
+
+#. module: l10n_account_translate_config
+#: model:ir.model,name:l10n_account_translate_config.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: l10n_account_translate_config
+#: model:ir.model.fields,help:l10n_account_translate_config.field_res_config_settings__module_l10n_account_translate_off
+msgid "If checked, the General Account will become a monolingual field."
+msgstr ""
+
+#. module: l10n_account_translate_config
+#: model:ir.model.fields,field_description:l10n_account_translate_config.field_res_config_settings__module_l10n_multilang
+msgid "Module L10N Multilang"
+msgstr ""
+
+#. module: l10n_account_translate_config
+#: model:ir.model.fields,field_description:l10n_account_translate_config.field_res_config_settings__module_l10n_account_translate_off
+msgid "Monolingual General Accounts"
+msgstr ""

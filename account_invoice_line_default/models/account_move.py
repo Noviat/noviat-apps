@@ -22,23 +22,27 @@ class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
     def _compute_account_id(self):
-        for move in self:
+        product_lines = self.filtered(
+            lambda line: line.display_type == "product" and line.move_id.is_invoice()
+        )
+        for product_line in product_lines:
             if (
-                move.partner_id
-                and move.partner_id.commercial_partner_id.property_in_inv_account_id
-                and move.move_type in ["in_invoice", "in_refund"]
+                product_line.partner_id
+                and product_line.partner_id.commercial_partner_id.property_in_inv_account_id
+                and product_line.move_type in ["in_invoice", "in_refund"]
             ):
-                move.account_id = (
-                    move.partner_id.commercial_partner_id.property_in_inv_account_id
+                product_line.account_id = (
+                    product_line.partner_id.commercial_partner_id.property_in_inv_account_id
                 )
             elif (
-                move.partner_id
-                and move.partner_id.commercial_partner_id.property_out_inv_account_id
-                and move.move_type in ["out_invoice", "out_refund"]
+                product_line.partner_id
+                and product_line.partner_id.commercial_partner_id.property_out_inv_account_id
+                and product_line.move_type in ["out_invoice", "out_refund"]
             ):
-                move.account_id = (
-                    move.partner_id.commercial_partner_id.property_out_inv_account_id
+                product_line.account_id = (
+                    product_line.partner_id.commercial_partner_id.property_out_inv_account_id
                 )
             else:
-                super(AccountMoveLine, move)._compute_account_id()
-        return
+                super(AccountMoveLine, product_line)._compute_account_id()
+        lines = self - product_lines
+        return super(AccountMoveLine, lines)._compute_account_id()

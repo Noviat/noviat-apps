@@ -1,9 +1,9 @@
-# Copyright 2009-2023 Noviat.
+# Copyright 2009-2024 Noviat.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
     "name": "Belgium - Advanced CODA statements Import",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.3.0",
     "license": "LGPL-3",
     "author": "Noviat",
     "website": "https://www.noviat.com/",
@@ -32,7 +32,7 @@
         "views/account_coda_trans_code_views.xml",
         "views/account_coda_trans_type_views.xml",
         "views/coda_bank_account_views.xml",
-        "wizards/account_coda_import.xml",
+        "wizards/account_coda_import_views.xml",
         "views/menu.xml",
     ],
     "installable": True,

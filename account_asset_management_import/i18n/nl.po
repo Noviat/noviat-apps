@@ -1,0 +1,330 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_asset_management_import
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-07 16:09+0000\n"
+"PO-Revision-Date: 2023-12-08 03:45+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Dutch <https://translation.noviat.com/projects/accounting-v16/"
+"account_asset_management_import/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.16.2\n"
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid ""
+"%(model)s, field '%(field)s', the import of ORM fields of type '%(type)s' is "
+"not supported"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "%(model)s, undefined field '%(field)s' found while importing assets"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model_terms:ir.ui.view,arch_db:account_asset_management_import.fixed_asset_import_view_form
+msgid "Cancel"
+msgstr "Annuleer"
+
+#. module: account_asset_management_import
+#: model_terms:ir.ui.view,arch_db:account_asset_management_import.fixed_asset_import_view_form_result
+msgid "Close"
+msgstr "Sluiten"
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__compute_board
+msgid "Compute Depreciation Board"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Duplicate Asset with reference '%(code)s' found !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid ""
+"Duplicate header field '%(field)s' found !\n"
+"Please correct the input file."
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Error when processing line '%s'"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Error while reading Excel sheet: <br>%(error)s"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Field '%(fld)s' with name '%(val)s' not found !"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__fa_data
+msgid "File"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__file_type
+msgid "File Type"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__fa_fname
+msgid "Filename"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.actions.act_window,name:account_asset_management_import.fixed_asset_import_action
+#: model:ir.ui.menu,name:account_asset_management_import.fixed_asset_import_menu
+msgid "Fixed Assets Import"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__id
+msgid "ID"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model_terms:ir.ui.view,arch_db:account_asset_management_import.fixed_asset_import_view_form
+msgid "Import"
+msgstr "Importeer"
+
+#. module: account_asset_management_import
+#: model_terms:ir.ui.view,arch_db:account_asset_management_import.fixed_asset_import_view_form
+#: model_terms:ir.ui.view,arch_db:account_asset_management_import.fixed_asset_import_view_form_result
+msgid "Import File"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model,name:account_asset_management_import.model_fixed_asset_import
+msgid "Import Wizard for Fixed Assets"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Import result"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Imported Assets"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Incorrect value '%(value)s' for field '%(field)s' !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Incorrect value '%(value)s' for field '%(field)s' of type %(type)s !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Incorrect value '%(value)s' for field '%(field)s' of type Boolean !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Incorrect value '%(value)s' for field '%(field)s' of type Date !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid ""
+"Incorrect value '%(value)s' for field '%(field)s' of type Date ! should be "
+"YYYY-MM-DD"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Incorrect value '%(value)s' for field '%(field)s' of type Integer !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Incorrect value '%(value)s' for field '%(field)s' of type Many2One !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Incorrect value '%(value)s' for field '%(field)s' of type Numeric !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Incorrect value '%(value)s' for field '%(field)s' of type Selection !"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__note
+msgid "Log"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Multiple partners with Reference or Name '%(value)s' found !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Multiple profiles with name '%(value)s' found !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Multiple records for field '%(fld)s' with name '%(val)s' found !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Partner '%s' not found !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "Profile '%s' not found !"
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid ""
+"Programming Error:\n"
+"Missing formatting info for column '%(field)s'."
+msgstr ""
+
+#. module: account_asset_management_import
+#: model_terms:ir.ui.view,arch_db:account_asset_management_import.fixed_asset_import_view_form_result
+msgid "Results :"
+msgstr "Resultaat :"
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,help:account_asset_management_import.field_fixed_asset_import__compute_board
+msgid ""
+"Select this option if you want to compute the depreciation tables for the "
+"new created assets.\n"
+"This option may take a considerable amount of time when importing a large "
+"number of assets."
+msgstr ""
+
+#. module: account_asset_management_import
+#: model_terms:ir.ui.view,arch_db:account_asset_management_import.fixed_asset_import_view_form
+msgid "Select your file :"
+msgstr "Selecteer uw bestand:"
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,field_description:account_asset_management_import.field_fixed_asset_import__sheet
+msgid "Sheet"
+msgstr ""
+
+#. module: account_asset_management_import
+#: model:ir.model.fields,help:account_asset_management_import.field_fixed_asset_import__sheet
+msgid ""
+"Specify the Excel sheet.\n"
+"If not specified the first sheet will be retrieved."
+msgstr ""
+
+#. module: account_asset_management_import
+#. odoo-python
+#: code:addons/account_asset_management_import/wizards/fixed_asset_import.py:0
+#, python-format
+msgid "The '%(field)s' field is a required field that must be correctly set."
+msgstr ""
+
+#. module: account_asset_management_import
+#: model_terms:ir.ui.view,arch_db:account_asset_management_import.fixed_asset_import_view_form_result
+msgid "View Assets"
+msgstr ""

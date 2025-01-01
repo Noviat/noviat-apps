@@ -1,0 +1,70 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_tax_constraints
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-07 16:21+0000\n"
+"PO-Revision-Date: 2023-12-08 03:45+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: French <https://translation.noviat.com/projects/"
+"accounting-v16/account_tax_constraints/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.16.2\n"
+
+#. module: account_tax_constraints
+#: model:ir.model,name:account_tax_constraints.model_account_account
+msgid "Account"
+msgstr "Compte"
+
+#. module: account_tax_constraints
+#: model:ir.model,name:account_tax_constraints.model_account_tax
+msgid "Tax"
+msgstr "Taxe"
+
+#. module: account_tax_constraints
+#. odoo-python
+#: code:addons/account_tax_constraints/models/account_tax.py:0
+#, python-format
+msgid ""
+"You cannot delete a tax that has been set on Journal Items.\n"
+"\n"
+"Journal Item IDs: %s"
+msgstr ""
+
+#. module: account_tax_constraints
+#. odoo-python
+#: code:addons/account_tax_constraints/models/account_tax.py:0
+#, python-format
+msgid ""
+"You cannot delete a tax that has been set on legacy invoice lines.\n"
+"\n"
+"Invoice Line IDs: %s"
+msgstr ""
+
+#. module: account_tax_constraints
+#. odoo-python
+#: code:addons/account_tax_constraints/models/account_tax.py:0
+#, python-format
+msgid ""
+"You cannot delete a tax that has been set on product records\n"
+"As an alterative, you can disable a tax via the 'active' flag.\n"
+"\n"
+"Product Template records: %s"
+msgstr ""
+
+#. module: account_tax_constraints
+#. odoo-python
+#: code:addons/account_tax_constraints/models/account_account.py:0
+#, python-format
+msgid ""
+"You cannot delete an account that has been set on tax objects.\n"
+"Account: %(account)s\n"
+"Tax Object IDs: %(tax_ids)s"
+msgstr ""

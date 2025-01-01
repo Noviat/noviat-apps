@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="coda_bank_account_view_search" model="ir.ui.view">
@@ -70,6 +70,7 @@
                         <field name="journal_id" />
                         <field name="description1" />
                         <field name="description2" />
+                        <field name="type" />
                     </group>
                     <group name="main1-right">
                         <field name="bank_id" />
@@ -133,7 +134,6 @@
                             </tree>
                             <form string="Account Mapping Rules">
                                 <field name="company_id" invisible="1" />
-                                <field name="split" invisible="1" />
                                 <group name="main">
                                     <group name="main-left">
                                         <field name="name" />
@@ -141,7 +141,6 @@
                                     </group>
                                     <group name="main-right">
                                         <field name="sequence" />
-                                        <field name="active" />
                                     </group>
                                 </group>
                                 <separator name="condition" string="Conditions" />
@@ -171,7 +170,14 @@
                                         <field name="structcomm" />
                                     </group>
                                 </group>
-                                <separator name="result" string="Result" />
+                                <group name="split">
+                                    <field name="split" invisible="1" />
+                                </group>
+                                <separator
+                                    name="result"
+                                    string="Result"
+                                    attrs="{'invisible': [('split', '=', True)]}"
+                                />
                                 <group
                                     name="result"
                                     attrs="{'invisible': [('split', '=', True)]}"

@@ -1,0 +1,101 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_be_asset_management_data
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-07 16:21+0000\n"
+"PO-Revision-Date: 2023-12-08 03:45+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: French <https://translation.noviat.com/projects/"
+"accounting-v16/l10n_be_asset_management_data/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.16.2\n"
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#. odoo-python
+#: code:addons/l10n_be_asset_management_data/wizards/l10n_be_account_asset_installer.py:0
+#, python-format
+msgid "Dutch"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#. odoo-python
+#: code:addons/l10n_be_asset_management_data/wizards/l10n_be_account_asset_installer.py:0
+#, python-format
+msgid "English"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#. odoo-python
+#: code:addons/l10n_be_asset_management_data/wizards/l10n_be_account_asset_installer.py:0
+#, python-format
+msgid "French"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer__asset_lang
+msgid "Language"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model.fields,field_description:l10n_be_asset_management_data.field_l10n_be_account_asset_installer__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model_terms:ir.ui.view,arch_db:l10n_be_asset_management_data.l10n_be_account_asset_installer_view_form
+msgid "Load"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.model,name:l10n_be_asset_management_data.model_l10n_be_account_asset_installer
+msgid "Load Belgian Financial Asset reporting structure"
+msgstr ""
+
+#. module: l10n_be_asset_management_data
+#: model:ir.actions.act_window,name:l10n_be_asset_management_data.l10n_be_account_asset_installer_action
+#: model_terms:ir.ui.view,arch_db:l10n_be_asset_management_data.l10n_be_account_asset_installer_view_form
+msgid "Load Belgian asset reporting structure"
+msgstr ""

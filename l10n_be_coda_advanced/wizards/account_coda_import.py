@@ -1,4 +1,4 @@
-# Copyright 2009-2023 Noviat.
+# Copyright 2009-2024 Noviat.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 import base64
@@ -90,7 +90,6 @@ class AccountCodaImport(models.TransientModel):
     skip_undefined = fields.Boolean(
         help="Skip Bank Statements for accounts which have not been defined "
         "in the CODA configuration.",
-        default=True,
     )
     note = fields.Text(string="Log")
 
@@ -172,7 +171,24 @@ class AccountCodaImport(models.TransientModel):
 
         cba = wiz_dict["coda_banks"].filtered(cba_filter)
         if cba:
-            if cba.company_id not in self.env.companies:
+            if cba.type == "skip":
+                wiz_dict["cba_skip_warnings"].append(
+                    _(
+                        "\n\nThe CODA File contains a statement which is not "
+                        "processed since the associated CODA Bank Account "
+                        "Configuration record is defined as type 'Skip' !"
+                        "\nPlease adjust the settings for CODA Bank Account"
+                        " '%(cba)s' ('Bank Account Number'='%(nbr)s', "
+                        "'Currency'='%(cur)s' and 'Account Description'='%(desc)s') "
+                        "if you need to import statements for this Bank Account !",
+                        cba=cba.name,
+                        nbr=coda_statement["acc_number"],
+                        cur=coda_statement["currency"],
+                        desc=coda_statement["description"],
+                    )
+                )
+                skip = True
+            elif cba.company_id not in self.env.companies:
                 wiz_dict["coda_import_note"] += _(
                     "\n\nMatching CODA Bank Account Configuration "
                     "record found for Bank Account Number '%(number)s' "
@@ -192,35 +208,22 @@ class AccountCodaImport(models.TransientModel):
                 "bank_account_id"
             ).mapped("sanitized_acc_number")
         else:
-            if self.skip_undefined:
-                wiz_dict["coda_import_note"] += _(
-                    "\n\nNo matching CODA Bank Account Configuration " "record found !"
-                ) + _(
-                    "\nPlease check if the 'Bank Account Number', "
-                    "'Currency' and 'Account Description' fields "
-                    "of your configuration record match with"
-                    " '%(number)s', '%(currency)s' and '%(description)s' if you need "
-                    "to import statements for this Bank Account Number !"
-                ) % {
-                    "number": coda_statement["acc_number"],
-                    "currency": coda_statement["currency"],
-                    "description": coda_statement["description"],
-                }
-                skip = True
-            else:
-                err_string = _(
-                    "\nNo matching CODA Bank Account Configuration " "record found !"
-                ) + _(
-                    "\nPlease check if the 'Bank Account Number', "
-                    "'Currency' and 'Account Description' fields "
-                    "of your configuration record match with"
-                    " '%(number)s', '%(currency)s' and '%(description)s' !"
-                ) % {
-                    "number": coda_statement["acc_number"],
-                    "currency": coda_statement["currency"],
-                    "description": coda_statement["description"],
-                }
-                raise UserError(err_string)
+            err_string = _(
+                "\nNo matching CODA Bank Account Configuration " "record found !"
+            ) + _(
+                "\nPlease check if the 'Bank Account Number', "
+                "'Currency' and 'Account Description' fields "
+                "of your configuration record match with"
+                " '%(number)s', '%(currency)s' and '%(description)s' !"
+            ) % {
+                "number": coda_statement["acc_number"],
+                "currency": coda_statement["currency"],
+                "description": coda_statement["description"],
+            }
+            skip = True
+            if not self.skip_undefined:
+                wiz_dict["nb_err"] += 1
+                wiz_dict["err_string"] += err_string
         bal_start = list2float(line[43:58])  # old balance data
         if line[42] == "1":  # 1= Debit
             bal_start = -bal_start
@@ -438,17 +441,17 @@ class AccountCodaImport(models.TransientModel):
             for x in wiz_dict["trans_codes"]
             if (x.type == "family") and (x.code == transaction["trans_family"])
         ]
-        if not trans_family:
-            err_string = (
-                _("\nThe File contains an invalid " "CODA Transaction Family : %s !")
-                % transaction["trans_family"]
+        if trans_family:
+            trans_family = trans_family[0]
+            transaction["trans_family_id"] = trans_family.id
+            transaction["trans_family_desc"] = trans_family.description
+        else:
+            transaction["trans_family_id"] = None
+            transaction["trans_family_desc"] = _(
+                "Transaction Family unknown, please consult your bank."
             )
-            raise UserError(err_string)
-        trans_family = trans_family[0]
-        transaction["trans_family_id"] = trans_family.id
-        transaction["trans_family_desc"] = trans_family.description
         transaction["trans_code"] = line[56:58]
-        trans_code = [
+        trans_code = trans_family and [
             x
             for x in wiz_dict["trans_codes"]
             if (x.type == "code")
@@ -461,7 +464,7 @@ class AccountCodaImport(models.TransientModel):
         else:
             transaction["trans_code_id"] = None
             transaction["trans_code_desc"] = _(
-                "Transaction Code unknown, " "please consult your bank."
+                "Transaction Code unknown, please consult your bank."
             )
         transaction["trans_category"] = line[58:61]
         trans_category = [
@@ -675,17 +678,22 @@ class AccountCodaImport(models.TransientModel):
         info_line["trans_ref"] = line[10:31]
         # get key of associated transaction record
         mm_seq = coda_statement["main_move_stack"][-1]["sequence"]
-        trans_check = coda_statement["coda_transactions"][mm_seq]["trans_ref"]
-        if info_line["trans_ref"] != trans_check:
-            err_string = (
-                _(
-                    "\nCODA parsing error on "
-                    "information data record 3.1, seq nr %s !"
-                    "\nPlease report this issue via your Odoo support channel."
-                )
-                % line[2:10]
-            )
-            raise UserError(err_string)
+        # The CODA doc states that the 'trans_ref' field is for informational
+        # purposes only.
+        # CRELAN doesn't put the 'trans_ref' in the info records hence we need
+        # skip this consistency check
+        #
+        # trans_check = coda_statement["coda_transactions"][mm_seq]["trans_ref"]
+        # if info_line["trans_ref"] != trans_check:
+        #     err_string = (
+        #         _(
+        #             "\nCODA parsing error on "
+        #             "information data record 3.1, seq nr %s !"
+        #             "\nPlease report this issue via your Odoo support channel."
+        #         )
+        #         % line[2:10]
+        #     )
+        #     raise UserError(err_string)
         info_line["main_move_sequence"] = mm_seq
         # positions 32-38 : transaction code
         info_line["trans_type"] = line[31]
@@ -705,16 +713,17 @@ class AccountCodaImport(models.TransientModel):
             for x in wiz_dict["trans_codes"]
             if (x.type == "family") and (x.code == info_line["trans_family"])
         ]
-        if not trans_family:
-            err_string = (
-                _("\nThe File contains an invalid CODA Transaction Family : %s !")
-                % info_line["trans_family"]
+        if trans_family:
+            trans_family = trans_family[0]
+            info_line["trans_family_id"] = trans_family.id
+            info_line["trans_family_desc"] = trans_family.description
+        else:
+            info_line["trans_family_id"] = None
+            info_line["trans_family_desc"] = _(
+                "Transaction Family unknown, please consult your bank."
             )
-            raise UserError(err_string)
-        trans_family = trans_family[0]
-        info_line["trans_family_desc"] = trans_family.description
         info_line["trans_code"] = line[34:36]
-        trans_code = [
+        trans_code = trans_family and [
             x
             for x in wiz_dict["trans_codes"]
             if (x.type == "code")
@@ -950,9 +959,9 @@ class AccountCodaImport(models.TransientModel):
                     )
         return discard
 
-    def _create_bank_statement(self, wiz_dict, coda_statement):
+    def _prepare_st_vals(self, wiz_dict, coda_statement):
 
-        bank_st = False
+        st_vals = False
         cba = coda_statement["coda_bank_params"]
         journal = cba.journal_id
         balance_start_check = False
@@ -978,7 +987,7 @@ class AccountCodaImport(models.TransientModel):
                     )
                     % journal.name
                 )
-                return bank_st
+                return st_vals
             else:
                 data = self.env["account.move.line"].read_group(
                     [
@@ -1007,7 +1016,7 @@ class AccountCodaImport(models.TransientModel):
             if cba.balance_start_enforce:
                 wiz_dict["nb_err"] += 1
                 wiz_dict["err_string"] += balance_start_err_string
-                return bank_st
+                return st_vals
             else:
                 coda_statement["coda_parsing_note"] += "\n" + balance_start_err_string
 
@@ -1024,31 +1033,7 @@ class AccountCodaImport(models.TransientModel):
             "company_id": cba.company_id.id,
             "coda_bank_account_id": cba.id,
         }
-
-        try:
-            st = self.env["account.bank.statement"].with_company(cba.company_id)
-            bank_st = st.create(st_vals)
-        except (UserError, ValidationError) as e:
-            wiz_dict["nb_err"] += 1
-            err_string = e.args[0]
-            wiz_dict["err_string"] += _("\nApplication Error ! ") + err_string
-            tb = "".join(format_exception(*exc_info()))
-            _logger.error(
-                "Application Error while processing Statement %s\n%s",
-                coda_statement.get("name", "/"),
-                tb,
-            )
-        except Exception as e:
-            wiz_dict["nb_err"] += 1
-            wiz_dict["err_string"] += _("\nSystem Error : ") + str(e)
-            tb = "".join(format_exception(*exc_info()))
-            _logger.error(
-                "System Error while processing Statement %s\n%s",
-                coda_statement.get("name", "/"),
-                tb,
-            )
-
-        return bank_st
+        return st_vals
 
     def _prepare_statement_line(  # noqa: C901
         self, wiz_dict, coda_statement, transaction, coda_parsing_note
@@ -1244,7 +1229,6 @@ class AccountCodaImport(models.TransientModel):
             "counterparty_currency": transaction["counterparty_currency"],
             "globalisation_id": transaction["globalisation_id"],
             "payment_reference": transaction["payment_reference"],
-            "statement_id": coda_statement["bank_st_id"],
             "journal_id": cba.journal_id.id,
             "name": move_name,
             "narration": transaction["note"].replace("\n", "<br>"),
@@ -1273,13 +1257,6 @@ class AccountCodaImport(models.TransientModel):
                 )
 
         return st_line_vals
-
-    def _create_bank_statement_line(self, wiz_dict, coda_statement, transaction):
-        st_line_vals = self._prepare_st_line_vals(wiz_dict, coda_statement, transaction)
-        cba = coda_statement["coda_bank_params"]
-        stl = self.env["account.bank.statement.line"].with_company(cba.company_id)
-        st_line = stl.create(st_line_vals)
-        transaction["st_line_id"] = st_line.id
 
     def _discard_empty_statement(self, wiz_dict, coda_statement):
         """
@@ -1323,6 +1300,10 @@ class AccountCodaImport(models.TransientModel):
         import_results = []
         wiz_dict = {
             "ziperr_log": "",
+            # we store a warning message when encountering a statement with
+            # cba type 'skip' but this warning message is not shown in the user
+            # interface but intended for use by custom modules
+            "cba_skip_warnings": [],
         }
         if self.coda_fname.split(".")[-1].lower() == "zip":
             coda_files = self._coda_zip(wiz_dict)
@@ -1431,7 +1412,12 @@ class AccountCodaImport(models.TransientModel):
             coda_data = base64.decodebytes(self.coda_data)
             with zipfile.ZipFile(BytesIO(coda_data)) as coda_zip:
                 for fn in coda_zip.namelist():
-                    if fn.endswith("/") or fn.startswith("__MACOSX/"):
+                    if (
+                        fn.endswith("/")
+                        or fn.startswith("__MACOSX/")
+                        or fn.endswith("/.DS_Store")
+                        or fn.endswith("/._.DS_Store")
+                    ):
                         continue
                     coda_files.append((coda_zip.read(fn), fn))
         # fall back to regular CODA file processing if zip expand fails
@@ -1504,6 +1490,7 @@ class AccountCodaImport(models.TransientModel):
         return coda_files
 
     def _coda_parsing(self, wiz_dict, codafile, codafilename):  # noqa: C901
+        self = self.with_context(skip_account_move_compute_name=True)
         wiz_dict.update(
             {
                 "nb_err": 0,
@@ -1627,7 +1614,7 @@ class AccountCodaImport(models.TransientModel):
 
         for coda_statement in coda_statements:
 
-            bank_st = False
+            st_vals = False
             cba = coda_statement["coda_bank_params"]
             self._coda_statement_hook(wiz_dict, coda_statement)
             discard = self._check_duplicate(wiz_dict, coda_statement)
@@ -1649,15 +1636,10 @@ class AccountCodaImport(models.TransientModel):
                 discard = self._discard_empty_statement(wiz_dict, coda_statement)
 
             if not discard and not coda_statement.get("skip"):
-                bank_st = self._create_bank_statement(wiz_dict, coda_statement)
-                if bank_st:
-                    bank_statements += bank_st
-                    coda_statement["bank_st_id"] = bank_st.id
-                    coda.company_ids |= coda_statement["coda_bank_params"].company_id
-                else:
-                    break
-            else:
-                break
+                st_vals = self._prepare_st_vals(wiz_dict, coda_statement)
+
+            if not st_vals:
+                continue
 
             # prepare bank statement line values and merge
             # information records into the statement line
@@ -1684,11 +1666,15 @@ class AccountCodaImport(models.TransientModel):
             # resequence since _coda_transaction_hook may add/remove lines
             transaction_seq = 0
             st_balance_end = round(coda_statement["balance_start"], 2)
+            line_vals_list = []
             for transaction in bank_st_transactions:
                 transaction_seq += 1
                 transaction["sequence"] = transaction_seq
                 st_balance_end += round(transaction["amount"], 2)
-                self._create_bank_statement_line(wiz_dict, coda_statement, transaction)
+                st_line_vals = self._prepare_st_line_vals(
+                    wiz_dict, coda_statement, transaction
+                )
+                line_vals_list.append(st_line_vals)
 
             if round(st_balance_end - coda_statement["balance_end_real"], 2):
                 err_string = _(
@@ -1704,9 +1690,41 @@ class AccountCodaImport(models.TransientModel):
                 }
                 coda_statement["coda_parsing_note"] += "\n" + err_string
 
-            # trigger calculate balance_end
-            bank_st.write({"balance_start": coda_statement["balance_start"]})
-            journal_name = cba.journal_id.name
+            st_vals.update(
+                {
+                    "balance_start": coda_statement["balance_start"],
+                    "line_ids": [(0, 0, x) for x in line_vals_list],
+                }
+            )
+
+            bank_st = self.env["account.bank.statement"].with_company(cba.company_id)
+            try:
+                bank_st = bank_st.create(st_vals)
+            except (UserError, ValidationError) as e:
+                wiz_dict["nb_err"] += 1
+                err_string = e.args[0]
+                wiz_dict["err_string"] += _("\nApplication Error ! ") + err_string
+                tb = "".join(format_exception(*exc_info()))
+                _logger.error(
+                    "Application Error while processing Statement %s\n%s",
+                    coda_statement.get("name", "/"),
+                    tb,
+                )
+            except Exception as e:
+                wiz_dict["nb_err"] += 1
+                wiz_dict["err_string"] += _("\nSystem Error : ") + str(e)
+                tb = "".join(format_exception(*exc_info()))
+                _logger.error(
+                    "System Error while processing Statement %s\n%s",
+                    coda_statement.get("name", "/"),
+                    tb,
+                )
+            if bank_st:
+                bank_statements += bank_st
+                coda_statement["bank_st_id"] = bank_st.id
+                coda.company_ids |= coda_statement["coda_bank_params"].company_id
+            else:
+                continue
 
             coda_statement["coda_parsing_note"] = coda_parsing_note
 
@@ -1721,7 +1739,7 @@ class AccountCodaImport(models.TransientModel):
                 "Ending Balance: %(balance_end_real).2f"
                 "%(coda_parsing_note)s"
             ) % {
-                "journal_name": journal_name,
+                "journal_name": cba.journal_id.name,
                 "coda_version": coda_statement["coda_version"],
                 "coda_seq_number": coda_statement["coda_seq_number"],
                 "paper_nb_seq_number": coda_statement.get("paper_nb_seq_number")
@@ -1758,17 +1776,24 @@ class AccountCodaImport(models.TransientModel):
             + str(len(coda_statements))
         )
 
-        if not wiz_dict["nb_err"]:
-            coda = self.env["account.coda"].browse(wiz_dict["coda_id"])
+        note = ""
+        coda = self.env["account.coda"].browse(wiz_dict.get("coda_id"))
+        if coda:
             old_note = coda.note and (coda.note + "\n\n") or ""
             note = coda_note_header + wiz_dict["coda_import_note"] + coda_note_footer
-            coda.write({"note": old_note + note, "state": "done"})
-        else:
-            note = (
-                _("Errors detected during the processing of " "CODA File %s :")
+        if wiz_dict["nb_err"]:
+            if note:
+                note += "\n\n"
+            note += (
+                _("Errors detected during the processing of CODA File %s :")
                 % codafilename
             )
-            note += "\n" + wiz_dict["err_string"]
+            note += "\n\n" + _("Number of errors: %s") % wiz_dict["nb_err"] + "\n"
+            note += wiz_dict["err_string"]
+        if coda:
+            # TODO: add chatter and move old_note to chatter ?
+            coda.note = "\n\n".join([note, old_note])
+            coda.state = wiz_dict["nb_err"] and "error" or "done"
 
         return coda, bank_statements, note
 
@@ -1818,7 +1843,7 @@ class AccountCodaImport(models.TransientModel):
             )
             try:
                 with self.env.cr.savepoint():
-                    reconcile_note += self._st_line_reconcile(
+                    reconcile_note = self._st_line_reconcile(
                         wiz_dict, st_line, cba, transaction, reconcile_note
                     )
             except MemoryError:
@@ -1993,7 +2018,30 @@ class AccountCodaImport(models.TransientModel):
         aml = payment.move_id.line_ids.filtered(
             lambda r: r.account_id == payment.outstanding_account_id
         )
-        match_info["counterpart_amls"] = [(aml, aml.balance)]
+
+        vals = {"counterpart_aml": aml}
+        ccur = st_line.company_id.currency_id
+        jcur = st_line.journal_id.currency_id or ccur
+        fcur = st_line.foreign_currency_id
+        cp_cur = aml.currency_id
+        if jcur == ccur and (not fcur or fcur == ccur):
+            vals["balance"] = -st_line.amount
+        else:
+            if fcur:
+                if fcur == ccur:
+                    vals["balance"] = -st_line.amount_currency
+                    vals["currency_id"] = jcur.id
+                    vals["amount_currency"] = -st_line.amount
+                elif fcur == cp_cur:
+                    vals["currency_id"] = fcur.id
+                    vals["amount_currency"] = -st_line.amount_currency
+                else:
+                    vals["currency_id"] = fcur.id
+                    vals["amount_currency"] = -st_line.amount_currency
+            else:
+                vals["currency_id"] = jcur.id
+                vals["amount_currency"] = -st_line.amount_currency
+        match_info["counterpart_amls"] = [vals]
         match_info["status"] = "done"
         match_info["partner_id"] = aml.partner_id.id
         return reconcile_note
@@ -2128,9 +2176,15 @@ class AccountCodaImport(models.TransientModel):
         if not invoices:
             return reconcile_note
 
+        # only trivial multi-currency scenarios are supported
+        # in the current version of this module
         if invoices.mapped("currency_id") != cba.currency_id:
             return reconcile_note
 
+        f2f = {
+            "amount_residual": "balance",
+            "amount_residual_currency": "amount_currency",
+        }
         cur = cba.currency_id
         amls = invoices.mapped("line_ids").filtered(
             lambda r: r.account_type == "asset_receivable"
@@ -2154,7 +2208,8 @@ class AccountCodaImport(models.TransientModel):
         matching_amls = matching_amls and matching_amls[0]
         if matching_amls:
             transaction["matching_info"]["counterpart_amls"] = [
-                (aml, getattr(aml, amt_fld)) for aml in matching_amls
+                {"counterpart_aml": aml, f2f[amt_fld]: -getattr(aml, amt_fld)}
+                for aml in matching_amls
             ]
         return reconcile_note
 
@@ -2382,6 +2437,10 @@ class AccountCodaImport(models.TransientModel):
                     )
 
         if match_info.get("invoice_id"):
+            f2f = {
+                "amount_residual": "balance",
+                "amount_residual_currency": "amount_currency",
+            }
             match_info["status"] = "done"
             invoice = self.env["account.move"].browse(match_info["invoice_id"])
             partner = invoice.partner_id.commercial_partner_id
@@ -2421,11 +2480,14 @@ class AccountCodaImport(models.TransientModel):
                     matches.append(iml)
             if len(matches) == 1:
                 aml = matches[0]
-                match_info["counterpart_amls"] = [(aml, getattr(aml, amt_fld))]
+                match_info["counterpart_amls"] = [
+                    {"counterpart_aml": aml, f2f[amt_fld]: -getattr(aml, amt_fld)}
+                ]
             if not matches:
                 if cur.is_zero(iml_amt_total - transaction["amount"]):
                     match_info["counterpart_amls"] = [
-                        (aml, getattr(aml, amt_fld)) for aml in imls
+                        {"counterpart_aml": aml, f2f[amt_fld]: -getattr(aml, amt_fld)}
+                        for aml in imls
                     ]
             if not match_info.get("counterpart_amls"):
                 line_notes = [
@@ -2493,12 +2555,18 @@ class AccountCodaImport(models.TransientModel):
         aml = self.env["account.move.line"].search(domain)
 
         if len(aml) == 1:
+            f2f = {
+                "amount_residual": "balance",
+                "amount_residual_currency": "amount_currency",
+            }
             match_info["status"] = "done"
             match_info["partner_id"] = aml.partner_id.id
             amt_fld = "amount_residual"
             if aml.currency_id == cba.currency_id:
                 amt_fld = "amount_residual_currency"
-            match_info["counterpart_amls"] = [(aml, getattr(aml, amt_fld))]
+            match_info["counterpart_amls"] = [
+                {"counterpart_aml": aml, f2f[amt_fld]: -getattr(aml, amt_fld)}
+            ]
 
         return reconcile_note
 
@@ -2600,12 +2668,18 @@ class AccountCodaImport(models.TransientModel):
         aml = self._match_aml_arap_refine(wiz_dict, st_line, cba, transaction, amls)
 
         if len(aml) == 1:
+            f2f = {
+                "amount_residual": "balance",
+                "amount_residual_currency": "amount_currency",
+            }
             match_info["status"] = "done"
             match_info["partner_id"] = aml.partner_id.id
             amt_fld = "amount_residual"
             if aml.currency_id == cba.currency_id:
                 amt_fld = "amount_residual_currency"
-            match_info["counterpart_amls"] = [(aml, getattr(aml, amt_fld))]
+            match_info["counterpart_amls"] = [
+                {"counterpart_aml": aml, f2f[amt_fld]: -getattr(aml, amt_fld)}
+            ]
 
         return reconcile_note
 
@@ -2806,42 +2880,141 @@ class AccountCodaImport(models.TransientModel):
             new_aml_dict["analytic_distribution"] = match_info["analytic_distribution"]
         return new_aml_dict
 
-    def _prepare_counterpart_aml_dicts(self, wiz_dict, st_line, cba, transaction):
-        match_info = transaction["matching_info"]
+    def _prepare_transaction_aml_dicts(self, wiz_dict, st_line, cba, transaction):
+        """
+        Handling of transaction["matching_info"]["counterpart_amls"] where we receive
+        a list of dicts with the following keys:
+        - counterpart_aml
+        - values for the new aml that needs to be created in the st_line journal entry
+          and reconciled with the counterpart_aml
+
+        The newly created amls will be reconciled via the account.bank.statement.line
+        _reconcile method (cf. module account_bank_statement_advanced).
+
+        The new aml values will be completed in this method using the exchange rate info
+        provided in the CODA transaction.
+        """
         ccur = st_line.company_id.currency_id
         jcur = st_line.journal_id.currency_id or ccur
-        amt_fld = jcur == ccur and "balance" or "amount_currency"
+        fcur = st_line.foreign_currency_id
 
         # rates provided in CODA transactions
         rate_c2j = rate_f2j = False
-        if st_line.foreign_currency_id == ccur and st_line.amount_currency:
+        if fcur == ccur and st_line.amount_currency:
             rate_c2j = abs(st_line.amount / st_line.amount_currency)
-        if st_line.foreign_currency_id != jcur and st_line.amount_currency:
+        if fcur != jcur and st_line.amount_currency:
             rate_f2j = abs(st_line.amount / st_line.amount_currency)
 
-        counterpart_aml_dicts = []
-        for entry in match_info["counterpart_amls"]:
-            aml = entry[0]
-            am_name = aml.move_id.name if aml.move_id.name != "/" else ""
-            aml_name = aml.name or ""
-            name = " ".join([am_name, aml_name])
-            counterpart_aml_dict = {
-                "counterpart_aml_id": aml.id,
-                "account_id": aml.account_id.id,
-                "name": name,
-            }
-            if aml.currency_id == jcur:
-                counterpart_aml_dict[amt_fld] = -entry[1]
-            elif aml.currency_id == ccur:
-                counterpart_aml_dict[amt_fld] = -entry[1] * rate_c2j
-            elif aml.currency_id == st_line.foreign_currency_id:
-                counterpart_aml_dict[amt_fld] = -entry[1] * rate_f2j
+        err_hdr = "Programming Error detecied in _prepare_transaction_aml_dicts()\n"
+        error = ""
+        new_aml_dicts = []
+        for entry in transaction["matching_info"]["counterpart_amls"]:
+            cp_aml = entry["counterpart_aml"]
+            cp_cur = cp_aml.currency_id
+            new_aml_dict = entry.copy()
+            new_aml_dict["account_id"] = cp_aml.account_id.id
+            if not any(
+                [
+                    x in new_aml_dict
+                    for x in ("balance", "debit", "credit", "amount_currency")
+                ]
+            ):
+                error += "\n" + "monetary value not provided in matching info"
+                break
+            if not new_aml_dict.get("name"):
+                cp_am_name = cp_aml.move_id.name if cp_aml.move_id.name != "/" else ""
+                cp_aml_name = cp_aml.name or ""
+                new_aml_dict["name"] = " ".join([cp_am_name, cp_aml_name])
+            if "balance" not in new_aml_dict and any(
+                [x in new_aml_dict for x in ("debit", "credit")]
+            ):
+                new_aml_dict["balance"] = new_aml_dict.get(
+                    "debit", 0
+                ) - new_aml_dict.get("credit", 0)
+
+            # counterpart aml as well as bank transaction in company currency
+            if cp_cur == ccur and jcur == ccur:
+                new_aml_dict["currency_id"] = ccur.id
+                new_aml_dict.pop("amount_currency", False)
+
+            # counterparty aml as well as bank journal in same foreign currency
+            elif cp_cur == jcur:
+                new_aml_dict["currency_id"] = cp_cur.id
+                if not fcur:
+                    new_aml_dict["balance"] = (
+                        new_aml_dict.get("balance")
+                        or new_aml_dict["amount_currency"] / rate_c2j
+                    )
+                    new_aml_dict["amount_currency"] = (
+                        new_aml_dict.get("amount_currency")
+                        or new_aml_dict["balance"] * rate_c2j
+                    )
+                elif fcur == ccur:
+                    new_aml_dict["balance"] = (
+                        new_aml_dict.get("balance")
+                        or new_aml_dict["amount_currency"] / rate_f2j
+                    )
+                    new_aml_dict["amount_currency"] = (
+                        new_aml_dict.get("amount_currency")
+                        or new_aml_dict["balance"] * rate_f2j
+                    )
+                else:
+                    new_aml_dict["balance"] = (
+                        new_aml_dict.get("balance")
+                        or new_aml_dict["amount_currency"] * rate_f2j / rate_c2j
+                    )
+                    new_aml_dict["amount_currency"] = (
+                        new_aml_dict.get("amount_currency")
+                        or new_aml_dict["balance"] * rate_f2j
+                    )
+
+            # counterpart aml in company currency and
+            # bank transaction in foreign currency
+            elif cp_cur == ccur:
+                new_aml_dict["currency_id"] = jcur.id
+                if not fcur:
+                    new_aml_dict["balance"] = (
+                        new_aml_dict.get("balance")
+                        or new_aml_dict["amount_currency"] / rate_c2j
+                    )
+                    new_aml_dict["amount_currency"] = (
+                        new_aml_dict.get("amount_currency")
+                        or new_aml_dict["balance"] * rate_c2j
+                    )
+                elif fcur == ccur:
+                    new_aml_dict["amount_currency"] = (
+                        new_aml_dict.get("amount_currency")
+                        or new_aml_dict["balance"] * rate_f2j
+                    )
+                else:
+                    new_aml_dict["amount_currency"] = (
+                        new_aml_dict.get("amount_currency")
+                        or new_aml_dict["balance"] * rate_c2j
+                    )
+
+            # counterpart aml in foreign currency
+            # with no rate provided in CODA transaction
             else:
-                counterpart_aml_dict[amt_fld] = aml.currency_id._convert(
-                    -entry[1], jcur, st_line.company_id, st_line.transaction_date
+                new_aml_dict["currency_id"] = cp_cur.id
+                new_aml_dict["balance"] = (
+                    new_aml_dict.get("balance")
+                    or new_aml_dict["amount_currency"] / rate_c2j
                 )
-            counterpart_aml_dicts.append(counterpart_aml_dict)
-        return counterpart_aml_dicts
+                new_aml_dict["amount_currency"] = new_aml_dict.get(
+                    "amount_currency"
+                ) or cp_aml.currency_id._convert(
+                    new_aml_dict["amount_currency"],
+                    jcur,
+                    st_line.company_id,
+                    st_line.transaction_date,
+                )
+
+            new_aml_dicts.append(new_aml_dict)
+            if error:
+                err_msg = err_hdr + error
+                _logger.error(err_msg)
+                raise UserError(err_msg)
+        return new_aml_dicts
 
     def _create_move_and_reconcile(
         self, wiz_dict, st_line, cba, transaction, reconcile_note
@@ -2849,7 +3022,7 @@ class AccountCodaImport(models.TransientModel):
         match_info = transaction["matching_info"]
         amls_vals = []
         if match_info.get("counterpart_amls"):
-            amls_vals += self._prepare_counterpart_aml_dicts(
+            amls_vals += self._prepare_transaction_aml_dicts(
                 wiz_dict, st_line, cba, transaction
             )
         if match_info.get("account_id"):
@@ -2931,6 +3104,11 @@ class AccountCodaImport(models.TransientModel):
             if iban[:2] == "BE":
                 # To DO : extend for other countries
                 bank_code = iban[4:7]
+                err_msg = _(
+                    "\n        Bank lookup failed. "
+                    "Please define a Bank with "
+                    "Code '%(bank_code)s' and Country '%(country)s' !"
+                ) % {"bank_code": bank_code, "country": bank_country.name}
                 if bic:
                     banks = self.env["res.bank"].search(
                         [
@@ -2942,27 +3120,19 @@ class AccountCodaImport(models.TransientModel):
                     if banks:
                         bank = banks[0]
                     else:
-                        bank = self.env["res.bank"].create(
-                            {
-                                "name": bic,
-                                "code": bank_code,
-                                "bic": bic,
-                                "country": bank_country.id,
-                            }
-                        )
+                        feedback = err_msg
                 else:
                     banks = self.env["res.bank"].search(
-                        [("code", "=", bank_code), ("country", "=", bank_country.id)]
+                        [
+                            ("bban_code_list", "ilike", bank_code),
+                            ("country", "=", bank_country.id),
+                        ]
                     )
                     if banks:
                         bank = banks[0]
                         bic = bank.bic
                     else:
-                        feedback = _(
-                            "\n        Bank lookup failed. "
-                            "Please define a Bank with "
-                            "Code '%(bank_code)s' and Country '%(country)s' !"
-                        ) % {"bank_code": bank_code, "country": bank_country.name}
+                        feedback = err_msg
             else:
                 if not bic:
                     feedback = _(
@@ -3261,8 +3431,8 @@ class AccountCodaImport(models.TransientModel):
         period_from = str2date(comm[42:48])
         period_to = str2date(comm[48:54])
         st_line_name = _("Closing, period from %(period_from)s to %(period_to)s") % {
-            period_from,
-            period_to,
+            "period_from": period_from,
+            "period_to": period_to,
         }
         comm_fields = [
             {

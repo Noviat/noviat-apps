@@ -15,7 +15,7 @@
             <field name="name" position="attributes">
                 <attribute
                     name="attrs"
-                >{'required': [('transaction_numbering', '=', 'statement')]}</attribute>
+                >{'required': [('transaction_numbering', '=', 'statement')], 'readonly': [('state', '=', 'confirm')]}</attribute>
             </field>
         </field>
     </record>

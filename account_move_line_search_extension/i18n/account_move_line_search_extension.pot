@@ -1,0 +1,108 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_move_line_search_extension
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Account :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Amount :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#: model:ir.model,name:account_move_line_search_extension.model_base
+msgid "Base"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#: model:ir.model,name:account_move_line_search_extension.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Journal :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#: model:ir.model,name:account_move_line_search_extension.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#: model:ir.actions.act_window,name:account_move_line_search_extension.account_move_line_action_search_extension
+#: model:ir.ui.menu,name:account_move_line_search_extension.account_move_line_menu_search_extension
+msgid "Journal Items Search All"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Partner :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Period :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Product :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Reconcile :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Tags :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#. odoo-javascript
+#: code:addons/account_move_line_search_extension/static/src/components/account_move_line_search_extension/amlse.xml:0
+#, python-format
+msgid "Taxes :"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#: model_terms:ir.ui.view,arch_db:account_move_line_search_extension.account_move_line_view_amlse
+msgid "Total Credit"
+msgstr ""
+
+#. module: account_move_line_search_extension
+#: model_terms:ir.ui.view,arch_db:account_move_line_search_extension.account_move_line_view_amlse
+msgid "Total Debit"
+msgstr ""

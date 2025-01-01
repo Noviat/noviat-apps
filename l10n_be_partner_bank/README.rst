@@ -15,4 +15,5 @@ This module adds the following functionality
 Known Issues / Roadmap
 ======================
 
+- Replace loading of Belgian banks from module data to setup wizard. 
 - Refactor module to base module + localisation modules in order to extend support for multiple countries.

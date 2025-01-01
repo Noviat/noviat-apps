@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_line_default
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_line_default
+#: model:ir.model,name:account_invoice_line_default.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: account_invoice_line_default
+#: model:ir.model.fields,help:account_invoice_line_default.field_res_partner__property_in_inv_account_id
+#: model:ir.model.fields,help:account_invoice_line_default.field_res_users__property_in_inv_account_id
+msgid "Default Account on incoming Invoices."
+msgstr ""
+
+#. module: account_invoice_line_default
+#: model:ir.model.fields,help:account_invoice_line_default.field_res_partner__property_out_inv_account_id
+#: model:ir.model.fields,help:account_invoice_line_default.field_res_users__property_out_inv_account_id
+msgid "Default Account on outgoing Invoices."
+msgstr ""
+
+#. module: account_invoice_line_default
+#: model:ir.model.fields,field_description:account_invoice_line_default.field_account_bank_statement_line__invoice_description
+#: model:ir.model.fields,field_description:account_invoice_line_default.field_account_move__invoice_description
+#: model:ir.model.fields,field_description:account_invoice_line_default.field_account_payment__invoice_description
+msgid "Description"
+msgstr ""
+
+#. module: account_invoice_line_default
+#: model:ir.model.fields,field_description:account_invoice_line_default.field_res_partner__property_in_inv_account_id
+#: model:ir.model.fields,field_description:account_invoice_line_default.field_res_users__property_in_inv_account_id
+msgid "Incoming Invoice Account"
+msgstr ""
+
+#. module: account_invoice_line_default
+#: model:ir.model,name:account_invoice_line_default.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: account_invoice_line_default
+#: model:ir.model,name:account_invoice_line_default.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: account_invoice_line_default
+#: model:ir.model.fields,field_description:account_invoice_line_default.field_res_partner__property_out_inv_account_id
+#: model:ir.model.fields,field_description:account_invoice_line_default.field_res_users__property_out_inv_account_id
+msgid "Outgoing Invoice Account"
+msgstr ""
+
+#. module: account_invoice_line_default
+#: model:ir.model.fields,help:account_invoice_line_default.field_account_bank_statement_line__invoice_description
+#: model:ir.model.fields,help:account_invoice_line_default.field_account_move__invoice_description
+#: model:ir.model.fields,help:account_invoice_line_default.field_account_payment__invoice_description
+msgid "This field will also be used as a default label on the invoice lines"
+msgstr ""

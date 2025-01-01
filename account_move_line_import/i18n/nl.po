@@ -161,6 +161,15 @@ msgstr ""
 #. odoo-python
 #: code:addons/account_move_line_import/wizards/aml_import.py:0
 #, python-format
+msgid ""
+"Error in input file:\n"
+"the header line should contain only cells of type 'char'."
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
 msgid "Error when processing line '%s'"
 msgstr ""
 

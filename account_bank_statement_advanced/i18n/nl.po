@@ -174,9 +174,14 @@ msgid "Company"
 msgstr "Bedrijf"
 
 #. module: account_bank_statement_advanced
-#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement__state__confirm
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
 msgid "Confirm"
+msgstr ""
+
+#. module: account_bank_statement_advanced
+#: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement__state__confirm
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.view_bank_statement_search
+msgid "Confirmed"
 msgstr ""
 
 #. module: account_bank_statement_advanced
@@ -255,9 +260,6 @@ msgid "Currency"
 msgstr "Valuta"
 
 #. module: account_bank_statement_advanced
-#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__date
-#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_move__date
-#: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_payment__date
 #: model:ir.model.fields,field_description:account_bank_statement_advanced.field_bank_statement_balance_print__date_balance
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_line_view_search
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
@@ -278,6 +280,7 @@ msgstr ""
 
 #. module: account_bank_statement_advanced
 #: model:ir.model.fields.selection,name:account_bank_statement_advanced.selection__account_bank_statement__state__draft
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.view_bank_statement_search
 msgid "Draft"
 msgstr ""
 

@@ -1,4 +1,4 @@
-# Copyright 2009-2023 Noviat.
+# Copyright 2009-2024 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, models
@@ -67,7 +67,7 @@ class ResPartnerBank(models.Model):
                 if len(bank_ids) > 1:
                     raise UserError(
                         _(
-                            "Duplicate bank records found for BBAN Code '%{bban_code}%'.",
+                            "Duplicate bank records found for BBAN Code '%(bban_code)s'.",
                             bban_code=bban_code,
                         )
                     )

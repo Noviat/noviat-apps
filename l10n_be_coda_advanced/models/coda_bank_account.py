@@ -1,4 +1,4 @@
-# Copyright 2009-2023 Noviat.
+# Copyright 2009-2024 Noviat.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import _, api, fields, models
@@ -25,6 +25,15 @@ class CodaBankAccount(models.Model):
     ]
 
     name = fields.Char(required=True)
+    type = fields.Selection(
+        selection=[("normal", "Normal"), ("skip", "Skip")],
+        required=True,
+        default="normal",
+        help="No Bank Statements will be generated for "
+        "CODA Files containing Statements of type 'Skip'"
+        "\nThe CODA import wizard will also not generate "
+        "any warning message for such statements. ",
+    )
     description1 = fields.Char(
         string="Primary Account Description",
         size=35,

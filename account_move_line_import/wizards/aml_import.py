@@ -190,6 +190,13 @@ class AmlImport(models.TransientModel):
             if not ln or ln and ln[0] == "#":
                 continue
             if not header:
+                if not all([isinstance(x, str) for x in ln]):
+                    raise UserError(
+                        _(
+                            "Error in input file:\n"
+                            "the header line should contain only cells of type 'char'."
+                        )
+                    )
                 header = [x.lower() for x in ln]
                 wiz_dict["header_fields"] = self._process_header(wiz_dict, header)
             else:

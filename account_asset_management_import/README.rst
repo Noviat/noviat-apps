@@ -29,7 +29,6 @@ Mandatory Fields
 
   The Reference is checked for uniqueness to avoid loading of duplicate assets.
 
-
 - Asset Name
 
 - Asset Profile
@@ -45,11 +44,12 @@ Mandatory Fields
 Other Fields
 ''''''''''''
 
-Extra columns can be added and will be processed as long as
-the column header is equal to the 'ORM' name of the field.
-Input fields with no corresponding ORM field will be ignored
-unless special support has been added for that field in this
-module (or a module that extends the capabilities of this module).
+Extra columns can be added and will be processed as long as the column header
+is equal to the Label of the field (in user language) or the 'ORM' name of the field.
+
+Input fields with no corresponding ORM field will be ignored unless special support
+has been added for that field in this module (or a module that extends the capabilities
+of this module).
 
 This module has implemented specific support for the following fields:
 
@@ -58,7 +58,6 @@ This module has implemented specific support for the following fields:
   The value must be unique.
   Lookup logic : exact match on partner reference,
   if not found exact match on partner name.
-
 
 A blank column header indicates the end of the columns that will be
 processed. This allows 'comment' columns on the input lines.

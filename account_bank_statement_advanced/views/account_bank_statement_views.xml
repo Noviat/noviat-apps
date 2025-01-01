@@ -1,6 +1,27 @@
 <?xml version="1.0" ?>
 <odoo>
 
+    <record id="view_bank_statement_search" model="ir.ui.view">
+        <field name="name">account.bank.statement.search</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_search" />
+        <field name="arch" type="xml">
+            <filter name="empty" position="before">
+                <filter
+                    string="Draft"
+                    name="draft"
+                    domain="[('state', '=', 'draft')]"
+                />
+                <filter
+                    string="Confirmed"
+                    name="confirm"
+                    domain="[('state', '=', 'confirm')]"
+                />
+                <separator />
+            </filter>
+        </field>
+    </record>
+
     <record id="account_bank_statement_view_tree" model="ir.ui.view">
         <field name="name">account.bank.statement.tree</field>
         <field name="model">account.bank.statement</field>
@@ -283,7 +304,8 @@
         <field
             name="domain"
         >['|', ('journal_id', '=', False), ('journal_id.type', '=', 'bank')]</field>
-        <field name="context">{'journal_type':'bank'}</field>
+        <!-- 'absa' context used in account_bank_transaction_numbering_scheme -->
+        <field name="context">{'journal_type':'bank', 'absa': 1}</field>
         <field
             name="view_ids"
             eval="[(5, 0, 0),

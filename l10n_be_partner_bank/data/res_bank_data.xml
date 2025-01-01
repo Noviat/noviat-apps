@@ -4,14 +4,8 @@
     <!--
     cf. https://www.nbb.be/en/payments-and-securities/payment-standards/bank-identification-codes
     -->
-    <record id="res_bank_BPOTBEB1" model="res.bank">
-        <field name="bban_codes">000,299</field>
-        <field name="bic">BPOTBEB1</field>
-        <field name="name">Bpost</field>
-        <field name="country" ref="base.be" />
-    </record>
     <record id="res_bank_GEBABEBB" model="res.bank">
-        <field name="bban_codes">001-049,137,140-149,200-214,220-298</field>
+        <field name="bban_codes">000-049,137,140-149,200-214,220-299</field>
         <field name="bic">GEBABEBB</field>
         <field name="name">BNP Paribas Fortis</field>
         <field name="country" ref="base.be" />
@@ -90,12 +84,6 @@
         <field name="bban_codes">176</field>
         <field name="bic">BSCHBEBBRET</field>
         <field name="name">Santander Consumer Finance België</field>
-        <field name="country" ref="base.be" />
-    </record>
-    <record id="res_bank_BARBBEBB" model="res.bank">
-        <field name="bban_codes">183</field>
-        <field name="bic">BARBBEBB</field>
-        <field name="name">Bank of Baroda</field>
         <field name="country" ref="base.be" />
     </record>
     <record id="res_bank_BBRUBEBB" model="res.bank">
@@ -208,12 +196,6 @@
         <field name="bban_codes">524,546</field>
         <field name="bic">WAFABEBB</field>
         <field name="name">Attijariwafa bank Europe</field>
-        <field name="country" ref="base.be" />
-    </record>
-    <record id="res_bank_SHIZBEBB" model="res.bank">
-        <field name="bban_codes">530</field>
-        <field name="bic">SHIZBEBB</field>
-        <field name="name">Shizuoka Bank (Europe)</field>
         <field name="country" ref="base.be" />
     </record>
     <record id="res_bank_BKIDBE22" model="res.bank">
@@ -487,6 +469,12 @@
         <field name="name">VDK Spaarbank</field>
         <field name="country" ref="base.be" />
     </record>
+    <record id="res_bank_TRWIBEB1" model="res.bank">
+        <field name="bban_codes">905,967</field>
+        <field name="bic">TRWIBEB1</field>
+        <field name="name">Wise Europe SA</field>
+        <field name="country" ref="base.be" />
+    </record>
     <record id="res_bank_CEKVBE88" model="res.bank">
         <field name="bban_codes">906,908</field>
         <field name="bic">CEKVBE88</field>
@@ -563,12 +551,6 @@
         <field name="bban_codes">964</field>
         <field name="bic">FPEBBEB2</field>
         <field name="name">Financière des Paiements Electroniques</field>
-        <field name="country" ref="base.be" />
-    </record>
-    <record id="res_bank_TRWIBEB1" model="res.bank">
-        <field name="bban_codes">967</field>
-        <field name="bic">TRWIBEB1</field>
-        <field name="name">Wise Europe</field>
         <field name="country" ref="base.be" />
     </record>
     <record id="res_bank_ENIBBEBB" model="res.bank">

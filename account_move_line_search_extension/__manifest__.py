@@ -1,9 +1,9 @@
-# Copyright 2009-2023 Noviat.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2009-2025 Noviat.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
     "name": "Journal Items Search Extension",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.2",
     "license": "AGPL-3",
     "author": "Noviat",
     "website": "https://www.noviat.com/",

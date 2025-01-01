@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-16 22:50+0000\n"
-"PO-Revision-Date: 2023-11-16 22:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,7 +15,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -35,7 +32,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -46,7 +42,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -62,10 +57,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -75,7 +66,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -88,17 +78,16 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
 "\n"
-"No matching CODA Bank Account Configuration record found !"
+"The CODA File contains a statement which is not processed since the associated CODA Bank Account Configuration record is defined as type 'Skip' !\n"
+"Please adjust the settings for CODA Bank Account '%(cba)s' ('Bank Account Number'='%(nbr)s', 'Currency'='%(cur)s' and 'Account Description'='%(desc)s') if you need to import statements for this Bank Account !"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -111,7 +100,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -120,7 +108,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -131,7 +118,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -140,7 +126,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -151,7 +136,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -161,7 +145,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -170,18 +153,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#, python-format
-msgid ""
-"\n"
-"CODA parsing error on information data record 3.1, seq nr %s !\n"
-"Please report this issue via your Odoo support channel."
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -193,7 +164,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -203,7 +173,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -215,7 +184,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -226,7 +194,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -235,7 +202,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -246,7 +212,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -255,7 +220,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -266,7 +230,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -275,7 +238,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -286,7 +248,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -295,17 +256,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#, python-format
-msgid ""
-"\n"
-"Please check if the 'Bank Account Number', 'Currency' and 'Account Description' fields of your configuration record match with '%(number)s', '%(currency)s' and '%(description)s' if you need to import statements for this Bank Account Number !"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -317,8 +267,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -327,7 +275,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -338,7 +285,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -347,20 +293,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#, python-format
-msgid ""
-"\n"
-"The File contains an invalid CODA Transaction Family : %s !"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
@@ -373,8 +305,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -383,7 +313,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -394,7 +323,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -404,7 +332,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "\n"
@@ -413,7 +340,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -429,7 +355,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "'\n"
@@ -438,7 +363,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -450,7 +374,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "'\n"
@@ -459,7 +382,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -471,7 +393,7 @@ msgstr ""
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_100
 msgid ""
 "(SEPA) payment with a structured format communication applying the ISO "
-"standard 11649: Structured creditor reference to remittan"
+"standard 11649: Structured creditor reference to remittance information"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -491,17 +413,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "1-st (recurrent)"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
@@ -529,7 +446,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_113
 #, python-format
@@ -640,15 +556,12 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Amount"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Amount (given by the customer)"
@@ -681,7 +594,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Amount on which % is calculated"
 msgstr ""
@@ -712,7 +624,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Application Error : "
 msgstr ""
@@ -736,7 +647,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Automatic Reconcile remarks:"
 msgstr ""
@@ -744,24 +654,13 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Avgas"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
-#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_016
-msgid "BLIW/IBLC dues"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_01_15
 msgid "Balance due insurance premium"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#: model:ir.model,name:l10n_be_coda_advanced.model_res_bank
-msgid "Bank"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -788,7 +687,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Bank Statement '%(name)s' line '%(line_ref)s':"
@@ -822,14 +720,8 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Basic Amount"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#: model:ir.model,name:l10n_be_coda_advanced.model_account_bank_statement_line_global
-msgid "Batch Payment Info"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -901,16 +793,6 @@ msgid "CODA Bank Account Configuration"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
-#: model:ir.model,name:l10n_be_coda_advanced.model_coda_bank_statement
-msgid "CODA Bank Statement"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#: model:ir.model,name:l10n_be_coda_advanced.model_coda_bank_statement_line
-msgid "CODA Bank Statement Line"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
 #: model:ir.ui.menu,name:l10n_be_coda_advanced.menu_coda_configuration
 msgid "CODA Configuration"
 msgstr ""
@@ -935,7 +817,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "CODA File %s has already been imported."
 msgstr ""
@@ -949,7 +830,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "CODA Import Failed.\n"
@@ -958,7 +838,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "CODA Import failed !"
@@ -1111,19 +990,12 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Card Number"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
@@ -1185,14 +1057,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Category"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Central (Pivot) Date"
@@ -1278,7 +1148,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_108
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_35_01
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_35_50
@@ -1293,7 +1162,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Closing, period from %(period_from)s to %(period_to)s"
@@ -1394,14 +1262,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Communication"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Communication Zone"
@@ -1449,8 +1315,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/models/coda_bank_account.py:0
 #: code:addons/l10n_be_coda_advanced/models/coda_bank_account.py:0
-#: code:addons/l10n_be_coda_advanced/models/coda_bank_account.py:0
-#: code:addons/l10n_be_coda_advanced/models/coda_bank_account.py:0
 #, python-format
 msgid ""
 "Configuration error !\n"
@@ -1466,7 +1330,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Conformity Code"
@@ -1645,7 +1508,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Country code of the principal"
 msgstr ""
@@ -1682,7 +1544,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_125
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_13
 #, python-format
@@ -1691,7 +1552,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Credit Account Number"
@@ -1771,7 +1631,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_102
 #, python-format
 msgid ""
@@ -1781,7 +1640,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_101
 #, python-format
@@ -1801,14 +1659,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Creditor's Identification Code"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Creditor's Number"
@@ -1817,14 +1673,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Cumulative"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Cumulative on network"
@@ -1835,21 +1689,10 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__currency_id
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_search
 #, python-format
 msgid "Currency"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#, python-format
-msgid "Currency exchange rate difference"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -1870,7 +1713,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Date"
 msgstr ""
@@ -1878,14 +1720,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Date of first transaction"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Date of last transaction"
@@ -1992,7 +1832,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Description of the detail"
 msgstr ""
@@ -2017,8 +1856,8 @@ msgstr ""
 msgid ""
 "Detail of 2. Simple amount without detailed data. Normally, data of this "
 "kind comes after type 2. The customer may ask for a separate file containing"
-" the detailed data. In that case, one will speak of a ‘separate "
-"application’. The records in a separate application keep type 6."
+" the detailed data. In that case, one will speak of a 'separate "
+"application'. The records in a separate application keep type 6."
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -2045,7 +1884,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Direct Debit Number"
 msgstr ""
@@ -2053,14 +1891,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Direct Debit Scheme"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Direct Debit Type"
@@ -2073,7 +1909,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Direct debit - DOM'80"
@@ -2105,7 +1940,6 @@ msgid "Discount foreign supplier's bills"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
-#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_bank_statement__display_name
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__display_name
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__display_name
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__display_name
@@ -2119,9 +1953,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
@@ -2196,7 +2027,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "Duplicate Bank Account(s) with account number '%(acc_number)s' for partner "
@@ -2218,7 +2048,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "End Date"
 msgstr ""
@@ -2232,8 +2061,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_104
 #, python-format
 msgid "Equivalent in EUR"
@@ -2243,15 +2070,17 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Equivalent in the currency of the account"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__account_coda__state__error
+msgid "Error"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Errors detected during the processing of CODA File %s :"
@@ -2264,7 +2093,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_127
 #, python-format
@@ -2305,7 +2133,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Extra information"
 msgstr ""
@@ -2317,7 +2144,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/models/account_coda_trans_code.py:0
 #: code:addons/l10n_be_coda_advanced/models/account_coda_trans_code.py:0
 #, python-format
 msgid "Family %s"
@@ -2370,7 +2196,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "First Transaction Sequence Number"
 msgstr ""
@@ -2419,7 +2244,8 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_80_37
-msgid "Fixed right, either one-off or periodical; for details, see \"categories\""
+msgid ""
+"Fixed right, either one-off or periodical; for details, see 'categories'"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -2507,9 +2333,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Fuel"
 msgstr ""
@@ -2542,14 +2365,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Gross amount in the currency of the account"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Gross amount in the original currency"
@@ -2568,7 +2389,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Guarantee Number"
@@ -2625,7 +2445,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "ISO 11649 Communication"
 msgstr ""
@@ -2640,16 +2459,12 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Identification Code"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Identification Number"
@@ -2695,7 +2510,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Import CODA File result"
@@ -2811,7 +2625,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Interest"
 msgstr ""
@@ -2839,7 +2652,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Interest rates, calculation basis"
 msgstr ""
@@ -2866,7 +2678,7 @@ msgid "Interim interest on subscription"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
-#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__transfer_account
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__transfer_account_id
 msgid "Internal Funds Transfer Account"
 msgstr ""
 
@@ -2886,7 +2698,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "Invoice %(name)s matching Structured Communication '%(bba)s' has another "
@@ -2896,7 +2707,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
 "Invoice %(name)s matching Structured Communication '%(bba)s' has different "
@@ -2905,7 +2715,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Invoice Number"
@@ -2929,7 +2738,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Issuing Institution"
 msgstr ""
@@ -2940,7 +2748,6 @@ msgid "JSON dictionary with the results of the CODA parsing"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
-#: model:ir.model,name:l10n_be_coda_advanced.model_account_journal
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__journal_id
 msgid "Journal"
 msgstr ""
@@ -2953,13 +2760,11 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "LPG"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
-#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_bank_statement____last_update
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda____last_update
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type____last_update
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import____last_update
@@ -2973,7 +2778,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Last Transaction Sequence Number"
@@ -3026,7 +2830,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Locality"
 msgstr ""
@@ -3058,7 +2861,7 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__find_payment
-msgid "Lookup Payment Reference"
+msgid "Lookup Payment Order Reference"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -3089,7 +2892,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Mandate Reference"
 msgstr ""
@@ -3097,14 +2899,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Maturity Date"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Message"
@@ -3120,8 +2920,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Minimum applicable"
 msgstr ""
@@ -3133,8 +2931,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
@@ -3151,9 +2947,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__name
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_category__name
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__name
@@ -3164,13 +2957,17 @@ msgid "Name"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_016
+msgid "Negative interest"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_000
 msgid "Net amount"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "New Balance"
@@ -3182,8 +2979,14 @@ msgid "Night safe"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__type
+msgid ""
+"No Bank Statements will be generated for CODA Files containing Statements of type 'Skip'\n"
+"The CODA import wizard will also not generate any warning message for such statements. "
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -3193,7 +2996,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Nominal Interest Rate or Rate of Charge"
@@ -3215,8 +3017,12 @@ msgid "Non-presented circular cheque"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__coda_bank_account__type__normal
+msgid "Normal"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Note/coin denomination"
@@ -3225,7 +3031,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Number"
 msgstr ""
@@ -3233,6 +3038,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Number of errors: %s"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Number of notes/coins"
@@ -3241,14 +3052,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Number of statements parsed"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Number of statements reconciled"
@@ -3274,7 +3083,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Old Balance"
 msgstr ""
@@ -3286,7 +3094,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/models/account_coda.py:0
 #: code:addons/l10n_be_coda_advanced/models/account_coda.py:0
 #, python-format
 msgid "Only CODA File objects in state 'draft' can be deleted !"
@@ -3300,18 +3107,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Original Amount"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
@@ -3340,8 +3141,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "POS Number"
 msgstr ""
@@ -3349,14 +3148,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "POS credit - globalisation"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_114
 #, python-format
@@ -3373,17 +3170,12 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "POS others"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
@@ -3417,7 +3209,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -3610,14 +3401,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Payment with ISO 11649 structured format communication"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -3633,7 +3422,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Percent"
 msgstr ""
@@ -3641,15 +3429,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Percentage"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
@@ -3695,10 +3480,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Private"
 msgstr ""
@@ -3711,7 +3492,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/models/account_coda.py:0
 #: code:addons/l10n_be_coda_advanced/models/account_coda.py:0
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_process
 #, python-format
@@ -3726,7 +3506,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Product Code"
 msgstr ""
@@ -3738,7 +3517,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Proton loading"
@@ -3805,7 +3583,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "R transaction Type"
 msgstr ""
@@ -3819,15 +3596,12 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Rate"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Reason"
@@ -3876,7 +3650,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Reimbursement Proton balance"
@@ -4077,7 +3850,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Reversal of purchases"
 msgstr ""
@@ -4110,14 +3882,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "SEPA B2B"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "SEPA core"
@@ -4215,7 +3985,7 @@ msgid "Set Done"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
-#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__transfer_account
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__transfer_account_id
 msgid ""
 "Set here the default account that will be used for internal transfer between"
 " own bank accounts (e.g. transfer between current and deposit bank "
@@ -4230,14 +4000,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Settlement Date"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_03
 #, python-format
@@ -4312,6 +4080,11 @@ msgid ""
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__coda_bank_account__type__skip
+msgid "Skip"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda_import__skip_undefined
 msgid ""
 "Skip Bank Statements for accounts which have not been defined in the CODA "
@@ -4366,8 +4139,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Starting Date"
 msgstr ""
@@ -4381,14 +4152,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/models/account_bank_statement.py:0
-#: code:addons/l10n_be_coda_advanced/models/account_bank_statement.py:0
 #, python-format
 msgid "Statement %s confirmed, journal items were created."
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Street"
@@ -4408,14 +4177,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Structured creditor reference to remittance information"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Structured format communication"
@@ -4460,7 +4227,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "System Error : "
 msgstr ""
@@ -4497,9 +4263,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Teledata"
 msgstr ""
@@ -4522,7 +4285,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Term in days"
 msgstr ""
@@ -4543,10 +4305,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Terminal Identification"
 msgstr ""
@@ -4555,15 +4313,12 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Terminal Number"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_115
 #, python-format
@@ -4579,7 +4334,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "The CODA File has been processed by"
@@ -4600,7 +4354,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -4658,15 +4411,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "There are multiple invoices matching the Invoice Amount and Reference."
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
@@ -4683,9 +4433,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Time"
 msgstr ""
@@ -4697,7 +4444,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Total amount"
@@ -4718,8 +4464,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Transaction Category unknown, please consult your bank."
 msgstr ""
@@ -4732,8 +4476,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
@@ -4750,6 +4492,12 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
+#, python-format
+msgid "Transaction Family unknown, please consult your bank."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
@@ -4758,9 +4506,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
@@ -4773,9 +4518,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__type
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__trans_type_id
 #, python-format
@@ -4784,7 +4526,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -4854,6 +4595,7 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_comm_type__code
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__type
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__type
 msgid "Type"
 msgstr ""
 
@@ -4887,7 +4629,6 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Unit Price"
@@ -4971,7 +4712,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "VAT, withholding tax on income, commission, etc."
 msgstr ""
@@ -4979,14 +4719,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Validation Date"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Validation Sequence Number"
@@ -5037,7 +4775,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Volume"
 msgstr ""
@@ -5074,9 +4811,6 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Withdrawal"
 msgstr ""
@@ -5096,28 +4830,6 @@ msgstr ""
 #: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_010
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_31
 msgid "Writ service fee"
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#, python-format
-msgid ""
-"You should configure the 'Gain Exchange Rate Account' in your company "
-"settings, to manage automatically the booking of accounting entries related "
-"to differences between exchange rates."
-msgstr ""
-
-#. module: l10n_be_coda_advanced
-#. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#, python-format
-msgid ""
-"You should configure the 'Loss Exchange Rate Account' in your company "
-"settings, to manage automatically the booking of accounting entries related "
-"to differences between exchange rates."
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -5198,7 +4910,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "cancellation"
 msgstr ""
@@ -5213,14 +4924,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "debtor disagrees"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "debtor's account problem"
@@ -5229,7 +4938,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "diesel"
 msgstr ""
@@ -5237,14 +4945,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "direct debit cancelled or nonexistent"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -5254,14 +4960,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "domestic fuel oil"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "europremium"
@@ -5270,7 +4974,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "guarantee without fixed term"
 msgstr ""
@@ -5278,14 +4981,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "last (recurrent)"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "lubricants"
@@ -5299,7 +5000,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "one-off"
 msgstr ""
@@ -5312,16 +5012,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "other types"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
@@ -5332,14 +5028,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "payer disagrees"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "petrol"
@@ -5348,14 +5042,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "premium 99+"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "premium plus 98 oct"
@@ -5364,14 +5056,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "premium with lead substitute"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "recurrent"
@@ -5380,14 +5070,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "refund"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "refusal - other reason"
@@ -5396,14 +5084,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "refusal - reason not specified"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "regular unleaded"
@@ -5412,7 +5098,6 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "reject"
 msgstr ""
@@ -5420,14 +5105,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "return"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "reversal"
@@ -5437,8 +5120,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "structured format communication"
 msgstr ""
@@ -5446,15 +5127,12 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "technical problem"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format

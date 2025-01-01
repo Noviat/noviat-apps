@@ -1,4 +1,4 @@
-# Copyright 2009-2023 Noviat.
+# Copyright 2009-2024 Noviat.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import _, fields, models
@@ -35,8 +35,8 @@ class AccountCoda(models.Model):
         readonly=True,
     )
     state = fields.Selection(
-        selection=[("draft", "Draft"), ("done", "Done")],
-        default="done",
+        selection=[("draft", "Draft"), ("error", "Error"), ("done", "Done")],
+        default="draft",
         required=True,
         readonly=True,
     )

@@ -1,7 +1,7 @@
 /** @odoo-module */
 /*
-    Copyright 2009-2023 Noviat.
-    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+    Copyright 2009-2025 Noviat.
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 */
 
 import {onMounted, onRendered} from "@odoo/owl";
@@ -9,12 +9,14 @@ import {ListRenderer} from "@web/views/list/list_renderer";
 import {listView} from "@web/views/list/list_view";
 import {registry} from "@web/core/registry";
 import rpc from "web.rpc";
+import {useService} from "@web/core/utils/hooks";
 
 export class accountMoveLineSearchExtensionListRenderer extends ListRenderer {
     setup() {
         var self = this;
         self.amlse_domain = [];
         super.setup();
+        this.userService = useService("user");
         onRendered(() => {
             var dts = this.amlse_domain;
             if (dts && dts.length > 0) {

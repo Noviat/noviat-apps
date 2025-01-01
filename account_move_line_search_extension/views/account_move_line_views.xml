@@ -42,7 +42,7 @@
                 <field name="quantity" optional="hide" />
                 <field name="debit" sum="Total Debit" />
                 <field name="credit" sum="Total Credit" />
-                <field name="full_reconcile_id" optional="show" />
+                <field name="matching_number" optional="show" />
                 <field name="date_maturity" optional="hide" />
                 <field
                     name="amount_currency"

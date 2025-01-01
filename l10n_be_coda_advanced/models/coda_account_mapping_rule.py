@@ -11,6 +11,7 @@ class CodaAccountMappingRule(models.Model):
     _name = "coda.account.mapping.rule"
     _inherit = "analytic.mixin"
     _description = "Rules Engine to assign accounts during CODA parsing"
+    _check_company_auto = True
     _order = "sequence"
 
     coda_bank_account_id = fields.Many2one(
