@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
   <record id="account_coda_import_view_form_import" model="ir.ui.view">
@@ -12,6 +12,7 @@
           <field name="coda_data" filename="coda_fname" />
           <field name="coda_fname" invisible="1" />
           <field name="coda_fname_dummy" />
+          <field name="codepage" />
           <field name="accounting_date" />
           <field name="reconcile" />
           <field
