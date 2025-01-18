@@ -1,6 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_account_coda_manager,account.coda manager,model_account_coda,account.group_account_manager,1,1,1,1
-access_account_coda_user,account.coda user,model_account_coda,account.group_account_user,1,0,0,0
+access_account_coda_crud,account.coda,model_account_coda,account.group_account_user,1,1,1,1
 access_account_coda_trans_type_manager,account.coda.trans.type manager,model_account_coda_trans_type,account.group_account_manager,1,1,1,1
 access_account_coda_trans_type_user,account.coda.trans.type user,model_account_coda_trans_type,account.group_account_user,1,0,0,0
 access_account_coda_trans_code_manager,account.coda.trans.code manager,model_account_coda_trans_code,account.group_account_manager,1,1,1,1

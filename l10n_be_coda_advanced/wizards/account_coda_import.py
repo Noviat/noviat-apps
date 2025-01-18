@@ -1,5 +1,5 @@
-# Copyright 2009-2023 Noviat.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2009-2025 Noviat.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import base64
 import json
@@ -77,6 +77,13 @@ class AccountCodaImport(models.TransientModel):
     )
     coda_fname_dummy = fields.Char(
         related="coda_fname", string="CODA Filename", readonly=True
+    )
+    codepage = fields.Char(
+        string="Code Page",
+        default="windows-1252",
+        required=True,
+        help="Code Page of the system that has generated the csv file."
+        "\nE.g. Windows-1252, utf-8",
     )
     accounting_date = fields.Date(help="Keep empty to use the date in the CODA File")
     reconcile = fields.Boolean(
@@ -440,17 +447,17 @@ class AccountCodaImport(models.TransientModel):
             for x in wiz_dict["trans_codes"]
             if (x.type == "family") and (x.code == transaction["trans_family"])
         ]
-        if not trans_family:
-            err_string = (
-                _("\nThe File contains an invalid " "CODA Transaction Family : %s !")
-                % transaction["trans_family"]
+        if trans_family:
+            trans_family = trans_family[0]
+            transaction["trans_family_id"] = trans_family.id
+            transaction["trans_family_desc"] = trans_family.description
+        else:
+            transaction["trans_family_id"] = None
+            transaction["trans_family_desc"] = _(
+                "Transaction Family unknown, please consult your bank."
             )
-            raise UserError(err_string)
-        trans_family = trans_family[0]
-        transaction["trans_family_id"] = trans_family.id
-        transaction["trans_family_desc"] = trans_family.description
         transaction["trans_code"] = line[56:58]
-        trans_code = [
+        trans_code = trans_family and [
             x
             for x in wiz_dict["trans_codes"]
             if (x.type == "code")
@@ -463,7 +470,7 @@ class AccountCodaImport(models.TransientModel):
         else:
             transaction["trans_code_id"] = None
             transaction["trans_code_desc"] = _(
-                "Transaction Code unknown, " "please consult your bank."
+                "Transaction Code unknown, please consult your bank."
             )
         transaction["trans_category"] = line[58:61]
         trans_category = [
@@ -707,16 +714,17 @@ class AccountCodaImport(models.TransientModel):
             for x in wiz_dict["trans_codes"]
             if (x.type == "family") and (x.code == info_line["trans_family"])
         ]
-        if not trans_family:
-            err_string = (
-                _("\nThe File contains an invalid CODA Transaction Family : %s !")
-                % info_line["trans_family"]
+        if trans_family:
+            trans_family = trans_family[0]
+            info_line["trans_family_id"] = trans_family.id
+            info_line["trans_family_desc"] = trans_family.description
+        else:
+            info_line["trans_family_id"] = None
+            info_line["trans_family_desc"] = _(
+                "Transaction Family unknown, please consult your bank."
             )
-            raise UserError(err_string)
-        trans_family = trans_family[0]
-        info_line["trans_family_desc"] = trans_family.description
         info_line["trans_code"] = line[34:36]
-        trans_code = [
+        trans_code = trans_family and [
             x
             for x in wiz_dict["trans_codes"]
             if (x.type == "code")
@@ -1322,7 +1330,7 @@ class AccountCodaImport(models.TransientModel):
         if self.coda_fname.split(".")[-1].lower() == "zip":
             coda_files = self._coda_zip(wiz_dict)
         else:
-            coda_files = [(None, base64.decodebytes(self.coda_data), self.coda_fname)]
+            coda_files = [(None, base64.b64decode(self.coda_data), self.coda_fname)]
 
         for coda_file in coda_files:
             try:
@@ -1421,7 +1429,7 @@ class AccountCodaImport(models.TransientModel):
         """
         coda_files = []
         try:
-            coda_data = base64.decodebytes(self.coda_data)
+            coda_data = base64.b64decode(self.coda_data)
             with zipfile.ZipFile(BytesIO(coda_data)) as coda_zip:
                 for fn in coda_zip.namelist():
                     if fn.endswith("/") or fn.startswith("__MACOSX/"):
@@ -1469,7 +1477,7 @@ class AccountCodaImport(models.TransientModel):
         coda_files = []
         for data, filename in coda_files_in:
             coda_creation_date = False
-            recordlist = str(data, "windows-1252", "strict").split("\n")
+            recordlist = str(data, self.codepage, "strict").split("\n")
             if not recordlist:
                 wiz_dict["nb_err"] += 1
                 wiz_dict["ziperr_log"] += _(
@@ -1513,7 +1521,7 @@ class AccountCodaImport(models.TransientModel):
             }
         )
         note = ""
-        recordlist = str(codafile, "windows-1252", "strict").split("\n")
+        recordlist = str(codafile, self.codepage, "strict").split("\n")
         coda_statements = []
         coda = self.env["account.coda"]
 
