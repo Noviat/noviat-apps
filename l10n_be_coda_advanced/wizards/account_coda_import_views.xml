@@ -11,6 +11,7 @@
           <separator string="Select your file :" colspan="2" />
           <field name="coda_data" filename="coda_fname" />
           <field name="coda_fname" invisible="1" />
+          <field name="codepage" />
           <field name="accounting_date" />
           <field name="reconcile" />
           <field

@@ -1,9 +1,9 @@
-# Copyright 2009-2024 Noviat.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+# Copyright 2009-2025 Noviat.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
     "name": "Belgium - Advanced CODA statements Import",
-    "version": "16.0.1.3.0",
+    "version": "16.0.1.4.0",
     "license": "LGPL-3",
     "author": "Noviat",
     "website": "https://www.noviat.com/",

@@ -1,5 +1,5 @@
-# Copyright 2009-2024 Noviat.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+# Copyright 2009-2025 Noviat.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import base64
 import json
@@ -79,6 +79,13 @@ class AccountCodaImport(models.TransientModel):
 
     coda_data = fields.Binary(string="CODA (Zip) File", required=True)
     coda_fname = fields.Char(string="CODA Filename", default="", required=True)
+    codepage = fields.Char(
+        string="Code Page",
+        default="windows-1252",
+        required=True,
+        help="Code Page of the system that has generated the csv file."
+        "\nE.g. Windows-1252, utf-8",
+    )
     accounting_date = fields.Date(help="Keep empty to use the date in the CODA File")
     reconcile = fields.Boolean(
         help="Launch Automatic Reconcile after CODA import.", default=True
@@ -1308,7 +1315,7 @@ class AccountCodaImport(models.TransientModel):
         if self.coda_fname.split(".")[-1].lower() == "zip":
             coda_files = self._coda_zip(wiz_dict)
         else:
-            coda_files = [(None, base64.decodebytes(self.coda_data), self.coda_fname)]
+            coda_files = [(None, base64.b64decode(self.coda_data), self.coda_fname)]
 
         for coda_file in coda_files:
             try:
@@ -1409,7 +1416,7 @@ class AccountCodaImport(models.TransientModel):
         """
         coda_files = []
         try:
-            coda_data = base64.decodebytes(self.coda_data)
+            coda_data = base64.b64decode(self.coda_data)
             with zipfile.ZipFile(BytesIO(coda_data)) as coda_zip:
                 for fn in coda_zip.namelist():
                     if (
@@ -1462,7 +1469,7 @@ class AccountCodaImport(models.TransientModel):
         coda_files = []
         for data, filename in coda_files_in:
             coda_creation_date = False
-            recordlist = str(data, "windows-1252", "strict").split("\n")
+            recordlist = str(data, self.codepage, "strict").split("\n")
             if not recordlist:
                 wiz_dict["nb_err"] += 1
                 wiz_dict["ziperr_log"] += _(
@@ -1507,7 +1514,7 @@ class AccountCodaImport(models.TransientModel):
             }
         )
         note = ""
-        recordlist = str(codafile, "windows-1252", "strict").split("\n")
+        recordlist = str(codafile, self.codepage, "strict").split("\n")
         coda_statements = []
         coda = self.env["account.coda"]
 
