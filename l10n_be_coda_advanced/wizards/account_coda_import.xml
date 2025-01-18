@@ -12,6 +12,7 @@
           <field name="coda_data" filename="coda_fname"/>
           <field name="coda_fname" invisible="1"/>
           <field name="coda_fname_dummy"/>
+          <field name="codepage"/>
           <field name="accounting_date"/>
           <field name="reconcile"/>
           <field name="reconcile_matching_details"

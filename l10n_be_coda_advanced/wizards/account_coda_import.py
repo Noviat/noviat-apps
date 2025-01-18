@@ -1,4 +1,4 @@
-# Copyright 2009-2021 Noviat.
+# Copyright 2009-2025 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import base64
@@ -77,6 +77,13 @@ class AccountCodaImport(models.TransientModel):
     )
     coda_fname_dummy = fields.Char(
         related="coda_fname", string="CODA Filename", readonly=True
+    )
+    codepage = fields.Char(
+        string="Code Page",
+        default="windows-1252",
+        required=True,
+        help="Code Page of the system that has generated the csv file."
+        "\nE.g. Windows-1252, utf-8",
     )
     accounting_date = fields.Date(help="Keep empty to use the date in the CODA File")
     reconcile = fields.Boolean(
@@ -438,17 +445,17 @@ class AccountCodaImport(models.TransientModel):
             for x in self._trans_codes
             if (x.type == "family") and (x.code == transaction["trans_family"])
         ]
-        if not trans_family:
-            err_string = (
-                _("\nThe File contains an invalid CODA Transaction Family : %s !")
-                % transaction["trans_family"]
+        if trans_family:
+            trans_family = trans_family[0]
+            transaction["trans_family_id"] = trans_family.id
+            transaction["trans_family_desc"] = trans_family.description
+        else:
+            transaction["trans_family_id"] = None
+            transaction["trans_family_desc"] = _(
+                "Transaction Family unknown, please consult your bank."
             )
-            raise UserError(err_string)
-        trans_family = trans_family[0]
-        transaction["trans_family_id"] = trans_family.id
-        transaction["trans_family_desc"] = trans_family.description
         transaction["trans_code"] = line[56:58]
-        trans_code = [
+        trans_code = trans_family and [
             x
             for x in self._trans_codes
             if (x.type == "code")
@@ -691,16 +698,17 @@ class AccountCodaImport(models.TransientModel):
             for x in self._trans_codes
             if (x.type == "family") and (x.code == info_line["trans_family"])
         ]
-        if not trans_family:
-            err_string = (
-                _("\nThe File contains an invalid CODA Transaction Family : %s !")
-                % info_line["trans_family"]
+        if trans_family:
+            trans_family = trans_family[0]
+            info_line["trans_family_id"] = trans_family.id
+            info_line["trans_family_desc"] = trans_family.description
+        else:
+            info_line["trans_family_id"] = None
+            info_line["trans_family_desc"] = _(
+                "Transaction Family unknown, please consult your bank."
             )
-            raise UserError(err_string)
-        trans_family = trans_family[0]
-        info_line["trans_family_desc"] = trans_family.description
         info_line["trans_code"] = line[34:36]
-        trans_code = [
+        trans_code = trans_family and [
             x
             for x in self._trans_codes
             if (x.type == "code")
@@ -959,7 +967,9 @@ class AccountCodaImport(models.TransientModel):
                 )
                 balance_start_check = data and data[0]["balance"] or 0.0
 
-        if balance_start_check != coda_statement["balance_start"]:
+        if not cba.currency_id.is_zero(
+            balance_start_check - coda_statement["balance_start"]
+        ):
             balance_start_err_string = _(
                 "'\nThe CODA Statement %s Starting Balance (%.2f) "
                 "does not correspond with the previous "
@@ -1223,7 +1233,7 @@ class AccountCodaImport(models.TransientModel):
             and transaction.get("struct_comm_details")
         ):
             amount_eur = transaction["struct_comm_details"].get("amount_eur")
-            if amount_eur:
+            if amount_eur and transaction["type"] == "regular":
                 st_line_vals.update(
                     {
                         "currency_id": cba.company_id.currency_id.id,
@@ -1284,7 +1294,7 @@ class AccountCodaImport(models.TransientModel):
         if self.coda_fname.split(".")[-1].lower() == "zip":
             coda_files = self._coda_zip()
         else:
-            coda_files = [(None, base64.decodestring(self.coda_data), self.coda_fname)]
+            coda_files = [(None, base64.b64decode(self.coda_data), self.coda_fname)]
 
         for coda_file in coda_files:
             try:
@@ -1371,7 +1381,7 @@ class AccountCodaImport(models.TransientModel):
         """
         coda_files = []
         try:
-            coda_data = base64.decodestring(self.coda_data)
+            coda_data = base64.b64decode(self.coda_data)
             with zipfile.ZipFile(BytesIO(coda_data)) as coda_zip:
                 for fn in coda_zip.namelist():
                     if fn.endswith("/") or fn.startswith("__MACOSX/"):
@@ -1419,7 +1429,7 @@ class AccountCodaImport(models.TransientModel):
         coda_files = []
         for data, filename in coda_files_in:
             coda_creation_date = False
-            recordlist = str(data, "windows-1252", "strict").split("\n")
+            recordlist = str(data, self.codepage, "strict").split("\n")
             if not recordlist:
                 self._nb_err += 1
                 self._ziperr_log += _("\n\nError while processing CODA File '%s' :") % (
@@ -1451,7 +1461,7 @@ class AccountCodaImport(models.TransientModel):
         self._nb_err = 0
         self._err_string = ""
         note = ""
-        recordlist = str(codafile, "windows-1252", "strict").split("\n")
+        recordlist = str(codafile, self.codepage, "strict").split("\n")
         self._coda_id = self.env.context.get("coda_id")
         self._coda_banks = (
             self.env["coda.bank.account"]
@@ -1776,12 +1786,25 @@ class AccountCodaImport(models.TransientModel):
                         )
                         cr.rollback()
                         break
-                    except Exception:
-                        exctype, value = exc_info()[:2]
-                        line_note = "{}: {}".format(exctype.__name__, str(value))
+                    except (UserError, ValidationError) as e:
+                        line_note = _("Application Error : ") + e.name
+                        if e.value:
+                            line_note += ", " + e.value
                         reconcile_note += self._format_line_notes(
                             st_line, cba, transaction, [line_note], force=True
                         )
+                        cr.rollback()
+                    except Exception as e:
+                        line_note = _("System Error : ") + str(e)
+                        reconcile_note += self._format_line_notes(
+                            st_line, cba, transaction, [line_note], force=True
+                        )
+                        exctype, value = exc_info()[:2]
+                        log_err = "{}: {}".format(exctype.__name__, str(value))
+                        log_err = self._format_line_notes(
+                            st_line, cba, transaction, [log_err], force=True
+                        )
+                        _logger.error(log_err)
                         cr.rollback()
         config_param = self.env["ir.config_parameter"].sudo()
         note_size = int(config_param.get_param("coda.reconcile.note.size", 10000))
@@ -1836,7 +1859,12 @@ class AccountCodaImport(models.TransientModel):
                     for k in rule:
                         match[k] = rule[k]
 
-        if match.get("counterpart_amls") or match.get("account_id"):
+        if (
+            match.get("counterpart_amls")
+            or match.get("payment_aml_rec")
+            or match.get("new_aml_dicts")
+            or match.get("account_id")
+        ):
             reconcile_note = self._create_move_and_reconcile(
                 st_line, cba, transaction, reconcile_note
             )
@@ -2113,18 +2141,25 @@ class AccountCodaImport(models.TransientModel):
                 lambda r: r.account_id.internal_type in ("payable", "receivable")
                 and not r.reconciled
             )
-            cur = cba.currency_id
-            if cur == cba.company_id.currency_id:
+            jcur = cba.currency_id
+            ccur = cba.company_id.currency_id
+            if jcur == ccur:
                 amt_fld = "amount_residual"
-            elif cur == invoice.currency_id:
+            elif jcur == invoice.currency_id:
                 amt_fld = "amount_residual_currency"
             else:
+                match_str = _("this transaction")
+                if transaction.get("struct_comm_bba"):
+                    match_str = (
+                        _("Structured Communication '%s'")
+                        % transaction["struct_comm_bba"]
+                    )
                 line_notes = [
                     _(
-                        "Invoice %s matching Structured Communication '%s' "
+                        "Invoice %s matching %s "
                         "has another currency than this CODA file."
                     )
-                    % (invoice.name, transaction["struct_comm_bba"])
+                    % (invoice.name, match_str)
                 ]
                 line_notes.append(_("A manual reconciliation is required."))
                 reconcile_note += self._format_line_notes(
@@ -2137,15 +2172,15 @@ class AccountCodaImport(models.TransientModel):
             for iml in imls:
                 iml_amt = getattr(iml, amt_fld)
                 iml_amt_total += iml_amt
-                if cur.is_zero(iml_amt - transaction["amount"]):
+                if jcur.is_zero(iml_amt - transaction["amount"]):
                     matches.append(iml)
             if len(matches) == 1:
                 aml = matches[0]
-                match["counterpart_amls"] = [(aml, getattr(aml, amt_fld))]
+                match["counterpart_amls"] = [(aml, aml.amount_residual)]
             if not matches:
-                if cur.is_zero(iml_amt_total - transaction["amount"]):
+                if jcur.is_zero(iml_amt_total - transaction["amount"]):
                     match["counterpart_amls"] = [
-                        (aml, getattr(aml, amt_fld)) for aml in imls
+                        (aml, aml.amount_residual) for aml in imls
                     ]
             if not match.get("counterpart_amls"):
                 line_notes = [
@@ -2159,6 +2194,26 @@ class AccountCodaImport(models.TransientModel):
                 reconcile_note += self._format_line_notes(
                     st_line, cba, transaction, line_notes
                 )
+            else:
+                # foreign currency entry in currency of the bank journal
+                if amt_fld == "amount_residual_currency":
+                    if st_line.currency_id == ccur:
+                        absl_amt_paid_ccur = st_line.amount_currency
+                    else:
+                        rate_date = st_line.val_date or st_line.date
+                        absl_amt_paid_ccur = jcur._convert(
+                            transaction["amount"], ccur, cba.company_id, rate_date
+                        )
+                    bal_diff = ccur.round(
+                        sum([x[1] for x in match["counterpart_amls"]])
+                        - absl_amt_paid_ccur
+                    )
+                    if bal_diff:
+                        match["new_aml_dicts"] = [
+                            self._prepare_exchange_diff_aml(
+                                st_line, aml.currency_id, bal_diff
+                            )
+                        ]
 
         return reconcile_note
 
@@ -2214,12 +2269,33 @@ class AccountCodaImport(models.TransientModel):
         aml = self.env["account.move.line"].search(domain)
 
         if len(aml) == 1:
-            match["status"] = "done"
-            match["partner_id"] = aml.partner_id.id
+            jcur = cba.currency_id
+            ccur = cba.company_id.currency_id
             amt_fld = "amount_residual"
-            if aml.currency_id == cba.currency_id:
+            if aml.currency_id and aml.currency_id == jcur:
                 amt_fld = "amount_residual_currency"
-            match["counterpart_amls"] = [(aml, getattr(aml, amt_fld))]
+            if jcur.is_zero(getattr(aml, amt_fld) - transaction["amount"]):
+                match["counterpart_amls"] = [(aml, aml.amount_residual)]
+                match["status"] = "done"
+                match["partner_id"] = aml.partner_id.id
+                # foreign currency entry in currency of the bank journal
+                if amt_fld == "amount_residual_currency":
+                    if st_line.currency_id == ccur:
+                        absl_amt_paid_ccur = st_line.amount_currency
+                    else:
+                        rate_date = st_line.val_date or st_line.date
+                        absl_amt_paid_ccur = jcur._convert(
+                            transaction["amount"], ccur, cba.company_id, rate_date
+                        )
+                    bal_diff = ccur.round(
+                        match["counterpart_amls"][1] - absl_amt_paid_ccur
+                    )
+                    if bal_diff:
+                        match["new_aml_dicts"] = [
+                            self._prepare_exchange_diff_aml(
+                                st_line, aml.currency_id, bal_diff
+                            )
+                        ]
 
         return reconcile_note
 
@@ -2319,14 +2395,37 @@ class AccountCodaImport(models.TransientModel):
         amls = self.env["account.move.line"].search(domain)
 
         aml = self._match_aml_arap_refine(st_line, cba, transaction, amls)
-
+        # TODO:
+        # The lines below are common to the similar code block in_match_aml_other()
+        # hence we can move this part to a common method.
         if len(aml) == 1:
-            match["status"] = "done"
-            match["partner_id"] = aml.partner_id.id
+            jcur = cba.currency_id
+            ccur = cba.company_id.currency_id
             amt_fld = "amount_residual"
-            if aml.currency_id == cba.currency_id:
+            if aml.currency_id and aml.currency_id == jcur:
                 amt_fld = "amount_residual_currency"
-            match["counterpart_amls"] = [(aml, getattr(aml, amt_fld))]
+            if jcur.is_zero(getattr(aml, amt_fld) - transaction["amount"]):
+                match["counterpart_amls"] = [(aml, aml.amount_residual)]
+                match["status"] = "done"
+                match["partner_id"] = aml.partner_id.id
+                # foreign currency entry in currency of the bank journal
+                if amt_fld == "amount_residual_currency":
+                    if st_line.currency_id == ccur:
+                        absl_amt_paid_ccur = st_line.amount_currency
+                    else:
+                        rate_date = st_line.val_date or st_line.date
+                        absl_amt_paid_ccur = jcur._convert(
+                            transaction["amount"], ccur, cba.company_id, rate_date
+                        )
+                    bal_diff = ccur.round(
+                        match["counterpart_amls"][1] - absl_amt_paid_ccur
+                    )
+                    if bal_diff:
+                        match["new_aml_dicts"] = [
+                            self._prepare_exchange_diff_aml(
+                                st_line, aml.currency_id, bal_diff
+                            )
+                        ]
 
         return reconcile_note
 
@@ -2491,6 +2590,7 @@ class AccountCodaImport(models.TransientModel):
             transaction["ref"],
         )
         for line_note in line_notes:
+            line_note = line_note.replace("\n", INDENT8)
             note += INDENT8 + line_note
         return note
 
@@ -2533,31 +2633,50 @@ class AccountCodaImport(models.TransientModel):
                 "name": name,
                 "account_id": aml.account_id.id,
             }
-            if (
-                cba.currency_id != cba.company_id.currency_id
-                and st_line.currency_id == cba.company_id.currency_id
-            ):
-                amt = st_line.amount_currency
-                if amt > 0:
-                    counterpart_aml_dict["debit"] = 0.0
-                    counterpart_aml_dict["credit"] = amt
-                else:
-                    counterpart_aml_dict["debit"] = -amt
-                    counterpart_aml_dict["credit"] = 0.0
+            if entry[1] > 0:
+                counterpart_aml_dict["debit"] = 0.0
+                counterpart_aml_dict["credit"] = entry[1]
             else:
-                # the process_reconciliation method takes assumes that the
-                # input mv_line_dict 'debit'/'credit' contains the amount
-                # in bank statement line currency and will handle the currency
-                # conversions
-                if entry[1] > 0:
-                    counterpart_aml_dict["debit"] = 0.0
-                    counterpart_aml_dict["credit"] = entry[1]
-                else:
-                    counterpart_aml_dict["debit"] = -entry[1]
-                    counterpart_aml_dict["credit"] = 0.0
+                counterpart_aml_dict["debit"] = -entry[1]
+                counterpart_aml_dict["credit"] = 0.0
             counterpart_aml_dicts.append(counterpart_aml_dict)
 
         return counterpart_aml_dicts
+
+    def _prepare_exchange_diff_aml(self, st_line, rate_diff_currency, bal_diff):
+        # Remark:
+        # Within the Odoo 13.0 account module we find the following ways
+        # to define the exchange rate gain/loss accounts:
+        # Company level:
+        #     - income_currency_exchange_account_id
+        #     - expense_currency_exchange_account_id
+        #     - currency_exchange_journal_id
+        # On the currency_exchange_journal_id we also need to set the
+        # exchange rate gain/loss accounts.
+        # Hence we have an inconsistency here.
+        # We use the currency_exchange_journal_id settings here since
+        # the accounts on company level do not seem to be used any more by
+        # Odoo OC nor OE code.
+        rate_diff_journal = st_line.company_id.currency_exchange_journal_id
+        rate_diff_account = (
+            bal_diff > 0
+            and rate_diff_journal.default_debit_account_id
+            or rate_diff_journal.default_credit_account_id
+        )
+        if not rate_diff_account:
+            # trigger the error messages generated by Odoo when
+            # missing exchange diff settings
+            self.env["account.full.reconcile"]._prepare_exchange_diff_move(
+                st_line.date, st_line.company_id
+            )
+        return {
+            "name": _("Currency exchange rate difference"),
+            "debit": bal_diff > 0 and bal_diff or 0.0,
+            "credit": bal_diff < 0 and -bal_diff or 0.0,
+            "account_id": rate_diff_account.id,
+            "partner_id": st_line.partner_id.id,
+            "exchange_diff_aml": True,
+        }
 
     def _create_move_and_reconcile(self, st_line, cba, transaction, reconcile_note):
 
@@ -2567,28 +2686,34 @@ class AccountCodaImport(models.TransientModel):
             counterpart_aml_dicts = self._prepare_counterpart_aml_dicts(
                 st_line, cba, transaction
             )
+        # Remark:
+        # We do not match against payment lines in the current version
+        # of the CODA module since we believe that generating accounting
+        # entries on the liquidity account via the 'Register Paymnet'
+        # button is a bad practice.
+        # Hence the code line below is to prevent failing reconciles
+        # to allow the creation of a module to support this.
+        payment_aml_rec = match.get("payment_aml_rec")
+        new_aml_dicts = match.get("new_aml_dicts")
+
         if match.get("account_id"):
-            new_aml_dict = self._prepare_new_aml_dict(st_line, cba, transaction)
-            new_aml_dicts = [new_aml_dict]
+            if any([counterpart_aml_dicts, payment_aml_rec, new_aml_dicts]):
+                line_note = _(
+                    "Programming Error: \n "
+                    "The CODA matching engine has executed the CODA mapping rules "
+                    "after preparing the process_reconciliation dicts."
+                )
+                reconcile_note += self._format_line_notes(
+                    st_line, cba, transaction, [line_note]
+                )
+            else:
+                new_aml_dicts = [self._prepare_new_aml_dict(st_line, cba, transaction)]
         if counterpart_aml_dicts or payment_aml_rec or new_aml_dicts:
-            try:
-                st_line.process_reconciliation(
-                    counterpart_aml_dicts=counterpart_aml_dicts,
-                    payment_aml_rec=payment_aml_rec,
-                    new_aml_dicts=new_aml_dicts,
-                )
-            except (UserError, ValidationError) as e:
-                line_note = _("\nApplication Error : ") + e.name
-                if e.value:
-                    line_note += ", " + e.value
-                reconcile_note += self._format_line_notes(
-                    st_line, cba, transaction, [line_note], force=True
-                )
-            except Exception as e:
-                line_note = _("\nSystem Error : ") + str(e)
-                reconcile_note += self._format_line_notes(
-                    st_line, cba, transaction, [line_note], force=True
-                )
+            st_line.process_reconciliation(
+                counterpart_aml_dicts=counterpart_aml_dicts,
+                payment_aml_rec=payment_aml_rec,
+                new_aml_dicts=new_aml_dicts,
+            )
         return reconcile_note
 
     def action_open_bank_statements(self):

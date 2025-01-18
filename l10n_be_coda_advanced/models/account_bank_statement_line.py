@@ -11,3 +11,9 @@ class AccountBankStatementLine(models.Model):
         string="CODA transaction details",
         help="JSON dictionary with the results of the CODA parsing",
     )
+
+    def _prepare_move_line_for_currency(self, aml_dict, date):
+        date = self.val_date or date
+        exchange_diff_aml = aml_dict.pop("exchange_diff_aml", False)
+        if not exchange_diff_aml:
+            super()._prepare_move_line_for_currency(aml_dict, date)

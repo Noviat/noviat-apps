@@ -1,8 +1,9 @@
-# Copyright 2009-2020 Noviat.
+# Copyright 2009-2022 Noviat.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
 from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 
 class AccountBankStatementLine(models.Model):
@@ -93,6 +94,46 @@ class AccountBankStatementLine(models.Model):
             ).compute(self.amount, self.currency_id)
         if not self.currency_id:
             self.amount_currency = 0.0
+
+    @api.constrains("move_name")
+    def _check_liquidity_account_amount(self):
+        """
+        Prevent the reconciliation widget to generate an accounting entry
+        with liquidity account amount != transaction amount.
+        """
+        for line in self:
+            amls = line.journal_entry_ids
+            if not amls:
+                continue
+            liq_amls = amls.filtered(
+                lambda r: r.account_id == line.journal_id.default_debit_account_id
+            )
+            ccur = line.company_id.currency_id
+            jcur = line.journal_id.currency_id or ccur
+            amt_fld = jcur == ccur and "balance" or "amount_currency"
+            amt_check = sum([getattr(r, amt_fld) for r in liq_amls])
+            if not jcur.is_zero(line.amount - amt_check):
+                st_ref = _("statement") + " '{}' (ID:{})".format(
+                    line.statement_id.name or "/", line.statement_id.id,
+                )
+                line_ref = (
+                    line["ref"] and line["ref"] or line["name"] and line["name"] or "/"
+                )
+                transaction_ref = (
+                    st_ref
+                    + ", "
+                    + _("line")
+                    + " '{}' (ID:{})".format(line_ref, line.id)
+                )
+                cur_symbol = jcur.symbol or jcur.name
+                raise UserError(
+                    _(
+                        "Error while processing %s'."
+                        "\nLiquidity account amount %s %s is not equal to "
+                        "transaction amount %s %s."
+                    )
+                    % (transaction_ref, amt_check, cur_symbol, line.amount, cur_symbol)
+                )
 
     def unlink(self):
         glines = self.mapped("globalisation_id")
