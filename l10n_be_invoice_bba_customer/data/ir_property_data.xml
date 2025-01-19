@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record
+        id="ir_property_out_inv_comm_standard"
+        forcecreate="True"
+        model="ir.property"
+    >
+        <field name="name">out_inv_comm_standard</field>
+        <field
+            name="fields_id"
+            search="[('model', '=', 'res.partner'), ('name','=','out_inv_comm_standard')]"
+        />
+        <field name="value">odoo</field>
+        <field name="type">selection</field>
+    </record>
+    <record
+        id="ir_property_out_inv_comm_algorithm"
+        forcecreate="True"
+        model="ir.property"
+    >
+        <field name="name">out_inv_comm_algorithm</field>
+        <field
+            name="fields_id"
+            search="[('model', '=', 'res.partner'), ('name','=','out_inv_comm_algorithm')]"
+        />
+        <field name="value">random</field>
+        <field name="type">selection</field>
+    </record>
+    <record
+        id="ir_property_invoice_reference_type_odoo"
+        forcecreate="True"
+        model="ir.property"
+    >
+        <field name="name">invoice_reference_type_odoo</field>
+        <field
+            name="fields_id"
+            search="[('model', '=', 'res.partner'), ('name','=','invoice_reference_type_odoo')]"
+        />
+        <field name="value">none</field>
+        <field name="type">selection</field>
+    </record>
+    <record
+        id="ir_property_invoice_reference_type"
+        forcecreate="True"
+        model="ir.property"
+    >
+        <field name="name">invoice_reference_type</field>
+        <field
+            name="fields_id"
+            search="[('model', '=', 'res.partner'), ('name','=','invoice_reference_type')]"
+        />
+        <field name="value">partner</field>
+        <field name="type">selection</field>
+    </record>
+
+</odoo>

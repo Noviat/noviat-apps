@@ -1,0 +1,221 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_be_invoice_bba_customer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-07 21:34+0000\n"
+"PO-Revision-Date: 2024-04-10 17:55+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Dutch <https://translation.noviat.com/projects/accounting-v16/"
+"l10n_be_invoice_bba_customer/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4.2\n"
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields.selection,name:l10n_be_invoice_bba_customer.selection__account_journal__invoice_reference_model__be
+msgid "Belgian OGM-VCS Structured Communication"
+msgstr "Belgische gestructureerde communicatie OGM"
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_res_partner__out_inv_comm_algorithm
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_res_users__out_inv_comm_algorithm
+#: model_terms:ir.ui.view,arch_db:l10n_be_invoice_bba_customer.view_partner_property_form
+msgid "Communication Algorithm"
+msgstr "Communicatie Algoritme"
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_account_journal__invoice_reference_model
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_res_partner__out_inv_comm_standard
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_res_users__out_inv_comm_standard
+msgid "Communication Standard"
+msgstr "Communicatie Standard"
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model,name:l10n_be_invoice_bba_customer.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/res_partner.py:0
+#, python-format
+msgid "Customer Reference"
+msgstr "Referentie"
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/res_partner.py:0
+#, python-format
+msgid "Date"
+msgstr "Datum"
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields.selection,name:l10n_be_invoice_bba_customer.selection__account_journal__invoice_reference_model__partner
+msgid "Defined on Customer record"
+msgstr "Klanten fiche"
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_account_bank_statement_line__invoice_date_changed
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_account_move__invoice_date_changed
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_account_payment__invoice_date_changed
+msgid "Invoice Date Changed"
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_res_partner__invoice_reference_type
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_res_users__invoice_reference_type
+msgid "Invoice Reference Type"
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_res_partner__invoice_reference_type_odoo
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_res_users__invoice_reference_type_odoo
+msgid "Invoice Reference Type Odoo"
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model,name:l10n_be_invoice_bba_customer.model_account_journal
+#, fuzzy
+msgid "Journal"
+msgstr "Dagboek"
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model,name:l10n_be_invoice_bba_customer.model_account_move
+#, fuzzy
+msgid "Journal Entry"
+msgstr "Boeking"
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_account_bank_statement_line__journal_partner_changed
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_account_move__journal_partner_changed
+#: model:ir.model.fields,field_description:l10n_be_invoice_bba_customer.field_account_payment__journal_partner_changed
+msgid "Journal Partner Changed"
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/res_partner.py:0
+#, python-format
+msgid "Random"
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_res_partner__invoice_reference_type
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_res_partner__invoice_reference_type_odoo
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_res_partner__out_inv_comm_algorithm
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_res_users__invoice_reference_type
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_res_users__invoice_reference_type_odoo
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_res_users__out_inv_comm_algorithm
+msgid ""
+"Select Algorithm to generate the Structured Communication on Outgoing "
+"Invoices."
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_res_partner__out_inv_comm_standard
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_res_users__out_inv_comm_standard
+msgid ""
+"Select Communication Standard for Outgoing Invoices.\n"
+"This setting will only be effective when you create your Customer Invoices "
+"via a Sales Journal with Communication Standard set to 'Defined on Customer "
+"record'."
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/account_move.py:0
+#, python-format
+msgid ""
+"The OGM-VCS Structured Communication has already been used!\n"
+"Please use a unique OGM-VCS Payment Communication."
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/account_move.py:0
+#, python-format
+msgid "The OGM-VCS Structured Communication is not correctly defined !"
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/account_move.py:0
+#, python-format
+msgid ""
+"The Partner should have a 3-7 digit Reference Number for the generation of "
+"Belgian OGM-VCS Structured Communications with Communication Algorithm set "
+"to 'Customer Reference' !'                   '\n"
+"Please correct the Partner record."
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/account_move.py:0
+#, python-format
+msgid ""
+"The combination of Communication Standard and Algorithm on the Curstomer "
+"record is not implemented"
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/account_move.py:0
+#, python-format
+msgid ""
+"The combination of reference model and reference type on the journal is not "
+"implemented"
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/account_move.py:0
+#, python-format
+msgid ""
+"The daily maximum of outgoing invoices with an automatically generated "
+"Belgian OGM-VCS Structured Communication has been exceeded!\n"
+"Please create manually a unique OGM-VCS Structured Communication."
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/account_move.py:0
+#, python-format
+msgid ""
+"The daily maximum of outgoing invoices with an automatically generated "
+"Belgian OGM-VCS Structured Communication has been exceeded!\n"
+"Please create manually a uniqueOGM-VCS Structured Communication or change "
+"the Communication Algorithm on the partner record."
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#. odoo-python
+#: code:addons/l10n_be_invoice_bba_customer/models/account_move.py:0
+#, python-format
+msgid ""
+"You are not allowed to modify the Payment Reference of a posted Customer "
+"Invoice."
+msgstr ""
+
+#. module: l10n_be_invoice_bba_customer
+#: model:ir.model.fields,help:l10n_be_invoice_bba_customer.field_account_journal__invoice_reference_model
+msgid ""
+"You can set here the default Communication Standard that will appear on "
+"customer invoices, once validated, to help the customer to refer to that "
+"particular invoice when making the payment.\n"
+"If you select 'Invoice Number or Open' the Payment Reference will become the "
+"Invoice Number or remain empty in case of you select 'Open' as Communication "
+"Type.\n"
+"If you select 'Defined on Customer record', the Payment Communication "
+"Standard defined on the Customer record will be used."
+msgstr ""
+
+#, python-format
+#~ msgid "Free Communication"
+#~ msgstr "Vrije mededeling"

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <record id="view_partner_property_form" model="ir.ui.view">
+    <field name="name">res.partner.property.inv_comm_type.form.inherit</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="account.view_partner_property_form" />
+    <field name="arch" type="xml">
+      <field name="property_account_payable_id" position="after">
+        <field name="out_inv_comm_standard" />
+        <field
+                    name="out_inv_comm_algorithm"
+                    attrs="{'invisible': ['|', ('out_inv_comm_standard', '!=', 'be'), ('parent_id', '!=', False)], 'required': [('out_inv_comm_standard', 'not in', (False, 'be')), ('parent_id', '=', False)]}"
+                />
+        <field
+                    name="invoice_reference_type"
+                    string="Communication Algorithm"
+                    attrs="{'invisible': ['|', ('out_inv_comm_standard', 'in', ('be', 'odoo')), ('parent_id', '!=', False)], 'required': [('out_inv_comm_standard', 'not in', (False, 'be')), ('parent_id', '=', False)]}"
+                />
+        <field
+                    name="invoice_reference_type_odoo"
+                    string="Communication Algorithm"
+                    attrs="{'invisible': ['|', ('out_inv_comm_standard', '!=', 'odoo'), ('parent_id', '!=', False)], 'required': [('out_inv_comm_standard', '=', 'odoo'), ('parent_id', '=', False)]}"
+                />
+      </field>
+    </field>
+  </record>
+
+</odoo>
