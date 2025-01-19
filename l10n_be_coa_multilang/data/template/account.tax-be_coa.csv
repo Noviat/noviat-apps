@@ -1,0 +1,427 @@
+id,code,sequence,description,invoice_label,name,price_include,amount,amount_type,type_tax_use,tax_group_id,active,repartition_line_ids/repartition_type,repartition_line_ids/document_type,repartition_line_ids/tag_ids,repartition_line_ids/account_id,repartition_line_ids/factor_percent,name@fr,name@nl
+attn_VAT-OUT-21-S,VAT-OUT-21-S,10,21%,21%,21% Services,False,21,percent,sale,atg_VAT_21,True,base,invoice,+03,,,21% Services,21% Diensten
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-21-G,VAT-OUT-21-G,11,21%,21%,21% Goods,False,21,percent,sale,atg_VAT_21,True,base,invoice,+03,,,21% Marchandises,21% Goederen
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-21-CD2-S,VAT-OUT-21-CD2-S,12,21% - Cash Discount 2%,21% - Cash Discount 2%,21% Services - Cash Discount 2%,False,20.58,percent,sale,atg_VAT_21,False,base,invoice,+03,,,21% Services - Escompte de caisse 2%,21%  Diensten - Korting contant 2%
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-21-CD2-G,VAT-OUT-21-CD2-G,13,21% - Cash Discount 2%,21% - Cash Discount 2%,21% Goods - Cash Discount 2%,False,20.58,percent,sale,atg_VAT_21,False,base,invoice,+03,,,21% Marchandises - Escompte de caisse 2%,21% Goederen - Korting contant 2%
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-21-INC-S,VAT-OUT-21-INC-S,14,21%,21%,21% Services (Price Incl.),True,21,percent,sale,atg_VAT_21,True,base,invoice,+03,,,21% Services (Prix incl.),21% Diensten (Prijs incl.)
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-21-INC-G,VAT-OUT-21-INC-G,15,21%,21%,21% Goods (Price Incl.),True,21,percent,sale,atg_VAT_21,True,base,invoice,+03,,,21% Marchandises (Prix incl.),21% Goederen (Prijs incl.)
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-12-S,VAT-OUT-12-S,20,12%,12%,12% Services,False,12,percent,sale,atg_VAT_12,True,base,invoice,+02,,,12% Services,12% Diensten
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-12-G,VAT-OUT-12-G,21,12%,12%,12% Goods,False,12,percent,sale,atg_VAT_12,True,base,invoice,+02,,,12% Marchandises,12% Goederen
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-06-S,VAT-OUT-06-S,30,6%,6%,6% Services,False,6,percent,sale,atg_VAT_06,True,base,invoice,+01,,,6% Services,6% Diensten
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-06-G,VAT-OUT-06-G,31,6%,6%,6% Goods,False,6,percent,sale,atg_VAT_06,True,base,invoice,+01,,,6% Marchandises,6% Goederen
+,,,,,,,,,,,,tax,invoice,+54,aatn_451054,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,+64,aatn_411064,,,
+attn_VAT-OUT-00-S,VAT-OUT-00-S,40,0%,0%,0% Services,False,0,percent,sale,atg_VAT_00,True,base,invoice,+00,,,0% Services,0% Diensten
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-OUT-00-G,VAT-OUT-00-G,41,0%,0%,0% Goods,False,0,percent,sale,atg_VAT_00,True,base,invoice,+00,,,0% Marchandises,0% Goederen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-OUT-00-CC,VAT-OUT-00-CC,50,0%,0%,0% Cocontractant,False,0,percent,sale,atg_VAT_00,True,base,invoice,+45,,,0% Cocontractant,0% Medecontractant
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-OUT-00-EU-S,VAT-OUT-00-EU-S,60,0%,0%,Services within EU,False,0,percent,sale,atg_VAT_00,True,base,invoice,+44,,,Services UE,Diensten EU
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+48S,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-OUT-00-EU-G,VAT-OUT-00-EU-G,61,0%,0%,Goods within EU (Code L),False,0,percent,sale,atg_VAT_00,True,base,invoice,+46L,,,Marchandises UE (Code L),Goederen EU (Code L)
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+48L,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-OUT-00-EU-T,VAT-OUT-00-EU-T,62,0%,0%,Goods within EU (Code T),False,0,percent,sale,atg_VAT_00,True,base,invoice,+46T,,,Marchandises UE (Code T),Goederen EU (Code T)
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+48T,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-OUT-00-ROW,VAT-OUT-00-ROW,70,0%,0%,Export Outside EU,False,0,percent,sale,atg_VAT_00,True,base,invoice,+47,,,Export hors UE,Export buiten EU
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+49,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V81-21-S,VAT-IN-V81-21-S,110,21%,21%,21% - Services for resale,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+81D,,,21% - Services pour revente,21% - Diensten voor wederverkoop
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-81D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V81-21-G,VAT-IN-V81-21-G,113,21%,21%,"21% - Raw mat., consum. and goods for resale",False,21,percent,purchase,atg_VAT_21,True,base,invoice,+81D,,,21% - Approvisionn. et marchandises,"21% - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-81D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V81-12,VAT-IN-V81-12,120,12%,12%,"12% - Raw mat., consum. and goods for resale",False,12,percent,purchase,atg_VAT_12,True,base,invoice,+81D,,,12% - Approvisionn. et marchandises,"12% - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-81D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V81-06,VAT-IN-V81-06,130,6%,6%,"6% - Raw mat., consum. and goods for resale",False,6,percent,purchase,atg_VAT_06,True,base,invoice,+81D,,,6% - Approvisionn. et marchandises,"6% - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-81D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V81-00,VAT-IN-V81-00,140,0%,0%,"0% - Raw mat., consum. and goods for resale",False,0,percent,purchase,atg_VAT_00,True,base,invoice,+81D,,,0% - Approvisionn. et marchandises,"0% - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-81D||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V82-21-S,VAT-IN-V82-21-S,210,21%,21%,21% - Services,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D,,,21% - Services,21% - Diensten
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V82-21-CD2-S,VAT-IN-V82-21-CD2-S,213,21% - Cash Discount 2%,21% - Cash Discount 2%,21% - Services - Cash Discount 2%,False,20.58,percent,purchase,atg_VAT_21,True,base,invoice,+82D,,,21% - Services -  Escompte de caisse 2%,21% - Diensten - Korting contant 2%
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V82-21-INC-S,VAT-IN-V82-21-INC-S,216,21%,21%,21% - Services (Price Incl.),True,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D,,,21% - Services (Prix incl.),21% - Diensten (Prijs incl.)
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V82-21-G,VAT-IN-V82-21-G,220,21%,21%,21% - Other goods,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D,,,21% - Biens divers,21% - Diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V82-12-S,VAT-IN-V82-12-S,230,12%,12%,12% - Services,False,12,percent,purchase,atg_VAT_12,True,base,invoice,+82D,,,12% - Services,12% - Diensten
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V82-12-G,VAT-IN-V82-12-G,240,12%,12%,12% - Other goods,False,12,percent,purchase,atg_VAT_12,True,base,invoice,+82D,,,12% - Biens divers,12% - Diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V82-06-S,VAT-IN-V82-06-S,250,6%,6%,6% - Services,False,6,percent,purchase,atg_VAT_06,True,base,invoice,+82D,,,6% - Services,6% - Diensten
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V82-06-G,VAT-IN-V82-06-G,260,6%,6%,6% - Other goods,False,6,percent,purchase,atg_VAT_06,True,base,invoice,+82D,,,6% - Biens divers,6% - Diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V82-00-S,VAT-IN-V82-00-S,270,0%,0%,0% - Services,False,0,percent,purchase,atg_VAT_00,True,base,invoice,+82D,,,0% - Services,0% - Diensten
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V82-00-G,VAT-IN-V82-00-G,280,0%,0%,0% - Other goods,False,0,percent,purchase,atg_VAT_00,True,base,invoice,+82D,,,0% - Biens divers,0% - Diverse goederen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V83-21,VAT-IN-V83-21,310,21%,21%,21% - Capital goods,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+83D,,,21% - Biens d'investissement,21% - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-83D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V83-12,VAT-IN-V83-12,320,12%,12%,12% - Capital goods,False,12,percent,purchase,atg_VAT_12,True,base,invoice,+83D,,,12% - Biens d'investissement,12% - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-83D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V83-06,VAT-IN-V83-06,330,6%,6%,6% - Capital goods,False,6,percent,purchase,atg_VAT_06,True,base,invoice,+83D,,,6% - Biens d'investissement,6% - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,base,refund,-83D||+85D,,,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,,,
+attn_VAT-IN-V83-00,VAT-IN-V83-00,340,0%,0%,0% - Capital goods,False,0,percent,purchase,atg_VAT_00,True,base,invoice,+83D,,,0% - Biens d'investissement,0% - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-83D||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V81-21-CC,VAT-IN-V81-21-CC,410,21% Cocontractant,21% Cocontractant,"21% Cocontract. - Raw mat., consum. and goods for resale",False,21,percent,purchase,atg_VAT_21,True,base,invoice,+81D||+87,,,21% Cocontractant - Approvisionn. et marchandises,"21% Medecontract. - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-81D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V81-12-CC,VAT-IN-V81-12-CC,420,12% Cocontractant,12% Cocontractant,"12% Cocontract. - Raw mat., consum. and goods for resale",False,12,percent,purchase,atg_VAT_12,False,base,invoice,+81D||+87,,,12% Cocontractant - Approvisionn. et marchandises,"12% Medecontract. - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-81D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V81-06-CC,VAT-IN-V81-06-CC,430,6% Cocontractant,6% Cocontractant,"6% Cocontract. - Raw mat., consum. and goods for resale",False,6,percent,purchase,atg_VAT_06,False,base,invoice,+81D||+87,,,6% Cocontractant - Approvisionn. et marchandises,"6% Medecontract. - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-81D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V81-00-CC,VAT-IN-V81-00-CC,440,0% Cocontractant,0% Cocontractant,"0% Cocontract. - Raw mat., consum. and goods for resale",False,0,percent,purchase,atg_VAT_00,False,base,invoice,+81D||+87,,,7=translations!D98,"6% Medecontract. - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-81D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V82-21-CC,VAT-IN-V82-21-CC,510,21% Cocontractant,21% Cocontractant,21% Cocontract. - Services and other goods,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D||+87,,,21% Cocontractant - Services et biens divers,21% Medecontract. - Diensten en diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-82D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V82-12-CC,VAT-IN-V82-12-CC,520,12% Cocontractant,12% Cocontractant,12% Cocontract. - Services and other goods,False,12,percent,purchase,atg_VAT_12,False,base,invoice,+82D||+87,,,12% Cocontractant - Services et biens divers,12% Medecontract. - Diensten en diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-82D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V82-06-CC,VAT-IN-V82-06-CC,530,6% Cocontractant,6% Cocontractant,6% Cocontract. - Services and other goods,False,6,percent,purchase,atg_VAT_06,False,base,invoice,+82D||+87,,,6% Cocontractant - Services et biens divers,6% Medecontract. - Diensten en diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-82D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V82-00-CC,VAT-IN-V82-00-CC,540,0% Cocontractant,0% Cocontractant,0% Cocontract. - Services and other goods,False,0,percent,purchase,atg_VAT_00,False,base,invoice,+82D||+87,,,0% Cocontractant - Services et biens divers,0% Medecontract. - Diensten en diverse goederen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-82D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V83-21-CC,VAT-IN-V83-21-CC,610,21% Cocontractant,21% Cocontractant,21% Cocontract. - Capital goods,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+83D||+87,,,21% Cocontractant - Biens d'investissement,21% Medecontract. - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-83D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V83-12-CC,VAT-IN-V83-12-CC,620,12% Cocontractant,12% Cocontractant,12% Cocontract. - Capital goods,False,12,percent,purchase,atg_VAT_12,False,base,invoice,+83D||+87,,,12% Cocontractant - Biens d'investissement,12% Medecontract. - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-83D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V83-06-CC,VAT-IN-V83-06-CC,630,6% Cocontractant,6% Cocontractant,6% Cocontract. - Capital goods,False,6,percent,purchase,atg_VAT_06,False,base,invoice,+83D||+87,,,6% Cocontractant - Biens d'investissement,6% Medecontract. - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-56,aatn_451056,-100,,
+,,,,,,,,,,,,base,refund,-83D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451056,-100,,
+attn_VAT-IN-V83-00-CC,VAT-IN-V83-00-CC,640,0% Cocontractant,0% Cocontractant,0% Cocontract. - Capital goods,False,0,percent,purchase,atg_VAT_00,False,base,invoice,+83D||+87,,,0% Cocontractant - Biens d'investissement,0% Medecontract. - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-83D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V82-CAR50-INC,VAT-IN-V82-CAR50-INC,710,Car Expenses - VAT 50% Deductible,Car Expenses - VAT 50% Deductible,Car Expenses - VAT 50% Deductible (Price Incl.),True,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D,,,Frais de voiture - TVA 50% déduct. (Prix incl.),Autokosten - BTW 50% aftrekbaar (Prijs incl.)
+,,,,,,,,,,,,tax,invoice,+82ND,,50,,
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,50,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,-82ND||+85ND,,50,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,50,,
+attn_VAT-IN-V82-CAR35-INC,VAT-IN-V82-CAR35-INC,713,Car Expenses - VAT 35% Deductible,Car Expenses - VAT 35% Deductible,Car Expenses - VAT 35% Deductible (Price Incl.),True,21,percent,purchase,atg_VAT_21,False,base,invoice,+82D,,,Frais de voiture - TVA 35% déduct. (Prix incl.),Autokosten - BTW 35% aftrekbaar (Prijs incl.)
+,,,,,,,,,,,,tax,invoice,+82ND,,65,,
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,35,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,-82ND||+85ND,,65,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,35,,
+attn_VAT-IN-V82-CAR50-EXC,VAT-IN-V82-CAR50-EXC,720,Car Expenses - VAT 50% Deductible,Car Expenses - VAT 50% Deductible,Car Expenses - VAT 50% Deductible (Price Excl.),False,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D,,,Frais de voiture - TVA 50% déduct. (Prix excl.),Autokosten - BTW 50% aftrekbaar (Prijs excl.)
+,,,,,,,,,,,,tax,invoice,+82ND,,50,,
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,50,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,-82ND||+85ND,,50,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,50,,
+attn_VAT-IN-V82-CAR35-EXC,VAT-IN-V82-CAR35-EXC,724,Car Expenses - VAT 35% Deductible,Car Expenses - VAT 35% Deductible,Car Expenses - VAT 35% Deductible (Price Excl.),False,21,percent,purchase,atg_VAT_21,False,base,invoice,+82D,,,Frais de voiture - TVA 35% déduct. (Prix excl.),Autokosten - BTW 35% aftrekbaar (Prijs excl.)
+,,,,,,,,,,,,tax,invoice,+82ND,,65,,
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,35,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,-82ND||+85ND,,65,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,35,,
+attn_VAT-IN-V82-ND25-INC,VAT-IN-V82-ND25-INC,730,Expenses 25% non-deductible,Expenses 25% non-deductible,Expenses 25% non-deductible (Price Incl.),True,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D,,,Frais - TVA 25% non-déduct. (Prix incl.),Onkosten - BTW 25% niet aftrekbaar (Prijs incl.)
+,,,,,,,,,,,,tax,invoice,+82ND,,25,,
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,75,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,-82ND||+85ND,,25,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,75,,
+attn_VAT-IN-V82-ND25-EXC,VAT-IN-V82-ND25-EXC,734,Expenses 25% non-deductible,Expenses 25% non-deductible,Expenses 25% non-deductible (Price Excl.),False,21,percent,purchase,atg_VAT_21,False,base,invoice,+82D,,,Frais - TVA 25% non-déduct. (Prix excl.),Onkosten - BTW 25% niet aftrekbaar (Prijs excl.)
+,,,,,,,,,,,,tax,invoice,+82ND,,25,,
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,75,,
+,,,,,,,,,,,,base,refund,-82D||+85D,,,,
+,,,,,,,,,,,,tax,refund,-82ND||+85ND,,25,,
+,,,,,,,,,,,,tax,refund,+63,aatn_451063,75,,
+attn_VAT-IN-V81-21-EU-S,VAT-IN-V81-21-EU-S,1110,21% Intracomm.,21% Intracomm.,21% Intracomm. - Services for resale,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+81D||+88,,,21% Intracomm. - Services pour revente,21% Intracomm. - Diensten voor wederverkoop
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-81D||-88||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V81-21-EU-G,VAT-IN-V81-21-EU-G,1114,21% Intracomm.,21% Intracomm.,"21% Intracomm. - Raw mat., consum. and goods for resale",False,21,percent,purchase,atg_VAT_21,True,base,invoice,+81D||+86,,,21% Intracomm. - Approvisionn. et marchandises,"21% Intracomm. - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-81D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V81-12-EU,VAT-IN-V81-12-EU,1120,12% Intracomm.,12% Intracomm.,"12% Intracomm. - Raw mat., consum. and goods for resale",False,12,percent,purchase,atg_VAT_12,False,base,invoice,+81D||+86,,,12% Intracomm. - Approvisionn. et marchandises,"12% Intracomm. - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-81D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V81-06-EU,VAT-IN-V81-06-EU,1130,6% Intracomm.,6% Intracomm.,"6% Intracomm. - Raw mat., consum. and goods for resale",False,6,percent,purchase,atg_VAT_06,False,base,invoice,+81D||+86,,,6% Intracomm. - Approvisionn. et marchandises,"6% Intracomm. - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-81D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V81-00-EU,VAT-IN-V81-00-EU,1140,0% Intracomm.,0% Intracomm.,"0% Intracomm. - Raw mat., consum. and goods for resale",False,0,percent,purchase,atg_VAT_00,False,base,invoice,+81D||+86,,,0% Intracomm. - Approvisionn. et marchandises,"0% Intracomm. - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-81D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V82-21-EU-S,VAT-IN-V82-21-EU-S,1210,21% Intracomm.,21% Intracomm.,21% Intracomm. - Services,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D||+88,,,21% Intracomm. - Services,21% Intracomm. - Diensten
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-82D||-88||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V82-21-EU-G,VAT-IN-V82-21-EU-G,1220,21% Intracomm.,21% Intracomm.,21% Intracomm. - Other goods,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D||+86,,,21% Intracomm. - Biens divers,21% Intracomm. - Diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-82D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V82-12-EU-S,VAT-IN-V82-12-EU-S,1230,12% Intracomm.,12% Intracomm.,12% Intracomm. - Services,False,12,percent,purchase,atg_VAT_12,False,base,invoice,+82D||+88,,,12% Intracomm. - Services,12% Intracomm. - Diensten
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-82D||-88||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V82-12-EU-G,VAT-IN-V82-12-EU-G,1240,12% Intracomm.,12% Intracomm.,12% Intracomm. - Other goods,False,12,percent,purchase,atg_VAT_12,False,base,invoice,+82D||+86,,,12% Intracomm. - Biens divers,12% Intracomm. - Diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-82D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V82-06-EU-S,VAT-IN-V82-06-EU-S,1250,6% Intracomm.,6% Intracomm.,6% Intracomm. - Services,False,6,percent,purchase,atg_VAT_06,False,base,invoice,+82D||+88,,,6% Intracomm. - Services,6% Intracomm. - Diensten
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-82D||-88||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V82-06-EU-G,VAT-IN-V82-06-EU-G,1260,6% Intracomm.,6% Intracomm.,6% Intracomm. - Other goods,False,6,percent,purchase,atg_VAT_06,False,base,invoice,+82D||+86,,,6% Intracomm. - Biens divers,6% Intracomm. - Diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-82D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V82-00-EU-S,VAT-IN-V82-00-EU-S,1270,0% Intracomm.,0% Intracomm.,0% Intracomm. - Services,False,0,percent,purchase,atg_VAT_00,False,base,invoice,+82D||+88,,,0% Intracomm. - Services,0% Intracomm. - Diensten
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-82D||-88||+84,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V82-00-EU-G,VAT-IN-V82-00-EU-G,1280,0% Intracomm.,0% Intracomm.,0% Intracomm. - Other goods,False,0,percent,purchase,atg_VAT_00,False,base,invoice,+82D||+86,,,0% Intracomm. - Biens divers,0% Intracomm. - Diverse goederen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-82D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V83-21-EU,VAT-IN-V83-21-EU,1310,21% Intracomm.,21% Intracomm.,21% Intracomm. - Capital goods,False,21,percent,purchase,atg_VAT_21,False,base,invoice,+83D||+86,,,21% Intracomm. - Biens d'investissement,21% Intracomm. - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-83D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V83-12-EU,VAT-IN-V83-12-EU,1320,12% Intracomm.,12% Intracomm.,12% Intracomm. - Capital goods,False,12,percent,purchase,atg_VAT_12,False,base,invoice,+83D||+86,,,12% Intracomm. - Biens d'investissement,12% Intracomm. - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-83D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V83-06-EU,VAT-IN-V83-06-EU,1330,6% Intracomm.,6% Intracomm.,6% Intracomm. - Capital goods,False,6,percent,purchase,atg_VAT_06,False,base,invoice,+83D||+86,,,6% Intracomm. - Biens d'investissement,6% Intracomm. - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-55,aatn_451055,-100,,
+,,,,,,,,,,,,base,refund,-83D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451055,-100,,
+attn_VAT-IN-V83-00-EU,VAT-IN-V83-00-EU,1340,0% Intracomm.,0% Intracomm.,0% Intracomm. - Capital goods,False,0,percent,purchase,atg_VAT_00,False,base,invoice,+83D||+86,,,0% Intracomm. - Biens d'investissement,0% Intracomm. - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-83D||-86||+84,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V81-21-ROW-CC,VAT-IN-V81-21-ROW-CC,2110,21% Outside EU,21% Outside EU,"21% Outside EU - Raw mat., consum. and goods for resale",False,21,percent,purchase,atg_VAT_21,True,base,invoice,+81D||+87,,,21% Hors UE - Approvisionn. et marchandises,"21% Buiten EU - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-81D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V81-12-ROW-CC,VAT-IN-V81-12-ROW-CC,2120,12% Outside EU,12% Outside EU,"12% Outside EU - Raw mat., consum. and goods for resale",False,12,percent,purchase,atg_VAT_12,False,base,invoice,+81D||+87,,,12% Hors UE - Approvisionn. et marchandises,"12% Buiten EU - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-81D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V81-06-ROW-CC,VAT-IN-V81-06-ROW-CC,2130,6% Outside EU,6% Outside EU,"6% Outside EU - Raw mat., consum. and goods for resale",False,6,percent,purchase,atg_VAT_06,False,base,invoice,+81D||+87,,,6% Hors UE - Approvisionn. et marchandises,"6% Buiten EU - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-81D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V81-00-ROW-CC,VAT-IN-V81-00-ROW-CC,2140,0% Outside EU,0% Outside EU,"0% Outside EU - Raw mat., consum. and goods for resale",False,0,percent,purchase,atg_VAT_00,False,base,invoice,+81D||+87,,,0% Hors UE - approvisionn. et marchandises,"0% Buiten EU - Handelsgoed., grond- en hulpstoffen"
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-81D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V82-21-ROW-CC,VAT-IN-V82-21-ROW-CC,2210,21% Outside EU,21% Outside EU,21% Outside EU - Services and other goods,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+82D||+87,,,21% Hors UE - Services et biens divers,21% Buiten EU - Diensten en diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-82D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V82-12-ROW-CC,VAT-IN-V82-12-ROW-CC,2220,12% Outside EU,12% Outside EU,12% Outside EU - Services and other goods,False,12,percent,purchase,atg_VAT_12,False,base,invoice,+82D||+87,,,12% Hors UE - Services et biens divers,12% Buiten EU - Diensten en diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-82D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V82-06-ROW-CC,VAT-IN-V82-06-ROW-CC,2230,6% Outside EU,6% Outside EU,6% Outside EU - Services and other goods,False,6,percent,purchase,atg_VAT_06,False,base,invoice,+82D||+87,,,6% Hors UE - Services et biens divers,6% Buiten EU - Diensten en diverse goederen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-82D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V82-00-ROW-CC,VAT-IN-V82-00-ROW-CC,2240,0% Outside EU,0% Outside EU,0% Outside EU - Services and other goods,False,0,percent,purchase,atg_VAT_00,False,base,invoice,+82D||+87,,,0% Hors UE - Services et biens divers,0% Buiten EU - Diensten en diverse goederen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-82D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-IN-V83-21-ROW-CC,VAT-IN-V83-21-ROW-CC,2310,21% Outside EU,21% Outside EU,21% Outside EU - Capital goods,False,21,percent,purchase,atg_VAT_21,True,base,invoice,+83D||+87,,,21% Hors UE - Biens d'investissement,21% Buiten EU - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-83D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V83-12-ROW-CC,VAT-IN-V83-12-ROW-CC,2320,12% Outside EU,12% Outside EU,12% Outside EU - Capital goods,False,12,percent,purchase,atg_VAT_12,False,base,invoice,+83D||+87,,,12% Hors UE - Biens d'investissement,12% Buiten EU - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-83D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V83-06-ROW-CC,VAT-IN-V83-06-ROW-CC,2330,6% Outside EU,6% Outside EU,6% Outside EU - Capital goods,False,6,percent,purchase,atg_VAT_06,False,base,invoice,+83D||+87,,,6% Hors UE - Biens d'investissement,6% Buiten EU - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,+59,aatn_411059,,,
+,,,,,,,,,,,,tax,invoice,-57,aatn_451057,-100,,
+,,,,,,,,,,,,base,refund,-83D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,aatn_411059,,,
+,,,,,,,,,,,,tax,refund,,aatn_451057,-100,,
+attn_VAT-IN-V83-00-ROW-CC,VAT-IN-V83-00-ROW-CC,2340,0% Outside EU,0% Outside EU,0% Outside EU - Capital goods,False,0,percent,purchase,atg_VAT_00,False,base,invoice,+83D||+87,,,0% Hors UE - Biens d'investissement,0% Buiten EU - Bedrijfsmiddelen
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,-83D||-87||+85D,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-V61,VAT-V61,3000,VAT adjustments in favor of the Tax Authority,VAT adjustments in favor of the Tax Authority,VAT adjustments in favor of the Tax Authority,False,0,percent,sale,atg_VAT_00,True,base,invoice,+61,,,Diverses régularisations en faveur de l'Etat,Diverse BTW regularisaties in het voordeel van de Staat
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+61,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-V62,VAT-V62,3010,VAT adjustments in favor of the Declarant,VAT adjustments in favor of the Declarant,VAT adjustments in favor of the Declarant,False,0,percent,purchase,atg_VAT_00,True,base,invoice,+62,,,Régularisations TVA en faveur du déclarant,Diverse BTW regularisaties in het voordeel van de aangever
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+62,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-V91,VAT-V91,3020,Advance for Operations from December 1 to 20,Advance for Operations from December 1 to 20,Advance for Operations from December 1 to 20,False,0,percent,sale,atg_VAT_00,True,base,invoice,+91,,,TVA due pour la période du 1er au 20 décembre,Voorschot voor handelingen van 1 tot 20 december
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+91,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-V59,VAT-V59,4000,VAT deductible case 59,VAT deductible case 59,VAT deductible case 59,False,0,percent,purchase,atg_VAT_00,True,base,invoice,+59,,,TVA déductible grille 59,BTW aftrekbaar vak 59
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+59,,,,
+,,,,,,,,,,,,tax,refund,,,,,
+attn_VAT-V82,VAT-V82,4500,VAT base case 82,VAT base case 82,VAT base case 82,False,0,percent,purchase,atg_VAT_00,True,base,invoice,+82D,,,TVA base grille 82,BTW MvH vak 82
+,,,,,,,,,,,,tax,invoice,,,,,
+,,,,,,,,,,,,base,refund,+82D,,,,
+,,,,,,,,,,,,tax,refund,,,,,

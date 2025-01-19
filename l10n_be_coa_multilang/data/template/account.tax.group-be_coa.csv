@@ -1,0 +1,5 @@
+id,name,country_id,tax_receivable_account_id,tax_payable_account_id,name@fr,name@nl
+atg_VAT_21,21%,base.be,aatn_411000,aatn_451000,21%,21%
+atg_VAT_12,12%,base.be,aatn_411000,aatn_451000,12%,12%
+atg_VAT_06,6%,base.be,aatn_411000,aatn_451000,6%,6%
+atg_VAT_00,0%,base.be,aatn_411000,aatn_451000,0%,0%

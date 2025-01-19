@@ -1,0 +1,25 @@
+id,name,code,account_type,tag_ids,reconcile,name@fr,name@nl,name@de
+aatn_400000,Customers,400000,asset_receivable,,True,Clients,Klanten,Kunden
+aatn_400100,Customers (POS),400100,asset_receivable,,True,Clients (POS),Klanten (POS),Kunden (POS)
+aatn_411000,Input VAT - current account balance,411000,asset_current,,False,TVA à récupérer - Compte courant,Terug te vorderen BTW - Rekening courant,Zurückzufordernde Mehrwertsteuer - Kontokorrent
+aatn_411059,VAT Deductible,411059,asset_current,,False,TVA à récupérer,BTW Aftrekbaar,Zurückzufordernde Mehrwertsteuer
+aatn_411062,VAT Deductible - Correction Case 62,411062,asset_current,,False,TVA à récupérer - régularisation grille 62,BTW Aftrekbaar - herziening vak 62,Zurückzufordernde Mehrwertsteuer - Berichtigungen raster 62
+aatn_411064,VAT Deductible - Outgoing Credit Notes,411064,asset_current,,False,TVA à récupérer - notes de crédit délivrées,BTW Aftrekbaar - uitgereikte creditnota’s,Zurückzufordernde Mehrwertsteuer - Erteilter Gutschriften
+aatn_440000,Suppliers,440000,liability_payable,,True,Fournisseurs,Leveranciers,Lieferanten
+aatn_451000,Output VAT - current account balance,451000,liability_current,,False,TVA à payer - Compte courant,Te betalen BTW - Rekening courant,Zu zahlende Mehrwertsteuer -  Kontokorrent
+aatn_451054,VAT Debt,451054,liability_current,,False,TVA à payer,BTW schuld,Zu zahlende Mehrwertsteuer
+aatn_451055,VAT Debt - Intracommunity,451055,liability_current,,False,TVA à payer - intracommunautaire,BTW schuld - Intracommunautaire verwervingen,Zu zahlende Mehrwertsteuer - Innergemeinschaftlich
+aatn_451056,VAT Debt - Cocontractant,451056,liability_current,,False,TVA à payer - cocontractant,BTW schuld - medecontractant,Zu zahlende Mehrwertsteuer -Vertragspartner
+aatn_451057,VAT Debt - Import,451057,liability_current,,False,TVA à payer - importations avec report de perceptions,BTW schuld - invoer met verlegging,Zu zahlende Mehrwertsteuer - Einfuhren mit mit Verlegung der Erhebung
+aatn_451061,VAT Debt - Correction Case 61,451061,liability_current,,False,TVA à payer - régularisation grille 61,BTW schuld - herziening vak 61,Zu zahlende Mehrwertsteuer - Berichtigungen raster 61
+aatn_451063,VAT Debt - Incoming Credit Notes,451063,liability_current,,False,TVA à payer - notes de crédit reçues,BTW schuld - ontvangen creditnota’s,Zu zahlende Mehrwertsteuer - Erhaltener Gutschriften
+aatn_580000,Liquidity Transfer,580000,asset_current,,True,Virements internes,Interne overboekingen,Interne Geldtransferkonten
+aatn_599000,Bank Suspense Account,599000,asset_current,,True,Compte d'attente banque,Wachtrekenig bank,Wartekonto Bank
+aatn_600000,Purchases of raw materials,600000,expense,account.account_tag_operating,False,Achats de matières premières,Aankopen van grondstoffen,Einkäufe von Rohstoffen
+aatn_654000,Exchange rate losses,654000,expense,account.account_tag_financing,False,Différences négatives de change,Nadelige wisselresultaten,Nachteilige Wechselkursresultate
+aatn_657000,Early payment discounts,657000,expense,account.account_tag_financing,False,Escomptes pour paiements anticipés,Korting voor vroegtijdige betalingen,Finanzielle Rabatte
+aatn_658400,Cash difference losses,658400,expense,account.account_tag_financing,False,Différences négatives de caiise,Nadelige kasverschillen,Bargelddifferenz Verlus
+aatn_700000,Sales,700000,income,account.account_tag_operating,False,Ventes,Verkopen,Verkäufe
+aatn_754000,Exchange rate gains,754000,income,account.account_tag_financing,False,Différences positives de change,Voordelige wisselresultaten,Vorteilhafte Wechselkursresultate
+aatn_757000,Early payment discounts,757000,income,account.account_tag_financing,False,Escomptes pour paiements anticipés,Korting voor vroegtijdige betalingen,Finanzielle Rabatte
+aatn_758400,Cash difference gains,758400,income,account.account_tag_financing,False,Différences positives de caiise,Voordelige kasverschillen,Bargelddifferenz Ertrag

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates>
+    <t
+        t-name="AccountMoveLineSearchExtension"
+        t-inherit="web.ListRenderer"
+        t-inherit-mode="primary"
+        owl="1"
+    >
+        <xpath expr="//table" position="before">
+            <div name="amlse" class="table-responsive o_amlse_row">
+                <table name="amlse" class="o_amlse_input">
+                    <thead>
+                        <tr>
+                            <th name="product">Product :</th>
+                            <th name="account">Account :</th>
+                            <th name="partner">Partner :</th>
+                            <th name="journal">Journal :</th>
+                            <th name="date_range">Period :</th>
+                            <th name="reconcile">Reconcile :</th>
+                            <th name="amount">Amount :</th>
+                            <th name="taxes">Taxes :</th>
+                            <th name="tags">Tags :</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="oe_amlse_tr_input">
+                            <td name="product">
+                                <input
+                                    type="text"
+                                    class="oe_account_select_product"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                            <td name="account">
+                                <input
+                                    type="text"
+                                    class="oe_account_select_account"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                            <td name="partner">
+                                <input
+                                    type="text"
+                                    class="oe_account_select_partner"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                            <td name="journal">
+                                <select
+                                    class="oe_account_select_journal"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                            <td name="period">
+                                <input
+                                    type="text"
+                                    class="oe_account_select_period"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                            <td name="reconcile">
+                                <input
+                                    type="text"
+                                    class="oe_account_select_reconcile"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                            <td name="amount">
+                                <input
+                                    type="text"
+                                    class="oe_account_select_amount"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                            <td name="taxes">
+                                <input
+                                    type="text"
+                                    class="oe_account_select_taxes"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                            <td name="tags">
+                                <input
+                                    type="text"
+                                    class="oe_account_select_tags"
+                                    t-on-change="ev => this._onchange_data(ev)"
+                                />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </xpath>
+    </t>
+</templates>

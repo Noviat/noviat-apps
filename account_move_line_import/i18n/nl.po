@@ -1,0 +1,482 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_move_line_import
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-07 16:09+0000\n"
+"PO-Revision-Date: 2023-12-08 03:45+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Dutch <https://translation.noviat.com/projects/accounting-v16/"
+"account_move_line_import/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.16.2\n"
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "%(name)s '%(val)s' not found !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"%(name)s, field '%(hf)s', the import of ORM fields of type '%(type)s' is not "
+"supported"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "%(name)s, unsupported field '%(hf)s' found while importing move lines"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields.selection,name:account_move_line_import.selection__aml_import__csv_separator__,
+#: model:ir.model.fields.selection,name:account_move_line_import.selection__aml_import__decimal_separator__,
+msgid ", (comma)"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields.selection,name:account_move_line_import.selection__aml_import__decimal_separator___
+msgid ". (dot)"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields.selection,name:account_move_line_import.selection__aml_import__csv_separator__;
+msgid "; (semicolon)"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"<b>Incorrect file format !</b><br>Only files of type csv and xls(x) are "
+"supported."
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Account with code '%s' not found !"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__csv_separator
+msgid "CSV Separator"
+msgstr ""
+
+#. module: account_move_line_import
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.aml_import_view_form
+msgid "Cancel"
+msgstr "Annuleer"
+
+#. module: account_move_line_import
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.aml_import_view_form_result
+msgid "Close"
+msgstr "Sluiten"
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__codepage
+msgid "Code Page"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,help:account_move_line_import.field_aml_import__codepage
+msgid ""
+"Code Page of the system that has generated the csv file.\n"
+"E.g. Windows-1252, utf-8"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Currency '%s' not found !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Debit/credit values different from balance !"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__decimal_separator
+msgid "Decimal Separator"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__dialect
+msgid "Dialect"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"Duplicate header field '%s' found !\n"
+"Please correct the input file."
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"Error in input file, Total Debit (%(sum_debit)s) is different from Total "
+"Credit (%(sum_credit)s) !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"Error in input file:\n"
+"the header line should contain only cells of type 'char'."
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Error when processing line '%s'"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Error while reading Excel sheet: <br>%(err)s"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__aml_data
+msgid "File"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__file_type
+msgid "File Type"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__aml_fname
+msgid "Filename"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__id
+msgid "ID"
+msgstr ""
+
+#. module: account_move_line_import
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.aml_import_view_form
+msgid "Import"
+msgstr "Importeer"
+
+#. module: account_move_line_import
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.view_move_form
+msgid "Import Entry Lines from xlsx or csv File"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/models/account_move.py:0
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.aml_import_view_form
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.aml_import_view_form_result
+#, python-format
+msgid "Import File"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Import File result"
+msgstr ""
+
+#. module: account_move_line_import
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.view_move_form
+msgid "Import Lines"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model,name:account_move_line_import.model_aml_import
+msgid "Import account move lines"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect Balance value !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect Credit value !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect Debit value !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"Incorrect data format for field '%(field)s' with value '%(due)s',  should be "
+"YYYY-MM-DD"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect debit/credit values !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect value '%(val)s' for field '%(field)s' of type Boolean !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect value '%(val)s' for field '%(field)s' of type Integer !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect value '%(val)s' for field '%(field)s' of type Numeric !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect value '%(val)s' for field '%(hf)s' !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect value '%(val)s' for field '%(hf)s' of type %(fmt)s !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Incorrect value '%(val)s' for field '%(hf)s' of type Boolean !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"Incorrect value '%(val)s' for field '%(hf)s' of type Date, it should be YYYY-"
+"MM-DD !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"Incorrect value '%(val)s' for field '%(hf)s', it should be a comma separated "
+"string !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Invalid Analytic Account '%s' !"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,help:account_move_line_import.field_aml_import__dialect
+msgid "JSON dictionary to store the csv dialect"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model,name:account_move_line_import.model_account_move
+msgid "Journal Entry"
+msgstr "Boeking"
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__note
+msgid "Log"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Multiple Analytic Accounts found that match with '%s' !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Multiple partners with Reference or Name '%s' found !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Multiple products with Internal Reference or Name '%s' found !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"Multiple records of type '%(name)s' with field %(field)s '%(val)s' found !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "No header line found in the input file !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Partner '%s' not found !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Product '%s' not found !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid ""
+"Programming Error:\n"
+"Missing formatting info for column '%s'."
+msgstr ""
+
+#. module: account_move_line_import
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.aml_import_view_form_result
+msgid "Results :"
+msgstr "Resultaat :"
+
+#. module: account_move_line_import
+#: model_terms:ir.ui.view,arch_db:account_move_line_import.aml_import_view_form
+msgid "Select your file :"
+msgstr "Selecteer uw bestand:"
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__sheet
+msgid "Sheet"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,help:account_move_line_import.field_aml_import__sheet
+msgid ""
+"Specify the Excel sheet.\n"
+"If not specified the first sheet will be retrieved."
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "Tax Grid '%s' not found !"
+msgstr ""
+
+#. module: account_move_line_import
+#. odoo-python
+#: code:addons/account_move_line_import/wizards/aml_import.py:0
+#, python-format
+msgid "The '%s' field is a required field that must be correctly set."
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields,field_description:account_move_line_import.field_aml_import__warning
+msgid "Warning"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields.selection,name:account_move_line_import.selection__aml_import__file_type__csv
+msgid "csv"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields.selection,name:account_move_line_import.selection__aml_import__file_type__xls
+msgid "xls"
+msgstr ""
+
+#. module: account_move_line_import
+#: model:ir.model.fields.selection,name:account_move_line_import.selection__aml_import__file_type__xlsx
+msgid "xlsx"
+msgstr ""

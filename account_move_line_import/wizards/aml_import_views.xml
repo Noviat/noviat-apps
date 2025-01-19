@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="aml_import_view_form" model="ir.ui.view">
+        <field name="name">aml.import.form</field>
+        <field name="model">aml.import</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form string="Import File">
+                <group name="main">
+                    <field
+                        name="warning"
+                        widget="html"
+                        nolabel="1"
+                        colspan="2"
+                        invisible="not warning"
+                        class="alert alert-info"
+                        role="alert"
+                        force_save="1"
+                    />
+                    <separator string="Select your file :" colspan="2" />
+                    <field name="aml_data" filename="aml_fname" />
+                    <field name="sheet" invisible="file_type not in ('xls', 'xlsx')" />
+                    <field
+                        name="csv_separator"
+                        required="file_type == 'csv'"
+                        invisible="file_type != 'csv'"
+                    />
+                    <field
+                        name="decimal_separator"
+                        required="file_type == 'csv'"
+                        invisible="file_type != 'csv'"
+                    />
+                    <field
+                        name="codepage"
+                        required="file_type == 'csv'"
+                        invisible="file_type != 'csv'"
+                    />
+                </group>
+                <group name="invisible" invisible="1">
+                    <field name="aml_fname" />
+                    <field name="file_type" />
+                    <field name="dialect" />
+                </group>
+                <footer>
+                    <button
+                        name="aml_import"
+                        string="Import"
+                        type="object"
+                        class="btn-primary"
+                        data-hotkey="q"
+                        invisible="warning"
+                    />
+                    <button
+                        string="Cancel"
+                        class="btn-secondary"
+                        special="cancel"
+                        data-hotkey="z"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="aml_import_view_form_result" model="ir.ui.view">
+        <field name="name">aml.import.form.result</field>
+        <field name="model">aml.import</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <form string="Import File">
+                <group name="result">
+                    <separator colspan="2" string="Results :" />
+                    <field
+                        name="note"
+                        colspan="2"
+                        nolabel="1"
+                        width="850"
+                        height="400"
+                    />
+                </group>
+                <footer>
+                    <button
+                        string="Close"
+                        class="btn-secondary"
+                        special="cancel"
+                        data-hotkey="z"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

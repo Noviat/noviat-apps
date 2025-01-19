@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <record id="res_config_settings_view_form" model="ir.ui.view">
+    <field name="name">account settings</field>
+    <field name="model">res.config.settings</field>
+    <field name="inherit_id" ref="account.res_config_settings_view_form" />
+    <field name="arch" type="xml">
+      <app name="account" position="inside">
+        <field name="module_l10n_multilang" invisible="1" />
+        <block title="Chart of Accounts" name="account_translate_off_setting_container">
+          <setting
+                        id="account_translate_settings"
+                        string="Monolingual General Accounts"
+                    >
+            <field name="module_l10n_account_translate_off" widget="upgrade_boolean" />
+          </setting>
+        </block>
+      </app>
+    </field>
+  </record>
+
+</odoo>
