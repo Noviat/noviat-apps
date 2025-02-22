@@ -9,8 +9,3 @@ Monolingual Chart of Accounts
 This module sets translate=False on the General Account (account.account) name field
 and hence neutralises undesired multilingual account names provoked by e.g. duplicating
 General Accounts.
-
-Known Issues / Roadmap
-======================
-
-Add uninstall wizard.

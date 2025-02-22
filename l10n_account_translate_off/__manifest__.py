@@ -8,6 +8,7 @@
     "author": "Noviat",
     "website": "https://www.noviat.com/",
     "license": "AGPL-3",
+    "uninstall_hook": "uninstall_hook",
     "installable": True,
     "depends": ["account"],
 }
