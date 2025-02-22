@@ -13,7 +13,7 @@
                         id="account_translate_settings"
                         string="Monolingual General Accounts"
                     >
-            <field name="module_l10n_account_translate_off" widget="upgrade_boolean" />
+            <field name="module_l10n_account_translate_off" />
           </setting>
         </block>
       </app>
