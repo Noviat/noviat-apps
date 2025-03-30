@@ -797,11 +797,6 @@ msgid "Value Date"
 msgstr "Date de valeur"
 
 #. module: account_bank_statement_advanced
-#: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.account_bank_statement_view_form
-msgid "View Details"
-msgstr ""
-
-#. module: account_bank_statement_advanced
 #: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement__website_message_ids
 msgid "Website Messages"
 msgstr ""

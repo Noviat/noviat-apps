@@ -23,12 +23,6 @@
                     name="readonly"
                 >state == 'confirm' or import_format == 'coda'</attribute>
       </field>
-      <xpath
-                expr="//field[@name='line_ids']//button[@name='view_transaction_details']"
-                position="attributes"
-            >
-        <attribute name="invisible">import_format == 'coda'</attribute>
-      </xpath>
       <page name="statement_line_ids" position="after">
         <page string="CODA Notes" name="coda_note">
           <field name="coda_note" />

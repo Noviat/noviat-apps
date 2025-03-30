@@ -1079,12 +1079,13 @@ class AccountCodaImport(models.TransientModel):
                     glob_mod = self.env[
                         "account.bank.statement.line.global"
                     ].with_company(cba.company_id)
+                    parent_id = coda_statement["glob_id_stack"][-1][2] or False
                     glob_line = glob_mod.create(
                         {
                             "code": glob_code,
                             "name": glob_name,
                             "type": "coda",
-                            "parent_id": coda_statement["glob_id_stack"][-1][2],
+                            "parent_id": parent_id,
                             "amount": transaction["globalisation_amount"],
                             "payment_reference": transaction["payment_reference"],
                             "currency_id": cba.currency_id.id,
@@ -1231,20 +1232,34 @@ class AccountCodaImport(models.TransientModel):
             st_line_vals["bank_account_id"] = transaction["bank_account_id"]
 
         if (
-            coda_statement["currency"] != "EUR"
-            and cba.company_id.currency_id.name == "EUR"
+            cba.company_id.currency_id.name == "EUR"
             and transaction["struct_comm_type"] == "105"
             and transaction.get("struct_comm_details")
         ):
             amount_eur = transaction["struct_comm_details"].get("amount_eur")
             if amount_eur and transaction["type"] == "regular":
-                st_line_vals.update(
-                    {
-                        "foreign_currency_id": cba.company_id.currency_id.id,
-                        "amount_currency": amount_eur,
-                    }
-                )
-
+                if coda_statement["currency"] != "EUR":
+                    st_line_vals.update(
+                        {
+                            "foreign_currency_id": cba.company_id.currency_id.id,
+                            "amount_currency": amount_eur,
+                        }
+                    )
+                else:
+                    for_cur_name = transaction["struct_comm_details"].get("currency")
+                    amount_currency = transaction["struct_comm_details"].get(
+                        "amount_currency_original"
+                    )
+                    foreign_currency = self.env["res.currency"].search(
+                        [("name", "=", for_cur_name)]
+                    )
+                    if foreign_currency and amount_currency:
+                        st_line_vals.update(
+                            {
+                                "foreign_currency_id": foreign_currency.id,
+                                "amount_currency": amount_currency,
+                            }
+                        )
         return st_line_vals
 
     def _discard_empty_statement(self, wiz_dict, coda_statement):

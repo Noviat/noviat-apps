@@ -2040,6 +2040,11 @@ msgid "Display Name"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__distribution_analytic_account_ids
+msgid "Distribution Analytic Account"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format

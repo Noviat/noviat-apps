@@ -38,7 +38,7 @@
                     class="btn-primary"
                     name="automatic_reconcile"
                     type="object"
-                    invisible="not is_reconciled or not amount or import_format != 'coda'"
+                    invisible="is_reconciled or not amount or import_format != 'coda'"
                     data-hotkey="z"
                 />
             </button>

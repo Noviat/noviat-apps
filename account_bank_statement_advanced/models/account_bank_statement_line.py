@@ -345,19 +345,6 @@ class AccountBankStatementLine(models.Model):
         todelete.unlink()
         return super().unlink()
 
-    def view_transaction_details(self):
-        act = self.env["ir.actions.actions"]._for_xml_id(
-            "account_bank_statement_advanced.account_bank_statement_line_action"
-        )
-        act.update(
-            {
-                "res_id": self.id,
-                "views": [x for x in act["views"] if x[1] == "form"],
-                "target": "new",
-            }
-        )
-        return act
-
     def button_view_move(self):
         self.ensure_one()
         act_move = {

@@ -1,5 +1,5 @@
 # Copyright 2009-2024 Noviat.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 
 from odoo import fields, models
@@ -11,7 +11,6 @@ class AccountMove(models.Model):
     invoice_description = fields.Char(
         string="Description",
         index=True,
-        readonly=True,
         copy=False,
         help="This field will also be used as a default label on the invoice lines",
     )

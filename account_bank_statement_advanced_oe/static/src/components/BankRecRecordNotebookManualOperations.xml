@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t
+        t-name="BankRecRecordNotebookManualOperations"
+        t-inherit="account_accountant.BankRecRecordNotebookManualOperations"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//div[hasclass('align-items-start')]" position="after">
+            <xpath expr="//div[@name='narration']" position="move" />
+        </xpath>
+        <xpath expr="//div[@name='narration']" position="attributes">
+            <attribute name="class">o_group row align-items-start</attribute>
+        </xpath>
+    </t>
+</templates>

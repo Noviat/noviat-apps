@@ -128,6 +128,7 @@
     <record id="account_bank_statement_line_view_form" model="ir.ui.view">
         <field name="name">bank.statement.line.form</field>
         <field name="model">account.bank.statement.line</field>
+        <field name="priority">1</field>
         <field name="arch" type="xml">
             <form
                 string="Bank Transaction"

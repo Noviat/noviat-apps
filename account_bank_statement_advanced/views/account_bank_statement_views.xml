@@ -163,13 +163,14 @@
                             <field
                                 name="line_ids"
                                 readonly="state == 'confirm'"
-                                context="{'default_transaction_date': date, 'default_journal_id': journal_id, 'form_view_ref': 'account_bank_statement_advanced.account_bank_statement_line_view_form', 'import_format': import_format}"
+                                context="{'default_transaction_date': date, 'default_journal_id': journal_id, 'import_format': import_format}"
                             >
                                 <tree
                                     editable="bottom"
                                     decoration-info="is_reconciled == False"
                                     default_order="sequence"
                                     limit="500"
+                                    open_form_view="True"
                                 >
                                     <!-- Invisible fields -->
                                     <field name="company_id" column_invisible="1" />
@@ -189,13 +190,6 @@
                                     />
                                     <!-- Visible fields -->
                                     <field name="sequence" widget="handle" />
-                                    <button
-                                        name="view_transaction_details"
-                                        title="View Details"
-                                        type="object"
-                                        icon="fa-external-link"
-                                        class="o_handle_cell"
-                                    />
                                     <field
                                         name="transaction_date"
                                         readonly="is_readonly"

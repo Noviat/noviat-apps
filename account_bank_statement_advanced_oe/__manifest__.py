@@ -19,7 +19,7 @@
     ],
     "assets": {
         "web.assets_backend": [
-            "account_bank_statement_advanced_oe/static/src/components/**/*",
+            "account_bank_statement_advanced_oe/static/src/components/*",
         ],
     },
     "installable": True,
