@@ -122,37 +122,40 @@ class L10nBeVatListing(models.TransientModel):
 
     def _get_client_vals(self):
         partner_dom = self._get_partner_domain()
-        partners = self.env["res.partner"].search(partner_dom)
-        if not partners:
+        partner_vats = self.env["res.partner"].search_read(partner_dom, fields=["vat"])
+        if not partner_vats:
             raise UserError(_("No Belgian VAT subjected customers found."))
+        partner_ids = [x["id"] for x in partner_vats]
 
         flds = ["partner_id", "balance"]
         groupby = ["partner_id"]
 
         aml_dom = self._get_move_line_domain()
-        aml_dom += [("partner_id", "in", partners.ids)]
+        aml_dom += [("partner_id", "in", partner_ids)]
         base_dom, vat_dom = self._get_move_line_tax_domains()
 
         base_data = self.env["account.move.line"].read_group(
             aml_dom + base_dom, flds, groupby
         )
-        vat_dom += [("partner_id", "in", partners.ids)]
+        vat_dom += [("partner_id", "in", partner_ids)]
         vat_data = self.env["account.move.line"].read_group(
-            aml_dom + vat_dom, flds, groupby
+            aml_dom + vat_dom, flds, groupby, orderby="partner_id"
         )
 
-        partners = partners.filtered(
-            lambda r: r.id in [x["partner_id"][0] for x in base_data]
-        )
-        if not partners:
+        vat_data_partner_ids = [x["partner_id"][0] for x in base_data]
+        partner_vats = {
+            x["id"]: x["vat"] for x in partner_vats if x["id"] in vat_data_partner_ids
+        }
+        if not partner_vats:
             raise UserError(
                 _("No VAT subjected transactions found for %s.") % self.year
             )
 
         records = {}
-        for i, entry in enumerate(base_data):
-            vat = self._normalise_vat(partners[i].vat)
-            records[entry["partner_id"][0]] = {
+        for entry in base_data:
+            partner_id = entry["partner_id"][0]
+            vat = self._normalise_vat(partner_vats[partner_id])
+            records[partner_id] = {
                 "vat": vat,
                 "base_amount": -entry["balance"],
             }
