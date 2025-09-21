@@ -1,22 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* l10n_be_coa_multilang
+# * l10n_be_coa_multilang
 #
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 16:21+0000\n"
-"PO-Revision-Date: 2024-04-10 17:55+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2025-08-16 03:02+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
 "Language-Team: French <https://translation.noviat.com/projects/"
-"accounting-v16/l10n_be_coa_multilang/fr/>\n"
+"noviat-generic-accounting-v16/l10n_be_coa_multilang/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4.2\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.actions.report,print_report_name:l10n_be_coa_multilang.action_report_l10nbevatdeclaration
@@ -41,7 +43,7 @@ msgstr "0% - Approvisionn. et marchandises"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-00-S
 msgid "0% - Services"
-msgstr ""
+msgstr "0% - Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-00-CC
@@ -64,7 +66,7 @@ msgstr "0% Cocontractant - Services et biens divers"
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-00-CC
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-CC
 msgid "0% Cocontractant"
-msgstr ""
+msgstr "0% Cocontractant"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-G
@@ -97,7 +99,7 @@ msgstr "0% Intracomm. - Approvisionn. et marchandises"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-00-EU-S
 msgid "0% Intracomm. - Services"
-msgstr ""
+msgstr "0% Intracomm. - Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-00-ROW-CC
@@ -124,7 +126,7 @@ msgstr "0% Hors UE - Services et biens divers"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-S
 msgid "0% Services"
-msgstr ""
+msgstr "0% Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.report.line,name:l10n_be_coa_multilang.atrl_00
@@ -175,7 +177,7 @@ msgstr "12% - Approvisionn. et marchandises"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-12-S
 msgid "12% - Services"
-msgstr ""
+msgstr "12% - Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-12-CC
@@ -197,7 +199,7 @@ msgstr "12% Cocontractant - Services et biens divers"
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-12-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-12-CC
 msgid "12% Cocontractant"
-msgstr ""
+msgstr "12% Cocontractant"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-12-G
@@ -230,7 +232,7 @@ msgstr "12% Intracomm. - Approvisionn. et marchandises"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-12-EU-S
 msgid "12% Intracomm. - Services"
-msgstr ""
+msgstr "12% Intracomm. - Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-12-ROW-CC
@@ -257,7 +259,7 @@ msgstr "12% Hors UE - Services et biens divers"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-12-S
 msgid "12% Services"
-msgstr ""
+msgstr "12% Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.group,name:l10n_be_coa_multilang.atg_VAT_21
@@ -299,7 +301,7 @@ msgstr "21% - Approvisionn. et marchandises"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-S
 msgid "21% - Services"
-msgstr ""
+msgstr "21% - Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-INC-S
@@ -336,7 +338,7 @@ msgstr "21% Cocontractant - Services et biens divers"
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-21-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-21-CC
 msgid "21% Cocontractant"
-msgstr ""
+msgstr "21% Cocontractant"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-G
@@ -380,7 +382,7 @@ msgstr "21% Intracomm. - Approvisionn. et marchandises"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-21-EU-S
 msgid "21% Intracomm. - Services"
-msgstr ""
+msgstr "21% Intracomm. - Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V81-21-EU-S
@@ -412,7 +414,7 @@ msgstr "21% Hors UE - Services et biens divers"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-S
 msgid "21% Services"
-msgstr ""
+msgstr "21% Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-21-INC-S
@@ -522,7 +524,7 @@ msgstr "6% - Approvisionn. et marchandises"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-06-S
 msgid "6% - Services"
-msgstr ""
+msgstr "6% - Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V83-06-CC
@@ -544,7 +546,7 @@ msgstr "6% Cocontractant - Services et biens divers"
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-06-CC
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V83-06-CC
 msgid "6% Cocontractant"
-msgstr ""
+msgstr "6% Cocontractant"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-06-G
@@ -577,7 +579,7 @@ msgstr "6% Intracomm. - Approvisionn. et marchandises"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-IN-V82-06-EU-S
 msgid "6% Intracomm. - Services"
-msgstr ""
+msgstr "6% Intracomm. - Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V81-06-ROW-CC
@@ -604,7 +606,7 @@ msgstr "6% Hors UE - Services et biens divers"
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-06-S
 msgid "6% Services"
-msgstr ""
+msgstr "6% Services"
 
 #. module: l10n_be_coa_multilang
 #: model:account.report.line,name:l10n_be_coa_multilang.atrl_61
@@ -1108,7 +1110,7 @@ msgstr "Banque"
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_599000
 msgid "Bank Suspense account"
-msgstr ""
+msgstr "Compte d'attente transactions bancaires"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__be_legal_financial_report_scheme__account_type__asset_cash
@@ -1192,7 +1194,7 @@ msgstr "Effets à payer"
 #. module: l10n_be_coa_multilang
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_10
 msgid "CAPITAL"
-msgstr ""
+msgstr "CAPITAL"
 
 #. module: l10n_be_coa_multilang
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_57
@@ -1283,7 +1285,7 @@ msgstr "Annuler"
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_321100
 msgid "Capital"
-msgstr ""
+msgstr "Capital"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,description:l10n_be_coa_multilang.attn_VAT-IN-V82-CAR35-EXC
@@ -1343,12 +1345,12 @@ msgstr "Valeurs disponibles"
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_758400
 msgid "Cash difference gains"
-msgstr ""
+msgstr "Différences positives de caisse"
 
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_658400
 msgid "Cash difference losses"
-msgstr ""
+msgstr "Différences négatives de caisse"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -1405,7 +1407,7 @@ msgstr "Clôturer"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatintracom
 #, python-format
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_account_report_line__color
@@ -1414,7 +1416,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__color
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_declaration_case__color
 msgid "Color"
-msgstr ""
+msgstr "Couleur"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__comments
@@ -1447,9 +1449,8 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model,name:l10n_be_coa_multilang.model_res_company
-#, fuzzy
 msgid "Companies"
-msgstr "Société"
+msgstr "Sociétés"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -1475,7 +1476,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:ir.model,name:l10n_be_coa_multilang.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Paramètres de configuration"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -1486,7 +1487,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model,name:l10n_be_coa_multilang.model_res_partner
-#, fuzzy
 msgid "Contact"
 msgstr "Contact"
 
@@ -1520,7 +1520,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__create_uid
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__create_date
@@ -1536,7 +1536,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__create_date
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -1695,7 +1695,7 @@ msgstr ""
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_vat_declaration.py:0
 #, python-format
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__display_name
@@ -1711,7 +1711,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__display_name
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__draft_moves
@@ -1855,7 +1855,7 @@ msgstr "Frais - TVA 25% non-déduct. (Prix incl.)"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_intracom_view_form_declaration
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_listing_view_form_client_listing
 msgid "Export"
-msgstr ""
+msgstr "Export"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-ROW
@@ -1954,7 +1954,7 @@ msgstr "Février"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_intracom__file_name
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__file_name
 msgid "File Name"
-msgstr ""
+msgstr "Nom de fichier"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311400
@@ -2024,7 +2024,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__font
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_declaration_case__font
 msgid "Font"
-msgstr ""
+msgstr "Police"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_coa_multilang_config__coa_lang__fr
@@ -2074,7 +2074,7 @@ msgstr "Marchandises UE (Code T)"
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_scheme__account_group
 msgid "Group"
-msgstr ""
+msgstr "Groupe"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,help:l10n_be_coa_multilang.field_account_report_line__invisible
@@ -2097,7 +2097,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__id
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__id
 msgid "ID"
-msgstr ""
+msgstr "Identifiant"
 
 #. module: l10n_be_coa_multilang
 #: model:account.report.line,name:l10n_be_coa_multilang.atrl_II
@@ -2272,7 +2272,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_declaration_case__info
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_declaration_view_form_declaration
 msgid "Info"
-msgstr ""
+msgstr "Infos"
 
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_411000
@@ -2345,7 +2345,7 @@ msgstr "Placements de trésorerie"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__invisible
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_chart_common__invisible
 msgid "Invisible"
-msgstr ""
+msgstr "Invisible"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -2374,7 +2374,7 @@ msgstr "Janvier"
 #: model:ir.model,name:l10n_be_coa_multilang.model_account_journal
 #, python-format
 msgid "Journal"
-msgstr ""
+msgstr "Journal"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -2467,7 +2467,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing____last_update
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__write_uid
@@ -2483,7 +2483,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__write_uid
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__write_date
@@ -2499,7 +2499,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__write_date
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_323113
@@ -2525,7 +2525,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__level
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__level
 msgid "Level"
-msgstr ""
+msgstr "Niveau"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__limit_amount
@@ -2764,7 +2764,7 @@ msgstr "Produits d’exploitation non récurrents"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_intracom__note
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__note
 msgid "Notes"
-msgstr ""
+msgstr "Remarques"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_legal_report__month__11
@@ -2915,12 +2915,12 @@ msgstr "TVA à payer - Compte courant"
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_589900
 msgid "Outstanding Payments Account"
-msgstr ""
+msgstr "Compte de paiements sortants en suspens"
 
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_589000
 msgid "Outstanding Receipts Account"
-msgstr ""
+msgstr "Compte de paiements entrants en suspens"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_312410
@@ -2959,7 +2959,7 @@ msgstr "PROVISIONS POUR RISQUES ET CHARGES"
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Parent"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_account_report_line__factor
@@ -2971,7 +2971,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__parent_path
 msgid "Parent Path"
-msgstr ""
+msgstr "Chemin du parent"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311411
@@ -3185,7 +3185,7 @@ msgstr "REMUNERATIONS, CHARGES SOCIALES ET PENSIONS"
 #. module: l10n_be_coa_multilang
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_13
 msgid "RESERVES"
-msgstr ""
+msgstr "RESERVES"
 
 #. module: l10n_be_coa_multilang
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_12
@@ -3299,7 +3299,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_update_be_reportscheme__note
 msgid "Result"
-msgstr ""
+msgstr "Résultat"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -3307,7 +3307,7 @@ msgstr ""
 #: code:addons/l10n_be_coa_multilang/wizards/l10n_be_update_be_reportscheme.py:0
 #, python-format
 msgid "Results"
-msgstr ""
+msgstr "Résultats"
 
 #. module: l10n_be_coa_multilang
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_update_be_reportscheme_view_form_result
@@ -3439,7 +3439,7 @@ msgstr "Date de début"
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_312210
 msgid "Stocks"
-msgstr ""
+msgstr "Stocks"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_312200
@@ -3506,7 +3506,7 @@ msgstr "CHIFFRE D'AFFAIRES"
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_scheme__account_tag_ids
 msgid "Tags"
-msgstr ""
+msgstr "Étiquettes"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311300
@@ -3595,7 +3595,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_intracom_view_form_declaration
 msgid "Total Amount"
-msgstr ""
+msgstr "Montant total"
 
 #. module: l10n_be_coa_multilang
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_listing_view_form_client_listing
@@ -3657,7 +3657,7 @@ msgstr "Chiffre d'affaires"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__type
 #, python-format
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_321120
@@ -3705,7 +3705,7 @@ msgstr "Réserves immunisées"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_update_be_reportscheme_view_form
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_update_be_reportscheme_view_form_result
 msgid "Update"
-msgstr ""
+msgstr "Mettre à jour"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_update_be_reportscheme__update_account_tags

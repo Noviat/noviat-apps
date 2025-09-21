@@ -35,9 +35,7 @@ class L10nBeVatIntracom(models.TransientModel):
         self.client_ids = [(0, 0, x) for x in client_vals]
 
         module = __name__.split("addons.")[1].split(".")[0]
-        result_view = self.env.ref(
-            "{}.{}_view_form_declaration".format(module, self._table)
-        )
+        result_view = self.env.ref(f"{module}.{self._table}_view_form_declaration")
 
         return {
             "name": _("Intracom VAT Declaration"),
@@ -53,7 +51,7 @@ class L10nBeVatIntracom(models.TransientModel):
     def create_xls(self):
         report_file = "vat_intra_%s" % self.period
         module = __name__.split("addons.")[1].split(".")[0]
-        report_name = "{}.vat_intracom_xls".format(module)
+        report_name = f"{module}.vat_intracom_xls"
         report = {
             "name": _("Intracom VAT Declaration"),
             "type": "ir.actions.report",
@@ -91,9 +89,7 @@ class L10nBeVatIntracom(models.TransientModel):
         )
 
         self._validate_xmlschema(xml_string, "NewICO-in_v0_9.xsd")
-        self.file_name = "{nbr}_vat_intra_{period}.xml".format(
-            nbr=self._get_company_vat(), period=self.period
-        )
+        self.file_name = f"{self._get_company_vat()}_vat_intra_{self.period}.xml"
         self.file_save = base64.encodebytes(xml_string)
 
         return self._action_save_xml()
@@ -156,7 +152,6 @@ class L10nBeVatIntracom(models.TransientModel):
         return ic_vals
 
     def _get_move_line_tax_domains(self):
-
         dom = [
             ("country_id", "=", self.env.ref("base.be").id),
             ("applicability", "=", "taxes"),
@@ -186,7 +181,7 @@ class L10nBeVatIntracom(models.TransientModel):
                 raise UserError(
                     _("Missing VAT number for partner '%s'") % client.partner_id.name
                 )
-            key = "{}-{}".format(vat, client.code)
+            key = f"{vat}-{client.code}"
             if key in intra_list:
                 intra_list[key]["amount"] += client.amount
             else:
@@ -293,7 +288,6 @@ class L10nBeVatIntracomXlsx(models.AbstractModel):
     _description = "Intracom declaration excel export"
 
     def _get_ws_params(self, workbook, data, listing):
-
         col_specs = {
             "seq": {
                 "header": {"value": _("Nr")},
@@ -351,7 +345,6 @@ class L10nBeVatIntracomXlsx(models.AbstractModel):
         ]
 
     def _generate_listing(self, workbook, ws, ws_params, data, listing):
-
         ws.set_portrait()
         ws.fit_to_pages(1, 0)
         ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
@@ -388,7 +381,6 @@ class L10nBeVatIntracomXlsx(models.AbstractModel):
         return row_pos + 2
 
     def _listing_lines(self, ws, row_pos, ws_params, data, listing):
-
         if not listing.client_ids:
             no_entries = _("No records found for the selected period.")
             row_pos = ws.write_string(
@@ -427,7 +419,7 @@ class L10nBeVatIntracomXlsx(models.AbstractModel):
         amount_pos = ws_params["wanted_list"].index("amount")
         amount_start = self._rowcol_to_cell(row_pos_start, amount_pos)
         amount_stop = self._rowcol_to_cell(row_pos - 1, amount_pos)
-        total_amount_formula = "SUM({}:{})".format(amount_start, amount_stop)
+        total_amount_formula = f"SUM({amount_start}:{amount_stop})"
         row_pos = self._write_line(
             ws,
             row_pos,

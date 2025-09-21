@@ -92,9 +92,9 @@ class L10nBeVatCommon(models.AbstractModel):
         for rec in self:
             if rec.year and rec.period_length:
                 if rec.period_length == "month":
-                    rec.period = "{}-{}".format(rec.year, rec.month)
+                    rec.period = f"{rec.year}-{rec.month}"
                 else:
-                    rec.period = "{}-Q{}".format(rec.year, rec.quarter)
+                    rec.period = f"{rec.year}-Q{rec.quarter}"
             else:
                 rec.period = False
 
@@ -130,9 +130,9 @@ class L10nBeVatCommon(models.AbstractModel):
                     m_to = ["03", "06", "09", "12"][i]
                 else:
                     m_from = m_to = False
-                self.date_from = m_from and "{}-{}-01".format(self.year, m_from)
+                self.date_from = m_from and f"{self.year}-{m_from}-01"
                 d_to = m_to and calendar.monthrange(int(self.year), int(m_to))[1]
-                self.date_to = d_to and "{}-{}-{}".format(self.year, m_to, d_to)
+                self.date_to = d_to and f"{self.year}-{m_to}-{d_to}"
             dom = self._get_move_line_date_domain()
             dom.append(("state", "=", "draft"))
             check_draft = self.env["account.move"].search_count(dom)
@@ -364,7 +364,7 @@ class L10nBeVatCommon(models.AbstractModel):
             schema.assertValid(t)
         except (etree.XMLSchemaParseError, etree.DocumentInvalid) as err:
             raise UserError(  # pylint: disable=C8107
-                "{}\n\n{}".format(err.__class__.__name__, str(err))
+                f"{err.__class__.__name__}\n\n{str(err)}"
             ) from err
         except Exception as err:
             error = _("Unknown Error")
@@ -390,7 +390,7 @@ class L10nBeVatCommon(models.AbstractModel):
     def _move_lines_act_window(self):
         mod = "account_move_line_search_extension"
         act = "account_move_line_action_search_extension"
-        act_window = self.env.ref("{}.{}".format(mod, act), raise_if_not_found=False)
+        act_window = self.env.ref(f"{mod}.{act}", raise_if_not_found=False)
         if act_window:
             res = act_window.sudo().read()[0]
             res["context"] = {"account_move_line_search_extension": 1}

@@ -50,9 +50,7 @@ class L10nBeVatListing(models.TransientModel):
         self.client_ids = [(0, 0, x) for x in client_vals]
 
         module = __name__.split("addons.")[1].split(".")[0]
-        result_view = self.env.ref(
-            "{}.{}_view_form_client_listing".format(module, self._table)
-        )
+        result_view = self.env.ref(f"{module}.{self._table}_view_form_client_listing")
 
         return {
             "name": _("Annual Listing of VAT subjected Customers"),
@@ -68,7 +66,7 @@ class L10nBeVatListing(models.TransientModel):
     def create_xls(self):
         report_file = "vat_list_%s" % self.year
         module = __name__.split("addons.")[1].split(".")[0]
-        report_name = "{}.vat_listing_xls".format(module)
+        report_name = f"{module}.vat_listing_xls"
         report = {
             "name": _("Annual Listing of VAT subjected Customers"),
             "type": "ir.actions.report",
@@ -106,9 +104,7 @@ class L10nBeVatListing(models.TransientModel):
         )
 
         self._validate_xmlschema(xml_string, "NewLK-in_v0_9.xsd")
-        self.file_name = "{nbr}_vat_list_{period}.xml".format(
-            nbr=self._get_company_vat(), period=self.period
-        )
+        self.file_name = f"{self._get_company_vat()}_vat_list_{self.period}.xml"
         self.file_save = base64.encodebytes(xml_string)
 
         return self._action_save_xml()
@@ -121,37 +117,40 @@ class L10nBeVatListing(models.TransientModel):
 
     def _get_client_vals(self):
         partner_dom = self._get_partner_domain()
-        partners = self.env["res.partner"].search(partner_dom)
-        if not partners:
+        partner_vats = self.env["res.partner"].search_read(partner_dom, fields=["vat"])
+        if not partner_vats:
             raise UserError(_("No Belgian VAT subjected customers found."))
+        partner_ids = [x["id"] for x in partner_vats]
 
         flds = ["partner_id", "balance"]
         groupby = ["partner_id"]
 
         aml_dom = self._get_move_line_domain()
-        aml_dom += [("partner_id", "in", partners.ids)]
+        aml_dom += [("partner_id", "in", partner_ids)]
         base_dom, vat_dom = self._get_move_line_tax_domains()
 
         base_data = self.env["account.move.line"].read_group(
             aml_dom + base_dom, flds, groupby
         )
-        vat_dom += [("partner_id", "in", partners.ids)]
+        vat_dom += [("partner_id", "in", partner_ids)]
         vat_data = self.env["account.move.line"].read_group(
             aml_dom + vat_dom, flds, groupby
         )
 
-        partners = partners.filtered(
-            lambda r: r.id in [x["partner_id"][0] for x in base_data]
-        )
-        if not partners:
+        vat_data_partner_ids = [x["partner_id"][0] for x in base_data]
+        partner_vats = {
+            x["id"]: x["vat"] for x in partner_vats if x["id"] in vat_data_partner_ids
+        }
+        if not partner_vats:
             raise UserError(
                 _("No VAT subjected transactions found for %s.") % self.year
             )
 
         records = {}
-        for i, entry in enumerate(base_data):
-            vat = self._normalise_vat(partners[i].vat)
-            records[entry["partner_id"][0]] = {
+        for entry in base_data:
+            partner_id = entry["partner_id"][0]
+            vat = self._normalise_vat(partner_vats[partner_id])
+            records[partner_id] = {
                 "vat": vat,
                 "base_amount": -entry["balance"],
             }
@@ -191,7 +190,6 @@ class L10nBeVatListing(models.TransientModel):
         return partner_dom
 
     def _get_move_line_tax_domains(self):
-
         dom = [
             ("country_id", "=", self.env.ref("base.be").id),
             ("applicability", "=", "taxes"),
@@ -319,7 +317,6 @@ class L10nBeVatListingXlsx(models.AbstractModel):
     _description = "Annual Listing of VAT subjected Customers - excel export"
 
     def _get_ws_params(self, workbook, data, listing):
-
         col_specs = {
             "seq": {
                 "header": {"value": _("Nr")},
@@ -383,7 +380,6 @@ class L10nBeVatListingXlsx(models.AbstractModel):
         ]
 
     def _generate_listing(self, workbook, ws, ws_params, data, listing):
-
         ws.set_portrait()
         ws.fit_to_pages(1, 0)
         ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
@@ -420,7 +416,6 @@ class L10nBeVatListingXlsx(models.AbstractModel):
         return row_pos + 2
 
     def _listing_lines(self, ws, row_pos, ws_params, data, listing):
-
         if not listing.client_ids:
             no_entries = _("No records found for the selected period.")
             row_pos = ws.write_string(
@@ -459,11 +454,11 @@ class L10nBeVatListingXlsx(models.AbstractModel):
         base_pos = ws_params["wanted_list"].index("base_amount")
         base_start = self._rowcol_to_cell(row_pos_start, base_pos)
         base_stop = self._rowcol_to_cell(row_pos - 1, base_pos)
-        total_base_formula = "SUM({}:{})".format(base_start, base_stop)
+        total_base_formula = f"SUM({base_start}:{base_stop})"
         vat_pos = ws_params["wanted_list"].index("vat_amount")
         vat_start = self._rowcol_to_cell(row_pos_start, vat_pos)
         vat_stop = self._rowcol_to_cell(row_pos - 1, vat_pos)
-        total_vat_formula = "SUM({}:{})".format(vat_start, vat_stop)
+        total_vat_formula = f"SUM({vat_start}:{vat_stop})"
         row_pos = self._write_line(
             ws,
             row_pos,

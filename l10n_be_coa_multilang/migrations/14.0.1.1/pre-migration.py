@@ -3,7 +3,6 @@
 
 
 def migrate(cr, version):
-
     cr.execute(
         """
     UPDATE account_tax at SET tax_group_id = imd2.res_id
