@@ -44,9 +44,7 @@ class L10nBeVatDeclaration(models.TransientModel):
         self.case_ids = [(0, 0, x) for x in case_vals]
         self._vat_declaration_controls()
         module = __name__.split("addons.")[1].split(".")[0]
-        result_view = self.env.ref(
-            "{}.{}_view_form_declaration".format(module, self._table)
-        )
+        result_view = self.env.ref(f"{module}.{self._table}_view_form_declaration")
 
         return {
             "name": _("Periodical VAT Declaration"),
@@ -62,7 +60,7 @@ class L10nBeVatDeclaration(models.TransientModel):
     def create_xls(self):
         report_file = "vat_declaration_%s" % self.period
         module = __name__.split("addons.")[1].split(".")[0]
-        report_name = "{}.vat_declaration_xls".format(module)
+        report_name = f"{module}.vat_declaration_xls"
         report = {
             "name": _("Periodical VAT Declaration"),
             "type": "ir.actions.report",
@@ -77,7 +75,7 @@ class L10nBeVatDeclaration(models.TransientModel):
     def create_detail_xls(self):
         report_file = "vat_detail_%s" % self.period
         module = __name__.split("addons.")[1].split(".")[0]
-        report_name = "{}.vat_detail_xls".format(module)
+        report_name = f"{module}.vat_detail_xls"
         report = {
             "name": _("Periodical VAT Declaration details"),
             "type": "ir.actions.report",
@@ -127,8 +125,8 @@ class L10nBeVatDeclaration(models.TransientModel):
         ).report_action(self)
 
     def _get_file_base_name(self):
-        return "{}_vat_declaration".format(self._get_company_vat()) + (
-            self.period and "_{}".format(self.period) or ""
+        return f"{self._get_company_vat()}_vat_declaration" + (
+            self.period and f"_{self.period}" or ""
         )
 
     def _intervat_cases(self):
@@ -384,9 +382,7 @@ class L10nBeVatDeclaration(models.TransientModel):
             self.controls = passed + " : " + control
         else:
             self.controls = failed + " : " + control
-        self.controls += control_vals.format(
-            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
-        )
+        self.controls += control_vals.format(left=f"{vl:.2f}", right=f"{vr:.2f}")
 
         control = "([84] + [86] + [88]) * 21% >= [55]"
         self.controls += "\n"
@@ -396,9 +392,7 @@ class L10nBeVatDeclaration(models.TransientModel):
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
-        self.controls += control_vals.format(
-            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
-        )
+        self.controls += control_vals.format(left=f"{vl:.2f}", right=f"{vr:.2f}")
 
         control = "([85] + [87]) * 21% >= ([56] + [57])"
         self.controls += "\n"
@@ -408,9 +402,7 @@ class L10nBeVatDeclaration(models.TransientModel):
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
-        self.controls += control_vals.format(
-            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
-        )
+        self.controls += control_vals.format(left=f"{vl:.2f}", right=f"{vr:.2f}")
 
         control = "([81] + [82] + [83] + [84] + [85]) * 50% >= [59]"
         self.controls += "\n"
@@ -429,9 +421,7 @@ class L10nBeVatDeclaration(models.TransientModel):
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
-        self.controls += control_vals.format(
-            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
-        )
+        self.controls += control_vals.format(left=f"{vl:.2f}", right=f"{vr:.2f}")
 
         control = "[85] * 21% >= [63]"
         vl = cround(cvalues["85"] * 0.21)
@@ -441,9 +431,7 @@ class L10nBeVatDeclaration(models.TransientModel):
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
-        self.controls += control_vals.format(
-            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
-        )
+        self.controls += control_vals.format(left=f"{vl:.2f}", right=f"{vr:.2f}")
 
         control = "[49] * 21% >= [64]"
         vl = cround(cvalues["49"] * 0.21)
@@ -453,9 +441,7 @@ class L10nBeVatDeclaration(models.TransientModel):
             self.controls += passed + " : " + control
         else:
             self.controls += failed + " : " + control
-        self.controls += control_vals.format(
-            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
-        )
+        self.controls += control_vals.format(left=f"{vl:.2f}", right=f"{vr:.2f}")
 
         control = "[55] > 0 if ([86] or [88]) > 0"
         self.controls += "\n"
@@ -465,12 +451,9 @@ class L10nBeVatDeclaration(models.TransientModel):
             self.controls += failed + " : " + control
         else:
             self.controls += passed + " : " + control
-        self.controls += control_vals.format(
-            left="{:.2f}".format(vl), right="{:.2f}".format(vr)
-        )
+        self.controls += control_vals.format(left=f"{vl:.2f}", right=f"{vr:.2f}")
 
     def _node_VATDeclaration(self, parent, ns_map, ref):
-
         VATDeclaration = etree.SubElement(
             parent,
             "VATDeclaration",
@@ -512,7 +495,6 @@ class L10nBeVatDeclaration(models.TransientModel):
         # Justification not supported at this point in time
 
     def _get_grid_list(self):
-
         grid_list = []
         for entry in self.case_ids:
             if entry.case_id.code in self._intervat_cases():
@@ -578,7 +560,6 @@ class L10nBeVatDeclarationXlsx(models.AbstractModel):
     _description = "VAT declaration excel export"
 
     def _get_ws_params(self, workbook, data, declaration):
-
         col_specs = {
             "case": {
                 "header": {"value": _("Case")},
@@ -615,7 +596,6 @@ class L10nBeVatDeclarationXlsx(models.AbstractModel):
         ]
 
     def _generate_declaration(self, workbook, ws, ws_params, data, declaration):
-
         ws.set_portrait()
         ws.fit_to_pages(1, 0)
         ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
@@ -654,7 +634,6 @@ class L10nBeVatDeclarationXlsx(models.AbstractModel):
         return row_pos + 2
 
     def _declaration_lines(self, ws, row_pos, ws_params, data, declaration):
-
         row_pos = self._write_line(
             ws,
             row_pos,
@@ -762,7 +741,6 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         return slist
 
     def _get_centralisation_ws_params(self, wb, data, decl):
-
         col_specs = {
             "code": {
                 "header": {"value": _("Code")},
@@ -812,7 +790,6 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         }
 
     def _centralisation_report(self, wb, ws, ws_params, data, decl):
-
         ws.set_portrait()
         ws.fit_to_pages(1, 0)
         ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
@@ -828,7 +805,6 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         return self._write_ws_title(ws, row_pos, ws_params)
 
     def _centralisation_lines(self, ws, row_pos, ws_params, data, decl):
-
         report_cache = data["report_cache"]
         if not report_cache["journals"]:
             no_entries = _("No records found for the selected period.")
@@ -864,7 +840,7 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
 
         debit_start = self._rowcol_to_cell(start_pos, debit_pos)
         debit_stop = self._rowcol_to_cell(row_pos - 1, debit_pos)
-        total_debit_formula = "SUM({}:{})".format(debit_start, debit_stop)
+        total_debit_formula = f"SUM({debit_start}:{debit_stop})"
         row_pos = self._write_line(
             ws,
             row_pos,
@@ -1129,7 +1105,7 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         title = (10 * " ").join(
             [
                 decl.company_id.name,
-                journal.name + "({})".format(journal.code),
+                journal.name + f"({journal.code})",
                 decl.period,
                 dict(decl._fields["target_move"]._description_selection(self.env)).get(
                     decl.target_move
@@ -1151,7 +1127,6 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         }
 
     def _journal_report(self, wb, ws, ws_params, data, decl):
-
         time_start = time.time()
         ws.set_landscape()
         ws.fit_to_pages(1, 0)
@@ -1175,7 +1150,6 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
         return self._write_ws_title(ws, row_pos, ws_params)
 
     def _journal_lines(self, ws, row_pos, ws_params, data, decl, journal):
-
         report_cache = data["report_cache"]
         wl = ws_params["wanted_list"]
         if journal.type in ("sale", "purchase"):
@@ -1271,10 +1245,10 @@ class L10nBeVatDetailXlsx(models.AbstractModel):
 
         debit_start = self._rowcol_to_cell(start_pos, debit_pos)
         debit_stop = self._rowcol_to_cell(row_pos - 1, debit_pos)
-        debit_formula = "SUM({}:{})".format(debit_start, debit_stop)
+        debit_formula = f"SUM({debit_start}:{debit_stop})"
         credit_start = self._rowcol_to_cell(start_pos, credit_pos)
         credit_stop = self._rowcol_to_cell(row_pos - 1, credit_pos)
-        credit_formula = "SUM({}:{})".format(credit_start, credit_stop)
+        credit_formula = f"SUM({credit_start}:{credit_stop})"
         debit_cell = self._rowcol_to_cell(row_pos, debit_pos)
         credit_cell = self._rowcol_to_cell(row_pos, credit_pos)
         bal_formula = debit_cell + "-" + credit_cell

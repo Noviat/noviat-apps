@@ -45,7 +45,6 @@ class AccountAccount(models.Model):
     def _onchange_code(self):
         countries = self._get_be_scheme_countries()
         if self.code and self.company_id.country_id.code in countries:
-
             entry, entries = self._get_be_report_scheme_entry(self.code)
 
             be_chart_entries = entries.mapped("report_chart_id")

@@ -76,9 +76,7 @@ class L10nBeUpdateBeReportscheme(models.TransientModel):
         module = __name__.split("addons.")[1].split(".")[0]
         if note:
             self.note = note
-            result_view = self.env.ref(
-                "{}.{}_view_form_result".format(module, self._table)
-            )
+            result_view = self.env.ref(f"{module}.{self._table}_view_form_result")
             return {
                 "name": _("Results"),
                 "res_id": self.id,
@@ -90,13 +88,13 @@ class L10nBeUpdateBeReportscheme(models.TransientModel):
                 "type": "ir.actions.act_window",
             }
         else:
-            todo = self.env.ref("{}.{}_todo".format(module, self._table))
+            todo = self.env.ref(f"{module}.{self._table}_todo")
             todo.state = "done"
             return {"type": "ir.actions.act_window_close"}
 
     def button_close(self):
         self.ensure_one()
         module = __name__.split("addons.")[1].split(".")[0]
-        todo = self.env.ref("{}.{}_todo".format(module, self._table))
+        todo = self.env.ref(f"{module}.{self._table}_todo")
         todo.state = "done"
         return {"type": "ir.actions.act_window_close"}

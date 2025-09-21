@@ -1,22 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* l10n_be_coa_multilang
+# * l10n_be_coa_multilang
 #
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 16:09+0000\n"
-"PO-Revision-Date: 2024-04-10 17:55+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Dutch <https://translation.noviat.com/projects/accounting-v16/"
-"l10n_be_coa_multilang/nl/>\n"
+"PO-Revision-Date: 2025-07-13 19:02+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
+"Language-Team: Dutch <https://translation.noviat.com/projects/"
+"noviat-generic-accounting-v16/l10n_be_coa_multilang/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4.2\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.actions.report,print_report_name:l10n_be_coa_multilang.action_report_l10nbevatdeclaration
@@ -1060,7 +1062,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_intracom__month__04
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_listing__month__04
 msgid "April"
-msgstr ""
+msgstr "April"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_declaration__ask_payment
@@ -1107,12 +1109,12 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_550001
 msgid "Bank"
-msgstr ""
+msgstr "Bank"
 
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_599000
 msgid "Bank Suspense account"
-msgstr ""
+msgstr "Wachtrekening bank transacties"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__be_legal_financial_report_scheme__account_type__asset_cash
@@ -1346,12 +1348,12 @@ msgstr "Liquide middelen"
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_758400
 msgid "Cash difference gains"
-msgstr ""
+msgstr "Voordelige kassaverschillen"
 
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_658400
 msgid "Cash difference losses"
-msgstr ""
+msgstr "Nadelige kassaverschillen"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -1408,7 +1410,7 @@ msgstr "Sluiten"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatintracom
 #, python-format
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_account_report_line__color
@@ -1417,7 +1419,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report_line__color
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_declaration_case__color
 msgid "Color"
-msgstr ""
+msgstr "Kleur"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__comments
@@ -1450,9 +1452,8 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model,name:l10n_be_coa_multilang.model_res_company
-#, fuzzy
 msgid "Companies"
-msgstr "Bedrijf"
+msgstr "Bedrijven"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -1478,7 +1479,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:ir.model,name:l10n_be_coa_multilang.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Configuratie instellingen"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -1489,7 +1490,6 @@ msgstr ""
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model,name:l10n_be_coa_multilang.model_res_partner
-#, fuzzy
 msgid "Contact"
 msgstr "Contact"
 
@@ -1523,7 +1523,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__create_uid
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Gemaakt door"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__create_date
@@ -1539,7 +1539,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__create_date
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Gemaakt op"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -1652,7 +1652,7 @@ msgstr "Kosten van schulden"
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_intracom__month__12
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_listing__month__12
 msgid "December"
-msgstr ""
+msgstr "December"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__declarant_id
@@ -1714,7 +1714,7 @@ msgstr "Omschrijving"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__display_name
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Weergavenaam"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__draft_moves
@@ -1733,7 +1733,7 @@ msgstr "Concept boekingen"
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_coa_multilang_config__coa_lang__nl
 msgid "Dutch"
-msgstr ""
+msgstr "Nederlands"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_321000
@@ -1783,7 +1783,7 @@ msgstr "Einddatum"
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_coa_multilang_config__coa_lang__en
 msgid "English"
-msgstr ""
+msgstr "Engels"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311420
@@ -1858,7 +1858,7 @@ msgstr "Onkosten - BTW 25% niet aftrekbaar (Prijs incl.)"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_intracom_view_form_declaration
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_listing_view_form_client_listing
 msgid "Export"
-msgstr ""
+msgstr "Exporteren"
 
 #. module: l10n_be_coa_multilang
 #: model:account.tax.template,name:l10n_be_coa_multilang.attn_VAT-OUT-00-ROW
@@ -1957,7 +1957,7 @@ msgstr "Februari"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_intracom__file_name
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__file_name
 msgid "File Name"
-msgstr ""
+msgstr "Bestandsnaam"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311400
@@ -2032,7 +2032,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_coa_multilang_config__coa_lang__fr
 msgid "French"
-msgstr ""
+msgstr "Frans"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311330
@@ -2077,7 +2077,7 @@ msgstr "Goederen EU (Code T)"
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_scheme__account_group
 msgid "Group"
-msgstr ""
+msgstr "Groep"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,help:l10n_be_coa_multilang.field_account_report_line__invisible
@@ -2100,7 +2100,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__id
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: l10n_be_coa_multilang
 #: model:account.report.line,name:l10n_be_coa_multilang.atrl_II
@@ -2275,7 +2275,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_declaration_case__info
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_declaration_view_form_declaration
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_411000
@@ -2470,7 +2470,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing____last_update
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Laatst gewijzigd op"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__write_uid
@@ -2486,7 +2486,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__write_uid
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__write_date
@@ -2502,7 +2502,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__write_date
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing_client__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_323113
@@ -2767,7 +2767,7 @@ msgstr "Niet-recurrente bedrijfsopbrengsten"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_intracom__note
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_vat_listing__note
 msgid "Notes"
-msgstr ""
+msgstr "Opmerkingen"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_legal_report__month__11
@@ -2786,7 +2786,7 @@ msgstr "December"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatlisting
 #, python-format
 msgid "Nr"
-msgstr ""
+msgstr "Nr"
 
 #. module: l10n_be_coa_multilang
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_41
@@ -2820,7 +2820,7 @@ msgstr "EIGEN AANDELEN"
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_intracom__month__10
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_listing__month__10
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__be_legal_financial_report_scheme__account_type__off_balance
@@ -2918,12 +2918,12 @@ msgstr "Te betalen BTW - Rekening courant"
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_589900
 msgid "Outstanding Payments Account"
-msgstr ""
+msgstr "Openstaande betalingen"
 
 #. module: l10n_be_coa_multilang
 #: model:account.account.template,name:l10n_be_coa_multilang.aatn_589000
 msgid "Outstanding Receipts Account"
-msgstr ""
+msgstr "Openstaande ontvangsten"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_312410
@@ -2962,7 +2962,7 @@ msgstr "VOORZIENINGEN EN UITGESTELDE BELASTINGEN"
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Bovenliggend"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_account_report_line__factor
@@ -2974,7 +2974,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_chart__parent_path
 msgid "Parent Path"
-msgstr ""
+msgstr "Bovenliggend pad"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311411
@@ -2998,7 +2998,7 @@ msgstr "Deelnemingen"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.report_l10nbevatlisting
 #, python-format
 msgid "Partner"
-msgstr ""
+msgstr "Relatie"
 
 #. module: l10n_be_coa_multilang
 #. odoo-python
@@ -3189,7 +3189,7 @@ msgstr "BEZOLDIGINGEN, SOCIALE LASTEN EN PENSIOENEN"
 #. module: l10n_be_coa_multilang
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_13
 msgid "RESERVES"
-msgstr ""
+msgstr "RESERVES"
 
 #. module: l10n_be_coa_multilang
 #: model:account.group.template,name:l10n_be_coa_multilang.agtn_12
@@ -3282,7 +3282,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_321400
 msgid "Reserves"
-msgstr ""
+msgstr "Reserves"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_321440
@@ -3379,7 +3379,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_intracom__month__09
 #: model:ir.model.fields.selection,name:l10n_be_coa_multilang.selection__l10n_be_vat_listing__month__09
 msgid "September"
-msgstr ""
+msgstr "September"
 
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_account_report_line__sequence
@@ -3512,7 +3512,7 @@ msgstr "OMZET"
 #. module: l10n_be_coa_multilang
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_be_legal_financial_report_scheme__account_tag_ids
 msgid "Tags"
-msgstr ""
+msgstr "Labels"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_311300
@@ -3602,7 +3602,7 @@ msgstr ""
 #. module: l10n_be_coa_multilang
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_intracom_view_form_declaration
 msgid "Total Amount"
-msgstr ""
+msgstr "Totaalbedrag"
 
 #. module: l10n_be_coa_multilang
 #: model_terms:ir.ui.view,arch_db:l10n_be_coa_multilang.l10n_be_vat_listing_view_form_client_listing
@@ -3664,7 +3664,7 @@ msgstr "Omzet"
 #: model:ir.model.fields,field_description:l10n_be_coa_multilang.field_l10n_be_legal_report__type
 #, python-format
 msgid "Type"
-msgstr ""
+msgstr "Soort"
 
 #. module: l10n_be_coa_multilang
 #: model:be.legal.financial.report.chart,name:l10n_be_coa_multilang.be_report_chart_321120

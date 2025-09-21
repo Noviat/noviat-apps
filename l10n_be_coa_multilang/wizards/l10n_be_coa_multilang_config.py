@@ -139,7 +139,6 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
                     out_rec.with_context(lang=lang).write({in_field: value})
 
     def execute(self):  # noqa C901
-
         self_no_ctx = self.with_context(active_test=False)
 
         if self.monolang_coa:
@@ -307,7 +306,7 @@ class L10nBeCoaMultilangConfig(models.TransientModel):
             wiz = upd_wiz.create({"note": note})
             module = __name__.split("addons.")[1].split(".")[0]
             result_view = "l10n_be_update_be_reportscheme_view_form_result"
-            view = self.env.ref("{}.{}".format(module, result_view))
+            view = self.env.ref(f"{module}.{result_view}")
             return {
                 "name": _("Results"),
                 "res_id": wiz.id,

@@ -65,7 +65,7 @@ class L10nBeLegalReport(models.TransientModel):
         line_vals = self._get_line_vals(report_cache)
         self.line_ids = [(0, 0, x) for x in line_vals]
         module = __name__.split("addons.")[1].split(".")[0]
-        result_view = self.env.ref("{}.{}_view_form_report".format(module, self._table))
+        result_view = self.env.ref(f"{module}.{self._table}_view_form_report")
         return {
             "name": self.chart_id.name,
             "res_id": self.id,
@@ -88,9 +88,9 @@ class L10nBeLegalReport(models.TransientModel):
         }
 
     def create_xls(self):
-        report_file = "{}-{}".format(self.type, self.date_to)
+        report_file = f"{self.type}-{self.date_to}"
         module = __name__.split("addons.")[1].split(".")[0]
-        report_name = "{}.legal_report_xls".format(module)
+        report_name = f"{module}.legal_report_xls"
         report = {
             "name": self.chart_id.name,
             "type": "ir.actions.report",
@@ -230,7 +230,6 @@ class L10nBeLegalReportXlsx(models.AbstractModel):
     _description = "Belgium Legal Reports - excel export"
 
     def _get_ws_params(self, workbook, data, be_report):
-
         col_specs = {
             "code": {
                 "header": {"value": _("Code")},
@@ -258,7 +257,7 @@ class L10nBeLegalReportXlsx(models.AbstractModel):
 
         return [
             {
-                "ws_name": "{}-{}".format(be_report.type, be_report.date_to),
+                "ws_name": f"{be_report.type}-{be_report.date_to}",
                 "generate_ws_method": "_generate_be_report",
                 "title": be_report.chart_id.name,
                 "wanted_list": wanted_list,
@@ -267,7 +266,6 @@ class L10nBeLegalReportXlsx(models.AbstractModel):
         ]
 
     def _generate_be_report(self, workbook, ws, ws_params, data, be_report):
-
         ws.set_portrait()
         ws.fit_to_pages(1, 0)
         ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
@@ -304,7 +302,6 @@ class L10nBeLegalReportXlsx(models.AbstractModel):
         return row_pos + 2
 
     def _be_report_lines(self, ws, row_pos, ws_params, data, be_report):
-
         row_pos = self._write_line(
             ws,
             row_pos,
