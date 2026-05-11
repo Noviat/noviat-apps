@@ -1368,6 +1368,9 @@ class AccountCodaImport(models.TransientModel):
                 wiz_note += entry[2]
                 time_start = time.time()
                 for statement in statements:
+                    cba = statement.coda_bank_account_id
+                    if cba.disable_reconcile:
+                        continue
                     self = self.with_company(statement.company_id)
                     statement = statement.with_company(statement.company_id)
                     reconcile_note = self._automatic_reconcile(wiz_dict, statement)
@@ -1591,7 +1594,9 @@ class AccountCodaImport(models.TransientModel):
 
         # end for line in recordlist:
 
-        if not wiz_dict["coda_id"]:
+        # we do not create an account_coda entry when importing from isabel_coonect
+        # since those files are stored in the isabel_connect_file table
+        if not (self.env.context.get("isabel_connect") or wiz_dict["coda_id"]):
             err_string = ""
             try:
                 coda = self.env["account.coda"].create(

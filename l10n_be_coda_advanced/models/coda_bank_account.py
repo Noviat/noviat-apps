@@ -168,6 +168,10 @@ class CodaBankAccount(models.Model):
         "Select the corresponding 'CODA Bank Statement' in order "
         "to view the contents of such duplicates.",
     )
+    disable_reconcile = fields.Boolean(
+        help="Set this option to disable the automatic reconcile "
+        "during CODA import for Bank Statements of this journal.",
+    )
     active = fields.Boolean(
         default=True,
         help="If the active field is set to False, "

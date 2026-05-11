@@ -36,9 +36,9 @@ class AccountBankStatement(models.Model):
             journal_id = vals.get("journal_id")
             if not journal_id and vals["line_ids"]:
                 journal_id = vals["line_ids"][0][2]["journal_id"]
-                journal = self.env["account.journal"].browse(journal_id)
-                if journal.transaction_numbering == "statement":
-                    statement_numbering = True
+            journal = self.env["account.journal"].browse(journal_id)
+            if journal.transaction_numbering == "statement":
+                statement_numbering = True
 
             seqs = [x[2]["sequence"] for x in vals.get("line_ids", [])]
             if len(seqs) != len(set(seqs)):

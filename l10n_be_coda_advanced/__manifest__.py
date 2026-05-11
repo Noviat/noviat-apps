@@ -3,7 +3,7 @@
 
 {
     "name": "Belgium - Advanced CODA statements Import",
-    "version": "17.0.1.1.0",
+    "version": "17.0.1.2.1",
     "license": "LGPL-3",
     "author": "Noviat",
     "website": "https://www.noviat.com/",
@@ -16,7 +16,6 @@
         "account_bank_statement_advanced",
         "account_bank_transaction_numbering_scheme",
     ],
-    "excludes": ["l10n_be_coda"],
     "data": [
         "security/ir.model.access.csv",
         "security/account_coda_security.xml",

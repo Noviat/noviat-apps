@@ -121,8 +121,10 @@
                             <field
                                 name="journal_id"
                                 domain="[('type', '=', 'bank')]"
+                                required="1"
                                 readonly="line_ids or state == 'confirm' or import_format_readonly"
                                 options="{'no_open': True, 'no_create': True}"
+                                force_save="1"
                             />
                             <field
                                 name="date"

@@ -31,6 +31,7 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_journal.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -42,6 +43,7 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_journal.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -1932,6 +1934,11 @@ msgid "Direct debit – DOM’80"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__disable_reconcile
+msgid "Disable Reconcile"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__discard_dup
 msgid "Discard Duplicates"
 msgstr ""
@@ -2548,6 +2555,13 @@ msgid "Import Log"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_journal.py:0
+#, python-format
+msgid "Imported Bank Statements"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #: model:ir.actions.act_window,name:l10n_be_coda_advanced.account_coda_action
 #: model:ir.ui.menu,name:l10n_be_coda_advanced.account_coda_menu
 msgid "Imported CODA Files"
@@ -2765,6 +2779,7 @@ msgid "JSON dictionary with the results of the CODA parsing"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_journal
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__journal_id
 msgid "Journal"
 msgstr ""
@@ -2981,6 +2996,13 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_15
 msgid "Night safe"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_journal.py:0
+#, python-format
+msgid "No Bank Statements imported."
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -3995,6 +4017,13 @@ msgid ""
 "Set here the default account that will be used for internal transfer between"
 " own bank accounts (e.g. transfer between current and deposit bank "
 "accounts)."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__disable_reconcile
+msgid ""
+"Set this option to disable the automatic reconcile during CODA import for "
+"Bank Statements of this journal."
 msgstr ""
 
 #. module: l10n_be_coda_advanced
