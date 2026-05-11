@@ -72,7 +72,7 @@ class AccountBankStatement(models.Model):
             )
             if dup:
                 message = _(
-                    "Statement %(st_name)s, Journal %(journal)s, dated %(date)s "
+                    "\nStatement %(st_name)s, Journal %(journal)s, dated %(date)s "
                     "has already been encoded.",
                     st_name=rec.name,
                     journal=rec.journal_id.name,
@@ -109,12 +109,18 @@ class AccountBankStatement(models.Model):
             if not stmt.date:
                 stmt.date = sorted_lines[-1:].transaction_date
 
-    @api.depends("line_ids.journal_id")
     def _compute_journal_id(self):
         for rec in self:
             if not rec.journal_id:
                 super(AccountBankStatement, rec)._compute_journal_id()
         return
+
+    @api.onchange("line_ids")
+    def _onchange_line_ids(self):
+        if self.env.context.get("absa") and self.line_ids and not self.journal_id:
+            raise UserError(
+                _("You must specify a journal before creating transactions.")
+            )
 
     @api.depends("move_line_ids")
     def _compute_move_line_count(self):

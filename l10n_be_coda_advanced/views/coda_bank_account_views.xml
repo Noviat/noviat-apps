@@ -92,6 +92,7 @@
                         <field name="find_so_number" invisible="not has_sale_module" />
                         <field name="balance_start_enforce" />
                         <field name="discard_dup" />
+                        <field name="disable_reconcile" />
                     </group>
                 </group>
                 <group name="invisible" invisible="1">

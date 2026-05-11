@@ -35,3 +35,13 @@ class AccountMove(models.Model):
                         )
                     )
         return super().button_cancel()
+
+    def _search_default_journal(self):
+        """
+        We don't set a default journal when entering a bank statement manually since
+        journal_id is a required field that must be set before creating transactions.
+        """
+        if self.env.context.get("absa"):
+            return self.env["account.journal"]
+        else:
+            return super()._search_default_journal()

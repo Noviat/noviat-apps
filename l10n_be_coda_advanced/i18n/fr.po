@@ -1,22 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* l10n_be_coda_advanced
+# * l10n_be_coda_advanced
 #
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 16:21+0000\n"
-"PO-Revision-Date: 2024-05-04 07:55+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: French <https://translation.noviat.com/projects/accounting-"
-"v16/l10n_be_coda_advanced/fr/>\n"
+"PO-Revision-Date: 2025-09-04 03:02+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
+"Language-Team: French <https://translation.noviat.com/projects/"
+"noviat-generic-accounting-v17/l10n_be_coda_advanced/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4.2\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -47,6 +49,7 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_journal.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -58,6 +61,7 @@ msgstr ""
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_journal.py:0
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid ""
@@ -423,6 +427,8 @@ msgid ""
 "(SEPA) payment with a structured format communication applying the ISO "
 "standard 11649: Structured creditor reference to remittance information"
 msgstr ""
+"Communication structurée d’un paiement conforme au standard ISO 11649: "
+"'Structured creditor reference to remittance information'"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_05_58
@@ -447,7 +453,7 @@ msgstr ""
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "1-st (recurrent)"
-msgstr ""
+msgstr "1-st (recurrent)"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -506,7 +512,7 @@ msgstr "Compte"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__account_mapping_ids
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
 msgid "Account Mapping Rules"
-msgstr ""
+msgstr "Account Mapping Rules"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__counterparty_number
@@ -649,7 +655,7 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__analytic_distribution
 msgid "Analytic Distribution"
-msgstr ""
+msgstr "Distribution analytique"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__analytic_distribution_search
@@ -659,7 +665,7 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__analytic_precision
 msgid "Analytic Precision"
-msgstr ""
+msgstr "Précision analytique"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -671,7 +677,7 @@ msgstr ""
 #. module: l10n_be_coda_advanced
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
 msgid "Archived"
-msgstr ""
+msgstr "Archivé"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_04
@@ -1211,7 +1217,7 @@ msgstr "Clôture, période du %(period_from)s à %(period_to)s"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__code
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__codepage
@@ -1319,7 +1325,7 @@ msgstr "Commission d'engagement paiement différé"
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Communication"
-msgstr ""
+msgstr "Communication"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -1336,7 +1342,7 @@ msgstr "Communication de la banque"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__company_ids
 msgid "Companies"
-msgstr ""
+msgstr "Sociétés"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__company_id
@@ -1593,7 +1599,7 @@ msgstr "Commission de couverture"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__create_uid
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__create_date
@@ -1605,7 +1611,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__create_date
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -1673,7 +1679,7 @@ msgstr "Crédit du remettant"
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_04_52
 msgid "Credit provider"
-msgstr ""
+msgstr "Credit provider"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_01_03
@@ -1784,7 +1790,7 @@ msgstr "Données de la contrepartie"
 #. module: l10n_be_coda_advanced
 #. odoo-python
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
-#, fuzzy, python-format
+#, python-format
 msgid "Date"
 msgstr "Date"
 
@@ -1880,10 +1886,10 @@ msgid ""
 "Year (of CODA 'New Balance Date') with Century: %(year)s\n"
 "Year (of CODA 'New Balance Date') without Century: %(y)s\n"
 "CODA sequence number: %(coda)s\n"
-"Paper Statement sequence number (as specified on 'Old Balance' record): "
-"%(paper_ob)s\n"
-"Paper Statement sequence number (as specified on 'New Balance' record): "
-"%(paper)s"
+"Paper Statement sequence number (as specified on 'Old Balance' record): %"
+"(paper_ob)s\n"
+"Paper Statement sequence number (as specified on 'New Balance' record): %"
+"(paper)s"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
@@ -1908,7 +1914,7 @@ msgstr "Chèque magasin"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__description
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_trans_type_view_form
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -1945,6 +1951,10 @@ msgid ""
 "the detailed data. In that case, one will speak of a 'separate application'. "
 "The records in a separate application keep type 6."
 msgstr ""
+"Détails de 2. Montant simple sans détails. Normalement, ces détails suivent "
+"le type 2. Le client peut choisir de recevoir ces détails dans un fichier "
+"distinct. On parle alors d'une 'application distincte'. Les enregistrements "
+"dans une application distincte conservent le type 6."
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.type,description:l10n_be_coda_advanced.actt_8
@@ -2008,6 +2018,11 @@ msgid "Direct debit – DOM’80"
 msgstr "Domiciliations – DOM'80"
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__disable_reconcile
+msgid "Disable Reconcile"
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__discard_dup
 msgid "Discard Duplicates"
 msgstr ""
@@ -2037,12 +2052,12 @@ msgstr "Escompte effet fournisseur étranger"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__display_name
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__distribution_analytic_account_ids
 msgid "Distribution Analytic Account"
-msgstr ""
+msgstr "Répartition sur le compte analytique"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -2095,7 +2110,7 @@ msgstr "Virements nationaux/locaux – SEPA credit transfers"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__account_coda__state__done
 msgid "Done"
-msgstr ""
+msgstr "Terminé"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_04_54
@@ -2168,7 +2183,7 @@ msgstr "Contre-valeur dans la devise du compte"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__account_coda__state__error
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -2343,6 +2358,8 @@ msgstr "Acompte fixe crédits – remboursement"
 msgid ""
 "Fixed right, either one-off or periodical; for details, see 'categories'"
 msgstr ""
+"Droit d'accès fixe - peut être unique ou périodique - pour les détails voir "
+"'rubriques'"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,comment:l10n_be_coda_advanced.actcc_09_50
@@ -2430,7 +2447,7 @@ msgstr "Vente de devises à terme"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__freecomm
 msgid "Free Communication"
-msgstr ""
+msgstr "Communication libre"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -2482,7 +2499,7 @@ msgstr "Montant brut dans la devise initiale"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_search
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_search
 msgid "Group By"
-msgstr ""
+msgstr "Regrouper par"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_024
@@ -2542,7 +2559,7 @@ msgstr "Leasing où l'établissement financier = donneur de leasing"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__id
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__id
 msgid "ID"
-msgstr ""
+msgstr "Identifiant"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -2631,6 +2648,13 @@ msgstr "Date de l'import"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__note
 msgid "Import Log"
 msgstr "Import log"
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_journal.py:0
+#, python-format
+msgid "Imported Bank Statements"
+msgstr ""
 
 #. module: l10n_be_coda_advanced
 #: model:ir.actions.act_window,name:l10n_be_coda_advanced.account_coda_action
@@ -2788,7 +2812,7 @@ msgstr "Intérêts intérimaires en cas de souscription"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__transfer_account_id
 msgid "Internal Funds Transfer Account"
-msgstr ""
+msgstr "Compte virements internes"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcf_41
@@ -2856,9 +2880,10 @@ msgid "JSON dictionary with the results of the CODA parsing"
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model,name:l10n_be_coda_advanced.model_account_journal
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__journal_id
 msgid "Journal"
-msgstr ""
+msgstr "Journal"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda_import__accounting_date
@@ -2889,7 +2914,7 @@ msgstr "Numéro de séquence dernière opération"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__write_uid
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__write_date
@@ -2901,7 +2926,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__write_date
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,help:l10n_be_coda_advanced.field_account_coda_import__reconcile
@@ -2933,7 +2958,7 @@ msgstr "Localité"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_import__note
 msgid "Log"
-msgstr ""
+msgstr "Log"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_13_02
@@ -3017,7 +3042,7 @@ msgstr "Mode de calcul (TVA, précompte mobilier, commission, etc.)"
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Minimum applicable"
-msgstr ""
+msgstr "Minimum applicable"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_403
@@ -3051,7 +3076,7 @@ msgstr "Nom"
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_016
 msgid "Negative interest"
-msgstr ""
+msgstr "Intérêt négatif"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_000
@@ -3069,6 +3094,13 @@ msgstr "Nouveau solde"
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_80_15
 msgid "Night safe"
 msgstr "Coffre de nuit"
+
+#. module: l10n_be_coda_advanced
+#. odoo-python
+#: code:addons/l10n_be_coda_advanced/models/account_journal.py:0
+#, python-format
+msgid "No Bank Statements imported."
+msgstr ""
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__type
@@ -3113,7 +3145,7 @@ msgstr "Chèque circulaire non présenté"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields.selection,name:l10n_be_coda_advanced.selection__coda_bank_account__type__normal
 msgid "Normal"
-msgstr ""
+msgstr "Normale"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -3127,7 +3159,7 @@ msgstr "Dénomination du billet/pièce"
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Number"
-msgstr ""
+msgstr "Numéro"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -3275,7 +3307,7 @@ msgstr "Payé ou motif du refus"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_type__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Parent"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_05
@@ -3295,7 +3327,7 @@ msgstr "Partenaire"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__partner_name
 msgid "Partner Name"
-msgstr ""
+msgstr "Nom du partenaire"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -3593,7 +3625,7 @@ msgstr "Privé"
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_process
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
 msgid "Process"
-msgstr ""
+msgstr "Traiter"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -3918,7 +3950,7 @@ msgstr "Prélèvement (européen) pour l’Etat de résidence"
 #. module: l10n_be_coda_advanced
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.coda_bank_account_view_form
 msgid "Result"
-msgstr ""
+msgstr "Résultat"
 
 #. module: l10n_be_coda_advanced
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_import_view_form_result
@@ -4100,6 +4132,13 @@ msgid ""
 msgstr ""
 
 #. module: l10n_be_coda_advanced
+#: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_bank_account__disable_reconcile
+msgid ""
+"Set this option to disable the automatic reconcile during CODA import for "
+"Bank Statements of this journal."
+msgstr ""
+
+#. module: l10n_be_coda_advanced
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_form
 msgid "Set to Draft"
 msgstr "Mettre à l'état \"Brouillon\""
@@ -4217,7 +4256,7 @@ msgstr "Taxe de spéculation"
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_account_mapping_rule__split
 msgid "Split"
-msgstr ""
+msgstr "Diviser"
 
 #. module: l10n_be_coda_advanced
 #: model:ir.model.fields,help:l10n_be_coda_advanced.field_coda_account_mapping_rule__split
@@ -4254,7 +4293,7 @@ msgstr "Date de prise d'effet"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda__state
 #: model_terms:ir.ui.view,arch_db:l10n_be_coda_advanced.account_coda_view_search
 msgid "State"
-msgstr ""
+msgstr "Etat"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -4372,7 +4411,7 @@ msgstr "Télécommunications"
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Teledata"
-msgstr ""
+msgstr "Teledata"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_11_51
@@ -4700,7 +4739,7 @@ msgstr "Frais de déplacement"
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_account_coda_trans_code__type
 #: model:ir.model.fields,field_description:l10n_be_coda_advanced.field_coda_bank_account__type
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_00_00
@@ -4883,7 +4922,7 @@ msgstr "Frais de visa"
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.category,description:l10n_be_coda_advanced.actrca_212
@@ -4894,7 +4933,7 @@ msgstr "Commission de d’entreposage"
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_64
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_47_64
 msgid "Warrant"
-msgstr ""
+msgstr "Warrant"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.trans.code,description:l10n_be_coda_advanced.actcc_07_14
@@ -5093,7 +5132,7 @@ msgstr "cautionnement sans échéance fixe"
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "last (recurrent)"
-msgstr ""
+msgstr "last (recurrent)"
 
 #. module: l10n_be_coda_advanced
 #. odoo-python
@@ -5112,7 +5151,7 @@ msgstr "numéro"
 #: code:addons/l10n_be_coda_advanced/wizards/account_coda_import.py:0
 #, python-format
 msgid "one-off"
-msgstr ""
+msgstr "one-off"
 
 #. module: l10n_be_coda_advanced
 #: model:account.coda.comm.type,description:l10n_be_coda_advanced.acct_105

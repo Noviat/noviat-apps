@@ -5,7 +5,7 @@
     <field name="name">account.coda.tree</field>
     <field name="model">account.coda</field>
     <field name="arch" type="xml">
-      <tree create="false">
+      <tree create="false" decoration-danger="state == 'error'">
         <field name="coda_creation_date" />
         <field name="name" />
         <field name="date" />

@@ -151,6 +151,7 @@ class CodaAccountMappingRule(models.Model):
         select += (
             "FROM coda_account_mapping_rule "
             f"WHERE active = True AND coda_bank_account_id = {coda_bank_account.id} "
+            "AND split IS NOT True "
             "ORDER BY sequence"
         )
         self.env.cr.execute(select)

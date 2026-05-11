@@ -41,7 +41,7 @@ Reconciliation logic
        CODA File Import wizard.
 
     2) Outgoing payments are matched with the corresponding invoice/refund via the
-       SEPA EndToEndReference field (requires **l10n_be_coda_pain** module).
+       SEPA EndToEndReference field.
 
     3) As a next step the 'Structured Communication' field of the CODA transaction
        line is matched against the reference field of in- and outgoing invoices
@@ -58,8 +58,7 @@ Reconciliation logic
          present within the Free Format Communication string (substring match).
 
     5) If the Sale Order number is found in the 'Free Format Communication' the
-       matching will be performed with the Sale Order Invoices
-       (requires **account_coda_sale** module).
+       matching will be performed with the Sale Order Invoices.
 
     6) If no matching accounting entry is found via the originating business transactions
        (Payment Order, Invoice, Sales Order) a lookup is performed directly on
@@ -90,33 +89,6 @@ communication code has been given a new or clearer description in CODA v2.
 The description provided by the CODA configuration tables is based upon the
 CODA v2 specifications.
 If required, you can manually adjust the descriptions via the CODA configuration menu.
-
-Installation instructions
--------------------------
-
-This module is **NOT** compatible with the **l10n_be_coda** module.
-
-The approach to use the bank statement name combined with the transaction
-sequence to generate the accounting entry names conflict with the
-use of the 'Register Payment' button. 
-
-|
-
-This is not an issue when
-
-- disabling this button for the CODA journals (cf. account_invoice_pay_filter module)
-- use the OCA account_banking_sepa_credit_transfer module to create payment orders
-  and configure the payment mode to prevent generation of a transfer booking.
-  
-We also recommend to set the configure set the payment_debit_account_id and payment_credit_account_id
-to 'deprecated' for the financial journals with CODA processing.
-
-
-Known Issues / Roadmap
-----------------------
-
-Make this module compatible with Odoo OE Batch Payments.
-
 
 Assistance
 ----------

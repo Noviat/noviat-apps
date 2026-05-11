@@ -14,6 +14,15 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
+#, python-format
+msgid ""
+"\n"
+"Statement %(st_name)s, Journal %(journal)s, dated %(date)s has already been encoded."
+msgstr ""
+
+#. module: account_bank_statement_advanced
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_advanced.statement_balance_report
 msgid "&amp;nbsp;"
 msgstr ""
@@ -702,15 +711,6 @@ msgid "Statement"
 msgstr ""
 
 #. module: account_bank_statement_advanced
-#. odoo-python
-#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
-#, python-format
-msgid ""
-"Statement %(st_name)s, Journal %(journal)s, dated %(date)s has already been "
-"encoded."
-msgstr ""
-
-#. module: account_bank_statement_advanced
 #: model:ir.model.fields,field_description:account_bank_statement_advanced.field_account_bank_statement_line__statement_date
 msgid "Statement Date"
 msgstr ""
@@ -798,6 +798,13 @@ msgstr ""
 msgid ""
 "You cannot duplicate a bank statement with import format "
 "'%(import_format)s'."
+msgstr ""
+
+#. module: account_bank_statement_advanced
+#. odoo-python
+#: code:addons/account_bank_statement_advanced/models/account_bank_statement.py:0
+#, python-format
+msgid "You must specify a journal before creating transactions."
 msgstr ""
 
 #. module: account_bank_statement_advanced
